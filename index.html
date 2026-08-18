@@ -45,7 +45,7 @@
     .dot-active { background: var(--active); }
     .dot-joint { background: var(--joint); }
     .sidebar { min-height: 0; max-height: calc(100vh - 68px); overflow: auto; border-left: 1px solid var(--line); background: var(--panel); }
-    .mode-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; padding: 12px; border-bottom: 1px solid var(--line); }
+    .mode-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; padding: 12px; border-bottom: 1px solid var(--line); }
     .mode-tab { border: 1px solid var(--line); border-radius: 9px; background: var(--panel-2); padding: 9px; cursor: pointer; }
     .mode-tab[aria-pressed="true"] { color: #151719; background: var(--active); border-color: var(--active); }
     .selected { padding: 18px; border-bottom: 1px solid var(--line); }
@@ -66,6 +66,7 @@
     .motion-button:hover, .motion-button:focus-visible { border-color: var(--joint-active); }
     .motion-note { margin-top: 9px; color: var(--muted); font-size: 12px; line-height: 1.5; }
     .switches { display: flex; flex-wrap: wrap; gap: 12px 18px; padding: 12px 18px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    .selected[hidden], .switches[hidden] { display: none; }
     .switches label { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; }
     .switches input { accent-color: var(--active); }
     .catalog { padding: 8px 12px 22px; }
@@ -77,6 +78,38 @@
     .loading { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; background: var(--bg); color: var(--muted); }
     .loading[hidden] { display: none; }
     .error { color: #ff8b7d; max-width: 520px; padding: 24px; line-height: 1.6; }
+    .simulator { padding: 16px 14px 28px; }
+    .simulator[hidden] { display: none; }
+    .sim-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .sim-title { margin: 0; font-size: 19px; }
+    .sim-badge { flex: 0 0 auto; border: 1px solid #5d704d; border-radius: 999px; color: var(--joint-active); padding: 4px 8px; font-size: 11px; }
+    .sim-intro, .sim-note { color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .sim-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 12px 0; }
+    .sim-action { border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); padding: 8px; cursor: pointer; }
+    .sim-action:hover, .sim-action:focus-visible { border-color: var(--joint-active); }
+    .sim-action.primary { grid-column: 1 / -1; color: #101611; background: var(--joint-active); border-color: var(--joint-active); font-weight: 650; }
+    .sim-action:disabled { cursor: not-allowed; opacity: .55; }
+    .sim-time { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; margin: 10px 0 14px; font-size: 12px; color: var(--muted); }
+    .sim-time progress { width: 100%; accent-color: var(--joint-active); }
+    .pipeline { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 14px; }
+    .pipe-card { min-width: 0; border: 1px solid var(--line); border-radius: 9px; background: #16191c; padding: 9px; }
+    .pipe-card.active { border-color: #4d7044; box-shadow: inset 0 0 0 1px rgba(124,255,107,.12); }
+    .pipe-label { color: var(--joint-active); font-size: 11px; }
+    .pipe-value { margin-top: 5px; min-height: 34px; font: 11px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace; color: #e8ede7; overflow-wrap: anywhere; }
+    .sim-details { margin-top: 9px; border: 1px solid var(--line); border-radius: 9px; background: #16191c; }
+    .sim-details summary { padding: 10px; cursor: pointer; color: #dfe5df; font-size: 13px; }
+    .control-vector { display: flex; gap: 7px; padding: 0 9px 9px; }
+    .control-vector textarea { min-width: 0; flex: 1; resize: vertical; border: 1px solid var(--line); border-radius: 7px; background: #101214; color: var(--text); padding: 7px; font: 11px/1.4 ui-monospace, Consolas, monospace; }
+    .control-vector button { border: 1px solid var(--line); border-radius: 7px; background: var(--panel-2); cursor: pointer; }
+    .control-grid, .joint-state-grid { max-height: 360px; overflow: auto; padding: 0 9px 9px; }
+    .control-row { display: grid; grid-template-columns: 66px 1fr 42px; align-items: center; gap: 7px; min-height: 31px; border-top: 1px solid #282d31; font-size: 11px; }
+    .control-row label { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .control-row input { width: 100%; accent-color: var(--joint-active); }
+    .control-row output { text-align: right; font-variant-numeric: tabular-nums; color: var(--joint-active); }
+    .control-live { grid-column: 1 / -1; display: flex; justify-content: flex-end; gap: 12px; margin: -5px 0 5px; color: var(--muted); }
+    .joint-row { display: grid; grid-template-columns: 96px 1fr; gap: 8px; padding: 7px 0; border-top: 1px solid #282d31; font-size: 11px; }
+    .joint-row code { color: #e8ede7; font-size: 10px; text-align: right; }
+    .equation { margin: 8px 9px 11px; padding: 9px; border-radius: 7px; background: #101214; color: #dfe7dc; font: 11px/1.65 ui-monospace, Consolas, monospace; white-space: pre-wrap; }
     @media (max-width: 900px) {
       .layout { grid-template-columns: 1fr; }
       .stage { min-height: 620px; }
@@ -110,8 +143,8 @@
           <button class="tool" id="view-side" type="button">侧面</button>
           <button class="tool" id="view-reset" type="button">复位</button>
         </div>
-        <div class="hint">右侧切换“肌腱39 / 关节自由度23”，也可直接点击模型</div>
-        <div class="legend">
+        <div class="hint" id="stage-hint">右侧切换“肌腱39 / 关节自由度23”，也可直接点击模型</div>
+        <div class="legend" id="stage-legend">
           <span><i class="dot dot-joint"></i>23个关节自由度</span>
           <span><i class="dot dot-bone"></i>骨骼</span>
           <span><i class="dot dot-muscle"></i>其他肌腱</span>
@@ -123,8 +156,9 @@
         <div class="mode-tabs">
           <button class="mode-tab" id="mode-tendon" type="button" aria-pressed="true">肌腱 39</button>
           <button class="mode-tab" id="mode-joint" type="button" aria-pressed="false">关节自由度 23</button>
+          <button class="mode-tab" id="mode-sim" type="button" aria-pressed="false">控制仿真</button>
         </div>
-        <div class="selected">
+        <div class="selected" id="selected-panel">
           <div class="selected-index" id="selected-index">控制维度 0 / 38</div>
           <div class="selected-name" id="selected-code">ECRL</div>
           <div class="selected-cn" id="selected-cn">桡侧腕长伸肌</div>
@@ -144,7 +178,7 @@
             <div class="motion-note">绿色圆环是旋转中心，绿色箭头是旋转轴；亮绿色骨骼是这个自由度带动的部分。演示会从模型允许的最小角度扫到最大角度，也可以拖动滑杆手动观察。</div>
           </div>
         </div>
-        <div class="switches">
+        <div class="switches" id="switch-panel">
           <label id="joint-toggle-label" hidden><input id="toggle-joints" type="checkbox">显示全部关节编号</label>
           <label id="axis-toggle-label" hidden><input id="toggle-axes" type="checkbox">显示全部旋转轴</label>
           <label id="tendon-toggle-label"><input id="toggle-all" type="checkbox" checked>显示其余38条</label>
@@ -152,6 +186,47 @@
         </div>
         <div class="catalog" id="catalog"></div>
         <div class="catalog" id="joint-catalog" hidden></div>
+        <section class="simulator" id="simulator" hidden>
+          <div class="sim-head">
+            <div>
+              <h2 class="sim-title">39路控制 → 23维新姿态</h2>
+              <div class="sim-intro">随机初始状态或手动输入控制，运行0.5秒并观察每一步计算。</div>
+            </div>
+            <span class="sim-badge">教学用降阶模拟</span>
+          </div>
+          <div class="sim-actions">
+            <button class="sim-action" id="random-state" type="button">随机初始状态</button>
+            <button class="sim-action" id="random-controls" type="button">随机39路控制</button>
+            <button class="sim-action primary" id="run-simulation" type="button">▶ 运行0.5秒</button>
+          </div>
+          <div class="sim-time"><span>t</span><progress id="sim-progress" max="0.5" value="0"></progress><output id="sim-clock">0.000 s</output></div>
+          <div class="pipeline" id="pipeline">
+            <div class="pipe-card active"><div class="pipe-label">① 初始状态 q₀[23]</div><div class="pipe-value" id="pipe-q0">等待初始化</div></div>
+            <div class="pipe-card"><div class="pipe-label">② 控制 u[39]</div><div class="pipe-value" id="pipe-u">等待输入</div></div>
+            <div class="pipe-card"><div class="pipe-label">③ 激活 a[39]</div><div class="pipe-value" id="pipe-a">尚未计算</div></div>
+            <div class="pipe-card"><div class="pipe-label">④ 肌肉力 F[39]</div><div class="pipe-value" id="pipe-force">尚未计算</div></div>
+            <div class="pipe-card"><div class="pipe-label">⑤ 相对关节力矩 τ[23]</div><div class="pipe-value" id="pipe-torque">尚未计算</div></div>
+            <div class="pipe-card"><div class="pipe-label">⑥ 新姿态 q[23]</div><div class="pipe-value" id="pipe-q">尚未计算</div></div>
+          </div>
+          <details class="sim-details" open>
+            <summary>输入39路控制（0～1）</summary>
+            <div class="control-vector"><textarea id="control-vector-input" rows="2" aria-label="39路控制向量" placeholder="粘贴39个以空格或逗号分隔的0～1数值"></textarea><button id="apply-control-vector" type="button">应用</button></div>
+            <div class="control-grid" id="control-grid"></div>
+          </details>
+          <details class="sim-details" open>
+            <summary>23维状态与输出</summary>
+            <div class="joint-state-grid" id="joint-state-grid"></div>
+          </details>
+          <details class="sim-details">
+            <summary>网页里怎样计算</summary>
+            <div class="equation">u → 一阶激活动力学 a
+a + Fmax + 长度/速度因子 → 肌肉力 F
+F + 肌腱—关节作用矩阵 R → 相对关节力矩 τ
+τ − 阻尼 − 回中力 → 关节加速度 q̈
+积分 q̈ → q̇ → q，并限制在官方关节范围内</div>
+          </details>
+          <p class="sim-note">这里复用官方39个执行器名称、最大等长力和23个关节范围，但惯量、接触、完整Hill肌肉模型与精确力臂被降阶近似；因此它用于理解“控制如何变成姿态”，不能替代MyoHand/MuJoCo论文级仿真。</p>
+        </section>
       </aside>
     </section>
   </main>
@@ -1322,6 +1397,27 @@
     let activeMotionBones = [];
     let activeMotionAxis = null;
     let motionFrame = null;
+    const MUSCLE_FMAX = [337.3,252.2,192.9,407.9,479.8,101.0,557.2,284.7,75.3,171.2,258.8,162.5,236.8,172.9,212.4,197.3,139.4,109.2,94.4,48.8,72.4,47.3,88.3,46.0,201.0,116.7,180.0,61.2,61.2,61.2,61.2,98.0,98.0,97.0,76.9,76.9,59.9,47.9,47.9];
+    // 每个对象是“执行器索引 -> 关节索引: 作用方向/相对力臂”的教学用降阶矩阵。
+    // 名称、Fmax和关节范围来自MyoHand；这里的力臂不是MuJoCo运行时的精确moment arm。
+    const ACTUATOR_EFFECTS = [
+      {1:.55,2:-.75},{1:.48,2:-.65},{1:-.65,2:-.65},{1:.45,2:.75},{1:-.55,2:.75},{2:.50},{0:.80},{0:.70},
+      {2:.12,19:.28,21:.85,22:.25},{2:.12,15:.28,17:.85,18:.25},{2:.12,11:.28,13:.85,14:.25},{2:.12,7:.28,9:.85,10:.25},
+      {2:.12,19:.35,21:.55,22:1.0},{2:.12,15:.35,17:.55,18:1.0},{2:.12,11:.35,13:.55,14:1.0},{2:.12,7:.35,9:.55,10:1.0},
+      {2:-.10,19:-.90,21:-.55,22:-.45},{2:-.10,15:-.90,17:-.55,18:-.45},{2:-.10,11:-.90,13:-.55,14:-.45},{2:-.10,7:-.90,9:-.55,10:-.45},
+      {19:-.72,21:-.52,22:-.45},{7:-.72,9:-.52,10:-.45},{4:-.35,5:-.50,6:-1.0},{4:-.45,5:-.90},{4:.30,5:.55,6:1.0},{3:1.0,4:-.20},{3:-.65,4:.80,5:.20},
+      {7:.30,8:.80,9:-.35,10:-.25},{7:.55,9:-.65,10:-.55},{7:.30,8:-.80,9:-.35,10:-.25},
+      {11:.30,12:.80,13:-.35,14:-.25},{11:.55,13:-.65,14:-.55},{11:.30,12:-.80,13:-.35,14:-.25},
+      {15:.30,16:.80,17:-.35,18:-.25},{15:.55,17:-.65,18:-.55},{15:.30,16:-.80,17:-.35,18:-.25},
+      {19:.30,20:.80,21:-.35,22:-.25},{19:.55,21:-.65,22:-.55},{19:.30,20:-.80,21:-.35,22:-.25}
+    ];
+    const simulation = {
+      q0: new Array(23).fill(0), q: new Array(23).fill(0), qvel: new Array(23).fill(0), qdd: new Array(23).fill(0),
+      control: new Array(39).fill(0), activation: new Array(39).fill(0), force: new Array(39).fill(0), torque: new Array(23).fill(0),
+      time: 0, running: false, frame: null, startedAt: 0
+    };
+    const controlRows = [];
+    const jointRows = [];
 
     function bytesFromBase64(value) {
       const raw = atob(value);
@@ -1387,6 +1483,9 @@
       const unitCylinder = new THREE.CylinderGeometry(1, 1, 1, 10, 1, false);
       const redMaterial = new THREE.MeshStandardMaterial({color: 0xa53b31, roughness: 0.62, transparent: true, opacity: 0.34});
       const activeMaterial = new THREE.MeshStandardMaterial({color: 0xffc928, emissive: 0x6b3d00, emissiveIntensity: 0.35, roughness: 0.45});
+      const simTendonMaterials = Array.from({length: 39}, () => new THREE.MeshStandardMaterial({
+        color: 0x75df69, emissive: 0x173c15, emissiveIntensity: 0.1, roughness: 0.45, transparent: true, opacity: 0.13
+      }));
       const start = new THREE.Vector3();
       const end = new THREE.Vector3();
       const middle = new THREE.Vector3();
@@ -1518,6 +1617,300 @@
         return boneMeshes.filter(mesh => names.includes(mesh.name));
       }
 
+      function jointChainForBone(name) {
+        if (name === 'ulna') return [];
+        if (name === 'radius') return [0];
+        const chain = [0, 1, 2];
+        if (['1mc', 'thumbprox', 'thumbdist'].includes(name)) chain.push(3, 4);
+        if (['thumbprox', 'thumbdist'].includes(name)) chain.push(5);
+        if (name === 'thumbdist') chain.push(6);
+        const match = name.match(/^([2-5])(proxph|midph|distph)$/);
+        if (match) {
+          const digit = Number(match[1]);
+          const base = 7 + (digit - 2) * 4;
+          chain.push(base, base + 1);
+          if (match[2] === 'midph' || match[2] === 'distph') chain.push(base + 2);
+          if (match[2] === 'distph') chain.push(base + 3);
+        }
+        return chain;
+      }
+
+      function rotationAbout(anchor, axis, angleDeg) {
+        const moveTo = new THREE.Matrix4().makeTranslation(anchor.x, anchor.y, anchor.z);
+        const rotate = new THREE.Matrix4().makeRotationAxis(axis, THREE.MathUtils.degToRad(angleDeg));
+        const moveBack = new THREE.Matrix4().makeTranslation(-anchor.x, -anchor.y, -anchor.z);
+        return moveTo.multiply(rotate).multiply(moveBack);
+      }
+
+      function applyPoseToHand(q) {
+        boneMeshes.forEach(mesh => {
+          const transform = new THREE.Matrix4().identity();
+          jointChainForBone(mesh.name).forEach(jointIndex => {
+            const object = jointObjects[jointIndex];
+            const anchor = object.anchor.clone().applyMatrix4(transform);
+            const axis = object.axis.clone().transformDirection(transform).normalize();
+            transform.premultiply(rotationAbout(anchor, axis, q[jointIndex]));
+          });
+          mesh.matrixAutoUpdate = false;
+          mesh.matrix.copy(transform);
+          mesh.matrixWorldNeedsUpdate = true;
+        });
+        render();
+      }
+
+      function restoreNeutralMeshTransforms() {
+        boneMeshes.forEach(mesh => {
+          mesh.matrixAutoUpdate = true;
+          mesh.position.set(0, 0, 0);
+          mesh.quaternion.identity();
+          mesh.scale.set(1, 1, 1);
+          mesh.updateMatrix();
+        });
+      }
+
+      function clamp(value, minimum, maximum) {
+        return Math.max(minimum, Math.min(maximum, value));
+      }
+
+      function jointNeutral(index) {
+        const [minimum, maximum] = MODEL.joints[index].range_deg;
+        return minimum <= 0 && maximum >= 0 ? 0 : minimum;
+      }
+
+      function vectorTop(values, names, formatter, count = 3) {
+        return values.map((value, index) => ({value, index}))
+          .sort((a, b) => Math.abs(b.value) - Math.abs(a.value))
+          .slice(0, count)
+          .map(item => `${names[item.index]} ${formatter(item.value)}`)
+          .join('<br>');
+      }
+
+      function buildSimulatorTables() {
+        const controlGrid = document.getElementById('control-grid');
+        MODEL.actuator_names.forEach((name, index) => {
+          const row = document.createElement('div');
+          row.className = 'control-row';
+          const label = document.createElement('label');
+          label.htmlFor = `control-${index}`;
+          label.textContent = `${index} ${name}`;
+          label.title = `${META[index][1]} · Fmax ${MUSCLE_FMAX[index].toFixed(1)} N`;
+          const input = document.createElement('input');
+          input.id = `control-${index}`;
+          input.type = 'range';
+          input.min = '0';
+          input.max = '1';
+          input.step = '0.01';
+          input.value = '0';
+          const output = document.createElement('output');
+          output.textContent = '0.00';
+          const live = document.createElement('div');
+          live.className = 'control-live';
+          const activation = document.createElement('span');
+          activation.textContent = 'a 0.00';
+          const force = document.createElement('span');
+          force.textContent = 'F 0.0 N';
+          live.append(activation, force);
+          input.addEventListener('input', () => {
+            simulation.control[index] = Number(input.value);
+            output.textContent = Number(input.value).toFixed(2);
+            document.getElementById('control-vector-input').value = simulation.control.map(value => value.toFixed(2)).join(', ');
+            updateSimulatorUI();
+          });
+          row.append(label, input, output, live);
+          controlGrid.appendChild(row);
+          controlRows.push({input, output, activation, force});
+        });
+
+        const jointGrid = document.getElementById('joint-state-grid');
+        MODEL.joints.forEach((joint, index) => {
+          const row = document.createElement('div');
+          row.className = 'joint-row';
+          const label = document.createElement('span');
+          label.textContent = `J${index} ${joint.name}`;
+          const value = document.createElement('code');
+          value.textContent = 'q₀ 0.0° → q 0.0° | τ +0.000';
+          row.append(label, value);
+          jointGrid.appendChild(row);
+          jointRows.push(value);
+        });
+      }
+
+      function updateSimulatorUI() {
+        const jointNames = MODEL.joints.map((joint, index) => `J${index}`);
+        const delta = simulation.q.map((value, index) => value - simulation.q0[index]);
+        document.getElementById('sim-progress').value = simulation.time;
+        document.getElementById('sim-clock').textContent = `${simulation.time.toFixed(3)} s`;
+        document.getElementById('pipe-q0').innerHTML = vectorTop(simulation.q0, jointNames, value => `${value >= 0 ? '+' : ''}${value.toFixed(1)}°`);
+        document.getElementById('pipe-u').innerHTML = vectorTop(simulation.control, MODEL.actuator_names, value => value.toFixed(2));
+        document.getElementById('pipe-a').innerHTML = vectorTop(simulation.activation, MODEL.actuator_names, value => value.toFixed(2));
+        document.getElementById('pipe-force').innerHTML = vectorTop(simulation.force, MODEL.actuator_names, value => `${value.toFixed(1)} N`);
+        document.getElementById('pipe-torque').innerHTML = vectorTop(simulation.torque, jointNames, value => `${value >= 0 ? '+' : ''}${value.toFixed(3)}`);
+        document.getElementById('pipe-q').innerHTML = vectorTop(delta, jointNames, value => `Δ${value >= 0 ? '+' : ''}${value.toFixed(1)}°`);
+        controlRows.forEach((row, index) => {
+          row.input.value = simulation.control[index].toFixed(2);
+          row.output.textContent = simulation.control[index].toFixed(2);
+          row.activation.textContent = `a ${simulation.activation[index].toFixed(2)}`;
+          row.force.textContent = `F ${simulation.force[index].toFixed(1)} N`;
+        });
+        jointRows.forEach((row, index) => {
+          row.textContent = `q₀ ${simulation.q0[index].toFixed(1)}° → q ${simulation.q[index].toFixed(1)}° | τ ${simulation.torque[index] >= 0 ? '+' : ''}${simulation.torque[index].toFixed(3)}`;
+        });
+        document.querySelectorAll('.pipe-card').forEach((card, index) => card.classList.toggle('active', simulation.running || index < 2));
+      }
+
+      function updateSimulationGeometry() {
+        simTendonMaterials.forEach((material, index) => {
+          const level = Math.max(simulation.control[index], simulation.activation[index]);
+          material.opacity = 0.10 + 0.86 * level;
+          material.emissiveIntensity = 0.08 + 1.25 * level;
+          material.color.setHSL(0.31, 0.72, 0.28 + 0.24 * level);
+        });
+        refreshTendons();
+        refreshJoints();
+        applyPoseToHand(simulation.q);
+      }
+
+      function stopSimulation(keepPose = true) {
+        if (simulation.frame !== null) cancelAnimationFrame(simulation.frame);
+        simulation.frame = null;
+        simulation.running = false;
+        document.getElementById('run-simulation').textContent = '▶ 运行0.5秒';
+        if (!keepPose) {
+          simulation.q = simulation.q0.slice();
+          simulation.qvel.fill(0);
+          applyPoseToHand(simulation.q);
+        }
+        updateSimulatorUI();
+      }
+
+      function randomizeInitialState() {
+        stopSimulation();
+        simulation.q0 = MODEL.joints.map((joint, index) => {
+          const [minimum, maximum] = joint.range_deg;
+          const range = maximum - minimum;
+          const neutral = jointNeutral(index);
+          if (minimum >= 0) return minimum + Math.random() * range * 0.34;
+          return clamp(neutral + (Math.random() * 2 - 1) * range * 0.24, minimum, maximum);
+        });
+        simulation.q = simulation.q0.slice();
+        simulation.qvel.fill(0);
+        simulation.qdd.fill(0);
+        simulation.activation.fill(0);
+        simulation.force.fill(0);
+        simulation.torque.fill(0);
+        simulation.time = 0;
+        updateSimulatorUI();
+        updateSimulationGeometry();
+      }
+
+      function randomizeControls() {
+        stopSimulation();
+        simulation.control = simulation.control.map(() => Math.pow(Math.random(), 4.0) * 0.16);
+        for (let i = 0; i < 5; i += 1) simulation.control[Math.floor(Math.random() * 39)] = 0.58 + Math.random() * 0.42;
+        document.getElementById('control-vector-input').value = simulation.control.map(value => value.toFixed(2)).join(', ');
+        updateSimulatorUI();
+        updateSimulationGeometry();
+      }
+
+      function integrateSimulation(dt) {
+        simulation.activation.forEach((value, index) => {
+          const target = simulation.control[index];
+          const timeConstant = target > value ? 0.035 : 0.060;
+          simulation.activation[index] += (target - value) * (1 - Math.exp(-dt / timeConstant));
+        });
+
+        simulation.force.forEach((_, actuatorIndex) => {
+          const effects = ACTUATOR_EFFECTS[actuatorIndex];
+          let stretch = 0;
+          let shorteningSpeed = 0;
+          let denominator = 0;
+          Object.entries(effects).forEach(([jointKey, weight]) => {
+            const jointIndex = Number(jointKey);
+            const [minimum, maximum] = MODEL.joints[jointIndex].range_deg;
+            const range = maximum - minimum;
+            stretch += Number(weight) * (simulation.q[jointIndex] - jointNeutral(jointIndex)) / range;
+            shorteningSpeed += Number(weight) * simulation.qvel[jointIndex] / range;
+            denominator += Math.abs(Number(weight));
+          });
+          stretch /= Math.max(denominator, 1e-6);
+          shorteningSpeed /= Math.max(denominator, 1e-6);
+          const lengthFactor = Math.exp(-1.35 * stretch * stretch);
+          const velocityFactor = clamp(1 - 0.18 * shorteningSpeed, 0.45, 1.35);
+          simulation.force[actuatorIndex] = MUSCLE_FMAX[actuatorIndex] * simulation.activation[actuatorIndex] * lengthFactor * velocityFactor;
+        });
+
+        for (let jointIndex = 0; jointIndex < 23; jointIndex += 1) {
+          let drive = 0;
+          let denominator = 0;
+          ACTUATOR_EFFECTS.forEach((effects, actuatorIndex) => {
+            const weight = Number(effects[jointIndex] || 0);
+            if (!weight) return;
+            drive += weight * simulation.force[actuatorIndex] / MUSCLE_FMAX[actuatorIndex];
+            denominator += Math.abs(weight);
+          });
+          simulation.torque[jointIndex] = drive / Math.max(denominator, 1e-6);
+          const [minimum, maximum] = MODEL.joints[jointIndex].range_deg;
+          const normalizedPosition = (simulation.q[jointIndex] - jointNeutral(jointIndex)) / (maximum - minimum);
+          simulation.qdd[jointIndex] = 520 * simulation.torque[jointIndex] - 7.5 * simulation.qvel[jointIndex] - 22 * normalizedPosition;
+          simulation.qvel[jointIndex] = clamp(simulation.qvel[jointIndex] + simulation.qdd[jointIndex] * dt, -220, 220);
+          simulation.q[jointIndex] += simulation.qvel[jointIndex] * dt;
+          if (simulation.q[jointIndex] <= minimum || simulation.q[jointIndex] >= maximum) {
+            simulation.q[jointIndex] = clamp(simulation.q[jointIndex], minimum, maximum);
+            simulation.qvel[jointIndex] = 0;
+          }
+        }
+      }
+
+      function startSimulation() {
+        if (simulation.running) {
+          stopSimulation();
+          return;
+        }
+        simulation.q = simulation.q0.slice();
+        simulation.qvel.fill(0);
+        simulation.qdd.fill(0);
+        simulation.activation.fill(0);
+        simulation.force.fill(0);
+        simulation.torque.fill(0);
+        simulation.time = 0;
+        simulation.running = true;
+        simulation.startedAt = performance.now();
+        document.getElementById('run-simulation').textContent = '■ 停止模拟';
+        function frame(now) {
+          const targetTime = Math.min(0.5, (now - simulation.startedAt) / 1000);
+          while (simulation.time < targetTime - 1e-8) {
+            const dt = Math.min(1 / 120, targetTime - simulation.time);
+            integrateSimulation(dt);
+            simulation.time += dt;
+          }
+          updateSimulatorUI();
+          updateSimulationGeometry();
+          if (targetTime < 0.5 && simulation.running) simulation.frame = requestAnimationFrame(frame);
+          else {
+            simulation.time = 0.5;
+            simulation.running = false;
+            simulation.frame = null;
+            document.getElementById('run-simulation').textContent = '↻ 从q₀重新运行';
+            updateSimulatorUI();
+          }
+        }
+        simulation.frame = requestAnimationFrame(frame);
+      }
+
+      function applyControlVector() {
+        const raw = document.getElementById('control-vector-input').value.trim();
+        const values = raw.split(/[\s,，;；]+/).filter(Boolean).map(Number);
+        if (values.length !== 39 || values.some(value => !Number.isFinite(value))) {
+          window.alert('请输入恰好39个数值，可用空格、逗号或分号分隔。');
+          return;
+        }
+        stopSimulation();
+        simulation.control = values.map(value => clamp(value, 0, 1));
+        document.getElementById('control-vector-input').value = simulation.control.map(value => value.toFixed(2)).join(', ');
+        updateSimulatorUI();
+        updateSimulationGeometry();
+      }
+
       function stopMotionAnimation() {
         if (motionFrame !== null) cancelAnimationFrame(motionFrame);
         motionFrame = null;
@@ -1603,6 +1996,16 @@
 
       function refreshTendons() {
         tendonMeshes.forEach(mesh => {
+          if (mode === 'simulator') {
+            const actuatorId = mesh.userData.actuatorId;
+            const level = Math.max(simulation.control[actuatorId], simulation.activation[actuatorId]);
+            mesh.material = simTendonMaterials[actuatorId];
+            mesh.visible = true;
+            mesh.scale.x = 0.0012 + 0.0029 * level;
+            mesh.scale.z = 0.0012 + 0.0029 * level;
+            mesh.renderOrder = level > 0.5 ? 2 : 1;
+            return;
+          }
           const active = mode === 'tendon' && mesh.userData.actuatorId === selected;
           mesh.material = active ? activeMaterial : redMaterial;
           mesh.visible = mode === 'tendon' && (active || showAll);
@@ -1616,6 +2019,14 @@
 
       function refreshJoints() {
         jointObjects.forEach((object, index) => {
+          if (mode === 'simulator') {
+            object.ring.visible = true;
+            object.sprite.visible = false;
+            object.arrow.visible = false;
+            object.ring.material = jointActiveMaterial;
+            object.ring.scale.setScalar(0.72 + Math.min(1.5, Math.abs(simulation.torque[index]) * 3));
+            return;
+          }
           const active = mode === 'joint' && index === selectedJoint;
           const jointModeVisible = mode === 'joint' && (active || showJoints);
           object.ring.visible = jointModeVisible;
@@ -1671,19 +2082,40 @@
       }
 
       function setMode(nextMode) {
+        const previousMode = mode;
         mode = nextMode;
         document.getElementById('mode-tendon').setAttribute('aria-pressed', mode === 'tendon' ? 'true' : 'false');
         document.getElementById('mode-joint').setAttribute('aria-pressed', mode === 'joint' ? 'true' : 'false');
+        document.getElementById('mode-sim').setAttribute('aria-pressed', mode === 'simulator' ? 'true' : 'false');
+        document.getElementById('selected-panel').hidden = mode === 'simulator';
+        document.getElementById('switch-panel').hidden = mode === 'simulator';
         document.getElementById('catalog').hidden = mode !== 'tendon';
         document.getElementById('joint-catalog').hidden = mode !== 'joint';
+        document.getElementById('simulator').hidden = mode !== 'simulator';
+        if (mode === 'simulator') {
+          document.getElementById('stage-hint').textContent = '绿色越亮、越粗表示控制/激活越强；骨骼同步显示积分得到的q(t)';
+          document.getElementById('stage-legend').innerHTML = '<span><i class="dot" style="background:#7cff6b"></i>控制/激活肌腱</span><span><i class="dot dot-bone"></i>新姿态骨骼</span><span><i class="dot dot-joint"></i>受力关节</span>';
+        } else {
+          document.getElementById('stage-hint').textContent = '右侧切换“肌腱39 / 关节自由度23”，也可直接点击模型';
+          document.getElementById('stage-legend').innerHTML = '<span><i class="dot dot-joint"></i>23个关节自由度</span><span><i class="dot dot-bone"></i>骨骼</span><span><i class="dot dot-muscle"></i>其他肌腱</span><span><i class="dot dot-active"></i>当前肌腱</span>';
+        }
         document.getElementById('motion-demo').hidden = mode !== 'joint';
         document.getElementById('joint-toggle-label').hidden = mode !== 'joint';
         document.getElementById('axis-toggle-label').hidden = mode !== 'joint';
         document.getElementById('tendon-toggle-label').hidden = mode !== 'tendon';
+        if (previousMode === 'simulator' && mode !== 'simulator') {
+          stopSimulation();
+          restoreNeutralMeshTransforms();
+        }
         if (mode === 'tendon') {
           clearJointMotion();
           selectActuator(selected);
-        } else selectJoint(selectedJoint);
+        } else if (mode === 'joint') selectJoint(selectedJoint);
+        else {
+          clearJointMotion();
+          updateSimulatorUI();
+          updateSimulationGeometry();
+        }
         refreshTendons();
         refreshJoints();
       }
@@ -1738,6 +2170,11 @@
 
       document.getElementById('mode-tendon').addEventListener('click', () => setMode('tendon'));
       document.getElementById('mode-joint').addEventListener('click', () => setMode('joint'));
+      document.getElementById('mode-sim').addEventListener('click', () => setMode('simulator'));
+      document.getElementById('random-state').addEventListener('click', randomizeInitialState);
+      document.getElementById('random-controls').addEventListener('click', randomizeControls);
+      document.getElementById('run-simulation').addEventListener('click', startSimulation);
+      document.getElementById('apply-control-vector').addEventListener('click', applyControlVector);
 
       document.getElementById('toggle-all').addEventListener('change', event => {
         showAll = event.target.checked;
@@ -1801,8 +2238,14 @@
 
       window.addEventListener('resize', resize);
       if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
+      buildSimulatorTables();
+      randomizeInitialState();
+      randomizeControls();
+      restoreNeutralMeshTransforms();
       setCamera(0.24, 0.02, 0.66);
-      setMode('tendon');
+      const pageParams = new URLSearchParams(window.location.search);
+      setMode(pageParams.get('mode') === 'sim' ? 'simulator' : 'tendon');
+      if (pageParams.get('autorun') === '1') startSimulation();
       resize();
       loading.hidden = true;
     } catch (error) {
