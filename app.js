@@ -52,8 +52,8 @@ function buildPanel(){
           const name=element('button','tendon-name');name.type='button';name.setAttribute('aria-label',`${id} ${meta.name}`);
           name.append(element('span','tendon-color'),element('span','tendon-code',id),element('span','tendon-cn',meta.name));
           const endpoints=ENDPOINTS.tendons[id];
-          name.append(element('span','tendon-endpoints',`模型起止：${endpoints.start} → ${endpoints.end}`));
-          name.setAttribute('aria-label',`${id} ${meta.name}，模型起点：${endpoints.start}，止点：${endpoints.end}`);
+          name.append(element('span','tendon-endpoints',`起止位置：${endpoints.start} → ${endpoints.end}`));
+          name.setAttribute('aria-label',`${id} ${meta.name}，起止位置：起点 ${endpoints.start}，止点 ${endpoints.end}`);
           name.addEventListener('click',()=>{atlas.highlight(id);refresh();});
           const toggle=element('button','visibility-toggle','Hide');toggle.type='button';toggle.dataset.toggleTendon=id;
           toggle.addEventListener('click',()=>{atlas.toggleTendon(id);refresh();});
