@@ -1,0 +1,21 @@
+{
+  "geometry": {
+    "repository": "https://github.com/Judy-Algorithm/EMG2Tendon",
+    "commit": "0513b54",
+    "source": "public MyoHand"
+  },
+  "controlTable": {
+    "model": "shm_msk_bones_muscle_tendon_only.osim",
+    "sha256": "891bb506410760e8c7b5948938a30ae76320e854abe74ae2c96c09e93522465b",
+    "opensimVersion": "4.5.2--",
+    "neutralCoordinates": 0,
+    "momentArmThresholdMm": 0.01
+  },
+  "coordinateDirectionOverrides": {
+    "thumb_CMC_flex": "positive q is extension, negative q is flexion",
+    "ring_MCP_abd": "positive q is adduction toward the middle finger",
+    "pinky_MCP_abd": "positive q is adduction toward the middle finger",
+    "middle_MCP_abd": "use radial/ulnar deviation to avoid ambiguous middle-finger abduction"
+  },
+  "rendering": "The public MyoHand surface and tendon paths are a visual reference. The 16-joint/23-DoF ranges and associations are from the SHM OpenSim control table. No pose simulation or native MyoHand moment-arm claims are made."
+}

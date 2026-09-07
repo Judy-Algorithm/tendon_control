@@ -1,22 +1,32 @@
-# Interactive MyoHand tendon atlas
+# 肌腱控制
 
-A self-contained browser visualization of the public MyoHand/MyoSuite model,
-covering 23 articulated joint degrees of freedom and 39 muscle-tendon
-actuators.
+16 个关节的通路控制面板。展开关节查看部位、自由度、活动范围、中立位动作及关联通道；点击动作查看通道全名，用 Display / Hide 控制左侧路径和箭头。鼠标拖动旋转，滚轮缩放。
 
-## Data and privacy
+## 运行
 
-The page contains only static model assets exported from the open-source
-MyoHand model: quantized bone geometry, joint anchors/axes/ranges, actuator
-names, and muscle-tendon paths. It contains no company data, EMG recordings,
-pose recordings, tendon pseudo-label arrays, model checkpoints, credentials,
-server addresses, or runtime server dependency.
+```sh
+npm start
+```
 
-## Deploy on Vercel
+打开 http://127.0.0.1:4173。纯静态网站，无构建步骤、CDN 或服务器依赖。部署 Vercel 时选择 Other，构建命令与输出目录留空。
 
-1. Import this GitHub repository into Vercel.
-2. Select Framework Preset `Other`.
-3. Leave Build Command and Output Directory empty.
-4. Deploy. Vercel serves the root `index.html` directly.
+## 数据
 
-See `THIRD_PARTY_NOTICES.md` for MyoSuite and Three.js attribution.
+- 骨骼网格、肌腱路径保留自 [EMG2Tendon](https://github.com/Judy-Algorithm/EMG2Tendon) 的公开 MyoHand 可视化，未替换为公司手部网格。
+- 右侧是用户指定的 SHM OpenSim 中立位控制表：16 个物理关节、23 个自由度、37 条启用通路，关联阈值为力臂绝对值 0.01 mm。
+- 两者按通路 ID 连接。左侧是几何参照，不是右侧 SHM 参数的配准结果；不使用原网站的教学仿真矩阵，也不运行姿态仿真。
+- 原 MyoHand 含前臂旋转坐标、无独立拇指 MCP 侧向坐标。SHM 表含拇指 MCP 侧向自由度、不含前臂旋转；侧向项标注借用拇指 MCP 位置。PT、PQ 不列入活动执行器。
+- 正负力臂转换为具体动作，而不是统一解释为屈曲／伸展。拇指 CMC 屈伸坐标正向为伸展；无名指、小指 MCP 侧向正向为内收；中指侧向使用桡偏／尺偏。范围沿用该表，不能解释为公开 MyoHand 的原生运动限位。
+- 所有动作关联均为中立位结果，不代表全姿态的固定解剖功能或独立可控性。
+
+模型摘要及坐标方向约定见 `docs/data-provenance.json`。仓库不包含 EMG、录制数据、模型权重、服务器信息或认证凭据。
+
+## 验证
+
+```sh
+npm test
+```
+
+浏览器验证使用 Playwright（测试用，不是网站依赖）：启动本地网站后，安装 Playwright 并运行 `node tests/browser.mjs`。默认使用已安装的 Chrome；可通过 `BROWSER_CHANNEL` 指定其他通道。
+
+第三方许可见 `THIRD_PARTY_NOTICES.md`。
