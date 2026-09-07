@@ -2,7 +2,27 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {ATLAS} from '../atlas-data.js';
 import {MODEL} from '../model-data.js';
+import {ENDPOINTS} from '../endpoint-data.js';
+import fs from 'node:fs';
 import {createAtlasState,formatRange} from '../atlas-state.js';
+
+test('all enabled channels have traceable SHM model endpoints',()=>{
+  const provenance=JSON.parse(fs.readFileSync(new URL('../docs/data-provenance.json',import.meta.url)));
+  assert.equal(ENDPOINTS.sha256,provenance.controlTable.sha256);
+  assert.deepEqual(Object.keys(ENDPOINTS.tendons).sort(),ATLAS.tendons.map(t=>t.id).sort());
+  for(const [id,e] of Object.entries(ENDPOINTS.tendons)){
+    assert.ok(e.start&&e.end&&e.startBody&&e.endBody);
+    assert.ok(e.startPoint.startsWith(`${id}_tendon__`));
+    assert.ok(e.endPoint.startsWith(`${id}_tendon__`));
+    assert.notEqual(e.startPoint,e.endPoint);
+  }
+  assert.equal(ENDPOINTS.tendons.FPL.start,'前臂支架');
+  assert.equal(ENDPOINTS.tendons.FPL.end,'拇指远节指骨');
+  assert.equal(ENDPOINTS.tendons.OP.start,'腕骨合并体');
+  assert.equal(ENDPOINTS.tendons.OP.end,'拇指掌骨');
+  // Preserve the model's equivalent routes rather than substituting textbook origins.
+  assert.equal(ENDPOINTS.tendons.LU_RB4.start,'中指掌骨');
+});
 
 test('16 physical joints, 23 DoFs and 37 uniquely mapped enabled channels',()=>{
   assert.equal(ATLAS.joints.length,16);

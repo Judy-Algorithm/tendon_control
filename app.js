@@ -2,6 +2,7 @@ import './vendor/three.min.js';
 import './vendor/orbit-controls.js';
 import {MODEL} from './model-data.js';
 import {ATLAS} from './atlas-data.js';
+import {ENDPOINTS} from './endpoint-data.js';
 import {createAtlasState,formatRange} from './atlas-state.js';
 
 const THREE=window.THREE;
@@ -50,6 +51,9 @@ function buildPanel(){
           row.style.setProperty('--tendon-color',colorFor(id));
           const name=element('button','tendon-name');name.type='button';name.setAttribute('aria-label',`${id} ${meta.name}`);
           name.append(element('span','tendon-color'),element('span','tendon-code',id),element('span','tendon-cn',meta.name));
+          const endpoints=ENDPOINTS.tendons[id];
+          name.append(element('span','tendon-endpoints',`模型起止：${endpoints.start} → ${endpoints.end}`));
+          name.setAttribute('aria-label',`${id} ${meta.name}，模型起点：${endpoints.start}，止点：${endpoints.end}`);
           name.addEventListener('click',()=>{atlas.highlight(id);refresh();});
           const toggle=element('button','visibility-toggle','Hide');toggle.type='button';toggle.dataset.toggleTendon=id;
           toggle.addEventListener('click',()=>{atlas.toggleTendon(id);refresh();});

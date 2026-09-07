@@ -53,9 +53,10 @@ h2{margin:0;font-size:16px;font-weight:550}
 .tendon-row{display:flex;align-items:center;gap:7px;padding:9px 1px;border-bottom:1px solid #ffffff08}
 .tendon-row:last-child{border:0}
 .tendon-name{min-width:0;flex:1;display:grid;grid-template-columns:3px minmax(0,1fr);gap:9px;padding:3px 2px;border:0;background:transparent;text-align:left}
-.tendon-color{grid-row:1/3;background:var(--tendon-color);border-radius:2px;align-self:stretch}
+.tendon-color{grid-row:1/4;background:var(--tendon-color);border-radius:2px;align-self:stretch}
 .tendon-code{font:600 12px/1.3 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--tendon-color)}
 .tendon-cn{grid-column:2;font-size:11px;line-height:1.5;color:var(--muted)}
+.tendon-endpoints{grid-column:2;font-size:12px;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}
 .tendon-row[data-highlighted="true"]{background:#ffffff07}
 .tendon-row[data-visible="false"] .tendon-name{opacity:.5}
 .visibility-toggle{min-width:67px;min-height:32px;border:1px solid #51575c;border-radius:6px;background:transparent;font-size:11px;padding:6px 10px}
