@@ -64,7 +64,7 @@ function buildPanel(){
       }
       card.append(directions,...lists);detail.append(card);
     }
-    const total=element('div','total');total.append(element('span','','总关联通道'),element('strong','',String(joint.tendons.length)));detail.append(total);
+    const total=element('div','total');total.append(element('span','','总关联的肌腱通道'),element('strong','',String(joint.tendons.length)));detail.append(total);
     article.append(trigger,detail);catalog.append(article);nodes.joints.set(joint.id,{trigger,detail});
   }
 }
