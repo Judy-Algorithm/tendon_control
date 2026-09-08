@@ -19,9 +19,9 @@ for(const digit of Object.keys(parts)){
   names['FDS'+digit]=`指浅屈肌 · ${parts[digit]}支`;
   names['FDP'+digit]=`指深屈肌 · ${parts[digit]}支`;
   names['EDC'+digit]=`指总伸肌 · ${parts[digit]}支`;
-  names['RI'+digit]=`${parts[digit]}桡侧骨间肌等效通路`;
+  names['RI'+digit]=`${parts[digit]}桡侧骨间肌通路`;
   names['LU_RB'+digit]=`${parts[digit]}蚓状肌—桡侧腱膜通路`;
-  names['UI_UB'+digit]=`${parts[digit]}尺侧骨间肌—尺侧腱膜通路`;
+  names['UI_UB'+digit]=digit==='5'?'小指尺侧肌腱通路（模型）':`${parts[digit]}尺侧骨间肌—尺侧腱膜通路`;
 }
 const fingerNumber={index:2,middle:3,ring:4,pinky:5};
 function directionLabels(coordinate){

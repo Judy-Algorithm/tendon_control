@@ -8,6 +8,7 @@ import {FITTED_ROUTES} from '../route-data.js';
 import {THREE,createSurface} from '../scripts/surface-geometry.mjs';
 import {POLICY} from '../scripts/attachment-policy.mjs';
 import {ATTACHMENT_CATALOG,endpointText} from '../attachment-catalog.js';
+import {ATTACHMENT_REFERENCE} from '../attachment-reference.js';
 const report=JSON.parse(fs.readFileSync(new URL('../docs/attachment-audit.json',import.meta.url)));
 const surfaces=new Map(MODEL.bones.map(b=>[b.name,createSurface(b,MODEL.quant)]));
 const v=a=>new THREE.Vector3(...a);
@@ -47,9 +48,22 @@ test('display text distinguishes native visual geometry from old SHM frame names
   assert.match(endpointText('FPL'),/桡骨 → 拇指远节指骨/);
   assert.match(endpointText('OP'),/大多角骨区域/);
   assert.match(endpointText('ECRL'),/骨骼未显示/);
-  assert.match(endpointText('LU_RB3'),/软组织等效起点/);
-  assert.match(endpointText('RI4'),/等效起点/);
+  assert.match(endpointText('LU_RB3'),/中指指深屈肌腱桡侧/);
+  assert.match(endpointText('RI4'),/^起止位置：第四掌骨掌侧桡侧面/);
   assert.ok(!POLICY.RI4.start&&!POLICY.RI5.start,'No unsupported origin reassignment');
+});
+test('anatomical labels remain distinct from unchanged geometry verification',()=>{
+  for(const tendon of ATLAS.tendons){
+    assert.doesNotMatch(endpointText(tendon.id),/等效|待核定|（解剖参考）/);
+    assert.doesNotMatch(tendon.name,/等效|待核定/);
+  }
+  for(const reference of Object.values(ATTACHMENT_REFERENCE))assert.ok(reference.sources.length);
+  assert.match(endpointText('RI3'),/^起止位置：第二、三掌骨相邻面.*中指近节指骨基底桡侧/);
+  assert.match(endpointText('UI_UB3'),/^起止位置：第三、四掌骨相邻面.*指背腱膜尺侧束/);
+  assert.match(endpointText('UI_UB5'),/模型坐标系.*第三掌骨.*小指中节指骨/);
+  assert.equal(ATTACHMENT_CATALOG.UI_UB3.start.kind,'model-anchor');
+  assert.equal(ATTACHMENT_CATALOG.RI4.start.kind,'model-anchor');
+  assert.equal(ATTACHMENT_CATALOG.LU_RB3.start.kind,'soft-tissue-equivalent');
 });
 test('routes are finite, continuous polylines, bounded in size and retain unfitted proximal endpoints',()=>{
   let segments=0;

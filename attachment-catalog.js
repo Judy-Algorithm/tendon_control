@@ -1,4 +1,5 @@
-// Descriptions of the geometry actually displayed, not SHM body-frame labels.
+import {ATTACHMENT_REFERENCE} from './attachment-reference.js';
+// Audit descriptions of the geometry, not SHM body-frame labels.
 // The source SHM mapping remains separately preserved in endpoint-data.js.
 const site=(label,bone,kind='bone')=>({label:kind==='model-anchor'?`${label}（待核定）`:label,bone,kind});
 const outside=()=>site('上臂起点（骨骼未显示）',null,'outside-mesh');
@@ -24,4 +25,11 @@ put('EPB',site('桡骨','radius'),site('拇指近节指骨基底','thumbprox'));
 put('FPL',site('桡骨','radius'),site('拇指远节指骨基底','thumbdist'));
 put('APL',site('桡骨','radius'),site('拇指掌骨基底','1mc'));
 put('OP',site('大多角骨区域','trapezium'),site('拇指掌骨骨干','1mc'));
-export function endpointText(id){const {start,end}=catalog[id];return `起止位置：${start.label} → ${end.label}`;}
+export function endpointText(id){
+  const reference=ATTACHMENT_REFERENCE[id];
+  if(reference){
+    const label=reference.basis==='model-frames'?'起止位置（模型坐标系）':'起止位置';
+    return `${label}：${reference.start} → ${reference.end}`;
+  }
+  const {start,end}=catalog[id];return `起止位置：${start.label} → ${end.label}`;
+}

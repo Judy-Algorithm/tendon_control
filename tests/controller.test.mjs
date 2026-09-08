@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {MotionController} from '../motion-controller.js';
 import {MODEL} from '../model-data.js';
 import {ATLAS} from '../atlas-data.js';
@@ -42,6 +43,27 @@ test('pause freezes pose and play resumes',()=>{
  pending.clear();c.tick(c.last+80);const angle=c.degrees;c.pause();c.tick(c.last+80);
  assert.equal(c.degrees,angle);assert.equal(pending.size,0);
  c.resume();assert.equal(c.degrees,angle);assert.equal(pending.size,1);
+});
+test('one playback button pauses, resumes, and replays after completion',()=>{
+ const {controller:c}=setup();select(c,'middle_MCP_flex','positive');
+ const button=nodes.get('motion-play');
+ assert.equal(nodes.has('motion-replay'),false);
+ assert.equal(button.textContent,'暂停');
+ pending.clear();c.tick(c.last+80);const angle=c.degrees;
+ button.events.click();assert.equal(c.playing,false);assert.equal(button.textContent,'播放');
+ button.events.click();assert.equal(c.playing,true);assert.equal(c.degrees,angle);
+ while(c.playing){pending.clear();c.tick(c.last+80);}
+ assert.equal(button.textContent,'重播');assert.equal(pending.size,0);
+ button.events.click();assert.equal(c.progress,0);assert.equal(c.degrees,c.baseRange.start);
+ assert.equal(button.textContent,'暂停');assert.equal(pending.size,1);
+});
+test('simplified markup removes requested hints, speed selector, and status text',()=>{
+ const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+ for(const removed of ['选择 ROM 动作，观察骨骼与肌腱随动','拖动可逐帧观察','preview-badge','motion-replay','motion-speed','motion-status'])assert.ok(!html.includes(removed));
+ assert.equal((html.match(/id="motion-play"/g)||[]).length,1);
+ const {controller:c}=setup();select(c,'middle_MCP_flex','positive');
+ assert.equal(nodes.has('motion-speed'),false);assert.equal(nodes.has('motion-status'),false);
+ pending.clear();c.tick(c.last+80);assert.ok(Math.abs(c.progress-80/2400)<1e-12);
 });
 test('manual observation, neutral, and replay restore the original range',()=>{
  const {controller:c}=setup();select(c,'middle_PIP_flex','negative');

@@ -2,16 +2,14 @@ import {buildRig,motionRange,angleAt} from './motion.js';
 
 export class MotionController {
   constructor(viewer,model){
-    this.viewer=viewer;this.model=model;this.key=null;this.rig=null;this.progress=0;this.playing=false;this.speed=1;this.frame=0;
+    this.viewer=viewer;this.model=model;this.key=null;this.rig=null;this.progress=0;this.playing=false;this.frame=0;
     this.root=document.getElementById('motion-controls');
     this.title=document.getElementById('motion-title');this.hint=document.getElementById('motion-hint');
-    this.angle=document.getElementById('motion-angle');this.status=document.getElementById('motion-status');
+    this.angle=document.getElementById('motion-angle');
     this.play=document.getElementById('motion-play');this.slider=document.getElementById('motion-progress');
     this.play.addEventListener('click',()=>{if(this.playing)this.pause();else if(this.progress>=1)this.replay();else this.resume();});
-    document.getElementById('motion-replay').addEventListener('click',()=>this.replay());
     document.getElementById('motion-neutral').addEventListener('click',()=>this.neutral());
-    document.getElementById('motion-speed').addEventListener('change',e=>{this.speed=Number(e.target.value);});
-    this.slider.addEventListener('input',()=>{this.pause();const degrees=Number(this.slider.value);this.progress=null;this.apply(degrees);this.status.textContent='手动观察';});
+    this.slider.addEventListener('input',()=>{this.pause();const degrees=Number(this.slider.value);this.progress=null;this.apply(degrees);});
     document.addEventListener('visibilitychange',()=>{if(document.hidden&&this.playing)this.pause();});
     this.tick=this.tick.bind(this);
   }
@@ -27,7 +25,7 @@ export class MotionController {
     document.getElementById('motion-min').textContent=`${dof.range.min.toFixed(1)}°`;
     document.getElementById('motion-max').textContent=`${dof.range.max.toFixed(1)}°`;
     this.dof=dof;
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches){this.apply(this.range.start);this.status.textContent='待播放';}
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){this.apply(this.range.start);}
     else this.resume();
   }
   resume(){
@@ -36,17 +34,17 @@ export class MotionController {
       // Resume from the exact manually selected pose, even outside the action's initial interval.
       this.range={...this.range,start:this.degrees};this.progress=0;
     }
-    this.pause();this.playing=true;this.last=performance.now();this.play.textContent='暂停';this.status.textContent='正在演示';
+    this.pause();this.playing=true;this.last=performance.now();this.play.textContent='暂停';
     this.apply(angleAt(this.range,this.progress));this.frame=requestAnimationFrame(this.tick);
   }
   replay(){if(!this.rig)return;this.range={...this.baseRange};this.progress=0;this.resume();}
-  pause(){cancelAnimationFrame(this.frame);this.frame=0;this.playing=false;this.play.textContent='播放';if(this.key)this.status.textContent='已暂停';}
-  neutral(){this.pause();this.progress=null;this.apply(0);this.status.textContent='中立位';}
+  pause(){cancelAnimationFrame(this.frame);this.frame=0;this.playing=false;this.play.textContent='播放';}
+  neutral(){this.pause();this.progress=null;this.apply(0);}
   tick(now){
     if(!this.playing)return;
-    const delta=Math.min(80,now-this.last);this.last=now;this.progress=Math.min(1,this.progress+delta*this.speed/2400);
+    const delta=Math.min(80,now-this.last);this.last=now;this.progress=Math.min(1,this.progress+delta/2400);
     this.apply(angleAt(this.range,this.progress));
-    if(this.progress>=1){this.pause();this.status.textContent='动作完成';this.play.textContent='重播';}
+    if(this.progress>=1){this.pause();this.play.textContent='重播';}
     else this.frame=requestAnimationFrame(this.tick);
   }
   apply(degrees){

@@ -1294,7 +1294,7 @@ export const ATLAS = {
     },
     {
       "id": "RI2",
-      "name": "食指桡侧骨间肌等效通路",
+      "name": "食指桡侧骨间肌通路",
       "modelIndex": 27
     },
     {
@@ -1309,7 +1309,7 @@ export const ATLAS = {
     },
     {
       "id": "RI3",
-      "name": "中指桡侧骨间肌等效通路",
+      "name": "中指桡侧骨间肌通路",
       "modelIndex": 30
     },
     {
@@ -1324,7 +1324,7 @@ export const ATLAS = {
     },
     {
       "id": "RI4",
-      "name": "无名指桡侧骨间肌等效通路",
+      "name": "无名指桡侧骨间肌通路",
       "modelIndex": 33
     },
     {
@@ -1339,7 +1339,7 @@ export const ATLAS = {
     },
     {
       "id": "RI5",
-      "name": "小指桡侧骨间肌等效通路",
+      "name": "小指桡侧骨间肌通路",
       "modelIndex": 36
     },
     {
@@ -1349,7 +1349,7 @@ export const ATLAS = {
     },
     {
       "id": "UI_UB5",
-      "name": "小指尺侧骨间肌—尺侧腱膜通路",
+      "name": "小指尺侧肌腱通路（模型）",
       "modelIndex": 38
     }
   ]
