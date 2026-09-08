@@ -3,6 +3,7 @@ import './vendor/orbit-controls.js';
 import {MODEL} from './model-data.js';
 import {ATLAS} from './atlas-data.js';
 import {ENDPOINTS} from './endpoint-data.js';
+import {FITTED_ROUTES} from './route-data.js';
 import {createAtlasState,formatRange} from './atlas-state.js';
 
 const THREE=window.THREE;
@@ -120,12 +121,14 @@ class TendonViewer {
     }
     this.tendons=new Map();const cylinder=new THREE.CylinderGeometry(1,1,1,9);
     for(const meta of ATLAS.tendons){
-      const color=new THREE.Color(colorFor(meta.id)).convertSRGBToLinear();const material=new THREE.MeshBasicMaterial({color,toneMapped:false,depthTest:false,depthWrite:false,transparent:true,opacity:.96});
+      const color=new THREE.Color(colorFor(meta.id)).convertSRGBToLinear();const material=new THREE.MeshBasicMaterial({color,toneMapped:false,depthTest:true,depthWrite:true});
       const group=new THREE.Group();group.name=meta.id;group.visible=false;
       const segments=[];
-      for(const segment of MODEL.tendon_segments_i16[meta.modelIndex]){
-        const a=new THREE.Vector3(...segment.slice(0,3)).multiplyScalar(MODEL.quant);
-        const b=new THREE.Vector3(...segment.slice(3,6)).multiplyScalar(MODEL.quant);
+      const fitted=FITTED_ROUTES[meta.id];
+      const route=fitted?fitted.slice(1).map((p,i)=>[...fitted[i],...p]):MODEL.tendon_segments_i16[meta.modelIndex].map(s=>s.map(v=>v*MODEL.quant));
+      for(const segment of route){
+        const a=new THREE.Vector3(...segment.slice(0,3));
+        const b=new THREE.Vector3(...segment.slice(3,6));
         const distance=a.distanceTo(b);if(distance<1e-7)continue;
         const mesh=new THREE.Mesh(cylinder,material);mesh.position.copy(a).add(b).multiplyScalar(.5);
         mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),b.clone().sub(a).normalize());
@@ -143,7 +146,8 @@ class TendonViewer {
       const rect=this.canvas.getBoundingClientRect();const pointer=new THREE.Vector2((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);
       this.raycaster.setFromCamera(pointer,this.camera);
       const pickable=atlas.visible().flatMap(id=>this.tendons.get(id).group.children);
-      const hit=this.raycaster.intersectObjects(pickable,false)[0];if(hit)selectTendon(hit.object.userData.tendonId);
+      const hit=this.raycaster.intersectObjects([...pickable,...this.bones],false)[0];
+      if(hit?.object.userData.tendonId)selectTendon(hit.object.userData.tendonId);
       down=null;
     });
     this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();document.getElementById('model-error').hidden=false;});
@@ -158,7 +162,7 @@ class TendonViewer {
     const visible=new Set(atlas.visible());
     for(const [id,t] of this.tendons){
       t.group.visible=visible.has(id);const selected=atlas.state.highlighted===id;
-      t.material.opacity=selected?1:.96;
+      t.material.opacity=1;
       t.group.children.forEach(m=>{m.scale.x=m.scale.z=selected?.00105:.00072;});
     }
     this.render();

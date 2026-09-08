@@ -1,0 +1,819 @@
+{
+  "date": "2026-09-08",
+  "scope": "Neutral-pose website visualization only; no OpenSim model, moment arms, or controller data changed.",
+  "sourceGeometrySha256": "282be01eabab0a3ef8b23ada2c924ec0a1914eb528a75c0edccf3a1033db6381",
+  "method": "Preselected anatomical bone and broad attachment region; retain original surface side. Exact landmarks and soft-tissue footprints are not available. Local terminal blending and 0.85 mm near-surface clearance; endpoints touch the mesh. PCA fractions are geometric regional heuristics, not anatomical measurements.",
+  "sources": {
+    "upperLimb": "https://medicine.uams.edu/neuroscience/education/medical-school-courses/human-structure-module/anatomy-tables/muscle-tables/muscles-of-the-upper-limb/",
+    "opponens": "https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb/opponens-pollicis-muscle/19520"
+  },
+  "channels": [
+    {
+      "id": "ECRL",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "2mc",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.02637,
+            -0.08292,
+            0.01048
+          ],
+          "fittedM": [
+            -0.025755607,
+            -0.083060631,
+            0.00996526
+          ],
+          "originalSurfaceGapMm": 0.8137648770989726,
+          "correctedSurfaceGapMm": 1.0506106718969445e-7,
+          "displacementMm": 0.8137648770989726,
+          "longitudinalFraction": 0.24768652821870224
+        }
+      ]
+    },
+    {
+      "id": "ECRB",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "3mc",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.02902,
+            -0.07304,
+            -0.00173
+          ],
+          "fittedM": [
+            -0.028673477,
+            -0.073018999,
+            -0.002066023
+          ],
+          "originalSurfaceGapMm": 0.4831467179468601,
+          "correctedSurfaceGapMm": 6.520198317712999e-8,
+          "displacementMm": 0.4831467179468601,
+          "longitudinalFraction": 0.08079143325924232
+        }
+      ]
+    },
+    {
+      "id": "ECU",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "5mc",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.01922,
+            -0.07568,
+            -0.02921
+          ],
+          "fittedM": [
+            -0.01930694,
+            -0.075683971,
+            -0.029262082
+          ],
+          "originalSurfaceGapMm": 0.10142413712199433,
+          "correctedSurfaceGapMm": 5.7056527510615956e-8,
+          "displacementMm": 0.10142413712199433,
+          "longitudinalFraction": 0.13080853309460286
+        }
+      ]
+    },
+    {
+      "id": "FCR",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "2mc",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.01637,
+            -0.08011,
+            0.00458
+          ],
+          "fittedM": [
+            -0.015691142,
+            -0.08004707,
+            0.004666627
+          ],
+          "originalSurfaceGapMm": 0.6872503768859799,
+          "correctedSurfaceGapMm": 3.4509794839840635e-7,
+          "displacementMm": 0.6872503768859799,
+          "longitudinalFraction": 0.16687895309317996
+        }
+      ]
+    },
+    {
+      "id": "FCU",
+      "status": "regional-visual-fit",
+      "note": "Modelled distal extension; pisiform/hamate attachments are not reconstructed.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "5mc",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.01302,
+            -0.07937,
+            -0.02711
+          ],
+          "fittedM": [
+            -0.013013764,
+            -0.079372497,
+            -0.02710975
+          ],
+          "originalSurfaceGapMm": 0.006722228611437859,
+          "correctedSurfaceGapMm": 2.3450080465977841e-7,
+          "displacementMm": 0.006722228611437859,
+          "longitudinalFraction": 0.19730235914864205
+        }
+      ]
+    },
+    {
+      "id": "PL",
+      "status": "preserved",
+      "reason": "Palmar aponeurosis attachment: no matching soft-tissue mesh; retain source route."
+    },
+    {
+      "id": "FDS5",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "5midph",
+          "region": [
+            0.2,
+            0.7
+          ],
+          "originalM": [
+            -0.00727,
+            -0.17156,
+            -0.03438
+          ],
+          "fittedM": [
+            -0.00993,
+            -0.17041,
+            -0.03612
+          ],
+          "originalSurfaceGapMm": 2.7885969342938153,
+          "correctedSurfaceGapMm": 7.152448122690996e-15,
+          "displacementMm": 3.3801923022218796,
+          "longitudinalFraction": 0.695143575603722
+        }
+      ]
+    },
+    {
+      "id": "FDS4",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "4midph",
+          "region": [
+            0.2,
+            0.7
+          ],
+          "originalM": [
+            -0.02335,
+            -0.17806,
+            -0.02411
+          ],
+          "fittedM": [
+            -0.024087091,
+            -0.177864528,
+            -0.024696415
+          ],
+          "originalSurfaceGapMm": 0.9619750088416488,
+          "correctedSurfaceGapMm": 4.783628616271089e-7,
+          "displacementMm": 0.9619750088416488,
+          "longitudinalFraction": 0.36804342552893177
+        }
+      ]
+    },
+    {
+      "id": "FDS3",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "3midph",
+          "region": [
+            0.2,
+            0.7
+          ],
+          "originalM": [
+            -0.03044,
+            -0.18215,
+            -0.00414
+          ],
+          "fittedM": [
+            -0.034504977,
+            -0.18128343,
+            -0.00422641
+          ],
+          "originalSurfaceGapMm": 4.157216378079693,
+          "correctedSurfaceGapMm": 2.999059217804273e-8,
+          "displacementMm": 4.157216378079693,
+          "longitudinalFraction": 0.24111234474347956
+        }
+      ]
+    },
+    {
+      "id": "FDS2",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "2midph",
+          "region": [
+            0.2,
+            0.7
+          ],
+          "originalM": [
+            -0.03234,
+            -0.17764,
+            0.01879
+          ],
+          "fittedM": [
+            -0.03412,
+            -0.17765,
+            0.01908
+          ],
+          "originalSurfaceGapMm": 1.620062097045275,
+          "correctedSurfaceGapMm": 6.938893903907228e-15,
+          "displacementMm": 1.8034966038227003,
+          "longitudinalFraction": 0.2057585760819907
+        }
+      ]
+    },
+    {
+      "id": "FDP5",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "5distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.00482,
+            -0.18794,
+            -0.03865
+          ],
+          "fittedM": [
+            -0.00741,
+            -0.18087,
+            -0.03879
+          ],
+          "originalSurfaceGapMm": 2.878995692256115,
+          "correctedSurfaceGapMm": 3.469446951953614e-15,
+          "displacementMm": 7.530776852357285,
+          "longitudinalFraction": 0.32118327491374743
+        }
+      ]
+    },
+    {
+      "id": "FDP4",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "4distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.02349,
+            -0.20495,
+            -0.02623
+          ],
+          "fittedM": [
+            -0.02444,
+            -0.19887,
+            -0.0276
+          ],
+          "originalSurfaceGapMm": 2.8895891317606797,
+          "correctedSurfaceGapMm": 7.757919228897728e-15,
+          "displacementMm": 6.304427015994398,
+          "longitudinalFraction": 0.34974902782528144
+        }
+      ]
+    },
+    {
+      "id": "FDP3",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "3distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.03578,
+            -0.2045,
+            -0.00218
+          ],
+          "fittedM": [
+            -0.03525718,
+            -0.204382831,
+            -0.002271342
+          ],
+          "originalSurfaceGapMm": 0.5435189145055834,
+          "correctedSurfaceGapMm": 1.1269225401094968e-7,
+          "displacementMm": 0.5435189145055834,
+          "longitudinalFraction": 0.12327731058579808
+        }
+      ]
+    },
+    {
+      "id": "FDP2",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "2distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.03364,
+            -0.19933,
+            0.02302
+          ],
+          "fittedM": [
+            -0.03539238,
+            -0.199231874,
+            0.022985265
+          ],
+          "originalSurfaceGapMm": 1.7554686173027962,
+          "correctedSurfaceGapMm": 2.0469414893705693e-7,
+          "displacementMm": 1.7554686173027962,
+          "longitudinalFraction": 0.19561136149861358
+        }
+      ]
+    },
+    {
+      "id": "EDC5",
+      "status": "regional-visual-fit",
+      "note": "Terminal extensor branch only; extensor expansion retained as an equivalent path.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "5distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.00962,
+            -0.18104,
+            -0.04035
+          ],
+          "fittedM": [
+            -0.00965522,
+            -0.18104244,
+            -0.040385996
+          ],
+          "originalSurfaceGapMm": 0.05041923444671533,
+          "correctedSurfaceGapMm": 1.4690513665349356e-7,
+          "displacementMm": 0.05041923444671533,
+          "longitudinalFraction": 0.33809029233278726
+        }
+      ]
+    },
+    {
+      "id": "EDC4",
+      "status": "regional-visual-fit",
+      "note": "Terminal extensor branch only; extensor expansion retained as an equivalent path.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "4distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.02869,
+            -0.19896,
+            -0.02743
+          ],
+          "fittedM": [
+            -0.02809,
+            -0.19822,
+            -0.02704
+          ],
+          "originalSurfaceGapMm": 0.6307093484944324,
+          "correctedSurfaceGapMm": 3.469446951953614e-15,
+          "displacementMm": 1.0294173109094427,
+          "longitudinalFraction": 0.33437226875277204
+        }
+      ]
+    },
+    {
+      "id": "EDC3",
+      "status": "regional-visual-fit",
+      "note": "Terminal extensor branch only; extensor expansion retained as an equivalent path.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "3distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.04188,
+            -0.2063,
+            -0.00218
+          ],
+          "fittedM": [
+            -0.039626453,
+            -0.205464149,
+            -0.002105731
+          ],
+          "originalSurfaceGapMm": 2.404711556352349,
+          "correctedSurfaceGapMm": 1.6831205961341182e-7,
+          "displacementMm": 2.404711556352349,
+          "longitudinalFraction": 0.2013914747057461
+        }
+      ]
+    },
+    {
+      "id": "EDC2",
+      "status": "regional-visual-fit",
+      "note": "Terminal extensor branch only; extensor expansion retained as an equivalent path.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "2distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.04104,
+            -0.19934,
+            0.02232
+          ],
+          "fittedM": [
+            -0.039618164,
+            -0.199024744,
+            0.022509696
+          ],
+          "originalSurfaceGapMm": 1.4686691602598132,
+          "correctedSurfaceGapMm": 1.9522787636576837e-7,
+          "displacementMm": 1.4686691602598132,
+          "longitudinalFraction": 0.19965036285391324
+        }
+      ]
+    },
+    {
+      "id": "EDM",
+      "status": "regional-visual-fit",
+      "note": "Terminal extensor branch, not direct whole-muscle insertion.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "5distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.01023,
+            -0.17734,
+            -0.04065
+          ],
+          "fittedM": [
+            -0.010252667,
+            -0.177339097,
+            -0.040679741
+          ],
+          "originalSurfaceGapMm": 0.03740546152444651,
+          "correctedSurfaceGapMm": 4.434253366961925e-7,
+          "displacementMm": 0.03740546152444651,
+          "longitudinalFraction": 0.09300259280740075
+        }
+      ]
+    },
+    {
+      "id": "EIP",
+      "status": "regional-visual-fit",
+      "note": "Terminal extensor branch, not direct whole-muscle insertion.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "2distph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.04034,
+            -0.20604,
+            0.02492
+          ],
+          "fittedM": [
+            -0.039270028,
+            -0.201188897,
+            0.024156579
+          ],
+          "originalSurfaceGapMm": 0.6842922952897974,
+          "correctedSurfaceGapMm": 3.523401679906364e-7,
+          "displacementMm": 5.026017984602257,
+          "longitudinalFraction": 0.3487115406328529
+        }
+      ]
+    },
+    {
+      "id": "EPL",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "thumbdist",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            0.01971,
+            -0.13383,
+            0.05168
+          ],
+          "fittedM": [
+            0.019791969,
+            -0.133634622,
+            0.051559822
+          ],
+          "originalSurfaceGapMm": 0.010080699700752102,
+          "correctedSurfaceGapMm": 4.2895456276277283e-7,
+          "displacementMm": 0.24358624140504057,
+          "longitudinalFraction": 0.34408235335423903
+        }
+      ]
+    },
+    {
+      "id": "EPB",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "thumbprox",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            0.01059,
+            -0.10704,
+            0.04158
+          ],
+          "fittedM": [
+            0.010290536,
+            -0.107257892,
+            0.041065785
+          ],
+          "originalSurfaceGapMm": 0.633697324667265,
+          "correctedSurfaceGapMm": 2.9811640540547177e-7,
+          "displacementMm": 0.633697324667265,
+          "longitudinalFraction": 0.19976077125566374
+        }
+      ]
+    },
+    {
+      "id": "FPL",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "thumbdist",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            0.01922,
+            -0.13804,
+            0.04868
+          ],
+          "fittedM": [
+            0.01836,
+            -0.13665,
+            0.04775
+          ],
+          "originalSurfaceGapMm": 0.08637446076286731,
+          "correctedSurfaceGapMm": 1.3877787807814457e-14,
+          "displacementMm": 1.8805850153609132,
+          "longitudinalFraction": 0.3447888953108317
+        }
+      ]
+    },
+    {
+      "id": "APL",
+      "status": "regional-visual-fit",
+      "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "1mc",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.00173,
+            -0.07755,
+            0.02408
+          ],
+          "fittedM": [
+            -0.00109396,
+            -0.077200164,
+            0.024263047
+          ],
+          "originalSurfaceGapMm": 0.7486243628183771,
+          "correctedSurfaceGapMm": 8.275195310817316e-8,
+          "displacementMm": 0.7486243628183771,
+          "longitudinalFraction": 0.34300420449025204
+        }
+      ]
+    },
+    {
+      "id": "OP",
+      "status": "regional-visual-fit",
+      "note": "Bony-origin approximation near original palmar site; retinaculum and exact tubercle footprint are not segmented.",
+      "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
+      "attachments": [
+        {
+          "side": "start",
+          "bone": "trapezium",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            -0.00624,
+            -0.07126,
+            -0.00242
+          ],
+          "fittedM": [
+            -0.006775541,
+            -0.068435821,
+            0.002317481
+          ],
+          "originalSurfaceGapMm": 5.541346524335736,
+          "correctedSurfaceGapMm": 3.5112343697066625e-7,
+          "displacementMm": 5.541346524335736,
+          "longitudinalFraction": 0.3570565480435227
+        },
+        {
+          "side": "end",
+          "bone": "1mc",
+          "region": [
+            0.2,
+            0.8
+          ],
+          "originalM": [
+            0.00829,
+            -0.10164,
+            0.02678
+          ],
+          "fittedM": [
+            0.00627,
+            -0.09789,
+            0.02713
+          ],
+          "originalSurfaceGapMm": 0.7372931981113957,
+          "correctedSurfaceGapMm": 0,
+          "displacementMm": 4.2738039262465035,
+          "longitudinalFraction": 0.7963949085380517
+        }
+      ]
+    },
+    {
+      "id": "RI2",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "LU_RB2",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "UI_UB2",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "RI3",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "LU_RB3",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "UI_UB3",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "RI4",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "LU_RB4",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "UI_UB4",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "RI5",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "LU_RB5",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    },
+    {
+      "id": "UI_UB5",
+      "status": "preserved",
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+    }
+  ]
+}

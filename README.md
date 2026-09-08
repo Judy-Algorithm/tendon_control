@@ -12,7 +12,7 @@ npm start
 
 ## 数据
 
-- 骨骼网格、肌腱路径保留自 [EMG2Tendon](https://github.com/Judy-Algorithm/EMG2Tendon) 的公开 MyoHand 可视化，未替换为公司手部网格。
+- 骨骼网格和原始肌腱路径保留自 [EMG2Tendon](https://github.com/Judy-Algorithm/EMG2Tendon) 的公开 MyoHand 可视化，未替换为公司手部网格。显示时使用独立的局部附着修正数据；范围、依据和局限见 [附着核对](docs/attachment-review.md)。
 - 右侧是用户指定的 SHM OpenSim 中立位控制表：16 个物理关节、23 个自由度、37 条启用通路，关联阈值为力臂绝对值 0.01 mm。
 - 两者按通路 ID 连接。左侧是几何参照，不是右侧 SHM 参数的配准结果；不使用原网站的教学仿真矩阵，也不运行姿态仿真。
 - 原 MyoHand 含前臂旋转坐标、无独立拇指 MCP 侧向坐标。SHM 表含拇指 MCP 侧向自由度、不含前臂旋转；侧向项标注借用拇指 MCP 位置。PT、PQ 不列入活动执行器。
