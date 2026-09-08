@@ -1349,7 +1349,7 @@ export const ATLAS = {
     },
     {
       "id": "UI_UB5",
-      "name": "小指尺侧肌腱通路（模型）",
+      "name": "小指尺侧模型肌腱通路",
       "modelIndex": 38
     }
   ]

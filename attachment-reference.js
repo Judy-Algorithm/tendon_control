@@ -3,6 +3,7 @@
 const anatomy='https://medicine.uams.edu/neuroscience/education/medical-school-courses/human-structure-module/anatomy-tables/muscle-tables/muscles-of-the-upper-limb/';
 const correction='https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0267620';
 const lumbricals='https://pmc.ncbi.nlm.nih.gov/articles/PMC11571722/';
+const extensor='https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb/extensor-digitorum/22591';
 const digits={2:'食指',3:'中指',4:'无名指',5:'小指'};
 export const ATTACHMENT_REFERENCE={};
 const put=(id,start,end,sources=[anatomy,correction])=>{
@@ -18,8 +19,20 @@ for(const d of [2,3,4,5]){
   const origin=d<4?`${digit}指深屈肌腱桡侧`:`${digits[d-1]}、${digit}指深屈肌腱相邻面`;
   put('LU_RB'+d,origin,`${digit}指背腱膜桡侧束`,[lumbricals,anatomy]);
   put('FDS'+d,'肱骨内上髁、尺骨冠突及桡骨前缘',`${digit}中节指骨骨干两侧`,[anatomy,'https://pmc.ncbi.nlm.nih.gov/articles/PMC6025501/']);
+  put('EDC'+d,'肱骨外上髁',`${digit}指背腱膜，分支止于中节与远节指骨基底背侧`,[extensor,anatomy]);
 }
 put('PL','肱骨内上髁','掌腱膜',[anatomy]);
+put('ECRL','肱骨外侧髁上嵴下三分之一','第二掌骨基底背侧',[
+  'https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb/extensor-carpi-radialis-longus/22064']);
+put('ECRB','肱骨外上髁','第三掌骨基底背侧',[
+  'https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb/extensor-carpi-radialis-brevis/21097']);
+put('ECU','肱骨外上髁及尺骨后缘','第五掌骨基底尺侧',[
+  'https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb/extensor-carpi-ulnaris/17595']);
+put('FCR','肱骨内上髁','第二、三掌骨基底掌侧',[anatomy]);
+put('FCU','肱骨内上髁、尺骨鹰嘴及尺骨后缘','豌豆骨，经韧带连接钩骨钩及第五掌骨基底',[anatomy]);
+put('EDM','肱骨外上髁','小指指背腱膜',[
+  'https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb/extensor-digiti-minimi/24076']);
+put('EIP','尺骨远端背侧及骨间膜','食指指背腱膜',[anatomy]);
 // UI_UB5 is not evidence for an anatomical "ulnar interosseous of digit 5".
 // The XML explicitly anchors P1 to thirdmc and P5 to midph5. Report frames,
 // not an invented bony insertion or an unverified reassignment to hypothenar muscle.

@@ -28,7 +28,7 @@ put('OP',site('大多角骨区域','trapezium'),site('拇指掌骨骨干','1mc')
 export function endpointText(id){
   const reference=ATTACHMENT_REFERENCE[id];
   if(reference){
-    const label=reference.basis==='model-frames'?'起止位置（模型坐标系）':'起止位置';
+    const label=reference.basis==='model-frames'?'模型坐标系起止位置':'起止位置';
     return `${label}：${reference.start} → ${reference.end}`;
   }
   const {start,end}=catalog[id];return `起止位置：${start.label} → ${end.label}`;
