@@ -1,11 +1,16 @@
 {
+  "revision": 2,
   "date": "2026-09-08",
   "scope": "Neutral-pose website visualization only; no OpenSim model, moment arms, or controller data changed.",
   "sourceGeometrySha256": "282be01eabab0a3ef8b23ada2c924ec0a1914eb528a75c0edccf3a1033db6381",
   "method": "Preselected anatomical bone and broad attachment region; retain original surface side. Exact landmarks and soft-tissue footprints are not available. Local terminal blending and 0.85 mm near-surface clearance; endpoints touch the mesh. PCA fractions are geometric regional heuristics, not anatomical measurements.",
   "sources": {
     "upperLimb": "https://medicine.uams.edu/neuroscience/education/medical-school-courses/human-structure-module/anatomy-tables/muscle-tables/muscles-of-the-upper-limb/",
-    "opponens": "https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb/opponens-pollicis-muscle/19520"
+    "opponens": "https://www.elsevier.com/resources/anatomy/muscular-system/muscles-of-upper-limb/opponens-pollicis-muscle/19520",
+    "fingerModel": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0121712",
+    "nomenclature": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0267620",
+    "interossei": "https://pubmed.ncbi.nlm.nih.gov/12360058/",
+    "lumbricals": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11571722/"
   },
   "channels": [
     {
@@ -35,6 +40,42 @@
           "correctedSurfaceGapMm": 1.0506106718969445e-7,
           "displacementMm": 0.8137648770989726,
           "longitudinalFraction": 0.24768652821870224
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            0.00514,
+            0.23638,
+            -0.0425
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 22.298818354343343
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指掌骨基底",
+          "bone": "2mc",
+          "kind": "bone",
+          "positionM": [
+            -0.025755607,
+            -0.083060631,
+            0.00996526
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.0506106718969445e-7,
+          "nearestVisibleSurface": {
+            "bone": "2mc",
+            "gapMm": 1.0506106718969445e-7
+          }
         }
       ]
     },
@@ -66,6 +107,42 @@
           "displacementMm": 0.4831467179468601,
           "longitudinalFraction": 0.08079143325924232
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            -0.00274,
+            0.20677,
+            -0.0217
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 9.131241993092068
+          }
+        },
+        {
+          "side": "end",
+          "label": "中指掌骨基底",
+          "bone": "3mc",
+          "kind": "bone",
+          "positionM": [
+            -0.028673477,
+            -0.073018999,
+            -0.002066023
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 6.520198317712999e-8,
+          "nearestVisibleSurface": {
+            "bone": "3mc",
+            "gapMm": 6.520198317712999e-8
+          }
+        }
       ]
     },
     {
@@ -95,6 +172,42 @@
           "correctedSurfaceGapMm": 5.7056527510615956e-8,
           "displacementMm": 0.10142413712199433,
           "longitudinalFraction": 0.13080853309460286
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            -0.00454,
+            0.20777,
+            -0.0344
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 10.523678064251094
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指掌骨基底",
+          "bone": "5mc",
+          "kind": "bone",
+          "positionM": [
+            -0.01930694,
+            -0.075683971,
+            -0.029262082
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 5.7056527510615956e-8,
+          "nearestVisibleSurface": {
+            "bone": "5mc",
+            "gapMm": 5.7056527510615956e-8
+          }
         }
       ]
     },
@@ -126,6 +239,42 @@
           "displacementMm": 0.6872503768859799,
           "longitudinalFraction": 0.16687895309317996
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            0.05125,
+            0.21922,
+            -0.0276
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 18.768774600383473
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指掌骨基底",
+          "bone": "2mc",
+          "kind": "bone",
+          "positionM": [
+            -0.015691142,
+            -0.08004707,
+            0.004666627
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.4509794839840635e-7,
+          "nearestVisibleSurface": {
+            "bone": "2mc",
+            "gapMm": 3.4509794839840635e-7
+          }
+        }
       ]
     },
     {
@@ -156,12 +305,84 @@
           "displacementMm": 0.006722228611437859,
           "longitudinalFraction": 0.19730235914864205
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            0.05305,
+            0.21992,
+            -0.033
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 17.23748205500489
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指掌骨基底",
+          "bone": "5mc",
+          "kind": "bone",
+          "positionM": [
+            -0.013013764,
+            -0.079372497,
+            -0.02710975
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 2.3450080465977841e-7,
+          "nearestVisibleSurface": {
+            "bone": "5mc",
+            "gapMm": 2.3450080465977841e-7
+          }
+        }
       ]
     },
     {
       "id": "PL",
       "status": "preserved",
-      "reason": "Palmar aponeurosis attachment: no matching soft-tissue mesh; retain source route."
+      "reason": "Palmar aponeurosis attachment: no matching soft-tissue mesh; retain source route.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            0.05285,
+            0.22212,
+            -0.0306
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 18.733470046950725
+          }
+        },
+        {
+          "side": "end",
+          "label": "掌腱膜区域（等效）",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.02551,
+            -0.09264,
+            -0.00443
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "3mc",
+            "gapMm": 0.03183464237718469
+          }
+        }
+      ]
     },
     {
       "id": "FDS5",
@@ -190,6 +411,42 @@
           "correctedSurfaceGapMm": 7.152448122690996e-15,
           "displacementMm": 3.3801923022218796,
           "longitudinalFraction": 0.695143575603722
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            0.05285,
+            0.22132,
+            -0.031
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 18.316738246751243
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指中节指骨骨干",
+          "bone": "5midph",
+          "kind": "bone",
+          "positionM": [
+            -0.00993,
+            -0.17041,
+            -0.03612
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 7.152448122690996e-15,
+          "nearestVisibleSurface": {
+            "bone": "5midph",
+            "gapMm": 7.152448122690996e-15
+          }
         }
       ]
     },
@@ -221,6 +478,42 @@
           "displacementMm": 0.9619750088416488,
           "longitudinalFraction": 0.36804342552893177
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            0.05155,
+            0.21852,
+            -0.0304
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 17.122526098680645
+          }
+        },
+        {
+          "side": "end",
+          "label": "无名指中节指骨骨干",
+          "bone": "4midph",
+          "kind": "bone",
+          "positionM": [
+            -0.024087091,
+            -0.177864528,
+            -0.024696415
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 4.783628616271089e-7,
+          "nearestVisibleSurface": {
+            "bone": "4midph",
+            "gapMm": 4.783628616271089e-7
+          }
+        }
       ]
     },
     {
@@ -250,6 +543,42 @@
           "correctedSurfaceGapMm": 2.999059217804273e-8,
           "displacementMm": 4.157216378079693,
           "longitudinalFraction": 0.24111234474347956
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "前臂等效起点（待核定）",
+          "bone": null,
+          "kind": "model-anchor",
+          "positionM": [
+            0.02848,
+            0.1798,
+            -0.0358
+          ],
+          "status": "model-anchor",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 0.5971144110234718
+          }
+        },
+        {
+          "side": "end",
+          "label": "中指中节指骨骨干",
+          "bone": "3midph",
+          "kind": "bone",
+          "positionM": [
+            -0.034504977,
+            -0.18128343,
+            -0.00422641
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 2.999059217804273e-8,
+          "nearestVisibleSurface": {
+            "bone": "3midph",
+            "gapMm": 2.999059217804273e-8
+          }
         }
       ]
     },
@@ -281,6 +610,42 @@
           "displacementMm": 1.8034966038227003,
           "longitudinalFraction": 0.2057585760819907
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "前臂等效起点（待核定）",
+          "bone": null,
+          "kind": "model-anchor",
+          "positionM": [
+            0.02798,
+            0.1787,
+            -0.0359
+          ],
+          "status": "model-anchor",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 0.5264796514562928
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指中节指骨骨干",
+          "bone": "2midph",
+          "kind": "bone",
+          "positionM": [
+            -0.03412,
+            -0.17765,
+            0.01908
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 6.938893903907228e-15,
+          "nearestVisibleSurface": {
+            "bone": "2midph",
+            "gapMm": 6.938893903907228e-15
+          }
+        }
       ]
     },
     {
@@ -289,6 +654,28 @@
       "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "ulna",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            0.02408,
+            0.17479,
+            -0.0354
+          ],
+          "fittedM": [
+            0.024217996,
+            0.174676323,
+            -0.035091433
+          ],
+          "originalSurfaceGapMm": 0.3566217067634253,
+          "correctedSurfaceGapMm": 1.2884937412618072e-7,
+          "displacementMm": 0.3566217067634253,
+          "longitudinalFraction": 0.17186881501634435
+        },
         {
           "side": "end",
           "bone": "5distph",
@@ -311,6 +698,42 @@
           "displacementMm": 7.530776852357285,
           "longitudinalFraction": 0.32118327491374743
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "尺骨",
+          "bone": "ulna",
+          "kind": "bone",
+          "positionM": [
+            0.024217996,
+            0.174676323,
+            -0.035091433
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.2884937412618072e-7,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 1.2884937412618072e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指远节指骨基底",
+          "bone": "5distph",
+          "kind": "bone",
+          "positionM": [
+            -0.00741,
+            -0.18087,
+            -0.03879
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.469446951953614e-15,
+          "nearestVisibleSurface": {
+            "bone": "5distph",
+            "gapMm": 3.469446951953614e-15
+          }
+        }
       ]
     },
     {
@@ -319,6 +742,28 @@
       "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "ulna",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            0.02389,
+            0.17319,
+            -0.0341
+          ],
+          "fittedM": [
+            0.023423836,
+            0.173574011,
+            -0.035142366
+          ],
+          "originalSurfaceGapMm": 1.2046995414463506,
+          "correctedSurfaceGapMm": 3.254704911108928e-7,
+          "displacementMm": 1.2046995414463506,
+          "longitudinalFraction": 0.17649257510045638
+        },
         {
           "side": "end",
           "bone": "4distph",
@@ -341,6 +786,42 @@
           "displacementMm": 6.304427015994398,
           "longitudinalFraction": 0.34974902782528144
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "尺骨",
+          "bone": "ulna",
+          "kind": "bone",
+          "positionM": [
+            0.023423836,
+            0.173574011,
+            -0.035142366
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.254704911108928e-7,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 3.254704911108928e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "无名指远节指骨基底",
+          "bone": "4distph",
+          "kind": "bone",
+          "positionM": [
+            -0.02444,
+            -0.19887,
+            -0.0276
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 7.757919228897728e-15,
+          "nearestVisibleSurface": {
+            "bone": "4distph",
+            "gapMm": 7.757919228897728e-15
+          }
+        }
       ]
     },
     {
@@ -349,6 +830,28 @@
       "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "ulna",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            0.02449,
+            0.1736,
+            -0.0343
+          ],
+          "fittedM": [
+            0.02405153,
+            0.173961198,
+            -0.035280441
+          ],
+          "originalSurfaceGapMm": 1.1331301964855214,
+          "correctedSurfaceGapMm": 1.9785786089326347e-7,
+          "displacementMm": 1.1331301964855214,
+          "longitudinalFraction": 0.17457891286346103
+        },
         {
           "side": "end",
           "bone": "3distph",
@@ -371,6 +874,42 @@
           "displacementMm": 0.5435189145055834,
           "longitudinalFraction": 0.12327731058579808
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "尺骨",
+          "bone": "ulna",
+          "kind": "bone",
+          "positionM": [
+            0.02405153,
+            0.173961198,
+            -0.035280441
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.9785786089326347e-7,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 1.9785786089326347e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "中指远节指骨基底",
+          "bone": "3distph",
+          "kind": "bone",
+          "positionM": [
+            -0.03525718,
+            -0.204382831,
+            -0.002271342
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.1269225401094968e-7,
+          "nearestVisibleSurface": {
+            "bone": "3distph",
+            "gapMm": 1.1269225401094968e-7
+          }
+        }
       ]
     },
     {
@@ -379,6 +918,28 @@
       "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "ulna",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            0.02378,
+            0.17509,
+            -0.0356
+          ],
+          "fittedM": [
+            0.024066883,
+            0.174853675,
+            -0.034958515
+          ],
+          "originalSurfaceGapMm": 0.7413863206466429,
+          "correctedSurfaceGapMm": 4.654097208324778e-7,
+          "displacementMm": 0.7413863206466429,
+          "longitudinalFraction": 0.17135645744919487
+        },
         {
           "side": "end",
           "bone": "2distph",
@@ -400,6 +961,42 @@
           "correctedSurfaceGapMm": 2.0469414893705693e-7,
           "displacementMm": 1.7554686173027962,
           "longitudinalFraction": 0.19561136149861358
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "尺骨",
+          "bone": "ulna",
+          "kind": "bone",
+          "positionM": [
+            0.024066883,
+            0.174853675,
+            -0.034958515
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 4.654097208324778e-7,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 4.654097208324778e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指远节指骨基底",
+          "bone": "2distph",
+          "kind": "bone",
+          "positionM": [
+            -0.03539238,
+            -0.199231874,
+            0.022985265
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 2.0469414893705693e-7,
+          "nearestVisibleSurface": {
+            "bone": "2distph",
+            "gapMm": 2.0469414893705693e-7
+          }
         }
       ]
     },
@@ -431,6 +1028,42 @@
           "displacementMm": 0.05041923444671533,
           "longitudinalFraction": 0.33809029233278726
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            -0.00444,
+            0.20897,
+            -0.0356
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 11.898394849726547
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指远节指骨（腱膜终末支）",
+          "bone": "5distph",
+          "kind": "bone",
+          "positionM": [
+            -0.00965522,
+            -0.18104244,
+            -0.040385996
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.4690513665349356e-7,
+          "nearestVisibleSurface": {
+            "bone": "5distph",
+            "gapMm": 1.4690513665349356e-7
+          }
+        }
       ]
     },
     {
@@ -460,6 +1093,42 @@
           "correctedSurfaceGapMm": 3.469446951953614e-15,
           "displacementMm": 1.0294173109094427,
           "longitudinalFraction": 0.33437226875277204
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            -0.00354,
+            0.20787,
+            -0.0368
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 11.099450436845935
+          }
+        },
+        {
+          "side": "end",
+          "label": "无名指远节指骨（腱膜终末支）",
+          "bone": "4distph",
+          "kind": "bone",
+          "positionM": [
+            -0.02809,
+            -0.19822,
+            -0.02704
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.469446951953614e-15,
+          "nearestVisibleSurface": {
+            "bone": "4distph",
+            "gapMm": 3.469446951953614e-15
+          }
         }
       ]
     },
@@ -491,6 +1160,42 @@
           "displacementMm": 2.404711556352349,
           "longitudinalFraction": 0.2013914747057461
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            -0.00524,
+            0.20747,
+            -0.0347
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 10.553568116992436
+          }
+        },
+        {
+          "side": "end",
+          "label": "中指远节指骨（腱膜终末支）",
+          "bone": "3distph",
+          "kind": "bone",
+          "positionM": [
+            -0.039626453,
+            -0.205464149,
+            -0.002105731
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.6831205961341182e-7,
+          "nearestVisibleSurface": {
+            "bone": "3distph",
+            "gapMm": 1.6831205961341182e-7
+          }
+        }
       ]
     },
     {
@@ -520,6 +1225,42 @@
           "correctedSurfaceGapMm": 1.9522787636576837e-7,
           "displacementMm": 1.4686691602598132,
           "longitudinalFraction": 0.19965036285391324
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            -0.00444,
+            0.20827,
+            -0.0346
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 11.0013544620651
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指远节指骨（腱膜终末支）",
+          "bone": "2distph",
+          "kind": "bone",
+          "positionM": [
+            -0.039618164,
+            -0.199024744,
+            0.022509696
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.9522787636576837e-7,
+          "nearestVisibleSurface": {
+            "bone": "2distph",
+            "gapMm": 1.9522787636576837e-7
+          }
         }
       ]
     },
@@ -551,6 +1292,42 @@
           "displacementMm": 0.03740546152444651,
           "longitudinalFraction": 0.09300259280740075
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "上臂起点（骨骼未显示）",
+          "bone": null,
+          "kind": "outside-mesh",
+          "positionM": [
+            -0.00424,
+            0.20807,
+            -0.0343
+          ],
+          "status": "outside-mesh",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 10.69718654600356
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指远节指骨（腱膜终末支）",
+          "bone": "5distph",
+          "kind": "bone",
+          "positionM": [
+            -0.010252667,
+            -0.177339097,
+            -0.040679741
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 4.434253366961925e-7,
+          "nearestVisibleSurface": {
+            "bone": "5distph",
+            "gapMm": 4.434253366961925e-7
+          }
+        }
       ]
     },
     {
@@ -559,6 +1336,28 @@
       "note": "Terminal extensor branch, not direct whole-muscle insertion.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "ulna",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            -0.01011,
+            0.04037,
+            -0.033
+          ],
+          "fittedM": [
+            -0.010928544,
+            0.040463243,
+            -0.033061351
+          ],
+          "originalSurfaceGapMm": 0.8261193192289752,
+          "correctedSurfaceGapMm": 3.9184273999901615e-7,
+          "displacementMm": 0.8261193192289752,
+          "longitudinalFraction": 0.6925708362792653
+        },
         {
           "side": "end",
           "bone": "2distph",
@@ -581,6 +1380,42 @@
           "displacementMm": 5.026017984602257,
           "longitudinalFraction": 0.3487115406328529
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "尺骨",
+          "bone": "ulna",
+          "kind": "bone",
+          "positionM": [
+            -0.010928544,
+            0.040463243,
+            -0.033061351
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.9184273999901615e-7,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 3.9184273999901615e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指远节指骨（腱膜终末支）",
+          "bone": "2distph",
+          "kind": "bone",
+          "positionM": [
+            -0.039270028,
+            -0.201188897,
+            0.024156579
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.523401679906364e-7,
+          "nearestVisibleSurface": {
+            "bone": "2distph",
+            "gapMm": 3.523401679906364e-7
+          }
+        }
       ]
     },
     {
@@ -589,6 +1424,28 @@
       "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "ulna",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            -0.00286,
+            0.10977,
+            -0.0432
+          ],
+          "fittedM": [
+            -0.002772875,
+            0.109757831,
+            -0.043208041
+          ],
+          "originalSurfaceGapMm": 0.08833729297021406,
+          "correctedSurfaceGapMm": 1.728460275626115e-7,
+          "displacementMm": 0.08833729297021406,
+          "longitudinalFraction": 0.42867410973419606
+        },
         {
           "side": "end",
           "bone": "thumbdist",
@@ -611,6 +1468,42 @@
           "displacementMm": 0.24358624140504057,
           "longitudinalFraction": 0.34408235335423903
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "尺骨",
+          "bone": "ulna",
+          "kind": "bone",
+          "positionM": [
+            -0.002772875,
+            0.109757831,
+            -0.043208041
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.728460275626115e-7,
+          "nearestVisibleSurface": {
+            "bone": "ulna",
+            "gapMm": 1.728460275626115e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "拇指远节指骨基底",
+          "bone": "thumbdist",
+          "kind": "bone",
+          "positionM": [
+            0.019791969,
+            -0.133634622,
+            0.051559822
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 4.2895456276277283e-7,
+          "nearestVisibleSurface": {
+            "bone": "thumbdist",
+            "gapMm": 4.2895456276277283e-7
+          }
+        }
       ]
     },
     {
@@ -619,6 +1512,28 @@
       "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "radius",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            -0.01441,
+            0.04836,
+            -0.0095
+          ],
+          "fittedM": [
+            -0.014266436,
+            0.04838264,
+            -0.009200778
+          ],
+          "originalSurfaceGapMm": 0.33265154598997443,
+          "correctedSurfaceGapMm": 8.127073242965996e-8,
+          "displacementMm": 0.33265154598997443,
+          "longitudinalFraction": 0.6080072214835609
+        },
         {
           "side": "end",
           "bone": "thumbprox",
@@ -641,6 +1556,42 @@
           "displacementMm": 0.633697324667265,
           "longitudinalFraction": 0.19976077125566374
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "桡骨",
+          "bone": "radius",
+          "kind": "bone",
+          "positionM": [
+            -0.014266436,
+            0.04838264,
+            -0.009200778
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 8.127073242965996e-8,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 8.127073242965996e-8
+          }
+        },
+        {
+          "side": "end",
+          "label": "拇指近节指骨基底",
+          "bone": "thumbprox",
+          "kind": "bone",
+          "positionM": [
+            0.010290536,
+            -0.107257892,
+            0.041065785
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 2.9811640540547177e-7,
+          "nearestVisibleSurface": {
+            "bone": "thumbprox",
+            "gapMm": 2.9811640540547177e-7
+          }
+        }
       ]
     },
     {
@@ -649,6 +1600,28 @@
       "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "radius",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            -0.01106,
+            0.10076,
+            -0.019
+          ],
+          "fittedM": [
+            -0.008741345,
+            0.100964562,
+            -0.01673135
+          ],
+          "originalSurfaceGapMm": 3.2503507979048414,
+          "correctedSurfaceGapMm": 1.3322746041113784e-7,
+          "displacementMm": 3.2503507979048414,
+          "longitudinalFraction": 0.394608619903969
+        },
         {
           "side": "end",
           "bone": "thumbdist",
@@ -671,6 +1644,42 @@
           "displacementMm": 1.8805850153609132,
           "longitudinalFraction": 0.3447888953108317
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "桡骨",
+          "bone": "radius",
+          "kind": "bone",
+          "positionM": [
+            -0.008741345,
+            0.100964562,
+            -0.01673135
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.3322746041113784e-7,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 1.3322746041113784e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "拇指远节指骨基底",
+          "bone": "thumbdist",
+          "kind": "bone",
+          "positionM": [
+            0.01836,
+            -0.13665,
+            0.04775
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.3877787807814457e-14,
+          "nearestVisibleSurface": {
+            "bone": "thumbdist",
+            "gapMm": 1.3877787807814457e-14
+          }
+        }
       ]
     },
     {
@@ -679,6 +1688,28 @@
       "note": "Bone/region reviewed; point inferred from native route, not a measured anatomical footprint.",
       "preserved": "Proximal muscle/forearm path retained; full origin or muscle belly is not reconstructed.",
       "attachments": [
+        {
+          "side": "start",
+          "bone": "radius",
+          "region": [
+            0,
+            1
+          ],
+          "originalM": [
+            -0.01016,
+            0.10056,
+            -0.0172
+          ],
+          "fittedM": [
+            -0.009186577,
+            0.10064588,
+            -0.016247569
+          ],
+          "originalSurfaceGapMm": 1.364570418449285,
+          "correctedSurfaceGapMm": 3.450996696357994e-8,
+          "displacementMm": 1.364570418449285,
+          "longitudinalFraction": 0.3962985620936269
+        },
         {
           "side": "end",
           "bone": "1mc",
@@ -700,6 +1731,42 @@
           "correctedSurfaceGapMm": 8.275195310817316e-8,
           "displacementMm": 0.7486243628183771,
           "longitudinalFraction": 0.34300420449025204
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "桡骨",
+          "bone": "radius",
+          "kind": "bone",
+          "positionM": [
+            -0.009186577,
+            0.10064588,
+            -0.016247569
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.450996696357994e-8,
+          "nearestVisibleSurface": {
+            "bone": "radius",
+            "gapMm": 3.450996696357994e-8
+          }
+        },
+        {
+          "side": "end",
+          "label": "拇指掌骨基底",
+          "bone": "1mc",
+          "kind": "bone",
+          "positionM": [
+            -0.00109396,
+            -0.077200164,
+            0.024263047
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 8.275195310817316e-8,
+          "nearestVisibleSurface": {
+            "bone": "1mc",
+            "gapMm": 8.275195310817316e-8
+          }
         }
       ]
     },
@@ -753,67 +1820,679 @@
           "displacementMm": 4.2738039262465035,
           "longitudinalFraction": 0.7963949085380517
         }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "大多角骨区域",
+          "bone": "trapezium",
+          "kind": "bone",
+          "positionM": [
+            -0.006775541,
+            -0.068435821,
+            0.002317481
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.5112343697066625e-7,
+          "nearestVisibleSurface": {
+            "bone": "trapezium",
+            "gapMm": 3.5112343697066625e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "拇指掌骨骨干",
+          "bone": "1mc",
+          "kind": "bone",
+          "positionM": [
+            0.00627,
+            -0.09789,
+            0.02713
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 0,
+          "nearestVisibleSurface": {
+            "bone": "1mc",
+            "gapMm": 0
+          }
+        }
       ]
     },
     {
       "id": "RI2",
-      "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "status": "regional-visual-fit",
+      "note": "Bony branch of a functional interosseous path; not a reconstruction of every muscle head.",
+      "preserved": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "attachments": [
+        {
+          "side": "start",
+          "bone": "2mc",
+          "region": [
+            0.2,
+            0.8
+          ],
+          "originalM": [
+            -0.02076,
+            -0.09952,
+            0.00388
+          ],
+          "fittedM": [
+            -0.023276361,
+            -0.098576185,
+            0.005804072
+          ],
+          "originalSurfaceGapMm": 3.305285610313734,
+          "correctedSurfaceGapMm": 7.079833513801006e-8,
+          "displacementMm": 3.305285610313734,
+          "longitudinalFraction": 0.46125791455835463
+        },
+        {
+          "side": "end",
+          "bone": "2proxph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.02905,
+            -0.13427,
+            0.01848
+          ],
+          "fittedM": [
+            -0.028717202,
+            -0.1337186,
+            0.018926993
+          ],
+          "originalSurfaceGapMm": 0.7839636276074391,
+          "correctedSurfaceGapMm": 1.539876513813094e-7,
+          "displacementMm": 0.7839636276074391,
+          "longitudinalFraction": 0.033661089135425384
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "食指掌骨（等效骨性支）",
+          "bone": "2mc",
+          "kind": "bone",
+          "positionM": [
+            -0.023276361,
+            -0.098576185,
+            0.005804072
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 7.079833513801006e-8,
+          "nearestVisibleSurface": {
+            "bone": "2mc",
+            "gapMm": 7.079833513801006e-8
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指近节指骨（等效骨性支）",
+          "bone": "2proxph",
+          "kind": "bone",
+          "positionM": [
+            -0.028717202,
+            -0.1337186,
+            0.018926993
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 1.539876513813094e-7,
+          "nearestVisibleSurface": {
+            "bone": "2proxph",
+            "gapMm": 1.539876513813094e-7
+          }
+        }
+      ]
     },
     {
       "id": "LU_RB2",
       "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "软组织等效起点",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.02076,
+            -0.09952,
+            0.00388
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "2mc",
+            "gapMm": 3.305285610313734
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指桡侧腱膜等效末端",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.03843,
+            -0.18985,
+            0.02499
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "2midph",
+            "gapMm": 0.23780800516469672
+          }
+        }
+      ]
     },
     {
       "id": "UI_UB2",
       "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "骨间肌等效起点（待核定）",
+          "bone": null,
+          "kind": "model-anchor",
+          "positionM": [
+            -0.02076,
+            -0.09952,
+            0.00388
+          ],
+          "status": "model-anchor",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "2mc",
+            "gapMm": 3.305285610313734
+          }
+        },
+        {
+          "side": "end",
+          "label": "食指尺侧腱膜等效末端",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.03943,
+            -0.19185,
+            0.01999
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "2midph",
+            "gapMm": 0.21903242685542937
+          }
+        }
+      ]
     },
     {
       "id": "RI3",
-      "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "status": "regional-visual-fit",
+      "note": "Bony branch of a functional interosseous path; not a reconstruction of every muscle head.",
+      "preserved": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "attachments": [
+        {
+          "side": "start",
+          "bone": "3mc",
+          "region": [
+            0.2,
+            0.8
+          ],
+          "originalM": [
+            -0.0184,
+            -0.09454,
+            -0.00493
+          ],
+          "fittedM": [
+            -0.024454225,
+            -0.093727509,
+            -0.005856983
+          ],
+          "originalSurfaceGapMm": 6.178436954198744,
+          "correctedSurfaceGapMm": 3.138150038562115e-7,
+          "displacementMm": 6.178436954198744,
+          "longitudinalFraction": 0.39087238516892053
+        },
+        {
+          "side": "end",
+          "bone": "3proxph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.03015,
+            -0.13893,
+            0.00161
+          ],
+          "fittedM": [
+            -0.030180147,
+            -0.13885379,
+            0.001254227
+          ],
+          "originalSurfaceGapMm": 0.3650908027889023,
+          "correctedSurfaceGapMm": 8.359996832591146e-8,
+          "displacementMm": 0.3650908027889023,
+          "longitudinalFraction": 0.14873737176674892
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "中指掌骨（等效骨性支）",
+          "bone": "3mc",
+          "kind": "bone",
+          "positionM": [
+            -0.024454225,
+            -0.093727509,
+            -0.005856983
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.138150038562115e-7,
+          "nearestVisibleSurface": {
+            "bone": "3mc",
+            "gapMm": 3.138150038562115e-7
+          }
+        },
+        {
+          "side": "end",
+          "label": "中指近节指骨（等效骨性支）",
+          "bone": "3proxph",
+          "kind": "bone",
+          "positionM": [
+            -0.030180147,
+            -0.13885379,
+            0.001254227
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 8.359996832591146e-8,
+          "nearestVisibleSurface": {
+            "bone": "3proxph",
+            "gapMm": 8.359996832591146e-8
+          }
+        }
+      ]
     },
     {
       "id": "LU_RB3",
       "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "软组织等效起点",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.0184,
+            -0.09454,
+            -0.00493
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "3mc",
+            "gapMm": 6.178436954198744
+          }
+        },
+        {
+          "side": "end",
+          "label": "中指桡侧腱膜等效末端",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.03934,
+            -0.18305,
+            0.00056
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "3midph",
+            "gapMm": 1.0936326643834497
+          }
+        }
+      ]
     },
     {
       "id": "UI_UB3",
       "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "骨间肌等效起点（待核定）",
+          "bone": null,
+          "kind": "model-anchor",
+          "positionM": [
+            -0.0184,
+            -0.09454,
+            -0.00493
+          ],
+          "status": "model-anchor",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "3mc",
+            "gapMm": 6.178436954198744
+          }
+        },
+        {
+          "side": "end",
+          "label": "中指尺侧腱膜等效末端",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.04184,
+            -0.17915,
+            -0.00974
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "3midph",
+            "gapMm": 3.8227733976377194
+          }
+        }
+      ]
     },
     {
       "id": "RI4",
-      "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "status": "regional-visual-fit",
+      "note": "Bony branch of a functional interosseous path; not a reconstruction of every muscle head.",
+      "preserved": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "4proxph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.02392,
+            -0.15021,
+            -0.01749
+          ],
+          "fittedM": [
+            -0.02527781,
+            -0.144525462,
+            -0.018814037
+          ],
+          "originalSurfaceGapMm": 2.7683993336863835,
+          "correctedSurfaceGapMm": 3.4643332215560516e-8,
+          "displacementMm": 5.992553470568713,
+          "longitudinalFraction": 0.3462673968848188
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "骨间肌等效起点（待核定）",
+          "bone": null,
+          "kind": "model-anchor",
+          "positionM": [
+            -0.0171,
+            -0.09553,
+            -0.01533
+          ],
+          "status": "model-anchor",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "4mc",
+            "gapMm": 5.225090426210395
+          }
+        },
+        {
+          "side": "end",
+          "label": "无名指近节指骨（等效骨性支）",
+          "bone": "4proxph",
+          "kind": "bone",
+          "positionM": [
+            -0.02527781,
+            -0.144525462,
+            -0.018814037
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 3.4643332215560516e-8,
+          "nearestVisibleSurface": {
+            "bone": "4proxph",
+            "gapMm": 3.4643332215560516e-8
+          }
+        }
+      ]
     },
     {
       "id": "LU_RB4",
       "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "软组织等效起点",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.0171,
+            -0.09553,
+            -0.01533
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "4mc",
+            "gapMm": 5.225090426210394
+          }
+        },
+        {
+          "side": "end",
+          "label": "无名指桡侧腱膜等效末端",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.02945,
+            -0.17067,
+            -0.01981
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "4midph",
+            "gapMm": 2.582910444807174
+          }
+        }
+      ]
     },
     {
       "id": "UI_UB4",
       "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "骨间肌等效起点（待核定）",
+          "bone": null,
+          "kind": "model-anchor",
+          "positionM": [
+            -0.0171,
+            -0.09553,
+            -0.01533
+          ],
+          "status": "model-anchor",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "4mc",
+            "gapMm": 5.225090426210394
+          }
+        },
+        {
+          "side": "end",
+          "label": "无名指尺侧腱膜等效末端",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.02855,
+            -0.17017,
+            -0.02991
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "4midph",
+            "gapMm": 2.3089293961352793
+          }
+        }
+      ]
     },
     {
       "id": "RI5",
-      "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "status": "regional-visual-fit",
+      "note": "Bony branch of a functional interosseous path; not a reconstruction of every muscle head.",
+      "preserved": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "attachments": [
+        {
+          "side": "end",
+          "bone": "5proxph",
+          "region": [
+            0,
+            0.35
+          ],
+          "originalM": [
+            -0.01708,
+            -0.13211,
+            -0.0255
+          ],
+          "fittedM": [
+            -0.016174882,
+            -0.131226926,
+            -0.027300883
+          ],
+          "originalSurfaceGapMm": 2.20050876321114,
+          "correctedSurfaceGapMm": 2.167408682020514e-7,
+          "displacementMm": 2.20050876321114,
+          "longitudinalFraction": 0.21491080937802892
+        }
+      ],
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "骨间肌等效起点（待核定）",
+          "bone": null,
+          "kind": "model-anchor",
+          "positionM": [
+            -0.0171,
+            -0.09553,
+            -0.01533
+          ],
+          "status": "model-anchor",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "4mc",
+            "gapMm": 5.225090426210395
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指近节指骨（等效骨性支）",
+          "bone": "5proxph",
+          "kind": "bone",
+          "positionM": [
+            -0.016174882,
+            -0.131226926,
+            -0.027300883
+          ],
+          "status": "surface-fitted",
+          "targetGapMm": 2.167408682020514e-7,
+          "nearestVisibleSurface": {
+            "bone": "5proxph",
+            "gapMm": 2.167408682020514e-7
+          }
+        }
+      ]
     },
     {
       "id": "LU_RB5",
       "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "软组织等效起点",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.01712,
+            -0.07553,
+            -0.01533
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "4mc",
+            "gapMm": 0.3039700707137436
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指桡侧腱膜等效末端",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.01357,
+            -0.17007,
+            -0.03618
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "5midph",
+            "gapMm": 1.0051330351450127
+          }
+        }
+      ]
     },
     {
       "id": "UI_UB5",
       "status": "preserved",
-      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping."
+      "reason": "Functional intrinsic/expansion route, not a one-to-one anatomical muscle; no unsupported bone snapping.",
+      "endpointAudit": [
+        {
+          "side": "start",
+          "label": "骨间肌等效起点（待核定）",
+          "bone": null,
+          "kind": "model-anchor",
+          "positionM": [
+            -0.01212,
+            -0.07553,
+            -0.02633
+          ],
+          "status": "model-anchor",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "5mc",
+            "gapMm": 0.452646810546811
+          }
+        },
+        {
+          "side": "end",
+          "label": "小指尺侧腱膜等效末端",
+          "bone": null,
+          "kind": "soft-tissue-equivalent",
+          "positionM": [
+            -0.00987,
+            -0.16937,
+            -0.04048
+          ],
+          "status": "soft-tissue-equivalent",
+          "targetGapMm": null,
+          "nearestVisibleSurface": {
+            "bone": "5midph",
+            "gapMm": 0.25607506412932435
+          }
+        }
+      ]
     }
   ]
 }

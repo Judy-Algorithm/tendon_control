@@ -7,19 +7,33 @@ import {ATLAS} from '../atlas-data.js';
 import {FITTED_ROUTES} from '../route-data.js';
 import {THREE,createSurface} from '../scripts/surface-geometry.mjs';
 import {POLICY} from '../scripts/attachment-policy.mjs';
+import {ATTACHMENT_CATALOG,endpointText} from '../attachment-catalog.js';
 const report=JSON.parse(fs.readFileSync(new URL('../docs/attachment-audit.json',import.meta.url)));
 const surfaces=new Map(MODEL.bones.map(b=>[b.name,createSurface(b,MODEL.quant)]));
 const v=a=>new THREE.Vector3(...a);
 
-test('all 37 channels are audited; 24 fits and 13 explicit soft-tissue/equivalent exceptions',()=>{
+test('all 74 endpoints are audited; 40 surface fits and 34 explicitly classified exceptions',()=>{
   assert.deepEqual(report.channels.map(c=>c.id).sort(),ATLAS.tendons.map(t=>t.id).sort());
-  assert.equal(Object.keys(FITTED_ROUTES).length,24);
-  assert.equal(report.channels.filter(c=>c.status==='preserved').length,13);
-  assert.equal(report.channels.flatMap(c=>c.attachments||[]).length,25);
+  assert.equal(Object.keys(FITTED_ROUTES).length,28);
+  assert.equal(report.channels.filter(c=>c.status==='preserved').length,9);
+  assert.equal(report.channels.flatMap(c=>c.attachments||[]).length,40);
+  const endpoints=report.channels.flatMap(c=>c.endpointAudit);
+  assert.equal(endpoints.length,74);
+  assert.equal(endpoints.filter(e=>e.status==='surface-fitted').length,40);
+  assert.equal(endpoints.filter(e=>e.status==='outside-mesh').length,13);
+  assert.equal(endpoints.filter(e=>e.status==='soft-tissue-equivalent').length,13);
+  assert.equal(endpoints.filter(e=>e.status==='model-anchor').length,8);
+  for(const e of endpoints){
+    assert.ok(e.label&&e.positionM.every(Number.isFinite));
+    assert.ok(Number.isFinite(e.nearestVisibleSurface.gapMm));
+    if(e.kind==='bone')assert.ok(e.status==='surface-fitted'&&e.targetGapMm<.001);
+    else assert.equal(e.targetGapMm,null);
+    if(e.kind==='model-anchor')assert.match(e.label,/待核定/);
+  }
   assert.equal(report.sourceGeometrySha256,crypto.createHash('sha256').update(fs.readFileSync(new URL('../model-data.js',import.meta.url))).digest('hex'));
   for(const c of report.channels.filter(c=>c.status==='preserved'))assert.ok(!FITTED_ROUTES[c.id]&&c.reason);
 });
-test('all 25 endpoints lie on the reviewed bone, inside the selected broad region and original side',()=>{
+test('all 40 bone endpoints lie on the reviewed bone, inside the selected broad region and original side',()=>{
   for(const c of report.channels)for(const a of c.attachments||[]){
     const points=FITTED_ROUTES[c.id],p=v(a.side==='start'?points[0]:points.at(-1)),surface=surfaces.get(a.bone),spec=POLICY[c.id][a.side];
     assert.ok(surface.closest(p).distance<1e-7,`${c.id} ${a.side} surface gap`);
@@ -27,6 +41,15 @@ test('all 25 endpoints lie on the reviewed bone, inside the selected broad regio
     if(spec.preserveSide)assert.ok(surface.radial(p).dot(surface.radial(v(a.originalM)))>=.5-1e-5,`${c.id} changed side`);
     assert.ok(a.displacementMm<8,`${c.id} excessive local displacement`);
   }
+});
+test('display text distinguishes native visual geometry from old SHM frame names',()=>{
+  assert.deepEqual(Object.keys(ATTACHMENT_CATALOG).sort(),ATLAS.tendons.map(t=>t.id).sort());
+  assert.match(endpointText('FPL'),/桡骨 → 拇指远节指骨/);
+  assert.match(endpointText('OP'),/大多角骨区域/);
+  assert.match(endpointText('ECRL'),/骨骼未显示/);
+  assert.match(endpointText('LU_RB3'),/软组织等效起点/);
+  assert.match(endpointText('RI4'),/等效起点/);
+  assert.ok(!POLICY.RI4.start&&!POLICY.RI5.start,'No unsupported origin reassignment');
 });
 test('routes are finite, continuous polylines, bounded in size and retain unfitted proximal endpoints',()=>{
   let segments=0;

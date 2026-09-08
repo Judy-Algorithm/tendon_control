@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {chromium} from 'playwright';
 import {ATLAS} from '../atlas-data.js';
+import {FITTED_ROUTES} from '../route-data.js';
 
 const browser=await chromium.launch({channel:process.env.BROWSER_CHANNEL||'chrome',headless:true,args:['--enable-unsafe-swiftshader']});
 await fs.mkdir('test-output',{recursive:true});
@@ -24,6 +25,14 @@ try{
   await page.goto(url);await page.waitForFunction(()=>window.tendonAtlas?.snapshot().ready);
   assert.equal(await page.locator('.joint-trigger').count(),16);
   assert.equal((await snapshot()).boneCount,29);
+  const geometry=await snapshot();assert.equal(geometry.geometryRevision,2);assert.equal(geometry.endpoints.length,37);
+  for(const e of geometry.endpoints){
+    assert.equal(e.depthTest,true);
+    if(FITTED_ROUTES[e.id]){
+      assert.deepEqual(e.start,FITTED_ROUTES[e.id][0]);
+      assert.deepEqual(e.end,FITTED_ROUTES[e.id].at(-1));
+    }
+  }
   await verifyRender([]);
   const initial=await page.locator('body').innerText();
   for(const old of ['控制仿真','随机初始','显示全部关节','旋转轴','重播动作','肌腱39'])assert.ok(!initial.includes(old));

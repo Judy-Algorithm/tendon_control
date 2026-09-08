@@ -4,6 +4,7 @@ import {MODEL} from '../model-data.js';
 import {ATLAS} from '../atlas-data.js';
 import {THREE,createSurface} from './surface-geometry.mjs';
 import {POLICY,SOURCES,preservationReason} from './attachment-policy.mjs';
+import {ATTACHMENT_CATALOG} from '../attachment-catalog.js';
 
 const surfaces=new Map(MODEL.bones.map(b=>[b.name,createSurface(b,MODEL.quant)]));
 const vector=a=>new THREE.Vector3(...a),array=v=>v.toArray().map(x=>Number(x.toFixed(9)));
@@ -66,7 +67,19 @@ for(const meta of ATLAS.tendons){
       correctedSurfaceGapMm:a.surface.closest(vector(points[a.side==='start'?0:points.length-1])).distance*1000,
       displacementMm:a.delta.length()*1000,longitudinalFraction:a.surface.longitudinal(a.hit.point)}))});
 }
-const report={date:'2026-09-08',scope:'Neutral-pose website visualization only; no OpenSim model, moment arms, or controller data changed.',
+for(const entry of audit){
+  const raw=MODEL.tendon_segments_i16[MODEL.actuator_names.indexOf(entry.id)];
+  const original=[raw[0].slice(0,3).map(x=>x*MODEL.quant),raw.at(-1).slice(3).map(x=>x*MODEL.quant)];
+  const current=routes[entry.id]||original;
+  entry.endpointAudit=['start','end'].map((side,i)=>{
+    const spec=ATTACHMENT_CATALOG[entry.id][side],point=vector(i===0?current[0]:current.at(-1));
+    const measured=[...surfaces].map(([bone,s])=>({bone,gapMm:s.closest(point).distance*1000})).sort((a,b)=>a.gapMm-b.gapMm)[0];
+    return {side,...spec,positionM:array(point),status:POLICY[entry.id]?.[side]?'surface-fitted':spec.kind,
+      targetGapMm:spec.bone?surfaces.get(spec.bone).closest(point).distance*1000:null,
+      nearestVisibleSurface:measured};
+  });
+}
+const report={revision:2,date:'2026-09-08',scope:'Neutral-pose website visualization only; no OpenSim model, moment arms, or controller data changed.',
   sourceGeometrySha256:crypto.createHash('sha256').update(fs.readFileSync(new URL('../model-data.js',import.meta.url))).digest('hex'),
   method:'Preselected anatomical bone and broad attachment region; retain original surface side. Exact landmarks and soft-tissue footprints are not available. Local terminal blending and 0.85 mm near-surface clearance; endpoints touch the mesh. PCA fractions are geometric regional heuristics, not anatomical measurements.',
   sources:SOURCES,channels:audit};

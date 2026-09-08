@@ -2,7 +2,7 @@ import './vendor/three.min.js';
 import './vendor/orbit-controls.js';
 import {MODEL} from './model-data.js';
 import {ATLAS} from './atlas-data.js';
-import {ENDPOINTS} from './endpoint-data.js';
+import {ATTACHMENT_CATALOG,endpointText} from './attachment-catalog.js';
 import {FITTED_ROUTES} from './route-data.js';
 import {createAtlasState,formatRange} from './atlas-state.js';
 
@@ -52,9 +52,8 @@ function buildPanel(){
           row.style.setProperty('--tendon-color',colorFor(id));
           const name=element('button','tendon-name');name.type='button';name.setAttribute('aria-label',`${id} ${meta.name}`);
           name.append(element('span','tendon-color'),element('span','tendon-code',id),element('span','tendon-cn',meta.name));
-          const endpoints=ENDPOINTS.tendons[id];
-          name.append(element('span','tendon-endpoints',`起止位置：${endpoints.start} → ${endpoints.end}`));
-          name.setAttribute('aria-label',`${id} ${meta.name}，起止位置：起点 ${endpoints.start}，止点 ${endpoints.end}`);
+          name.append(element('span','tendon-endpoints',endpointText(id)));
+          name.setAttribute('aria-label',`${id} ${meta.name}，${endpointText(id)}`);
           name.addEventListener('click',()=>{atlas.highlight(id);refresh();});
           const toggle=element('button','visibility-toggle','Hide');toggle.type='button';toggle.dataset.toggleTendon=id;
           toggle.addEventListener('click',()=>{atlas.toggleTendon(id);refresh();});
@@ -119,7 +118,8 @@ class TendonViewer {
       geo.setIndex(new THREE.BufferAttribute(decode(bone.faces_u16,Uint16Array),1));geo.computeVertexNormals();
       const mesh=new THREE.Mesh(geo,material);mesh.name=bone.name;this.bones.push(mesh);this.scene.add(mesh);
     }
-    this.tendons=new Map();const cylinder=new THREE.CylinderGeometry(1,1,1,9);
+    this.tendons=new Map();const cylinder=new THREE.CylinderGeometry(1,1,1,12);
+    const endpointSphere=new THREE.SphereGeometry(.00072,12,8);
     for(const meta of ATLAS.tendons){
       const color=new THREE.Color(colorFor(meta.id)).convertSRGBToLinear();const material=new THREE.MeshBasicMaterial({color,toneMapped:false,depthTest:true,depthWrite:true});
       const group=new THREE.Group();group.name=meta.id;group.visible=false;
@@ -135,7 +135,14 @@ class TendonViewer {
         mesh.scale.set(.00072,distance,.00072);mesh.userData.tendonId=meta.id;mesh.renderOrder=10;
         group.add(mesh);segments.push([a,b]);
       }
-      this.tendons.set(meta.id,{group,material,segments});this.scene.add(group);
+      // Round caps share the actual line endpoints; no disconnected flat-cut tips.
+      const capPoints=[segments[0][0],segments.at(-1)[1]],caps=[];
+      for(const [index,point] of capPoints.entries()){
+        const cap=new THREE.Mesh(endpointSphere,material);cap.position.copy(point);
+        cap.name=index?'endpoint-end':'endpoint-start';cap.userData.tendonId=meta.id;
+        cap.userData.endpoint=true;group.add(cap);caps.push(cap);
+      }
+      this.tendons.set(meta.id,{group,material,segments,caps});this.scene.add(group);
     }
     this.controls.addEventListener('change',()=>this.render());
     new ResizeObserver(()=>this.resize()).observe(this.stage);
@@ -163,7 +170,7 @@ class TendonViewer {
     for(const [id,t] of this.tendons){
       t.group.visible=visible.has(id);const selected=atlas.state.highlighted===id;
       t.material.opacity=1;
-      t.group.children.forEach(m=>{m.scale.x=m.scale.z=selected?.00105:.00072;});
+      t.group.children.forEach(m=>{if(m.userData.endpoint)m.scale.setScalar(selected?1.05/.72:1);else m.scale.x=m.scale.z=selected?.00105:.00072;});
     }
     this.render();
   }
@@ -225,4 +232,7 @@ window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,dir
   scope:[...atlas.scope()],visible:atlas.visible(),highlighted:atlas.state.highlighted,
   rendered:viewer?[...viewer.tendons].filter(([,t])=>t.group.visible).map(([id])=>id):[],
   boneCount:viewer?.bones.length||0,labelIds:[...document.querySelectorAll('.path-callout')].map(n=>n.dataset.tendon),
+  geometryRevision:2,
+  endpoints:viewer?[...viewer.tendons].map(([id,t])=>({id,start:t.caps[0].position.toArray(),end:t.caps[1].position.toArray(),
+    depthTest:t.material.depthTest,catalog:ATTACHMENT_CATALOG[id]})):[],
   ready:Boolean(viewer)})});
