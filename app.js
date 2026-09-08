@@ -5,6 +5,8 @@ import {ATLAS} from './atlas-data.js';
 import {ATTACHMENT_CATALOG,endpointText} from './attachment-catalog.js';
 import {FITTED_ROUTES} from './route-data.js';
 import {createAtlasState,formatRange} from './atlas-state.js';
+import {tendonSegments,routeInfluence,rotatePoint} from './motion.js';
+import {MotionController} from './motion-controller.js';
 
 const THREE=window.THREE;
 const atlas=createAtlasState(ATLAS);
@@ -12,7 +14,7 @@ const tendonMeta=new Map(ATLAS.tendons.map(t=>[t.id,t]));
 const specialColors={FDS3:'#ef6975',FDP3:'#eeb85b',EDC3:'#6aa2fa',RI3:'#57cca0',LU_RB3:'#b68af0',UI_UB3:'#61d7df'};
 const colorFor=id=>specialColors[id]||`hsl(${Math.round(tendonMeta.get(id).modelIndex*137.508)%360},65%,66%)`;
 const nodes={joints:new Map(),directions:new Map(),rows:[]};
-let viewer;
+let viewer,motion;
 function element(tag,className,text){
   const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;
 }
@@ -42,8 +44,8 @@ function buildPanel(){
         const title=element('span','direction-title',action.label);
         button.append(title,element('span','direction-codes',action.tendons.length?action.tendons.join(' · '):'无'));
         button.addEventListener('click',()=>{
-          if(atlas.state.direction&&key(atlas.state.direction.dofId,atlas.state.direction.id)===actionKey)atlas.clearDirection();
-          else atlas.selectDirection(dof.id,action.id);
+          if(atlas.state.direction&&key(atlas.state.direction.dofId,atlas.state.direction.id)===actionKey){motion?.replay();return;}
+          atlas.selectDirection(dof.id,action.id);
           refresh();
         });
         const list=element('ul','path-list');list.id=`${actionKey}-paths`;list.hidden=true;
@@ -88,6 +90,9 @@ function refresh(){
     n.toggle.setAttribute('aria-pressed',String(visible));
   }
   viewer?.refresh();
+  const joint=atlas.joint(),direction=atlas.action();
+  const dof=joint?.dofs.find(d=>d.id===atlas.state.direction?.dofId);
+  motion?.select(joint,dof,direction);
 }
 
 function decode(value,Type){
@@ -106,7 +111,7 @@ class TendonViewer {
     this.renderer.toneMapping=THREE.ACESFilmicToneMapping;this.renderer.toneMappingExposure=.8;
     this.controls=new THREE.OrbitControls(this.camera,this.canvas);this.controls.enableDamping=false;
     this.controls.minDistance=.15;this.controls.maxDistance=1.2;this.controls.target.set(0,-.10,0);
-    this.camera.position.set(.45,-.10,.08);this.controls.update();
+    this.camera.position.set(.37,-.22,.24);this.controls.update();
     this.scene.add(new THREE.HemisphereLight(0xfff6df,0x303842,.85));
     const keyLight=new THREE.DirectionalLight(0xffffff,1.15);keyLight.position.set(.6,-.5,.5);this.scene.add(keyLight);
     const fill=new THREE.DirectionalLight(0xd7e7ff,.4);fill.position.set(-.4,.4,-.3);this.scene.add(fill);
@@ -125,25 +130,24 @@ class TendonViewer {
       const group=new THREE.Group();group.name=meta.id;group.visible=false;
       const segments=[];
       const fitted=FITTED_ROUTES[meta.id];
-      const route=fitted?fitted.slice(1).map((p,i)=>[...fitted[i],...p]):MODEL.tendon_segments_i16[meta.modelIndex].map(s=>s.map(v=>v*MODEL.quant));
-      for(const segment of route){
-        const a=new THREE.Vector3(...segment.slice(0,3));
-        const b=new THREE.Vector3(...segment.slice(3,6));
-        const distance=a.distanceTo(b);if(distance<1e-7)continue;
-        const mesh=new THREE.Mesh(cylinder,material);mesh.position.copy(a).add(b).multiplyScalar(.5);
-        mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),b.clone().sub(a).normalize());
-        mesh.scale.set(.00072,distance,.00072);mesh.userData.tendonId=meta.id;mesh.renderOrder=10;
-        group.add(mesh);segments.push([a,b]);
-      }
-      // Round caps share the actual line endpoints; no disconnected flat-cut tips.
-      const capPoints=[segments[0][0],segments.at(-1)[1]],caps=[];
-      for(const [index,point] of capPoints.entries()){
+      const restSegments=tendonSegments(MODEL,meta,fitted);
+      const points=restSegments.flatMap(s=>s);
+      for(const [a,b] of restSegments)segments.push([new THREE.Vector3(...a),new THREE.Vector3(...b)]);
+      const mesh=new THREE.InstancedMesh(cylinder,material,segments.length);mesh.userData.tendonId=meta.id;mesh.renderOrder=10;
+      mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);mesh.frustumCulled=false;group.add(mesh);
+      const caps=[segments[0][0],segments.at(-1)[1]].map((point,index)=>{
         const cap=new THREE.Mesh(endpointSphere,material);cap.position.copy(point);
         cap.name=index?'endpoint-end':'endpoint-start';cap.userData.tendonId=meta.id;
-        cap.userData.endpoint=true;group.add(cap);caps.push(cap);
-      }
-      this.tendons.set(meta.id,{group,material,segments,caps});this.scene.add(group);
+        cap.userData.endpoint=true;group.add(cap);return cap;
+      });
+      this.tendons.set(meta.id,{group,material,segments,caps,mesh,points,weights:[],radius:.00072});this.scene.add(group);
     }
+    this.poseRig=null;this.poseAngle=0;this.dummy=new THREE.Object3D();this.up=new THREE.Vector3(0,1,0);
+    this.setPose(null,0);
+    for(const button of document.querySelectorAll('[data-view]'))button.addEventListener('click',()=>{
+      const offsets={oblique:[.37,-.12,.24],palm:[.45,0,.015],side:[.05,0,.45]};
+      this.controls.target.set(0,-.10,0);this.camera.position.copy(this.controls.target).add(new THREE.Vector3(...offsets[button.dataset.view]));this.controls.update();this.render();
+    });
     this.controls.addEventListener('change',()=>this.render());
     new ResizeObserver(()=>this.resize()).observe(this.stage);
     this.raycaster=new THREE.Raycaster();let down;
@@ -170,7 +174,32 @@ class TendonViewer {
     for(const [id,t] of this.tendons){
       t.group.visible=visible.has(id);const selected=atlas.state.highlighted===id;
       t.material.opacity=1;
-      t.group.children.forEach(m=>{if(m.userData.endpoint)m.scale.setScalar(selected?1.05/.72:1);else m.scale.x=m.scale.z=selected?.00105:.00072;});
+      t.radius=selected?.00105:.00072;
+      t.caps.forEach(cap=>cap.scale.setScalar(selected?1.05/.72:1));
+    }
+    this.setPose(this.poseRig,this.poseAngle);
+  }
+  setPose(rig,degrees){
+    const changed=this.poseRig!==rig;this.poseRig=rig;this.poseAngle=degrees;
+    const q=rig?new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(...rig.axis),degrees*Math.PI/180):new THREE.Quaternion();
+    for(const mesh of this.bones){
+      if(rig?.affected.has(mesh.name)){
+        const pivot=new THREE.Vector3(...rig.pivot);mesh.quaternion.copy(q);mesh.position.copy(pivot).sub(pivot.clone().applyQuaternion(q));
+      }else{mesh.quaternion.identity();mesh.position.set(0,0,0);}
+    }
+    for(const [id,t] of this.tendons){
+      if(changed||t.weights.length!==t.points.length)t.weights=t.points.map(p=>routeInfluence(p,rig,id));
+      const posed=t.points.map((p,i)=>rotatePoint(p,rig,degrees*t.weights[i]));
+      t.segments.forEach(([a,b],i)=>{
+        a.fromArray(posed[2*i]);b.fromArray(posed[2*i+1]);
+        this.dummy.position.copy(a).add(b).multiplyScalar(.5);
+        this.dummy.quaternion.setFromUnitVectors(this.up,b.clone().sub(a).normalize());
+        this.dummy.scale.set(t.radius,Math.max(a.distanceTo(b),1e-8),t.radius);
+        this.dummy.updateMatrix();t.mesh.setMatrixAt(i,this.dummy.matrix);
+      });
+      t.caps[0].position.copy(t.segments[0][0]);
+      t.caps[1].position.copy(t.segments.at(-1)[1]);
+      t.mesh.instanceMatrix.needsUpdate=true;
     }
     this.render();
   }
@@ -225,7 +254,9 @@ class TendonViewer {
 }
 
 buildPanel();
-try{viewer=new TendonViewer();}catch(error){document.getElementById('model-error').hidden=false;console.error(error);}
+try{viewer=new TendonViewer();motion=new MotionController(viewer,MODEL);}catch(error){document.getElementById('model-error').hidden=false;console.error(error);}
+atlas.openJoint('joint_bone11');
+atlas.selectDirection('middle_MCP_flex','positive');
 refresh();
 // Read-only inspection lets integration checks verify actual rendered visibility.
 window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,direction:atlas.state.direction,
@@ -235,4 +266,4 @@ window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,dir
   geometryRevision:2,
   endpoints:viewer?[...viewer.tendons].map(([id,t])=>({id,start:t.caps[0].position.toArray(),end:t.caps[1].position.toArray(),
     depthTest:t.material.depthTest,catalog:ATTACHMENT_CATALOG[id]})):[],
-  ready:Boolean(viewer)})});
+  motion:motion?.snapshot(),ready:Boolean(viewer)})});

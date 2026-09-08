@@ -1,28 +1,21 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111315">
-  <title>肌腱控制</title>
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="module" src="./app.js"></script>
-</head>
-<body>
-  <main class="app">
-    <header class="topbar"><h1>肌腱控制</h1></header>
-    <div class="layout">
-      <section class="stage" id="stage" aria-label="骨骼与肌腱通道">
-        <canvas id="canvas" aria-label="三维手部骨骼与肌腱"></canvas>
-        <svg id="path-labels" aria-label="肌腱通道标注"></svg>
-        <div class="model-error" id="model-error" role="alert" hidden>模型加载失败</div>
-      </section>
-      <aside class="sidebar" aria-label="关节控制">
-        <div class="panel-heading"><h2>活动关节</h2><span class="joint-count">16</span></div>
-        <div id="joint-list"></div>
-      </aside>
-    </div>
-  </main>
-</body>
-</html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111315"><title>肌腱控制 · ROM 动作</title><link rel="icon" href="data:,"><link rel="stylesheet" href="./styles.css"><script type="module" src="./app.js"></script></head>
+<body><main class="app">
+<header class="topbar"><h1>肌腱控制</h1><span class="preview-badge">ROM 动作</span></header>
+<div class="layout"><section class="stage" id="stage" aria-label="骨骼与肌腱通道">
+<canvas id="canvas" aria-label="三维手部骨骼与肌腱"></canvas><svg id="path-labels" aria-label="肌腱通道标注"></svg>
+<div class="stage-guide"><span class="live-dot"></span>选择 ROM 动作，观察骨骼与肌腱随动</div>
+<div class="view-tools" aria-label="观察视角"><button type="button" data-view="oblique">斜视</button><button type="button" data-view="palm">掌侧</button><button type="button" data-view="side">侧面</button></div>
+<div class="model-error" id="model-error" role="alert" hidden>模型加载失败，请刷新后重试</div>
+</section>
+<section id="motion-controls" class="motion-controls" aria-label="ROM 动作播放" hidden>
+<div class="motion-heading"><div><span id="motion-status" class="motion-status" role="status">待播放</span><h2 id="motion-title"></h2></div><div class="angle-readout"><strong id="motion-angle">0.0°</strong><span id="motion-angle-label">中立位</span></div></div>
+<p id="motion-hint"></p>
+<label class="scrub-label" for="motion-progress">关节角度 <span>拖动可逐帧观察</span></label>
+<input id="motion-progress" type="range" min="0" max="100" step="0.1" value="0">
+<div class="range-ends"><span id="motion-min"></span><span id="motion-max"></span></div>
+<div class="motion-actions"><button type="button" id="motion-play" class="primary">暂停</button><button type="button" id="motion-replay">重播</button><button type="button" id="motion-neutral">回中立位</button><label class="speed-label">速度<select id="motion-speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label></div>
+</section>
+<aside class="sidebar" aria-label="关节控制"><div class="panel-heading"><h2>活动关节 · ROM</h2><span class="joint-count">16</span></div><div id="joint-list"></div>
+<p class="model-note">关节运动示意：沿用 SHM 控制表的活动范围与中立位肌腱映射。肌腱随动采用几何近似；拇指 MCP 外展／内收使用补充示意轴。</p></aside>
+</div></main></body></html>

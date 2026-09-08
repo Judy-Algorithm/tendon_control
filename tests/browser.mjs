@@ -23,6 +23,8 @@ async function verifyRender(expected){
 }
 try{
   await page.goto(url);await page.waitForFunction(()=>window.tendonAtlas?.snapshot().ready);
+  // Return the default ROM demonstration to the neutral overview for attachment checks.
+  if((await snapshot()).jointId)await trigger((await snapshot()).jointId).click();
   assert.equal(await page.locator('.joint-trigger').count(),16);
   assert.equal((await snapshot()).boneCount,29);
   const geometry=await snapshot();assert.equal(geometry.geometryRevision,2);assert.equal(geometry.endpoints.length,37);
@@ -82,7 +84,9 @@ try{
   await verifyRender(middle.tendons);
 
   await page.setViewportSize({width:390,height:844});await page.reload();
-  await page.waitForFunction(()=>window.tendonAtlas?.snapshot().ready);await trigger('joint_bone11').click();
+  await page.waitForFunction(()=>window.tendonAtlas?.snapshot().ready);
+  if((await snapshot()).jointId)await trigger((await snapshot()).jointId).click();
+  await trigger('joint_bone11').click();
   await verifyRender(middle.tendons);await action('middle_MCP_flex','positive').click();
   await toggle('FDS3').click();assert.equal(await toggle('FDS3').innerText(),'Display');
   await verifyRender(['FDP3','RI3','LU_RB3','UI_UB3']);
