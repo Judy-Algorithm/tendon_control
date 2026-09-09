@@ -13,7 +13,12 @@ h1{margin:0;font-size:17px;font-weight:600;letter-spacing:.08em}
 .stage{position:relative;min-width:0;overflow:hidden;background:var(--bg)}
 #canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
 #canvas:active{cursor:grabbing}
-#path-labels{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none}
+#path-labels,#bone-labels{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none}
+/* Bone names are quiet, unboxed labels, separate from colored tendon callouts. */
+#bone-labels{pointer-events:none}
+.bone-label-line{stroke:#9ca6a5;stroke-width:.7;opacity:.32;vector-effect:non-scaling-stroke}
+.bone-label-dot{fill:#b4bdb9;opacity:.6}
+.bone-label-text{pointer-events:visiblePainted;cursor:default;fill:#c6ccc8;font-weight:400;letter-spacing:0;paint-order:stroke fill;stroke:#111315;stroke-width:3;stroke-linejoin:round}
 .path-callout{pointer-events:auto;cursor:pointer;outline:none}
 .path-callout rect{fill:#191c1ff0;stroke-width:1}
 .path-callout text{font-size:13px;font-weight:600;letter-spacing:.02em}
@@ -69,7 +74,7 @@ h2{margin:0;font-size:16px;font-weight:550}
 .total strong{font-size:15px;font-weight:550;color:var(--accent);font-variant-numeric:tabular-nums}
 @media(min-width:1600px){.layout{grid-template-columns:minmax(0,1fr) 470px}.joint-trigger{min-height:54px}}
 @media(max-width:1050px){.layout{grid-template-columns:minmax(0,1fr) 380px}.joint-trigger{padding-inline:17px}.joint-detail{padding-inline:12px}.panel-heading{padding-inline:17px}}
-@media(max-width:700px){.app{grid-template-rows:46px minmax(0,1fr)}.topbar{padding:0 17px}h1{font-size:15px}.layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(210px,38svh) auto minmax(0,1fr)}.sidebar{grid-area:3 / 1}.sidebar{border-left:0;border-top:1px solid var(--line)}.panel-heading{padding-block:12px}.joint-trigger{min-height:48px}.path-callout text{font-size:10px}.joint-detail{padding-inline:16px}}
+@media(max-width:700px){.app{grid-template-rows:46px minmax(0,1fr)}.topbar{padding:0 17px}h1{font-size:15px}.layout{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(280px,38svh) auto minmax(0,1fr)}.sidebar{grid-area:3 / 1}.sidebar{border-left:0;border-top:1px solid var(--line)}.panel-heading{padding-block:12px}.joint-trigger{min-height:48px}.path-callout text{font-size:10px}.joint-detail{padding-inline:16px}}
 
 .topbar{gap:18px}
 .preview-badge{font-size:13px;color:var(--accent);border:1px solid #f2c46f45;padding:5px 10px;border-radius:20px}

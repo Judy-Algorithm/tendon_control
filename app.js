@@ -7,6 +7,7 @@ import {FITTED_ROUTES} from './route-data.js';
 import {createAtlasState,formatRange} from './atlas-state.js';
 import {tendonSegments,routeInfluence,rotatePoint} from './motion.js';
 import {MotionController} from './motion-controller.js';
+import {BoneLabels} from './bone-labels.js';
 
 const THREE=window.THREE;
 const atlas=createAtlasState(ATLAS);
@@ -123,6 +124,7 @@ class TendonViewer {
       geo.setIndex(new THREE.BufferAttribute(decode(bone.faces_u16,Uint16Array),1));geo.computeVertexNormals();
       const mesh=new THREE.Mesh(geo,material);mesh.name=bone.name;this.bones.push(mesh);this.scene.add(mesh);
     }
+    this.boneLabels=new BoneLabels(THREE,document.getElementById('bone-labels'),this.bones);
     this.tendons=new Map();const cylinder=new THREE.CylinderGeometry(1,1,1,12);
     const endpointSphere=new THREE.SphereGeometry(.00072,12,8);
     for(const meta of ATLAS.tendons){
@@ -203,7 +205,7 @@ class TendonViewer {
     }
     this.render();
   }
-  render(){this.renderer.render(this.scene,this.camera);this.renderLabels();}
+  render(){this.renderer.render(this.scene,this.camera);this.renderLabels();this.boneLabels.render(this.camera,this.stage.clientWidth,this.stage.clientHeight);}
   renderLabels(){
     const ns='http://www.w3.org/2000/svg',width=this.stage.clientWidth,height=this.stage.clientHeight;
     if(!width||!height)return;
@@ -263,6 +265,7 @@ window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,dir
   scope:[...atlas.scope()],visible:atlas.visible(),highlighted:atlas.state.highlighted,
   rendered:viewer?[...viewer.tendons].filter(([,t])=>t.group.visible).map(([id])=>id):[],
   boneCount:viewer?.bones.length||0,labelIds:[...document.querySelectorAll('.path-callout')].map(n=>n.dataset.tendon),
+  boneLabels:viewer?.boneLabels.snapshot()??[],
   geometryRevision:2,
   endpoints:viewer?[...viewer.tendons].map(([id,t])=>({id,start:t.caps[0].position.toArray(),end:t.caps[1].position.toArray(),
     depthTest:t.material.depthTest,catalog:ATTACHMENT_CATALOG[id]})):[],
