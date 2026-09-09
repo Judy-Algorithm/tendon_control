@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {MODEL} from '../model-data.js';
 import {ATLAS} from '../atlas-data.js';
 import {THREE} from '../scripts/surface-geometry.mjs';
-import {BoneLabels,BONE_NAMES,layoutBoneLabels} from '../bone-labels.js';
+import {BoneLabels,BONE_NAMES,layoutBoneLabels,bonesForPart} from '../bone-labels.js';
 import {buildRig} from '../motion.js';
 
 const overlap=(a,b)=>a.left<b.left+b.w-.001&&a.left+a.w>b.left+.001&&a.top<b.top+b.h-.001&&a.top+a.h>b.top+.001;
@@ -57,26 +57,46 @@ function setPose(rig,degrees){
   mesh.updateMatrixWorld(true);
  }
 }
+test('opening, switching, and closing joints show only the current part and clear old names',()=>{
+ const labels=new BoneLabels(THREE,new SvgNode(),meshes),c=camera('oblique',1000,650);
+ setPose(null,0);
+ const expected={
+  拇指:['1mc','thumbprox','thumbdist'],
+  食指:['2mc','2proxph','2midph','2distph'],
+  中指:['3mc','3proxph','3midph','3distph'],
+  无名指:['4mc','4proxph','4midph','4distph'],
+  小指:['5mc','5proxph','5midph','5distph'],
+  手腕:['ulna','radius','lunate','scaphoid','pisiform','triquetrum','capitate','trapezium','trapezoid','hamate']
+ };
+ // Exercise every accordion entry, including MCP/PIP/DIP of the same finger.
+ for(const part of [null,...ATLAS.joints.map(j=>j.part),null,'中指',null]){
+  labels.render(c,1000,650,part);
+  const ids=expected[part]??[];
+  assert.deepEqual(labels.snapshot().map(l=>l.id).sort(),[...ids].sort());
+  for(const [id,n] of labels.nodes)assert.equal(n.group.style.display==='none',!ids.includes(id),id+' stale label');
+ }
+});
 test('all standard viewpoints and ROM endpoints keep on-screen names collision-free',()=>{
  for(const [w,h] of [[320,280],[390,320],[640,470],[1000,650]])for(const view of Object.keys(views)){
   const labels=new BoneLabels(THREE,new SvgNode(),meshes),c=camera(view,w,h);
-  setPose(null,0);labels.render(c,w,h);assert.ok(labels.placements.length>=25);assertClear(labels.placements,w,h);
+  setPose(null,0);labels.render(c,w,h,'中指');assert.ok(labels.placements.length>0);assertClear(labels.placements,w,h);
   for(const joint of ATLAS.joints)for(const dof of joint.dofs)for(const direction of dof.directions){
    const rig=buildRig(MODEL,joint,dof);setPose(rig,direction.id==='positive'?dof.range.max:dof.range.min);
-   labels.render(c,w,h);assertClear(labels.placements,w,h);
+   labels.render(c,w,h,joint.part);assertClear(labels.placements,w,h);
+   assert.ok(labels.placements.every(l=>bonesForPart(joint.part).includes(l.id)));
   }
  }
  setPose(null,0);
 });
 
-test('leaders follow moved bones, while unrelated bone anchors stay fixed',()=>{
+test('selected finger leaders follow motion while its metacarpal anchor stays fixed',()=>{
  const labels=new BoneLabels(THREE,new SvgNode(),meshes),c=camera('oblique',1000,650);
- setPose(null,0);labels.render(c,1000,650);
+ setPose(null,0);labels.render(c,1000,650,'中指');
  const before=new Map(labels.snapshot().map(l=>[l.id,l.anchor]));
  const joint=ATLAS.joints.find(j=>j.id==='joint_bone11'),rig=buildRig(MODEL,joint,joint.dofs[0]);
- setPose(rig,60);labels.render(c,1000,650);
+ setPose(rig,60);labels.render(c,1000,650,'中指');
  const after=new Map(labels.snapshot().map(l=>[l.id,l.anchor]));
  assert.ok(Math.hypot(...after.get('3proxph').map((v,i)=>v-before.get('3proxph')[i]))>1);
- assert.deepEqual(after.get('2proxph'),before.get('2proxph'));
+ assert.deepEqual(after.get('3mc'),before.get('3mc'));
  setPose(null,0);
 });

@@ -205,7 +205,7 @@ class TendonViewer {
     }
     this.render();
   }
-  render(){this.renderer.render(this.scene,this.camera);this.renderLabels();this.boneLabels.render(this.camera,this.stage.clientWidth,this.stage.clientHeight);}
+  render(){this.renderer.render(this.scene,this.camera);this.renderLabels();this.boneLabels.render(this.camera,this.stage.clientWidth,this.stage.clientHeight,atlas.joint()?.part??null);}
   renderLabels(){
     const ns='http://www.w3.org/2000/svg',width=this.stage.clientWidth,height=this.stage.clientHeight;
     if(!width||!height)return;

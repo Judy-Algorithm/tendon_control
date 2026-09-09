@@ -14,6 +14,14 @@ export const BONE_NAMES=Object.freeze({
   [n+'distph',{name:finger+'远节指骨',short:finger+'远节'}],
  ]))
 });
+const BONE_PARTS={
+ 手腕:['ulna','radius','lunate','scaphoid','pisiform','triquetrum','capitate','trapezium','trapezoid','hamate'],
+ 拇指:['1mc','thumbprox','thumbdist'],
+ ...Object.fromEntries([['2','食指'],['3','中指'],['4','无名指'],['5','小指']].map(([n,part])=>[
+  part,[n+'mc',n+'proxph',n+'midph',n+'distph']
+ ]))
+};
+export function bonesForPart(part){return BONE_PARTS[part]??[];}
 const clamp=(n,a,b)=>Math.min(Math.max(n,a),Math.max(a,b));
 
 // Two inner name columns leave the outer colored tendon-label gutters untouched.
@@ -81,13 +89,14 @@ export class BoneLabels {
    this.nodes.set(mesh.name,{mesh,anchor,meta,group,line,dot,text});
   }
  }
- render(camera,width,height){
+ render(camera,width,height,part=null){
   if(!width||!height)return;
   this.overlay.setAttribute('viewBox',`0 0 ${width} ${height}`);
   const cameraKey=camera.matrixWorld.elements.map(v=>v.toFixed(5)).join(',')+':'+width+':'+height;
-  if(cameraKey!==this.cameraKey){this.cameraKey=cameraKey;this.sides.clear();}
-  const items=[];
+  if(cameraKey!==this.cameraKey||part!==this.part){this.cameraKey=cameraKey;this.part=part;this.sides.clear();}
+  const items=[],scope=new Set(bonesForPart(part));
   for(const [id,n] of this.nodes){
+   if(!scope.has(id)){n.group.style.display='none';continue;}
    const p=n.anchor.clone().applyMatrix4(n.mesh.matrixWorld).project(camera);
    const x=(p.x+1)*width/2,y=(1-p.y)*height/2;
    if(p.z<-1||p.z>1||x<0||x>width||y<0||y>height){n.group.style.display='none';continue;}
