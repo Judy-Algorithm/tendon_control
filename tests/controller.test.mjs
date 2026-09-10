@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {MotionController} from '../motion-controller.js';
 import {MODEL} from '../model-data.js';
-import {ATLAS} from '../atlas-data.js';
+import {CONTROLS as ATLAS} from '../control-data.js';
 
 const nodes=new Map();
 class Control {
@@ -87,4 +87,19 @@ test('reduced motion waits for explicit play',()=>{
  assert.equal(c.playing,false);assert.equal(c.degrees,0);assert.equal(pending.size,0);
  c.resume();assert.equal(c.playing,true);
  globalThis.matchMedia=()=>({matches:false});
+});
+
+test('CMC playback identifies both illustrative ranges and the slider angle belongs to metacarpal five',()=>{
+ const {controller:c,poses}=setup();select(c,'ulnar_CMC_flex','positive');
+ assert.equal(nodes.get('motion-progress').max,'20');
+ assert.match(nodes.get('motion-hint').textContent,/第4掌骨 0–10°.*第5掌骨 0–20°/);
+ nodes.get('motion-progress').value='12';nodes.get('motion-progress').events.input();
+ assert.equal(c.degrees,12);assert.equal(c.playing,false);
+ assert.equal(poses.at(-1).rig.components.length,2);
+ assert.match(nodes.get('motion-angle-label').textContent,/第5掌骨/);
+ c.neutral();assert.equal(c.degrees,0);
+ select(c,'ulnar_CMC_flex','negative');assert.equal(c.degrees,20);
+ select(c,'middle_MCP_flex','positive');
+ assert.equal(c.rig.components,undefined);
+ assert.deepEqual(c.snapshot().affectedBones,['3proxph','3midph','3distph']);
 });

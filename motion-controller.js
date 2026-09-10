@@ -20,7 +20,8 @@ export class MotionController {
     this.rig=buildRig(this.model,joint,dof);this.baseRange=motionRange(dof,direction);this.range={...this.baseRange};this.progress=0;
     this.title.textContent=`${joint.title} · ${direction.label}`;
     this.hint.textContent=this.range.prepositioned?'从预屈曲位伸回 0°':`从中立位${direction.label}至 ${Math.abs(this.range.target).toFixed(1)}°`;
-    if(this.rig.inferred)this.hint.textContent+=' · 补充示意轴';
+    if(dof.hint)this.hint.textContent=dof.hint;
+    else if(this.rig.inferred)this.hint.textContent+=' · 补充示意轴';
     this.slider.min=String(dof.range.min);this.slider.max=String(dof.range.max);
     document.getElementById('motion-min').textContent=`${dof.range.min.toFixed(1)}°`;
     document.getElementById('motion-max').textContent=`${dof.range.max.toFixed(1)}°`;
@@ -52,7 +53,7 @@ export class MotionController {
     const label=Math.abs(degrees)<.05?'中立位':degrees<0?this.dof.range.negativeLabel:this.dof.range.positiveLabel;
     this.angle.textContent=`${Math.abs(degrees).toFixed(1)}°`;
     this.slider.value=String(degrees);this.slider.setAttribute('aria-valuetext',`${label} ${Math.abs(degrees).toFixed(1)} 度`);
-    document.getElementById('motion-angle-label').textContent=label;
+    document.getElementById('motion-angle-label').textContent=this.dof.angleLabel?`${this.dof.angleLabel} · ${label}`:label;
   }
   snapshot(){return {key:this.key,angle:this.degrees??0,playing:this.playing,progress:this.progress,affectedBones:this.rig?[...this.rig.affected]:[],inferredAxis:Boolean(this.rig?.inferred)};}
 }

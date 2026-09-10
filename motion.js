@@ -1,4 +1,5 @@
-// Geometry-only ROM demonstration. Angles and muscle associations follow ATLAS.
+// Geometry-only ROM demonstration. Original angles and muscle associations follow ATLAS.
+// Supplemental CMC coupling is illustrative; see control-data.js and docs/cmc-coupling.md.
 // This is prescribed kinematics; route blending is not a muscle-force solver.
 export const sub=(a,b)=>a.map((v,i)=>v-b[i]);
 export const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
@@ -7,7 +8,53 @@ export const unit=a=>{const n=Math.hypot(...a);if(n<1e-10)throw new Error('Degen
 const fingers={index:2,middle:3,ring:4,pinky:5};
 const thumbTendons=new Set(['EPL','EPB','FPL','APL','OP']);
 
+// Estimate an unsegmented CMC hinge center from the proximal 3 mm of the metacarpal.
+// Native model coordinates point proximally along +Y and palmarly along +X.
+export function metacarpalBase(model,name){
+  const bone=model.bones.find(b=>b.name===name);
+  if(!bone)throw new Error(`Missing metacarpal ${name}`);
+  const bytes=Uint8Array.from(atob(bone.vertices_i16),c=>c.charCodeAt(0));
+  const vertices=new Int16Array(bytes.buffer);
+  let maxY=-Infinity;
+  for(let i=1;i<vertices.length;i+=3)maxY=Math.max(maxY,vertices[i]*model.quant);
+  const sum=[0,0,0];let count=0;
+  for(let i=0;i<vertices.length;i+=3)if(vertices[i+1]*model.quant>=maxY-.003){
+    for(let j=0;j<3;j++)sum[j]+=vertices[i+j]*model.quant;
+    count++;
+  }
+  return sum.map(v=>v/count);
+}
+export function jointAnchor(model,joint){
+  if(joint.anchorBones){
+    const points=joint.anchorBones.map(name=>metacarpalBase(model,name));
+    return points[0].map((_,i)=>points.reduce((s,p)=>s+p[i],0)/points.length);
+  }
+  const native=model.joints.find(j=>j.name===joint.anchor);
+  if(!native)throw new Error(`Missing joint ${joint.anchor}`);
+  return native.anchor_i16.map(v=>v*model.quant);
+}
+export function rigForBone(rig,name){
+  if(!rig)return null;
+  if(rig.components)return rig.components.find(r=>r.affected.has(name))??null;
+  return rig.affected.has(name)?rig:null;
+}
+export function rigForTendon(rig,id){
+  if(!rig)return null;
+  if(rig.components)return rig.components.find(r=>r.tendonMatches(id))??null;
+  return rig.tendonMatches(id)?rig:null;
+}
 export function buildRig(model,joint,dof){
+  if(dof.motion?.type==='coupled-cmc'){
+    const components=dof.motion.segments.map(({digit,ratio})=>{
+      const pivot=metacarpalBase(model,`${digit}mc`);
+      const distal=model.joints.find(j=>j.name===`mcp${digit}_flexion`).anchor_i16.map(v=>v*model.quant);
+      const downstream=unit(sub(distal,pivot));
+      return {id:`cmc${digit}`,pivot,downstream,axis:unit(cross(downstream,[1,0,0])),ratio,inferred:true,
+        affected:new Set([`${digit}mc`,`${digit}proxph`,`${digit}midph`,`${digit}distph`]),
+        tendonMatches:id=>id.endsWith(String(digit))||(digit===5&&id==='EDM')};
+    });
+    return {id:dof.id,components,inferred:true,affected:new Set(components.flatMap(r=>[...r.affected]))};
+  }
   const native=name=>{const n=model.joints.find(j=>j.name===name);if(!n)throw new Error(`Missing joint ${name}`);return n;};
   const anchor=n=>n.anchor_i16.map(v=>v*model.quant);
   const [finger,level,kind]=dof.id.split('_');
@@ -45,7 +92,8 @@ export function rotatePoint(point,rig,degrees){
 }
 
 export function routeInfluence(point,rig,tendonId){
-  if(!rig||!rig.tendonMatches(tendonId))return 0;
+  rig=rigForTendon(rig,tendonId);
+  if(!rig)return 0;
   const s=dot(sub(point,rig.pivot),rig.downstream);
   const t=Math.max(0,Math.min(1,(s+.004)/.008));
   return t*t*(3-2*t);
@@ -73,7 +121,8 @@ export function tendonSegments(model,meta,fitted){
 export function motionRange(dof,direction){
   const target=direction.id==='positive'?dof.range.max:dof.range.min;
   // Zero-range extension needs a flexed starting pose, then moves monotonically to 0.
-  const start=Math.abs(target)<1e-8?(direction.id==='negative'?dof.range.max:dof.range.min)*.65:0;
+  const fraction=dof.motion?.type==='coupled-cmc'?1:.65;
+  const start=Math.abs(target)<1e-8?(direction.id==='negative'?dof.range.max:dof.range.min)*fraction:0;
   return {start,target,prepositioned:Math.abs(start)>1e-8};
 }
 

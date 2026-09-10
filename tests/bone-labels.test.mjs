@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {MODEL} from '../model-data.js';
-import {ATLAS} from '../atlas-data.js';
+import {CONTROLS as ATLAS} from '../control-data.js';
 import {THREE} from '../scripts/surface-geometry.mjs';
 import {BoneLabels,BONE_NAMES,layoutBoneLabels,bonesForPart} from '../bone-labels.js';
-import {buildRig} from '../motion.js';
+import {buildRig,rigForBone} from '../motion.js';
 
 const overlap=(a,b)=>a.left<b.left+b.w-.001&&a.left+a.w>b.left+.001&&a.top<b.top+b.h-.001&&a.top+a.h>b.top+.001;
 function assertClear(labels,w,h){
@@ -49,10 +49,11 @@ function camera(view,w,h){
  c.updateMatrixWorld(true);return c;
 }
 function setPose(rig,degrees){
- const q=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(...(rig?.axis??[0,0,1])),degrees*Math.PI/180);
  for(const mesh of meshes){
-  if(rig?.affected.has(mesh.name)){
-   const pivot=new THREE.Vector3(...rig.pivot);mesh.quaternion.copy(q);mesh.position.copy(pivot).sub(pivot.clone().applyQuaternion(q));
+  const component=rigForBone(rig,mesh.name);
+  if(component){
+   const q=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(...component.axis),degrees*(component.ratio??1)*Math.PI/180);
+   const pivot=new THREE.Vector3(...component.pivot);mesh.quaternion.copy(q);mesh.position.copy(pivot).sub(pivot.clone().applyQuaternion(q));
   }else{mesh.quaternion.identity();mesh.position.set(0,0,0);}
   mesh.updateMatrixWorld(true);
  }
@@ -61,6 +62,7 @@ test('opening, switching, and closing joints show only the current part and clea
  const labels=new BoneLabels(THREE,new SvgNode(),meshes),c=camera('oblique',1000,650);
  setPose(null,0);
  const expected={
+  尺侧手掌:['4mc','4proxph','4midph','4distph','5mc','5proxph','5midph','5distph'],
   拇指:['1mc','thumbprox','thumbdist'],
   食指:['2mc','2proxph','2midph','2distph'],
   中指:['3mc','3proxph','3midph','3distph'],

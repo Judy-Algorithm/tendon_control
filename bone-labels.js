@@ -15,6 +15,7 @@ export const BONE_NAMES=Object.freeze({
  ]))
 });
 const BONE_PARTS={
+ 尺侧手掌:['4mc','4proxph','4midph','4distph','5mc','5proxph','5midph','5distph'],
  手腕:['ulna','radius','lunate','scaphoid','pisiform','triquetrum','capitate','trapezium','trapezoid','hamate'],
  拇指:['1mc','thumbprox','thumbdist'],
  ...Object.fromEntries([['2','食指'],['3','中指'],['4','无名指'],['5','小指']].map(([n,part])=>[

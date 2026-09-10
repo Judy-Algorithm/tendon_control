@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {chromium} from 'playwright';
-import {ATLAS} from '../atlas-data.js';
+import {CONTROLS as ATLAS} from '../control-data.js';
 import {FITTED_ROUTES} from '../route-data.js';
 
 const browser=await chromium.launch({channel:process.env.BROWSER_CHANNEL||'chrome',headless:true,args:['--enable-unsafe-swiftshader']});
@@ -25,7 +25,7 @@ try{
   await page.goto(url);await page.waitForFunction(()=>window.tendonAtlas?.snapshot().ready);
   // Return the default ROM demonstration to the neutral overview for attachment checks.
   if((await snapshot()).jointId)await trigger((await snapshot()).jointId).click();
-  assert.equal(await page.locator('.joint-trigger').count(),16);
+  assert.equal(await page.locator('.joint-trigger').count(),17);
   assert.equal((await snapshot()).boneCount,29);
   const geometry=await snapshot();assert.equal(geometry.geometryRevision,2);assert.equal(geometry.endpoints.length,37);
   for(const e of geometry.endpoints){
@@ -57,7 +57,7 @@ try{
   assert.equal((await snapshot()).highlighted,'EDC3');
   assert.ok((await page.locator('.path-list:not([hidden])').innerText()).includes('指总伸肌'));
 
-  // Real browser checks traverse all 46 actions, including the empty side of thumb MCP.
+  // Real browser checks traverse all 48 actions, including the empty side of thumb MCP.
   let actionCount=0;
   for(const joint of ATLAS.joints){
     if((await snapshot()).jointId===joint.id)await trigger(joint.id).click();
@@ -71,7 +71,7 @@ try{
       }
     }
   }
-  assert.equal(actionCount,46);
+  assert.equal(actionCount,48);
   await trigger('joint_bone2').click();await action('thumb_MCP_abd','negative').click();await verifyRender([]);
   assert.equal(await page.locator('.path-list:not([hidden])').innerText(),'无');
 

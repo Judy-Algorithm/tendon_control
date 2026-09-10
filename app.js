@@ -2,15 +2,16 @@ import './vendor/three.min.js';
 import './vendor/orbit-controls.js';
 import {MODEL} from './model-data.js';
 import {ATLAS} from './atlas-data.js';
+import {CONTROLS} from './control-data.js';
 import {ATTACHMENT_CATALOG,endpointText} from './attachment-catalog.js';
 import {FITTED_ROUTES} from './route-data.js';
 import {createAtlasState,formatRange} from './atlas-state.js';
-import {tendonSegments,routeInfluence,rotatePoint} from './motion.js';
+import {tendonSegments,routeInfluence,rotatePoint,rigForBone,rigForTendon,jointAnchor} from './motion.js';
 import {MotionController} from './motion-controller.js';
 import {BoneLabels} from './bone-labels.js';
 
 const THREE=window.THREE;
-const atlas=createAtlasState(ATLAS);
+const atlas=createAtlasState(CONTROLS);
 const tendonMeta=new Map(ATLAS.tendons.map(t=>[t.id,t]));
 const specialColors={FDS3:'#ef6975',FDP3:'#eeb85b',EDC3:'#6aa2fa',RI3:'#57cca0',LU_RB3:'#b68af0',UI_UB3:'#61d7df'};
 const colorFor=id=>specialColors[id]||`hsl(${Math.round(tendonMeta.get(id).modelIndex*137.508)%360},65%,66%)`;
@@ -23,7 +24,7 @@ function key(dofId,id){return `${dofId}:${id}`;}
 
 function buildPanel(){
   const catalog=document.getElementById('joint-list');
-  for(const joint of ATLAS.joints){
+  for(const joint of CONTROLS.joints){
     const article=element('section','joint-item');article.dataset.jointId=joint.id;
     const trigger=element('button','joint-trigger');trigger.type='button';
     trigger.setAttribute('aria-expanded','false');trigger.setAttribute('aria-controls',`${joint.id}-detail`);
@@ -35,7 +36,7 @@ function buildPanel(){
     for(const dof of joint.dofs){
       const card=element('section','dof-card');card.dataset.dofId=dof.id;
       const head=element('div','dof-head');head.append(element('h3','dof-title',dof.action));
-      const range=element('dl','range');range.append(element('dt','','活动范围'),element('dd','',formatRange(dof.range)));head.append(range);
+      const range=element('dl','range');range.append(element('dt','',dof.rangeLabel??'活动范围'),element('dd','',formatRange(dof.range)));head.append(range);
       card.append(head,element('p','neutral-label','中立位'));
       const directions=element('div','directions');const lists=[];
       for(const action of dof.directions){
@@ -43,7 +44,7 @@ function buildPanel(){
         const button=element('button','direction');button.type='button';button.dataset.actionKey=actionKey;
         button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls',`${actionKey}-paths`);
         const title=element('span','direction-title',action.label);
-        button.append(title,element('span','direction-codes',action.tendons.length?action.tendons.join(' · '):'无'));
+        button.append(title,element('span','direction-codes',action.tendons.length?action.tendons.join(' · '):(joint.supplemental?'掌骨联动':'无')));
         button.addEventListener('click',()=>{
           if(atlas.state.direction&&key(atlas.state.direction.dofId,atlas.state.direction.id)===actionKey){motion?.replay();return;}
           atlas.selectDirection(dof.id,action.id);
@@ -62,12 +63,12 @@ function buildPanel(){
           toggle.addEventListener('click',()=>{atlas.toggleTendon(id);refresh();});
           row.append(name,toggle);list.append(row);nodes.rows.push({id,row,toggle});
         }
-        if(!action.tendons.length)list.append(element('li','empty-action','无'));
+        if(!action.tendons.length)list.append(element('li','empty-action',joint.supplemental?'CMC 肌腱关联尚未配置':'无'));
         directions.append(button);lists.push(list);nodes.directions.set(actionKey,{jointId:joint.id,button,list});
       }
       card.append(directions,...lists);detail.append(card);
     }
-    const total=element('div','total');total.append(element('span','','总关联的肌腱通道'),element('strong','',String(joint.tendons.length)));detail.append(total);
+    const total=element('div','total');total.append(element('span','','总关联的肌腱通道'),element('strong','',String(joint.tendons.length)));if(!joint.supplemental)detail.append(total);
     article.append(trigger,detail);catalog.append(article);nodes.joints.set(joint.id,{trigger,detail});
   }
 }
@@ -183,15 +184,17 @@ class TendonViewer {
   }
   setPose(rig,degrees){
     const changed=this.poseRig!==rig;this.poseRig=rig;this.poseAngle=degrees;
-    const q=rig?new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(...rig.axis),degrees*Math.PI/180):new THREE.Quaternion();
     for(const mesh of this.bones){
-      if(rig?.affected.has(mesh.name)){
-        const pivot=new THREE.Vector3(...rig.pivot);mesh.quaternion.copy(q);mesh.position.copy(pivot).sub(pivot.clone().applyQuaternion(q));
+      const component=rigForBone(rig,mesh.name);
+      if(component){
+        const q=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(...component.axis),degrees*(component.ratio??1)*Math.PI/180);
+        const pivot=new THREE.Vector3(...component.pivot);mesh.quaternion.copy(q);mesh.position.copy(pivot).sub(pivot.clone().applyQuaternion(q));
       }else{mesh.quaternion.identity();mesh.position.set(0,0,0);}
     }
     for(const [id,t] of this.tendons){
       if(changed||t.weights.length!==t.points.length)t.weights=t.points.map(p=>routeInfluence(p,rig,id));
-      const posed=t.points.map((p,i)=>rotatePoint(p,rig,degrees*t.weights[i]));
+      const component=rigForTendon(rig,id);
+      const posed=t.points.map((p,i)=>rotatePoint(p,component,degrees*(component?.ratio??1)*t.weights[i]));
       t.segments.forEach(([a,b],i)=>{
         a.fromArray(posed[2*i]);b.fromArray(posed[2*i+1]);
         this.dummy.position.copy(a).add(b).multiplyScalar(.5);
@@ -212,8 +215,7 @@ class TendonViewer {
     const svg=(tag,attrs={})=>{const n=document.createElementNS(ns,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,String(v));return n;};
     this.overlay.replaceChildren();this.overlay.setAttribute('viewBox',`0 0 ${width} ${height}`);
     const selectedJoint=atlas.joint();if(!selectedJoint)return;
-    const nativeJoint=MODEL.joints.find(j=>j.name===selectedJoint.anchor);
-    const anchor=new THREE.Vector3(...nativeJoint.anchor_i16).multiplyScalar(MODEL.quant);
+    const anchor=new THREE.Vector3(...jointAnchor(MODEL,selectedJoint));
     const visible=atlas.visible();const candidates=[];
     const labelWidth=width<500?72:86, labelHeight=width<500?22:25;
     for(const [index,id]of visible.entries()){
