@@ -8,7 +8,7 @@ import {FITTED_ROUTES} from './route-data.js';
 import {createAtlasState,formatRange} from './atlas-state.js';
 import {tendonSegments,routeInfluence,rotatePoint,rigForBone,rigForTendon,jointAnchor} from './motion.js';
 import {MotionController} from './motion-controller.js';
-import {BoneLabels} from './bone-labels.js';
+import {BoneHover} from './bone-hover.js';
 import {SideLabels} from './side-labels.js';
 
 const THREE=window.THREE;
@@ -126,7 +126,6 @@ class TendonViewer {
       geo.setIndex(new THREE.BufferAttribute(decode(bone.faces_u16,Uint16Array),1));geo.computeVertexNormals();
       const mesh=new THREE.Mesh(geo,material);mesh.name=bone.name;this.bones.push(mesh);this.scene.add(mesh);
     }
-    this.boneLabels=new BoneLabels(THREE,document.getElementById('bone-labels'),this.bones);
     this.sideLabels=new SideLabels(THREE,document.getElementById('side-labels'),this.bones);
     this.tendons=new Map();const cylinder=new THREE.CylinderGeometry(1,1,1,12);
     const endpointSphere=new THREE.SphereGeometry(.00072,12,8);
@@ -147,6 +146,9 @@ class TendonViewer {
       });
       this.tendons.set(meta.id,{group,material,segments,caps,mesh,points,weights:[],radius:.00072});this.scene.add(group);
     }
+    this.boneHover=new BoneHover(THREE,this.canvas,this.stage,this.bones,()=>this.render(),
+      ()=>[...this.tendons.values()].filter(t=>t.group.visible).flatMap(t=>t.group.children));
+    this.controls.addEventListener('start',()=>this.boneHover.clear());
     this.poseRig=null;this.poseAngle=0;this.dummy=new THREE.Object3D();this.up=new THREE.Vector3(0,1,0);
     this.setPose(null,0);
     for(const button of document.querySelectorAll('[data-view]'))button.addEventListener('click',()=>{
@@ -213,8 +215,8 @@ class TendonViewer {
   render(){
     this.renderer.render(this.scene,this.camera);this.renderLabels();
     const width=this.stage.clientWidth,height=this.stage.clientHeight;
-    this.boneLabels.render(this.camera,width,height,atlas.joint()?.part??null);
-    this.sideLabels.render(this.camera,width,height,[...this.boneLabels.snapshot(),...this.pathLabelBounds]);
+    this.boneHover.render(this.camera);
+    this.sideLabels.render(this.camera,width,height,this.pathLabelBounds);
   }
   renderLabels(){
     const ns='http://www.w3.org/2000/svg',width=this.stage.clientWidth,height=this.stage.clientHeight;
@@ -276,7 +278,7 @@ window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,dir
   scope:[...atlas.scope()],visible:atlas.visible(),highlighted:atlas.state.highlighted,
   rendered:viewer?[...viewer.tendons].filter(([,t])=>t.group.visible).map(([id])=>id):[],
   boneCount:viewer?.bones.length||0,labelIds:[...document.querySelectorAll('.path-callout')].map(n=>n.dataset.tendon),
-  boneLabels:viewer?.boneLabels.snapshot()??[],
+  boneLabels:[],boneHover:viewer?.boneHover.snapshot()??null,
   sideLabels:viewer?.sideLabels.snapshot()??[],
   geometryRevision:2,
   endpoints:viewer?[...viewer.tendons].map(([id,t])=>({id,start:t.caps[0].position.toArray(),end:t.caps[1].position.toArray(),

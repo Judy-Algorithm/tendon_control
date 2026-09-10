@@ -13,12 +13,8 @@ h1{margin:0;font-size:17px;font-weight:600;letter-spacing:.08em}
 .stage{position:relative;min-width:0;overflow:hidden;background:var(--bg)}
 #canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
 #canvas:active{cursor:grabbing}
-#path-labels,#bone-labels,#side-labels{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none}
-/* Bone names are quiet, unboxed labels, separate from colored tendon callouts. */
-#bone-labels{pointer-events:none}
-.bone-label-line{stroke:#9ca6a5;stroke-width:.7;opacity:.32;vector-effect:non-scaling-stroke}
-.bone-label-dot{fill:#b4bdb9;opacity:.6}
-.bone-label-text{pointer-events:visiblePainted;cursor:default;fill:#c6ccc8;font-weight:400;letter-spacing:0;paint-order:stroke fill;stroke:#111315;stroke-width:3;stroke-linejoin:round}
+#path-labels,#side-labels{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none}
+.bone-hover{position:absolute;z-index:4;pointer-events:none;user-select:none;max-width:calc(100% - 12px);padding:5px 9px;border:1px solid var(--line);border-radius:5px;background:#191c1ff5;color:var(--text);font-size:14px;line-height:1.4;white-space:nowrap}
 /* Anatomical direction labels stay quiet and do not intercept orbit or tendon clicks. */
 .side-label-line{stroke:#d5c19a;stroke-width:.8;opacity:.65;vector-effect:non-scaling-stroke}
 .side-label-bg{fill:#191c1fe8;stroke:#d5c19a40;stroke-width:.7}
