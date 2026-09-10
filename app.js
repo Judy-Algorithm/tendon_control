@@ -270,8 +270,7 @@ class TendonViewer {
 
 buildPanel();
 try{viewer=new TendonViewer();motion=new MotionController(viewer,MODEL);}catch(error){document.getElementById('model-error').hidden=false;console.error(error);}
-atlas.openJoint('joint_bone11');
-atlas.selectDirection('middle_MCP_flex','positive');
+// Start at neutral; select a ROM action to begin playback.
 refresh();
 // Read-only inspection lets integration checks verify actual rendered visibility.
 window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,direction:atlas.state.direction,
