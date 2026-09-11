@@ -1,18 +1,34 @@
+export function normalizeMuscleCode(value){return value.normalize('NFKC').toUpperCase().replace(/[\s_-]+/g,'');}
+export function findMuscles(tendons,query){
+  const code=normalizeMuscleCode(query);
+  if(!code)return [];
+  const exact=tendons.find(t=>normalizeMuscleCode(t.id)===code);
+  return exact?[exact.id]:tendons.filter(t=>normalizeMuscleCode(t.id).startsWith(code)).map(t=>t.id);
+}
+
 export function createAtlasState(atlas) {
   const joints=new Map(atlas.joints.map(j=>[j.id,j]));
   const tendons=new Set(atlas.tendons.map(t=>t.id));
-  const state={jointId:null,direction:null,hidden:new Set(),highlighted:null};
+  const state={jointId:null,direction:null,search:'',searchIds:[],hidden:new Set(),highlighted:null};
   function joint(){return joints.get(state.jointId)||null;}
   function action(){
     if(!state.direction)return null;
     return joint()?.dofs.find(d=>d.id===state.direction.dofId)?.directions.find(d=>d.id===state.direction.id)||null;
   }
-  function scope(){return action()?.tendons??joint()?.tendons??[];}
+  function scope(){return state.search?state.searchIds:action()?.tendons??joint()?.tendons??[];}
   return {
     state,joint,action,scope,
     visible(){return scope().filter(id=>!state.hidden.has(id));},
+    setSearch(query){
+      state.search=query.trim();state.searchIds=findMuscles(atlas.tendons,state.search);
+      state.jointId=null;state.direction=null;
+      state.highlighted=state.searchIds.length===1?state.searchIds[0]:null;
+      // A direct search explicitly reveals matching paths even if they were hidden in ROM.
+      for(const id of state.searchIds)state.hidden.delete(id);
+    },
     openJoint(id){
       if(id!==null&&!joints.has(id))throw new Error('Unknown joint');
+      state.search='';state.searchIds=[];
       state.jointId=id;state.direction=null;state.highlighted=null;
     },
     selectDirection(dofId,id){

@@ -15,6 +15,14 @@
 <div class="range-ends"><span id="motion-min"></span><span id="motion-max"></span></div>
 <div class="motion-actions"><button type="button" id="motion-play" class="primary">播放</button><button type="button" id="motion-neutral">回中立位</button></div>
 </section>
-<aside class="sidebar" aria-label="关节控制"><div class="panel-heading"><h2>活动关节 · ROM</h2><span class="joint-count">17</span></div><div id="joint-list"></div>
+<aside class="sidebar" aria-label="关节控制"><div class="sidebar-header">
+<form id="muscle-search-form" class="muscle-search" role="search" aria-label="肌肉缩写搜索">
+<label for="muscle-search-input">肌肉搜索</label>
+<div class="muscle-search-field"><input id="muscle-search-input" type="search" placeholder="输入缩写，如 FDS3 或 FDP" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" aria-describedby="muscle-search-status" aria-controls="muscle-search-results"><button id="muscle-search-clear" type="button" aria-label="清除肌肉搜索" hidden>清除</button></div>
+<p id="muscle-search-status" role="status" aria-live="polite">输入缩写，在手模上查看对应肌腱通路</p>
+<ul id="muscle-search-results" class="muscle-search-results" aria-label="匹配的肌肉" hidden></ul>
+</form>
+<div class="panel-heading"><h2>活动关节 · ROM</h2><span class="joint-count">17</span></div>
+</div><div id="joint-list"></div>
 </aside>
 </div></main></body></html>

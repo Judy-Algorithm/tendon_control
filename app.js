@@ -10,6 +10,7 @@ import {tendonSegments,routeInfluence,rotatePoint,rigForBone,rigForTendon,jointA
 import {MotionController} from './motion-controller.js';
 import {BoneHover} from './bone-hover.js';
 import {SideLabels} from './side-labels.js';
+import {MuscleSearch} from './muscle-search.js';
 
 const THREE=window.THREE;
 const atlas=createAtlasState(CONTROLS);
@@ -17,7 +18,7 @@ const tendonMeta=new Map(ATLAS.tendons.map(t=>[t.id,t]));
 const specialColors={FDS3:'#ef6975',FDP3:'#eeb85b',EDC3:'#6aa2fa',RI3:'#57cca0',LU_RB3:'#b68af0',UI_UB3:'#61d7df'};
 const colorFor=id=>specialColors[id]||`hsl(${Math.round(tendonMeta.get(id).modelIndex*137.508)%360},65%,66%)`;
 const nodes={joints:new Map(),directions:new Map(),rows:[]};
-let viewer,motion;
+let viewer,motion,search;
 function element(tag,className,text){
   const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;
 }
@@ -75,6 +76,7 @@ function buildPanel(){
 }
 
 function selectTendon(id){
+  if(atlas.state.search){atlas.highlight(id);refresh();return;}
   const joint=atlas.joint();if(!joint)return;
   if(!atlas.action()?.tendons.includes(id)){
     outer:for(const dof of joint.dofs)for(const action of dof.directions)if(action.tendons.includes(id)){
@@ -84,6 +86,7 @@ function selectTendon(id){
   atlas.highlight(id);refresh();
 }
 function refresh(){
+  search?.refresh();
   const actionKey=atlas.state.direction?key(atlas.state.direction.dofId,atlas.state.direction.id):null;
   for(const [id,n] of nodes.joints){const open=id===atlas.state.jointId;n.trigger.setAttribute('aria-expanded',String(open));n.detail.hidden=!open;}
   for(const [id,n] of nodes.directions){const open=n.jointId===atlas.state.jointId&&id===actionKey;n.button.setAttribute('aria-expanded',String(open));n.list.hidden=!open;}
@@ -224,9 +227,9 @@ class TendonViewer {
     if(!width||!height)return;
     const svg=(tag,attrs={})=>{const n=document.createElementNS(ns,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,String(v));return n;};
     this.overlay.replaceChildren();this.overlay.setAttribute('viewBox',`0 0 ${width} ${height}`);
-    const selectedJoint=atlas.joint();if(!selectedJoint)return;
-    const anchor=new THREE.Vector3(...jointAnchor(MODEL,selectedJoint));
-    const visible=atlas.visible();const candidates=[];
+    const selectedJoint=atlas.joint(),visible=atlas.visible();if(!visible.length)return;
+    const anchor=selectedJoint?new THREE.Vector3(...jointAnchor(MODEL,selectedJoint)):new THREE.Vector3(0,-.10,0);
+    const candidates=[];
     const labelWidth=width<500?72:86, labelHeight=width<500?22:25;
     for(const [index,id]of visible.entries()){
       const segments=this.tendons.get(id).segments;
@@ -269,11 +272,12 @@ class TendonViewer {
 }
 
 buildPanel();
+search=new MuscleSearch(atlas,ATLAS.tendons,refresh);
 try{viewer=new TendonViewer();motion=new MotionController(viewer,MODEL);}catch(error){document.getElementById('model-error').hidden=false;console.error(error);}
 // Start at neutral; select a ROM action to begin playback.
 refresh();
 // Read-only inspection lets integration checks verify actual rendered visibility.
-window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,direction:atlas.state.direction,
+window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,direction:atlas.state.direction,search:atlas.state.search,
   scope:[...atlas.scope()],visible:atlas.visible(),highlighted:atlas.state.highlighted,
   rendered:viewer?[...viewer.tendons].filter(([,t])=>t.group.visible).map(([id])=>id):[],
   boneCount:viewer?.bones.length||0,labelIds:[...document.querySelectorAll('.path-callout')].map(n=>n.dataset.tendon),

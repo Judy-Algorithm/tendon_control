@@ -117,3 +117,23 @@ select{border:1px solid #535b63;color:var(--text);border-radius:7px;background:v
 }
 @media(max-height:740px) and (min-width:701px){.motion-controls{padding:10px 24px}#motion-hint{margin:5px 0 6px}.motion-actions{margin-top:6px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.sidebar-header{position:sticky;top:0;z-index:3;background:var(--panel)}
+.sidebar-header .panel-heading{position:static}
+.muscle-search{margin:0;padding:16px 22px 0}
+.muscle-search>label{display:block;margin-bottom:8px;font-size:14px;font-weight:550}
+.muscle-search-field{display:flex;align-items:center;gap:6px;border:1px solid #59616a;border-radius:7px;background:var(--bg);padding:3px 5px 3px 10px}
+.muscle-search-field:focus-within{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+#muscle-search-input{min-width:0;width:100%;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:16px;padding:7px 0}
+#muscle-search-input::placeholder{color:var(--muted);font-size:14px}
+#muscle-search-input::-webkit-search-cancel-button{-webkit-appearance:none}
+#muscle-search-clear{flex-shrink:0;border:0;border-radius:4px;background:transparent;color:var(--muted);padding:8px 6px;font-size:13px}
+#muscle-search-clear:hover{color:var(--accent)}
+#muscle-search-status{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+.muscle-search-results{list-style:none;margin:10px 0 0;padding:0;max-height:144px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.muscle-search-result{display:flex;align-items:baseline;gap:12px;width:100%;min-height:38px;border:0;border-radius:4px;background:transparent;padding:8px;text-align:left}
+.muscle-search-result:hover,.muscle-search-result[aria-pressed="true"]{background:#f2c46f12}
+.muscle-search-result strong{flex-shrink:0;font:600 14px ui-monospace,Consolas,monospace;color:var(--accent)}
+.muscle-search-result span{min-width:0;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+@media(max-width:1050px){.muscle-search{padding-inline:17px}}
+@media(max-width:700px){.sidebar-header{position:static}.muscle-search{padding-top:12px}.muscle-search-results{max-height:114px}}

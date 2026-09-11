@@ -15,7 +15,7 @@ export class MotionController {
   }
   select(joint,dof,direction){
     const next=direction?`${dof.id}:${direction.id}`:null;if(next===this.key)return;
-    this.pause();this.key=next;this.viewer.setPose(null,0);this.rig=null;
+    this.pause();this.key=next;this.viewer.setPose(null,0);this.rig=null;this.degrees=0;this.progress=0;
     this.root.hidden=!direction;if(!direction)return;
     this.rig=buildRig(this.model,joint,dof);this.baseRange=motionRange(dof,direction);this.range={...this.baseRange};this.progress=0;
     this.title.textContent=`${joint.title} · ${direction.label}`;
