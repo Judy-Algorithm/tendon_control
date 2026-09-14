@@ -2,13 +2,14 @@ export function normalizeMuscleCode(value){return value.normalize('NFKC').toUppe
 export function findMuscles(tendons,query){
   const code=normalizeMuscleCode(query);
   if(!code)return [];
-  const exact=tendons.find(t=>normalizeMuscleCode(t.id)===code);
-  return exact?[exact.id]:tendons.filter(t=>normalizeMuscleCode(t.id).startsWith(code)).map(t=>t.id);
+  const modelName=tendon=>tendon.modelName??tendon.id;
+  const exact=tendons.find(t=>normalizeMuscleCode(modelName(t))===code);
+  return exact?[modelName(exact)]:tendons.filter(t=>normalizeMuscleCode(modelName(t)).startsWith(code)).map(modelName);
 }
 
-export function createAtlasState(atlas) {
+export function createAtlasState(atlas,searchMuscles=atlas.tendons) {
   const joints=new Map(atlas.joints.map(j=>[j.id,j]));
-  const tendons=new Set(atlas.tendons.map(t=>t.id));
+  const tendons=new Set([...atlas.tendons.map(t=>t.id),...searchMuscles.map(t=>t.modelName??t.id)]);
   const state={jointId:null,direction:null,search:'',searchIds:[],hidden:new Set(),highlighted:null};
   function joint(){return joints.get(state.jointId)||null;}
   function action(){
@@ -20,7 +21,7 @@ export function createAtlasState(atlas) {
     state,joint,action,scope,
     visible(){return scope().filter(id=>!state.hidden.has(id));},
     setSearch(query){
-      state.search=query.trim();state.searchIds=findMuscles(atlas.tendons,state.search);
+      state.search=query.trim();state.searchIds=findMuscles(searchMuscles,state.search);
       state.jointId=null;state.direction=null;
       state.highlighted=state.searchIds.length===1?state.searchIds[0]:null;
       // A direct search explicitly reveals matching paths even if they were hidden in ROM.

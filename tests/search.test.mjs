@@ -6,21 +6,24 @@ import {MODEL} from '../model-data.js';
 import {createAtlasState,findMuscles} from '../atlas-state.js';
 import {MuscleSearch} from '../muscle-search.js';
 import {MotionController} from '../motion-controller.js';
+import {ENDPOINTS} from '../endpoint-data.js';
+import {OPENSIM_MUSCLES} from '../opensim-muscles.js';
 
-test('every enabled abbreviation resolves exactly, including case, separators and full-width input',()=>{
-  for(const tendon of ATLAS.tendons){
-    for(const query of [tendon.id,tendon.id.toLowerCase(),tendon.id.replaceAll('_',' '),tendon.id.replaceAll('_','-')]){
-      assert.deepEqual(findMuscles(ATLAS.tendons,query),[tendon.id]);
+test('search catalog uses every OpenSim control-table name exactly',()=>{
+  assert.deepEqual(OPENSIM_MUSCLES.map(t=>t.modelName),Object.keys(ENDPOINTS.tendons));
+  for(const tendon of OPENSIM_MUSCLES){
+    for(const query of [tendon.modelName,tendon.modelName.toLowerCase(),tendon.modelName.replaceAll('_',' '),tendon.modelName.replaceAll('_','-')]){
+      assert.deepEqual(findMuscles(OPENSIM_MUSCLES,query),[tendon.modelName]);
     }
   }
-  assert.deepEqual(findMuscles(ATLAS.tendons,' ｆｄｓ３ '),['FDS3']);
-  assert.deepEqual(findMuscles(ATLAS.tendons,'lu rb 3'),['LU_RB3']);
-  assert.deepEqual(findMuscles(ATLAS.tendons,'uiub5'),['UI_UB5']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,' ｆｄｓ３ '),['FDS3']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'lu rb 3'),['LU_RB3']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'uiub5'),['UI_UB5']);
 });
 test('family prefixes return all modeled branches; blank, punctuation-only and unknown codes never show all',()=>{
-  assert.deepEqual(findMuscles(ATLAS.tendons,'FDS').sort(),['FDS2','FDS3','FDS4','FDS5']);
-  assert.deepEqual(findMuscles(ATLAS.tendons,'fd').sort(),['FDP2','FDP3','FDP4','FDP5','FDS2','FDS3','FDS4','FDS5']);
-  for(const query of ['', '   ','__-','FDS9','PT','PQ','<script>'])assert.deepEqual(findMuscles(ATLAS.tendons,query),[]);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'FDS').sort(),['FDS2','FDS3','FDS4','FDS5']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'fd').sort(),['FDP2','FDP3','FDP4','FDP5','FDS2','FDS3','FDS4','FDS5']);
+  for(const query of ['', '   ','__-','FDS9','PT','PQ','<script>'])assert.deepEqual(findMuscles(OPENSIM_MUSCLES,query),[]);
 });
 test('search reveals a hidden route independently of the selected joint and clearing restores a neutral empty scope',()=>{
   const c=createAtlasState(CONTROLS);
@@ -61,23 +64,26 @@ function setup(){
   let next=0;const frames=new Map();
   globalThis.requestAnimationFrame=fn=>{frames.set(++next,fn);return next;};
   globalThis.cancelAnimationFrame=id=>frames.delete(id);
-  const state=createAtlasState(CONTROLS),viewer={pose:{rig:null,angle:0},setPose(rig,angle){this.pose={rig,angle};}};
+  const state=createAtlasState(CONTROLS,OPENSIM_MUSCLES),viewer={pose:{rig:null,angle:0},setPose(rig,angle){this.pose={rig,angle};}};
   const motion=new MotionController(viewer,MODEL);let search;
   function refresh(){
     search.refresh();
     const joint=state.joint(),action=state.action(),dof=joint?.dofs.find(d=>d.id===state.state.direction?.dofId);
     motion.select(joint,dof,action);
   }
-  search=new MuscleSearch(state,ATLAS.tendons,refresh);refresh();
+  search=new MuscleSearch(state,OPENSIM_MUSCLES,refresh);refresh();
   const input=document.getElementById('muscle-search-input');
   const type=value=>{input.value=value;input.emit('input');};
   return {state,viewer,motion,search,refresh,nodes,input,type,frames};
 }
-test('live input displays family results with Chinese names; selecting a result isolates it and focuses the input',()=>{
+test('live input displays exact model names with clearly secondary Chinese references',()=>{
   const s=setup();
   assert.deepEqual(s.state.visible(),[]);assert.equal(s.frames.size,0);
   s.type('fds');assert.equal(s.search.buttons.length,4);assert.equal(s.frames.size,0);
-  for(const button of s.search.buttons)assert.match(button.children[1].textContent,/[\u4e00-\u9fff]/);
+  for(const button of s.search.buttons){
+    assert.ok(Object.hasOwn(ENDPOINTS.tendons,button.children[0].textContent));
+    assert.match(button.children[1].textContent,/^中文参考：/);
+  }
   const target=s.search.buttons.find(b=>b.children[0].textContent==='FDS3');target.emit('click');
   assert.deepEqual(s.state.visible(),['FDS3']);assert.equal(s.input.value,'FDS3');
   assert.equal(s.state.state.highlighted,'FDS3');assert.equal(document.activeElement,s.input);

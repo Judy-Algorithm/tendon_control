@@ -11,9 +11,10 @@ import {MotionController} from './motion-controller.js';
 import {BoneHover} from './bone-hover.js';
 import {SideLabels} from './side-labels.js';
 import {MuscleSearch} from './muscle-search.js';
+import {OPENSIM_MUSCLES} from './opensim-muscles.js';
 
 const THREE=window.THREE;
-const atlas=createAtlasState(CONTROLS);
+const atlas=createAtlasState(CONTROLS,OPENSIM_MUSCLES);
 const tendonMeta=new Map(ATLAS.tendons.map(t=>[t.id,t]));
 const specialColors={FDS3:'#ef6975',FDP3:'#eeb85b',EDC3:'#6aa2fa',RI3:'#57cca0',LU_RB3:'#b68af0',UI_UB3:'#61d7df'};
 const colorFor=id=>specialColors[id]||`hsl(${Math.round(tendonMeta.get(id).modelIndex*137.508)%360},65%,66%)`;
@@ -272,7 +273,7 @@ class TendonViewer {
 }
 
 buildPanel();
-search=new MuscleSearch(atlas,ATLAS.tendons,refresh);
+search=new MuscleSearch(atlas,OPENSIM_MUSCLES,refresh);
 try{viewer=new TendonViewer();motion=new MotionController(viewer,MODEL);}catch(error){document.getElementById('model-error').hidden=false;console.error(error);}
 // Start at neutral; select a ROM action to begin playback.
 refresh();
