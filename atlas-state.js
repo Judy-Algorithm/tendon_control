@@ -3,8 +3,9 @@ export function findMuscles(tendons,query){
   const code=normalizeMuscleCode(query);
   if(!code)return [];
   const modelName=tendon=>tendon.modelName??tendon.id;
-  const exact=tendons.find(t=>normalizeMuscleCode(modelName(t))===code);
-  return exact?[modelName(exact)]:tendons.filter(t=>normalizeMuscleCode(modelName(t)).startsWith(code)).map(modelName);
+  const searchNames=tendon=>[modelName(tendon),...(tendon.aliases??[])];
+  const exact=tendons.find(t=>searchNames(t).some(name=>normalizeMuscleCode(name)===code));
+  return exact?[modelName(exact)]:tendons.filter(t=>searchNames(t).some(name=>normalizeMuscleCode(name).startsWith(code))).map(modelName);
 }
 
 export function createAtlasState(atlas,searchMuscles=atlas.tendons) {

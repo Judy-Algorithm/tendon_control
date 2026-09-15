@@ -1,21 +1,52 @@
 import {ATLAS} from './atlas-data.js';
-import {ENDPOINTS} from './endpoint-data.js';
 
-// The GeometryPath keys are the names stored in the OpenSim control-table model.
-// Keep the Chinese atlas labels as secondary reading aids only.
+// Exact Muscle object order from Hand_Wrist_Model_for_development.osim.
+// SHA-256: 9A88909CA27DA9397ABE22599E51AE9699162BDF274F65D2A83D7B02793B24CC
 const atlasById=new Map(ATLAS.tendons.map(tendon=>[tendon.id,tendon]));
 
-const CONTROL_TABLE_MUSCLES=Object.keys(ENDPOINTS.tendons).map(modelName=>{
-  const atlasEntry=atlasById.get(modelName);
-  if(!atlasEntry)throw new Error(`OpenSim muscle is missing atlas metadata: ${modelName}`);
-  return Object.freeze({...atlasEntry,modelName});
-});
+// Default-pose GeometryPaths absent from the older web control table.
+// OpenSim ground coordinates are aligned using FPL/APL/EPB/EPL endpoints
+// against the visual hand (endpoint RMS: 0.48 mm).
+const ROUTES={
+  APB:[[-.005115063,-.067011715,.004785563],[-.002626537,-.066666881,.016203645],[.013818666,-.105093612,.039643707],[.015846388,-.120334843,.046756527]],
+  FPB:[[-.00654341,-.068236755,.001727068],[-.005927707,-.078616223,.009091466],[.003613659,-.102949967,.025813237],[.008519891,-.113461577,.033558723]],
+  ADPt:[[-.023179597,-.086051834,-.007732988],[-.005887642,-.090773257,.015918124],[.005735884,-.105568134,.023972488],[.002615674,-.110055309,.037563141]],
+  ADPo:[[-.01500635,-.066978684,-.009561346],[-.006089105,-.087610824,.015144675],[.004802418,-.105880265,.024322605],[.011733064,-.113928265,.036748891]],
+  ADM:[[-.010913973,-.067449714,-.025269871],[-.022975527,-.109638575,-.039102463],[-.025266143,-.117856413,-.044996232],[-.025415644,-.118308665,-.045326011],[-.028379788,-.126027847,-.05105029]],
+  FDM:[[-.014274837,-.075502772,-.029129718],[-.022975527,-.109638575,-.039102463],[-.025266143,-.117856413,-.044996232],[-.025415644,-.118308665,-.045326011],[-.028379788,-.126027847,-.05105029]],
+  '1stPI':[[-.023357038,-.088449414,.000709983],[-.029692483,-.124536644,.003238416],[-.031448796,-.138801975,.00455381]],
+  '2ndPI':[[-.026277953,-.085124153,-.014148481],[-.026737776,-.12358114,-.018322763],[-.029397724,-.135519961,-.018838467]],
+  '3rdPI':[[-.021999732,-.085623332,-.026472324],[-.026648747,-.11619089,-.031774833],[-.027763545,-.131006193,-.035867265]],
+  '1stDI_MC1':[[-.011011568,-.081293031,.019842687],[-.026209619,-.126073745,.015792618],[-.028902835,-.143751789,.019166035]],
+  '1stDI_MC2':[[-.02282935,-.083437757,.010305077],[-.024268408,-.124443645,.014993029],[-.028902835,-.143751789,.019166035]],
+  '2ndDI':[[-.02583816,-.085112164,-.004659331],[-.030192584,-.12216679,-.001140467],[-.031194377,-.13946613,-.000182809]],
+  '3rdDI':[[-.026180221,-.085121489,-.012039781],[-.030393144,-.125176107,-.014921265],[-.032888524,-.141500249,-.014964722]],
+  '4thDI':[[-.02096879,-.083505369,-.023916993],[-.03157342,-.118666473,-.029719024],[-.030115095,-.137538114,-.033641828]],
+  LUML:[[-.018745495,-.084269362,-.021483358],[-.020745301,-.111597358,-.032333137],[-.027076595,-.134996766,-.040717022],[-.034026784,-.138109134,-.042235996]],
+  LUMR:[[-.012770439,-.080906191,-.011349409],[-.023234531,-.115528058,-.019281689],[-.02470456,-.137445273,-.022150101],[-.034540758,-.142601878,-.02204389]],
+  LUMM:[[-.013108285,-.078911061,-.005864287],[-.019500338,-.120996561,-.002408638],[-.03609016,-.143542545,.000893607]],
+  LUMI:[[-.012415703,-.07727785,.001235227],[-.020483809,-.12188573,.011533906],[-.021671163,-.126597227,.012547829],[-.021809719,-.127090955,.012655305],[-.025093359,-.137695106,.014990311],[-.025198832,-.143694707,.014863177]],
+};
 
-// APB and FPB are present in the user's ARMS OpenSim model but absent from the
-// older 37-path web control table. Their default-pose GeometryPaths are aligned
-// to this hand with the existing FPL/APL/EPB/EPL paths (endpoint RMS: 0.48 mm).
-const ARMS_THUMB_MUSCLES=[
-  Object.freeze({id:'APB',modelName:'APB',name:'拇短展肌',route:[[-.005115063,-.067011715,.004785563],[-.002626537,-.066666881,.016203645],[.013818666,-.105093612,.039643707],[.015846388,-.120334843,.046756527]]}),
-  Object.freeze({id:'FPB',modelName:'FPB',name:'拇短屈肌',route:[[-.00654341,-.068236755,.001727068],[-.005927707,-.078616223,.009091466],[.003613659,-.102949967,.025813237],[.008519891,-.113461577,.033558723]]}),
+const SPECS=[
+  ['ECRL','ECRL'],['ECRB','ECRB'],['ECU','ECU'],['FCR','FCR'],['FCU','FCU'],['PL','PL'],
+  ['FDSL','FDS5'],['FDSR','FDS4'],['FDSM','FDS3'],['FDSI','FDS2'],
+  ['FDPL','FDP5'],['FDPR','FDP4'],['FDPM','FDP3'],['FDPI','FDP2'],
+  ['EDCL','EDC5'],['EDCR','EDC4'],['EDCM','EDC3'],['EDCI','EDC2'],
+  ['EDM','EDM'],['EIP','EIP'],['EPL','EPL'],['EPB','EPB'],['FPL','FPL'],['APL','APL'],
+  ['APB',null,'\u62c7\u77ed\u5c55\u808c'],['FPB',null,'\u62c7\u77ed\u5c48\u808c'],['OPP','OP'],
+  ['ADPt',null,'\u62c7\u6536\u808c\u6a2a\u5934'],['ADPo',null,'\u62c7\u6536\u808c\u659c\u5934'],
+  ['ADM',null,'\u5c0f\u6307\u5c55\u808c'],['FDM',null,'\u5c0f\u6307\u77ed\u5c48\u808c'],
+  ['1stPI',null,'\u7b2c\u4e00\u638c\u4fa7\u9aa8\u95f4\u808c'],['2ndPI',null,'\u7b2c\u4e8c\u638c\u4fa7\u9aa8\u95f4\u808c'],['3rdPI',null,'\u7b2c\u4e09\u638c\u4fa7\u9aa8\u95f4\u808c'],
+  ['1stDI_MC1',null,'\u7b2c\u4e00\u80cc\u4fa7\u9aa8\u95f4\u808c\u00b7\u7b2c\u4e00\u638c\u9aa8\u5934'],['1stDI_MC2',null,'\u7b2c\u4e00\u80cc\u4fa7\u9aa8\u95f4\u808c\u00b7\u7b2c\u4e8c\u638c\u9aa8\u5934'],
+  ['2ndDI',null,'\u7b2c\u4e8c\u80cc\u4fa7\u9aa8\u95f4\u808c'],['3rdDI',null,'\u7b2c\u4e09\u80cc\u4fa7\u9aa8\u95f4\u808c'],['4thDI',null,'\u7b2c\u56db\u80cc\u4fa7\u9aa8\u95f4\u808c'],
+  ['LUML',null,'\u5c0f\u6307\u8693\u72b6\u808c'],['LUMR',null,'\u65e0\u540d\u6307\u8693\u72b6\u808c'],['LUMM',null,'\u4e2d\u6307\u8693\u72b6\u808c'],['LUMI',null,'\u98df\u6307\u8693\u72b6\u808c'],
 ];
-export const OPENSIM_MUSCLES=Object.freeze([...CONTROL_TABLE_MUSCLES,...ARMS_THUMB_MUSCLES]);
+
+export const OPENSIM_MUSCLES=Object.freeze(SPECS.map(([modelName,sourceId,label])=>{
+  const source=sourceId?atlasById.get(sourceId):null;
+  if(sourceId&&!source)throw new Error('Missing visual path for '+modelName+': '+sourceId);
+  return Object.freeze({...source,id:modelName,modelName,name:label??source.name,
+    sourceId:sourceId===modelName?undefined:sourceId,aliases:sourceId&&sourceId!==modelName?[sourceId]:[],
+    route:ROUTES[modelName]});
+}));

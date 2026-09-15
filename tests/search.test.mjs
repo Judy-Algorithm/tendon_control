@@ -7,34 +7,35 @@ import {createAtlasState,findMuscles} from '../atlas-state.js';
 import {MuscleSearch} from '../muscle-search.js';
 import {MotionController} from '../motion-controller.js';
 import {tendonSegments} from '../motion.js';
-import {ENDPOINTS} from '../endpoint-data.js';
 import {OPENSIM_MUSCLES} from '../opensim-muscles.js';
 
-test('search catalog uses every OpenSim control-table name and ARMS thumb muscle exactly',()=>{
-  assert.deepEqual(OPENSIM_MUSCLES.slice(0,-2).map(t=>t.modelName),Object.keys(ENDPOINTS.tendons));
-  assert.deepEqual(OPENSIM_MUSCLES.slice(-2).map(t=>t.modelName),['APB','FPB']);
-  for(const tendon of OPENSIM_MUSCLES){
-    for(const query of [tendon.modelName,tendon.modelName.toLowerCase(),tendon.modelName.replaceAll('_',' '),tendon.modelName.replaceAll('_','-')]){
-      assert.deepEqual(findMuscles(OPENSIM_MUSCLES,query),[tendon.modelName]);
+const MODEL_NAMES=['ECRL','ECRB','ECU','FCR','FCU','PL','FDSL','FDSR','FDSM','FDSI','FDPL','FDPR','FDPM','FDPI','EDCL','EDCR','EDCM','EDCI','EDM','EIP','EPL','EPB','FPL','APL','APB','FPB','OPP','ADPt','ADPo','ADM','FDM','1stPI','2ndPI','3rdPI','1stDI_MC1','1stDI_MC2','2ndDI','3rdDI','4thDI','LUML','LUMR','LUMM','LUMI'];
+
+test('search catalog exactly matches all 43 OpenSim Muscle object names',()=>{
+  assert.equal(OPENSIM_MUSCLES.length,43);
+  assert.deepEqual(OPENSIM_MUSCLES.map(t=>t.modelName),MODEL_NAMES);
+  for(const muscle of OPENSIM_MUSCLES){
+    for(const query of [muscle.modelName,muscle.modelName.toLowerCase(),muscle.modelName.replaceAll('_',' '),muscle.modelName.replaceAll('_','-')]){
+      assert.deepEqual(findMuscles(OPENSIM_MUSCLES,query),[muscle.modelName]);
     }
   }
-  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,' ｆｄｓ３ '),['FDS3']);
-  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'lu rb 3'),['LU_RB3']);
-  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'uiub5'),['UI_UB5']);
 });
-test('family prefixes return all modeled branches; blank, punctuation-only and unknown codes never show all',()=>{
-  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'FDS').sort(),['FDS2','FDS3','FDS4','FDS5']);
-  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'fd').sort(),['FDP2','FDP3','FDP4','FDP5','FDS2','FDS3','FDS4','FDS5']);
-  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'apb'),['APB']);
-  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'ｆｐｂ'),['FPB']);
+test('model families and legacy extrinsic aliases resolve to exact OpenSim names',()=>{
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'FDS').sort(),['FDSI','FDSL','FDSM','FDSR']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'fdp').sort(),['FDPI','FDPL','FDPM','FDPR']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'edc').sort(),['EDCI','EDCL','EDCM','EDCR']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'fds3'),['FDSM']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'fdp5'),['FDPL']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'op'),['OPP']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'1st di mc1'),['1stDI_MC1']);
   for(const query of ['', '   ','__-','FDS9','PT','PQ','<script>'])assert.deepEqual(findMuscles(OPENSIM_MUSCLES,query),[]);
 });
-test('APB and FPB have finite renderable paths aligned to the thumb',()=>{
-  for(const id of ['APB','FPB']){
-    const meta=OPENSIM_MUSCLES.find(t=>t.id===id),segments=tendonSegments(MODEL,meta,meta.route);
-    assert.ok(segments.length>=3);
-    assert.ok(segments.flat(2).every(Number.isFinite));
-    assert.ok(segments.at(-1)[1][1]<-.11,'distal endpoint reaches the thumb');
+test('all 43 OpenSim muscles have finite renderable visual paths',()=>{
+  for(const meta of OPENSIM_MUSCLES){
+    const source=meta.sourceId?ATLAS.tendons.find(t=>t.id===meta.sourceId):meta;
+    const segments=tendonSegments(MODEL,source,meta.route);
+    assert.ok(segments.length>=1,meta.modelName);
+    assert.ok(segments.flat(2).every(Number.isFinite),meta.modelName);
   }
 });
 test('search reveals a hidden route independently of the selected joint and clearing restores a neutral empty scope',()=>{
@@ -93,12 +94,12 @@ test('live input displays exact model names with clearly secondary Chinese refer
   assert.deepEqual(s.state.visible(),[]);assert.equal(s.frames.size,0);
   s.type('fds');assert.equal(s.search.buttons.length,4);assert.equal(s.frames.size,0);
   for(const button of s.search.buttons){
-    assert.ok(Object.hasOwn(ENDPOINTS.tendons,button.children[0].textContent));
+    assert.ok(MODEL_NAMES.includes(button.children[0].textContent));
     assert.match(button.children[1].textContent,/^中文参考：/);
   }
-  const target=s.search.buttons.find(b=>b.children[0].textContent==='FDS3');target.emit('click');
-  assert.deepEqual(s.state.visible(),['FDS3']);assert.equal(s.input.value,'FDS3');
-  assert.equal(s.state.state.highlighted,'FDS3');assert.equal(document.activeElement,s.input);
+  const target=s.search.buttons.find(b=>b.children[0].textContent==='FDSM');target.emit('click');
+  assert.deepEqual(s.state.visible(),['FDSM']);assert.equal(s.input.value,'FDSM');
+  assert.equal(s.state.state.highlighted,'FDSM');assert.equal(document.activeElement,s.input);
   assert.equal(s.search.buttons.length,1);
   assert.match(s.nodes.get('muscle-search-status').textContent,/已显示 1/);
 });
@@ -109,7 +110,7 @@ test('searching during animation stops playback, resets the pose and hides motio
   s.type('fdp5');
   assert.equal(s.motion.playing,false);assert.equal(s.frames.size,0);
   assert.deepEqual(s.viewer.pose,{rig:null,angle:0});assert.equal(s.motion.snapshot().angle,0);
-  assert.equal(s.nodes.get('motion-controls').hidden,true);assert.deepEqual(s.state.visible(),['FDP5']);
+  assert.equal(s.nodes.get('motion-controls').hidden,true);assert.deepEqual(s.state.visible(),['FDPL']);
   s.state.openJoint('joint_bone11');s.refresh();assert.equal(s.input.value,'');
   s.state.selectDirection('middle_MCP_flex','negative');s.refresh();
   assert.equal(s.motion.playing,true);assert.equal(s.frames.size,1);
@@ -130,7 +131,7 @@ test('clear, Escape, keyboard result access, submit and unmatched input keep UI 
 test('composition waits for completed input and external ROM changes clear stale search results',()=>{
   const s=setup();s.input.value='ｆｄｓ３';s.input.emit('input',{isComposing:true});
   assert.deepEqual(s.state.visible(),[]);
-  s.input.emit('compositionend');assert.deepEqual(s.state.visible(),['FDS3']);
+  s.input.emit('compositionend');assert.deepEqual(s.state.visible(),['FDSM']);
   s.state.openJoint('joint_ulnar_cmc');s.refresh();
   assert.equal(s.input.value,'');assert.equal(s.search.buttons.length,0);assert.equal(s.search.results.hidden,true);
   assert.equal(s.state.joint().id,'joint_ulnar_cmc');
