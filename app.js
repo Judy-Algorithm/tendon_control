@@ -15,8 +15,8 @@ import {OPENSIM_MUSCLES} from './opensim-muscles.js';
 
 const THREE=window.THREE;
 const atlas=createAtlasState(CONTROLS,OPENSIM_MUSCLES);
-const tendonMeta=new Map(ATLAS.tendons.map(t=>[t.id,t]));
-const specialColors={FDS3:'#ef6975',FDP3:'#eeb85b',EDC3:'#6aa2fa',RI3:'#57cca0',LU_RB3:'#b68af0',UI_UB3:'#61d7df'};
+const tendonMeta=new Map(OPENSIM_MUSCLES.map(t=>[t.id,t]));
+const specialColors={FDS3:'#ef6975',FDP3:'#eeb85b',EDC3:'#6aa2fa',RI3:'#57cca0',LU_RB3:'#b68af0',UI_UB3:'#61d7df',APB:'#f08eb8',FPB:'#f0a35b'};
 const colorFor=id=>specialColors[id]||`hsl(${Math.round(tendonMeta.get(id).modelIndex*137.508)%360},65%,66%)`;
 const nodes={joints:new Map(),directions:new Map(),rows:[]};
 let viewer,motion,search;
@@ -133,11 +133,11 @@ class TendonViewer {
     this.sideLabels=new SideLabels(THREE,document.getElementById('side-labels'),this.bones);
     this.tendons=new Map();const cylinder=new THREE.CylinderGeometry(1,1,1,12);
     const endpointSphere=new THREE.SphereGeometry(.00072,12,8);
-    for(const meta of ATLAS.tendons){
+    for(const meta of OPENSIM_MUSCLES){
       const color=new THREE.Color(colorFor(meta.id)).convertSRGBToLinear();const material=new THREE.MeshBasicMaterial({color,toneMapped:false,depthTest:true,depthWrite:true});
       const group=new THREE.Group();group.name=meta.id;group.visible=false;
       const segments=[];
-      const fitted=FITTED_ROUTES[meta.id];
+      const fitted=meta.route??FITTED_ROUTES[meta.id];
       const restSegments=tendonSegments(MODEL,meta,fitted);
       const points=restSegments.flatMap(s=>s);
       for(const [a,b] of restSegments)segments.push([new THREE.Vector3(...a),new THREE.Vector3(...b)]);

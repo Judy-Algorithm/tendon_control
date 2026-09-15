@@ -6,7 +6,7 @@ export const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 export const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
 export const unit=a=>{const n=Math.hypot(...a);if(n<1e-10)throw new Error('Degenerate joint axis');return a.map(v=>v/n);};
 const fingers={index:2,middle:3,ring:4,pinky:5};
-const thumbTendons=new Set(['EPL','EPB','FPL','APL','OP']);
+const thumbTendons=new Set(['EPL','EPB','FPL','APL','OP','APB','FPB']);
 
 // Estimate an unsegmented CMC hinge center from the proximal 3 mm of the metacarpal.
 // Native model coordinates point proximally along +Y and palmarly along +X.
@@ -110,8 +110,7 @@ export function resampleRoute(points){
 }
 
 export function tendonSegments(model,meta,fitted){
-  const raw=model.tendon_segments_i16[meta.modelIndex].map(s=>s.map(v=>v*model.quant));
-  const routes=fitted?[fitted]:raw.map(s=>[s.slice(0,3),s.slice(3,6)]);
+  const routes=fitted?[fitted]:model.tendon_segments_i16[meta.modelIndex].map(s=>s.map(v=>v*model.quant)).map(s=>[s.slice(0,3),s.slice(3,6)]);
   return routes.flatMap(route=>{
     const points=resampleRoute(route);
     return points.slice(1).map((p,i)=>[points[i],p]);
