@@ -12,6 +12,7 @@ import {BoneHover} from './bone-hover.js';
 import {SideLabels} from './side-labels.js';
 import {MuscleSearch} from './muscle-search.js';
 import {OPENSIM_MUSCLES} from './opensim-muscles.js';
+import {jointDisplayTitle} from './opensim-joints.js';
 
 const THREE=window.THREE;
 const atlas=createAtlasState(CONTROLS,OPENSIM_MUSCLES);
@@ -35,7 +36,7 @@ function buildPanel(){
     const article=element('section','joint-item');article.dataset.jointId=joint.id;
     const trigger=element('button','joint-trigger');trigger.type='button';
     trigger.setAttribute('aria-expanded','false');trigger.setAttribute('aria-controls',`${joint.id}-detail`);
-    trigger.append(element('span','title',joint.title),element('span','dof-count',`${joint.dofs.length} 自由度`),element('span','chevron'));
+    trigger.append(element('span','title',jointDisplayTitle(joint)),element('span','dof-count',`${joint.dofs.length} 自由度`),element('span','chevron'));
     trigger.addEventListener('click',()=>{atlas.openJoint(atlas.state.jointId===joint.id?null:joint.id);refresh();});
     const detail=element('div','joint-detail');detail.id=`${joint.id}-detail`;detail.hidden=true;
     const location=element('dl','location');location.append(element('dt','','部位'),element('dd','',`${joint.part} · ${joint.location.replace(/ (CMC|MCP|PIP|DIP|IP)$/,'')}`));

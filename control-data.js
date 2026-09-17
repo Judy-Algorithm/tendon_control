@@ -1,8 +1,9 @@
 import {ATLAS} from './atlas-data.js';
+import {withOpenSimJoint} from './opensim-joints.js';
 
 // Supplemental visualization controls are separate from the measured SHM atlas.
 // These ranges and the fixed 1:2 coupling are demonstration parameters, not measured ROM.
-export const ULNAR_CMC={
+export const ULNAR_CMC=withOpenSimJoint({
   id:'joint_ulnar_cmc',title:'第4、5掌骨 CMC',part:'尺侧手掌',
   location:'第4、5腕掌关节 CMC',anchorBones:['4mc','5mc'],
   supplemental:true,tendons:[],
@@ -17,8 +18,9 @@ export const ULNAR_CMC={
       {id:'negative',label:'伸回中立位',tendons:[]}
     ]
   }]
-};
-const insertAt=ATLAS.joints.findIndex(j=>j.part==='无名指');
+});
+const modelJoints=ATLAS.joints.map(withOpenSimJoint);
+const insertAt=modelJoints.findIndex(j=>j.part==='无名指');
 export const CONTROLS={...ATLAS,joints:[
-  ...ATLAS.joints.slice(0,insertAt),ULNAR_CMC,...ATLAS.joints.slice(insertAt)
+  ...modelJoints.slice(0,insertAt),ULNAR_CMC,...modelJoints.slice(insertAt)
 ]};
