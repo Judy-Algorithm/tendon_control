@@ -1,13 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CONTROLS} from '../control-data.js';
+import {CONTROLS,JOINT_DISPLAY_ORDER} from '../control-data.js';
 import {OPENSIM_JOINT_NAMES,OPENSIM_COORDINATE_NAMES,coordinateDisplayName,jointDisplayTitle} from '../opensim-joints.js';
 
-const EXPECTED_JOINTS=['radiocarpal','CMC1a / CMC1b','MCP','IP','_2MCP','_2prox-midph_b','_2mid-distph','_3MCP','_3prox-midph_b','_3mid-distph','CMC4 / CMC5','_4MCP','_4prox-midph_b','_4mid-distph','_5MCP','_5prox-midph_b','_5mid-distph'];
+const EXPECTED_JOINTS=['radiocarpal','CMC1a / CMC1b','CMC4 / CMC5','MCP','_2MCP','_3MCP','_4MCP','_5MCP','IP','_2prox-midph_b','_3prox-midph_b','_4prox-midph_b','_5prox-midph_b','_2mid-distph','_3mid-distph','_4mid-distph','_5mid-distph'];
 
-test('all displayed controls retain exact OpenSim joint names',()=>{
+test('all displayed controls retain exact OpenSim joint names in anatomical groups',()=>{
   assert.equal(Object.keys(OPENSIM_JOINT_NAMES).length,17);
+  assert.deepEqual(CONTROLS.joints.map(j=>j.id),JOINT_DISPLAY_ORDER);
   assert.deepEqual(CONTROLS.joints.map(j=>j.modelJoint),EXPECTED_JOINTS);
+  assert.deepEqual(JOINT_DISPLAY_ORDER.slice(3,8),['joint_bone2','joint_bone6','joint_bone11','joint_bone16','joint_bone21']);
+  assert.deepEqual(JOINT_DISPLAY_ORDER.slice(8,13),['joint_bone3','joint_bone7','joint_bone12','joint_bone17','joint_bone22']);
+  assert.deepEqual(JOINT_DISPLAY_ORDER.slice(13),['joint_bone8','joint_bone13','joint_bone18','joint_bone23']);
 });
 
 test('every displayed degree of freedom is mapped to its OpenSim Coordinate',()=>{

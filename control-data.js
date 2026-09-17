@@ -20,7 +20,16 @@ export const ULNAR_CMC=withOpenSimJoint({
   }]
 });
 const modelJoints=ATLAS.joints.map(withOpenSimJoint);
-const insertAt=modelJoints.findIndex(j=>j.part==='无名指');
-export const CONTROLS={...ATLAS,joints:[
-  ...modelJoints.slice(0,insertAt),ULNAR_CMC,...modelJoints.slice(insertAt)
-]};
+export const JOINT_DISPLAY_ORDER=Object.freeze([
+  'joint_bone0',
+  'joint_bone1','joint_ulnar_cmc',
+  'joint_bone2','joint_bone6','joint_bone11','joint_bone16','joint_bone21',
+  'joint_bone3','joint_bone7','joint_bone12','joint_bone17','joint_bone22',
+  'joint_bone8','joint_bone13','joint_bone18','joint_bone23',
+]);
+const jointById=new Map([...modelJoints,ULNAR_CMC].map(joint=>[joint.id,joint]));
+export const CONTROLS={...ATLAS,joints:JOINT_DISPLAY_ORDER.map(id=>{
+  const joint=jointById.get(id);
+  if(!joint)throw new Error('Missing display joint '+id);
+  return joint;
+})};
