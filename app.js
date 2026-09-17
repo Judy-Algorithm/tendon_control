@@ -12,7 +12,7 @@ import {BoneHover} from './bone-hover.js';
 import {SideLabels} from './side-labels.js';
 import {MuscleSearch} from './muscle-search.js';
 import {OPENSIM_MUSCLES} from './opensim-muscles.js';
-import {jointDisplayTitle} from './opensim-joints.js';
+import {coordinateDisplayName,jointDisplayTitle} from './opensim-joints.js';
 
 const THREE=window.THREE;
 const atlas=createAtlasState(CONTROLS,OPENSIM_MUSCLES);
@@ -40,10 +40,11 @@ function buildPanel(){
     trigger.addEventListener('click',()=>{atlas.openJoint(atlas.state.jointId===joint.id?null:joint.id);refresh();});
     const detail=element('div','joint-detail');detail.id=`${joint.id}-detail`;detail.hidden=true;
     const location=element('dl','location');location.append(element('dt','','部位'),element('dd','',`${joint.part} · ${joint.location.replace(/ (CMC|MCP|PIP|DIP|IP)$/,'')}`));
-    detail.append(location);
+    const modelJoint=element('dl','location');modelJoint.append(element('dt','','OpenSim Joint'),element('dd','',joint.modelJoint));
+    detail.append(location,modelJoint);
     for(const dof of joint.dofs){
       const card=element('section','dof-card');card.dataset.dofId=dof.id;
-      const head=element('div','dof-head');head.append(element('h3','dof-title',dof.action));
+      const head=element('div','dof-head');head.append(element('h3','dof-title',dof.action+' · '+coordinateDisplayName(dof)));
       const range=element('dl','range');range.append(element('dt','',dof.rangeLabel??'活动范围'),element('dd','',formatRange(dof.range)));head.append(range);
       card.append(head,element('p','neutral-label','中立位'));
       const directions=element('div','directions');const lists=[];
