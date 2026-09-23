@@ -5,7 +5,11 @@ export function findMuscles(tendons,query){
   const modelName=tendon=>tendon.modelName??tendon.id;
   const searchNames=tendon=>[modelName(tendon),...(tendon.aliases??[])];
   const exact=tendons.find(t=>searchNames(t).some(name=>normalizeMuscleCode(name)===code));
-  return exact?[modelName(exact)]:tendons.filter(t=>searchNames(t).some(name=>normalizeMuscleCode(name).startsWith(code))).map(modelName);
+  if(exact)return [modelName(exact)];
+  const prefix=tendons.filter(t=>searchNames(t).some(name=>normalizeMuscleCode(name).startsWith(code)));
+  if(prefix.length)return prefix.map(modelName);
+  if(code.length<2)return [];
+  return tendons.filter(t=>(t.searchTerms??[]).some(name=>normalizeMuscleCode(name)===code)).map(modelName);
 }
 
 export function createAtlasState(atlas,searchMuscles=atlas.tendons) {

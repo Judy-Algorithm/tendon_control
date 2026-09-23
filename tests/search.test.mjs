@@ -28,6 +28,8 @@ test('model families and legacy extrinsic aliases resolve to exact OpenSim names
   assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'fdp5'),['FDPL']);
   assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'op'),['OPP']);
   assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'1st di mc1'),['1stDI_MC1']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'DI').sort(),['1stDI_MC1','1stDI_MC2','2ndDI','3rdDI','4thDI']);
+  assert.deepEqual(findMuscles(OPENSIM_MUSCLES,'PI').sort(),['1stPI','2ndPI','3rdPI']);
   for(const query of ['', '   ','__-','FDS9','PT','PQ','<script>'])assert.deepEqual(findMuscles(OPENSIM_MUSCLES,query),[]);
 });
 test('all 43 OpenSim muscles have finite renderable visual paths',()=>{

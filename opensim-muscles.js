@@ -46,7 +46,8 @@ const SPECS=[
 export const OPENSIM_MUSCLES=Object.freeze(SPECS.map(([modelName,sourceId,label])=>{
   const source=sourceId?atlasById.get(sourceId):null;
   if(sourceId&&!source)throw new Error('Missing visual path for '+modelName+': '+sourceId);
+  const intrinsicFamily=modelName.match(/^\d+(?:st|nd|rd|th)(DI|PI)/i)?.[1]?.toUpperCase();
   return Object.freeze({...source,id:modelName,modelName,name:label??source.name,
     sourceId:sourceId===modelName?undefined:sourceId,aliases:sourceId&&sourceId!==modelName?[sourceId]:[],
-    route:ROUTES[modelName]});
+    searchTerms:intrinsicFamily?[intrinsicFamily]:[],route:ROUTES[modelName]});
 }));
