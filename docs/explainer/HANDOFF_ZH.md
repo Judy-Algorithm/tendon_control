@@ -25,4 +25,4 @@
 - [验收报告](QA_REPORT.md)：133项自动测试、浏览器实际交互、手机布局和局限。
 - [科学审计](SCIENCE_AUDIT.md)与[数据发布审计](RELEASE_DATA_AUDIT.md)。
 - [截图目录](screenshots/)；[原生 SO 证据](NATIVE_SO_AUDIT.md)；[MyoHand 审计](MYOHAND_AUDIT.md)。
-- 此文件建立时本地验收完成；上线后的准确提交、Vercel状态与生产截图见后续发布记录，不能仅凭本文件判断部署成功。
+- **已上线并实际验收**：应用提交 `a5b9710`，Vercel Production 成功；Safari 上实测三个入口、IK 拟合、载荷变化、原生 SO 与 MyoHand 回放。[生产验收记录](PRODUCTION_VERIFICATION.md)含部署标识、线上截图与网络访问说明。

@@ -9,7 +9,8 @@
 - A: leader repository audit; B/C/D: scientific content worker; E: native MyoHand worker; G: scene worker.
 - F/H/I/J: leader interaction design and integration. K/L independent QA after first integration.
 - Only leader may publish. Maximum three concurrent subagents plus leader.
-- Current phase: implementation and local acceptance complete; final release gate.
+- Current phase: application published as `a5b9710`; production deployment success
+  and actual Safari acceptance verified. Documentation-only evidence follow-up.
 - A/F/H/I/J/L coordinated by leader; B/C/D science worker; E native data worker;
   G scene worker; K split into scene/numerical/native tests and independent final
   science/data audits. Three actual parallel workers, twelve logical packages.

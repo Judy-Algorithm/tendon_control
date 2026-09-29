@@ -65,6 +65,6 @@ are single-run observations, not a speed benchmark or frame-rate claim.
 
 ## Publication gate
 
-Local acceptance complete. Production publication and exact deployed commit
-are recorded separately after GitHub/Vercel verification; this local QA alone
-does not assert production success.
+Local acceptance complete. Production publication and actual Safari browser
+acceptance are now complete; see `PRODUCTION_VERIFICATION.md` for the exact
+application commit, deployment status, served hashes and production screenshots.
