@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {comparisonManifest,matchingRequestedParameters,sensitivityData,sensitivityChart} from '../explainer/native-v2/comparison.js';
+import {effectiveRequest} from '../explainer/native-v2/contracts.js';
+const load=f=>JSON.parse(fs.readFileSync(new URL('../explainer/native-v2/data/'+f,import.meta.url)));
+const base=load('myohand-run-pulse.json'),changed=load('myohand-run-pulse-force125.json');
+test('comparison names, exact requested/effective changes and protocol survive export',()=>{const c=comparisonManifest(base,changed,'myohand',{baselineName:'实验 A',currentName:'实验 B'});assert.equal(c.changes.length,1);assert.equal(c.changes[0].before,1);assert.equal(c.changes[0].after,1.25);assert.equal(c.baseline.name,'实验 A');assert.ok(c.effectiveChanges.length>1);assert.ok(c.protocol.includes('相同指令'));});
+test('existing-result lookup does not match merely the same coarse global setting',()=>{const q=effectiveRequest(changed,'myohand');assert.ok(matchingRequestedParameters(changed,base,'myohand',q));q.pulseRaw=.8;assert.equal(matchingRequestedParameters(changed,base,'myohand',q),false);});
+test('sensitivity uses actual two native outputs and keeps failures missing',()=>{let d=sensitivityData(changed,base,'myohand',{frame:10,muscle:11,metric:'force'});assert.equal(d.samples[1].y,changed.frames[10].tension_N[11]);assert.equal(d.samples[1].x,1.25);assert.equal(d.metric.unit,'N');assert.ok(sensitivityChart(d).includes('两个真实计算点'));const bad=structuredClone(changed);bad.manifest.qc.numericPassed=false;d=sensitivityData(bad,base,'myohand');assert.equal(d.samples[1].y,null);assert.equal(d.samples.length,2);assert.ok(sensitivityChart(d).includes('未通过检查'));});
+test('multiple parameter changes cannot masquerade as one-factor sensitivity',()=>{const r=structuredClone(changed);r.manifest.request.activationTimeScale=1.2;assert.equal(sensitivityData(r,base,'myohand').available,false);});

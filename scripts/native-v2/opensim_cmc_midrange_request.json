@@ -1,0 +1,10 @@
+{
+  "runId": "opensim-native-cmc4-midrange",
+  "actionId": "native:4cmc_flexion:separate_midrange_demo",
+  "coordinate": "4cmc_flexion",
+  "targetRad": 0.1016,
+  "duration_s": 2,
+  "samples": 51,
+  "parameters": {},
+  "purpose": "Supplemental native CMC4 half-range demonstration. The fixed +/-0.25rad requests remain unsupported and are not replaced."
+}

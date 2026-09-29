@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:4181",
+  "checks": [
+    "39 Myo muscles",
+    "23 Myo coordinates",
+    "edited settings mark stale",
+    "new native parameters retained",
+    "live-result.json nonempty",
+    "fresh run force1.13",
+    "matched baseline retained",
+    "response.png nonempty",
+    "response.svg nonempty",
+    "response.csv nonempty",
+    "CSV control and signed force units",
+    "channel-torque.svg nonempty",
+    "all channels in SVG",
+    "no page horizontal overflow",
+    "43 SO muscles",
+    "OpenSim exact existing parameter result found",
+    "opensim-fmax110-preset.json nonempty",
+    "preset contains native units and model hash",
+    "opensim-balance.png nonempty",
+    "opensim-fmax110-comparison.json nonempty",
+    "comparison binds full43 native baseline and edited outputs",
+    "independent MANO page",
+    "MANO 21 × 3 convention",
+    "atlas restored",
+    "no uncaught JS errors"
+  ],
+  "errors": [],
+  "live": true,
+  "at": "2026-09-29T19:45:49.360Z"
+}

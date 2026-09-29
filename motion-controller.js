@@ -26,6 +26,14 @@ export class MotionController {
     document.getElementById('motion-min').textContent=`${dof.range.min.toFixed(1)}°`;
     document.getElementById('motion-max').textContent=`${dof.range.max.toFixed(1)}°`;
     this.dof=dof;
+    if(this.root.querySelector){
+      let solverLinks=this.root.querySelector('.motion-solver-links');
+      if(!solverLinks){solverLinks=document.createElement('div');solverLinks.className='motion-solver-links';this.root.append(solverLinks);}
+      solverLinks.innerHTML=['opensim','myohand'].map(engine=>`<a href="#${engine}/native?action=${encodeURIComponent(next)}">用 ${engine==='opensim'?'OpenSim':'MyoHand'} 求解 →</a>`).join('');
+      let mappingNote=this.root.querySelector('.motion-native-note');
+      if(!mappingNote){mappingNote=document.createElement('details');mappingNote.className='motion-native-note';this.root.append(mappingNote);}
+      mappingNote.innerHTML='<summary>通道归类与求解范围</summary><p>这里的分组来自历史图谱中立位力臂，不是肌肉激活解，也不直接等于原生 MyoHand 分组。求解链接保留原片段的起止角度与 2.4 s 时序；手动拖动仅改变显示。</p>'+(dof.id==='wrist_flex'?'<p>ECRB 在原生 MyoHand 的腕屈曲方向贡献为负；此处历史图谱归类不同，不能跨模型照搬。</p>':'');
+    }
     if(matchMedia('(prefers-reduced-motion: reduce)').matches){this.apply(this.range.start);}
     else this.resume();
   }

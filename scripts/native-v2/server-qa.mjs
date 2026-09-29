@@ -1,0 +1,22 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const base=process.env.TEST_URL||'http://127.0.0.1:4181',out=process.env.QA_OUT||'test-output/native-v2-server';
+await fs.mkdir(out,{recursive:true});const checks=[];
+const check=(name,value)=>{assert.ok(value,name);checks.push(name);};
+const caps=await(await fetch(base+'/api/native/capabilities')).json();
+const request={actionId:'native-index-flexion-demo',coordinate:'2mcp_flexion',targetRad:.25,duration_s:2,samples:51,parameters:{fmaxMultiplier:1,optimalFiberLengthMultiplier:1,tendonSlackLengthMultiplier:1}};
+const payload={engine:'opensim',modelHash:caps.engines.opensim.modelHash,request};
+const post=(body,headers={})=>fetch(base+'/api/native/jobs',{method:'POST',headers:{'Content-Type':'application/json',...headers},body:JSON.stringify(body)});
+check('wrong model fingerprint rejected',(await post({...payload,modelHash:'0'.repeat(64)})).status===400);
+check('unknown executable field rejected',(await post({...payload,request:{...request,command:'not-executed'}})).status===400);
+check('cross-origin request rejected',(await post(payload,{Origin:'https://untrusted.example'})).status===403);
+check('oversized payload rejected',(await post({...payload,padding:'x'.repeat(310000)})).status===413);
+async function poll(id,done){for(let i=0;i<120;i++){const job=await(await fetch(base+'/api/native/jobs/'+id)).json();if(done(job))return job;await new Promise(r=>setTimeout(r,100));}throw new Error('job state timeout');}
+const submitted=await post(payload);check('valid native request accepted',submitted.status===202);const {id}=await submitted.json();
+await poll(id,j=>j.status==='running');await new Promise(r=>setTimeout(r,150));
+check('cancel acknowledged',(await fetch(base+'/api/native/jobs/'+id,{method:'DELETE'})).status===200);
+const cancelled=await poll(id,j=>j.status==='cancelled'&&j.finishedAt);check('cancelled run has no result',cancelled.status==='cancelled'&&!cancelled.result);
+const bad=await post({...payload,request:{...request,parameters:{...request.parameters,fmaxMultiplier:0.1}}});
+check('bounded native validation attempted',bad.status===202);const badId=(await bad.json()).id;
+const failed=await poll(badId,j=>j.status==='failed');check('invalid native parameter preserved as failure',!!failed.error&&!failed.result);
+const report={at:new Date().toISOString(),url:base,checks,cancelled,failed};await fs.writeFile(out+'/RESULTS.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

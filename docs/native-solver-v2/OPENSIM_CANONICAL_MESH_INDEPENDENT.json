@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "modelHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463",
+  "assetHash": "b964f0fe44926b3fd1dde10b8d86a2bc8fb521536df5f8861baa9f0082f8c864",
+  "runHash": "90a997133adff37a16238d596993187713fcf7bf769d63b935b2128e677b5a59",
+  "geoms": 32,
+  "verticesPerFrame": 59522,
+  "nativeLocalVertexMaxAbs_m": 0.0,
+  "nativeMeshScaleMaxAbs": 0.0,
+  "frames": [
+    {
+      "frameIndex": 0,
+      "time_s": 0.0,
+      "nativeBodyTransformMaxAbs": 0.0,
+      "nativeWorldVertexMaxAbs_m": 0.0
+    },
+    {
+      "frameIndex": 25,
+      "time_s": 1.0,
+      "nativeBodyTransformMaxAbs": 0.0,
+      "nativeWorldVertexMaxAbs_m": 0.0
+    },
+    {
+      "frameIndex": 50,
+      "time_s": 2.0,
+      "nativeBodyTransformMaxAbs": 0.0,
+      "nativeWorldVertexMaxAbs_m": 0.0
+    }
+  ],
+  "method": "Independent fresh OpenSim model and original ASCII VTP sources. Every exported vertex checked; actual native body transforms and mesh scale used, with no alignment/fitting or cosmetic gap filling.",
+  "limitations": [
+    "Verifies native registration, not anatomical truth or native wrapping uniqueness. Triangulation used only for display."
+  ]
+}

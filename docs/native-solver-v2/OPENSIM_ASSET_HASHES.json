@@ -1,0 +1,332 @@
+{
+  "scope": "Active OpenSim index and referenced native replay/model/geometry dependencies; archived raw and superseded correspondence files are separate.",
+  "files": [
+    {
+      "file": "opensim-canonical-atlas-v2-index-dip-flex-negative.json",
+      "sha256": "46e79ece068edd71ef21ef257c301d30eb82f17ab107d31f526ff59d8015e473",
+      "bytes": 5476441
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-index-mcp-flex-negative.json",
+      "sha256": "09905e7c99ff6c18cdb06c91bf4f528fe3cbf5ec5d494ed515cb9a1daef5ad9a",
+      "bytes": 5453224
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-index-pip-flex-negative.json",
+      "sha256": "528888e9e5c47d6c6b34af42be0510b349d5440d5e38aae8551f24f66b5ad02f",
+      "bytes": 5473673
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-middle-dip-flex-negative.json",
+      "sha256": "c3957c465f5eaea6470d6b04eddb83c5ca6ddb138a4cc8a1dbf65404cf430a2c",
+      "bytes": 5484992
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-middle-mcp-flex-negative.json",
+      "sha256": "19e7f66cc57260bc07bd03d23f9ec012238055f5815a99d03ca356f71023c1f3",
+      "bytes": 5493164
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-middle-pip-flex-negative.json",
+      "sha256": "772d5a57570ce8d5f5d832263750ababafcf5d966b3d369875f07e0f578b49c6",
+      "bytes": 5490556
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-pinky-dip-flex-negative.json",
+      "sha256": "c1f08dbe5d002674561c2748f74a36557e521bd877f11b0e1021571bddb6aef5",
+      "bytes": 5477259
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-pinky-mcp-flex-negative.json",
+      "sha256": "9dad0f3915f5047c89d8ced034daf296c32f1c66e1311a676adde2a8d7a91d0f",
+      "bytes": 5502120
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-pinky-pip-flex-negative.json",
+      "sha256": "d244a81c38c38bb9709ab47b8836e6a1063c09295b7efd9f01ec9d2e6e45adc2",
+      "bytes": 5490422
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-ring-dip-flex-negative-attempt.json",
+      "sha256": "74f0a9b65fb973693ac58ad1497ced954e85b827446b8554620b46b034522305",
+      "bytes": 516
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-ring-mcp-flex-negative.json",
+      "sha256": "4416ac2b00228b93c318b0ac5c016a0b7d2008c1ae7a39fc06e834fc6ae0672c",
+      "bytes": 5516337
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-ring-pip-flex-negative.json",
+      "sha256": "5976134a6573733c9780944a624ed44ba4c0e9373fadb806cf8f4760bb865bbd",
+      "bytes": 5483674
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-thumb-ip-flex-negative.json",
+      "sha256": "c0742d87c1acd4888c1c18ab1e79bc9b463996ace47118cf6f20d738e2625a66",
+      "bytes": 5486108
+    },
+    {
+      "file": "opensim-canonical-atlas-v2-thumb-mcp-flex-negative.json",
+      "sha256": "19ad6fd0512e6d76fa3a17240ee78553f2f00418844ad32a418f0bdc1232f8a8",
+      "bytes": 5436356
+    },
+    {
+      "file": "opensim-canonical-coverage-v2.json",
+      "sha256": "0e25fa94fa63125b687f826bb21f3a2e12362b8a4a1a4fb19c714eb4a73035f8",
+      "bytes": 160125
+    },
+    {
+      "file": "opensim-canonical-finger-baseline.json",
+      "sha256": "1860b46072d99099c4fce75dc2de64456d48be67f96afdf85e9c95395c773a20",
+      "bytes": 2288657
+    },
+    {
+      "file": "opensim-canonical-finger-fmax110.json",
+      "sha256": "6c3174c88e989ac45cfe30e049dee52f227cd67b58161012110c53e745a97246",
+      "bytes": 2289594
+    },
+    {
+      "file": "opensim-canonical-finger-lopt105.json",
+      "sha256": "60b8e1132dc2b81cfef84d9b165f0348fdfbbb4803a17f4c8234ac3fa198588a",
+      "bytes": 2307627
+    },
+    {
+      "file": "opensim-canonical-finger-lts105.json",
+      "sha256": "72930066ec2b03a025f10a0346291f8944d2d15d3f835a25c241f22e7f7e5713",
+      "bytes": 2305718
+    },
+    {
+      "file": "opensim-canonical-finger-overload.json",
+      "sha256": "8866b5530052ce26f7a72f07ea3fa37adf361cc13dc076c1b6376f424f04b611",
+      "bytes": 2280243
+    },
+    {
+      "file": "opensim-canonical-geometry.json",
+      "sha256": "b964f0fe44926b3fd1dde10b8d86a2bc8fb521536df5f8861baa9f0082f8c864",
+      "bytes": 3657563
+    },
+    {
+      "file": "opensim-canonical-model.json",
+      "sha256": "0300efb4f0138d809b12c0762d4ddf228cdf4a4346c5952022df3fb4c686157e",
+      "bytes": 630951
+    },
+    {
+      "file": "opensim-canonical-native-2mcp-abduction-negative.json",
+      "sha256": "545231ba4a299a986ddb2bc7be816f28d768c1de5966653efb09308629e897d4",
+      "bytes": 2315536
+    },
+    {
+      "file": "opensim-canonical-native-2mcp-abduction-positive.json",
+      "sha256": "b61f965d344352b23adce52e1bed0e7520479c819b10762891f526660c4f70d0",
+      "bytes": 2316792
+    },
+    {
+      "file": "opensim-canonical-native-2mcp-flexion-negative.json",
+      "sha256": "d83db3c6cf8798fbe1976db529e53092b854fee54ae7ce721c5ab2132024ecfc",
+      "bytes": 2318763
+    },
+    {
+      "file": "opensim-canonical-native-2mcp-flexion-positive.json",
+      "sha256": "f2e88ae6d58c547c767ee72dcdffe6deb9e3e2d00834624053493df46fac97ba",
+      "bytes": 2306868
+    },
+    {
+      "file": "opensim-canonical-native-2md-flexion-positive.json",
+      "sha256": "592f3a78048e21d811ae318c9d0eb61081ad3ee7cf09e410d7232ea37d5220dc",
+      "bytes": 2313318
+    },
+    {
+      "file": "opensim-canonical-native-2pm-flexion-positive.json",
+      "sha256": "710e2d7773481d9b4167440a3964ce3854c46d1ded1af26fd9f12966c5c4efaf",
+      "bytes": 2313936
+    },
+    {
+      "file": "opensim-canonical-native-3mcp-abduction-negative.json",
+      "sha256": "a0b24138fbbea20ea74c07e968443afbcec773016191ad3b4ee0e6dfa0ecccc6",
+      "bytes": 2316231
+    },
+    {
+      "file": "opensim-canonical-native-3mcp-abduction-positive.json",
+      "sha256": "db4d0d62a26a735666f27d2b9e6837def580016308992bc9b5a2934eba6181a9",
+      "bytes": 2316370
+    },
+    {
+      "file": "opensim-canonical-native-3mcp-flexion-negative.json",
+      "sha256": "22409de7a8dcbfd99bdabc4fe4e244e826fa9140dafebf3a1ea0a3707571314b",
+      "bytes": 2319465
+    },
+    {
+      "file": "opensim-canonical-native-3mcp-flexion-positive.json",
+      "sha256": "7454a500eb0ce1112baa1d7a20907d1747bb7dc51b829abee629357a4c56bbc9",
+      "bytes": 2316949
+    },
+    {
+      "file": "opensim-canonical-native-3md-flexion-positive.json",
+      "sha256": "b508eafec2ece4806c2270550e43d4e000b18ca8dd55fdf6dcf30a64ca264419",
+      "bytes": 2314520
+    },
+    {
+      "file": "opensim-canonical-native-3pm-flexion-positive.json",
+      "sha256": "963c4af9e617dc15a8457328e7713ddb5a40f90c08fe0f27934924c84c8d4d09",
+      "bytes": 2316201
+    },
+    {
+      "file": "opensim-canonical-native-4mcp-abduction-negative.json",
+      "sha256": "1cbd13a22da1a15c682c17fd1bf7fbff469de148ab7d1e4b47a996151c02e523",
+      "bytes": 2316246
+    },
+    {
+      "file": "opensim-canonical-native-4mcp-abduction-positive.json",
+      "sha256": "4be927aced0f4f6e9fe699f5ab430feaa98c45388c3985722c7a93d71f9514b9",
+      "bytes": 2315907
+    },
+    {
+      "file": "opensim-canonical-native-4mcp-flexion-negative.json",
+      "sha256": "dcaae0cd03af324351246d76104477681adff5aeabc45eae0777be57f0dae4a7",
+      "bytes": 2328024
+    },
+    {
+      "file": "opensim-canonical-native-4mcp-flexion-positive.json",
+      "sha256": "8885a9be3baca58ff406a4aab58690fbda30699f71a1dd06d4f2d628218dea76",
+      "bytes": 2316176
+    },
+    {
+      "file": "opensim-canonical-native-4md-flexion-positive.json",
+      "sha256": "c1c1a93b921ccc2c7029cf4a4e95eb581204ba8af92108bb2f6bb52eeec11cbb",
+      "bytes": 2316178
+    },
+    {
+      "file": "opensim-canonical-native-4pm-flexion-positive.json",
+      "sha256": "02e4f9913affdab7d4598e870dc701fea5b38f6c0d3250a7d10da2b39c4a1bb1",
+      "bytes": 2314963
+    },
+    {
+      "file": "opensim-canonical-native-5mcp-abduction-negative.json",
+      "sha256": "87d07ff6c9648aba94133e9a80184723528a8302072bb662dd9d594cc7df9fbd",
+      "bytes": 2316571
+    },
+    {
+      "file": "opensim-canonical-native-5mcp-abduction-positive.json",
+      "sha256": "cc2b919a621bdfd1096698481711f645fb7c69cec22a1ee98730bbdbd0a950c1",
+      "bytes": 2314216
+    },
+    {
+      "file": "opensim-canonical-native-5mcp-flexion-negative.json",
+      "sha256": "ebaacb3e91678db7ae6fc3dc1eb0120e269635cf2e1347c8d74d00fd2559bb8a",
+      "bytes": 2317208
+    },
+    {
+      "file": "opensim-canonical-native-5mcp-flexion-positive.json",
+      "sha256": "8e381824c2d4f10fcf770ed3d0fc0ebc56fee38b4a2507522b11653e7e04e040",
+      "bytes": 2307411
+    },
+    {
+      "file": "opensim-canonical-native-5md-flexion-positive.json",
+      "sha256": "d0cbb15ded04db9cb20c3ee56b79d80230e37560408a611709bbba095c5fa743",
+      "bytes": 2313810
+    },
+    {
+      "file": "opensim-canonical-native-5pm-flexion-positive.json",
+      "sha256": "f194761d9b43699e59751e484166040129e01dc11191738f644dd46994b4eb07",
+      "bytes": 2315978
+    },
+    {
+      "file": "opensim-canonical-native-actions.json",
+      "sha256": "a4b1188aac2765175d23a41a479a5db1c554b44c4829b0be986cda8cfee07a03",
+      "bytes": 24038
+    },
+    {
+      "file": "opensim-canonical-native-cmc-abduction-negative.json",
+      "sha256": "70a5086ed412477c4ad32e2cabdc081036071545797aaee6f064c390d6bd1238",
+      "bytes": 2315991
+    },
+    {
+      "file": "opensim-canonical-native-cmc-abduction-positive.json",
+      "sha256": "00367031b15b002470b42b52827757d50e6118c2aa9d5728928fca10460362c3",
+      "bytes": 2315726
+    },
+    {
+      "file": "opensim-canonical-native-cmc-flexion-negative.json",
+      "sha256": "6325856f4e8993a6e04637899f0d33c9c894f8e228ad6d3bcfba3891ff893655",
+      "bytes": 2315806
+    },
+    {
+      "file": "opensim-canonical-native-cmc-flexion-positive.json",
+      "sha256": "74f6b34c84be328b24411d02457a5c7bf3569dab4f6ed9bd47ee86fea57edbaa",
+      "bytes": 2314395
+    },
+    {
+      "file": "opensim-canonical-native-cmc4-midrange.json",
+      "sha256": "794f5dc586b5d379ca33fefc16ce1f89e8d2793e2404cfefaf8b796c61e196e5",
+      "bytes": 2314242
+    },
+    {
+      "file": "opensim-canonical-native-deviation-positive.json",
+      "sha256": "c3c0035703c14b36f4dd7e205cf02f4d729b9fdf074a918459bba7a9b3bf01c7",
+      "bytes": 2319112
+    },
+    {
+      "file": "opensim-canonical-native-flexion-negative.json",
+      "sha256": "59961c50c94550247b67dbc5dfb320af8519a6850e6687fe01cb701f1b7ffaf9",
+      "bytes": 2330138
+    },
+    {
+      "file": "opensim-canonical-native-flexion-positive.json",
+      "sha256": "f15f316e21848b370a74ff8eba99d0bba088e5446b2aef1607c5a1cd3b9b5f56",
+      "bytes": 2327283
+    },
+    {
+      "file": "opensim-canonical-native-ip-flexion-negative.json",
+      "sha256": "fe68871d56ecd4b041f3751d5b4e658a1f2b56312f498bbeb6723c8a10c1916a",
+      "bytes": 2316966
+    },
+    {
+      "file": "opensim-canonical-native-ip-flexion-positive.json",
+      "sha256": "312b74dc382bded53bd91def2a05d67de50679e5c3c5212775bae10bc9848e71",
+      "bytes": 2316245
+    },
+    {
+      "file": "opensim-canonical-native-mp-flexion-negative.json",
+      "sha256": "0a8d026619405fdda14f7c47ee48ea1b77850e96267db3d78111d3ce82927ea6",
+      "bytes": 2314702
+    },
+    {
+      "file": "opensim-canonical-native-mp-flexion-positive.json",
+      "sha256": "52a441124438a479c05977d790db44882190555d67287111e32443a39b5487b9",
+      "bytes": 2320829
+    },
+    {
+      "file": "opensim-canonical-repair.json",
+      "sha256": "b3a87ede945569c02a86701c1ff6705719a4120fe8288498cee0b3487e6450b3",
+      "bytes": 12138
+    },
+    {
+      "file": "opensim-canonical-scale-ik-geometry.json",
+      "sha256": "b1015bf7779a60fa423a4b82a4b686b1be9bb9d205f06d7f2666ecd34a755a96",
+      "bytes": 3657659
+    },
+    {
+      "file": "opensim-canonical-scale-ik-model.json",
+      "sha256": "ccfbf55593ecf736699ec3b28c893406c194ac4c4abfeaa1a130cf4052d51273",
+      "bytes": 438519
+    },
+    {
+      "file": "opensim-canonical-scale-ik-roundtrip.json",
+      "sha256": "77b3424d6b3a7adaea9bb9c83c152dcf19505aab8b1bf0613f72b9a585cb8f80",
+      "bytes": 1768641
+    },
+    {
+      "file": "opensim-canonical-wrist-baseline.json",
+      "sha256": "391ad1ba288a862a07d18d59b36a9bb032bd6d92d9c58a47b2eb8d1decc88bc2",
+      "bytes": 2325466
+    },
+    {
+      "file": "opensim-index.json",
+      "sha256": "79c61dbf7a0e8583b99cebf908b91d48b84e17fcbddfe4d8223057932ff6773c",
+      "bytes": 177961
+    }
+  ],
+  "fileCount": 65,
+  "totalBytes": 178988814
+}

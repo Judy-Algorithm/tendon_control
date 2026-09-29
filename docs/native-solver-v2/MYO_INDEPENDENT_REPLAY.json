@@ -1,0 +1,145 @@
+{
+  "verification": "fresh independent native forward replay of archived controls",
+  "scope": "Does not validate optimization/controller optimality or physiological truth.",
+  "engineVersion": "3.3.0",
+  "myosuiteVersion": "2.11.6",
+  "results": [
+    {
+      "file": "myohand-run-pulse.json",
+      "sha256": "5e73fafbb4e88c36aa36176658b5298bbe818ac18dd39353929093c298edb95c",
+      "runId": "myohand-92f5bcda5f94c74a",
+      "framesCompared": 41,
+      "muscles": 39,
+      "coordinates": 23,
+      "forceScale": 1.0,
+      "activationTimeScale": 1.0,
+      "maxAbsErrors": {
+        "q": 4.9942598667751525e-11,
+        "qvel": 4.988492952051615e-11,
+        "activation": 4.735367653552203e-11,
+        "force_N": 4.9926916767528695e-11,
+        "qfrcActuator_Nm": 4.999980117437186e-11
+      },
+      "absoluteTolerance": 1e-08,
+      "parameterMaxAbsErrors": {
+        "gainParameters": 0.0,
+        "biasParameters": 0.0,
+        "dynamicsParameters": 0.0
+      },
+      "rawActionControlMaxAbsError": 0.0,
+      "sourceHashChecks": {
+        "envs/myo/assets/hand/myohand_pose.xml": true,
+        "envs/myo/base_v0.py": true,
+        "envs/myo/myobase/__init__.py": true,
+        "envs/myo/myobase/pose_v0.py": true,
+        "simhive/myo_sim/hand/assets/myohand_assets.xml": true,
+        "simhive/myo_sim/hand/assets/myohand_body.xml": true,
+        "simhive/myo_sim/scene/myosuite_scene.xml": true
+      },
+      "passed": true
+    },
+    {
+      "file": "myohand-run-pulse-force125.json",
+      "sha256": "230d1e2c4db8d1e921b1e3029694bda15d3f8b27830528f945d810e5d343ee24",
+      "runId": "myohand-405bff8bbc9da2e4",
+      "framesCompared": 41,
+      "muscles": 39,
+      "coordinates": 23,
+      "forceScale": 1.25,
+      "activationTimeScale": 1.0,
+      "maxAbsErrors": {
+        "q": 4.994450697199532e-11,
+        "qvel": 4.994548524761555e-11,
+        "activation": 4.735367653552203e-11,
+        "force_N": 4.999234706759559e-11,
+        "qfrcActuator_Nm": 4.9877756357627825e-11
+      },
+      "absoluteTolerance": 1e-08,
+      "parameterMaxAbsErrors": {
+        "gainParameters": 0.0,
+        "biasParameters": 0.0,
+        "dynamicsParameters": 0.0
+      },
+      "rawActionControlMaxAbsError": 0.0,
+      "sourceHashChecks": {
+        "envs/myo/assets/hand/myohand_pose.xml": true,
+        "envs/myo/base_v0.py": true,
+        "envs/myo/myobase/__init__.py": true,
+        "envs/myo/myobase/pose_v0.py": true,
+        "simhive/myo_sim/hand/assets/myohand_assets.xml": true,
+        "simhive/myo_sim/hand/assets/myohand_body.xml": true,
+        "simhive/myo_sim/scene/myosuite_scene.xml": true
+      },
+      "passed": true
+    },
+    {
+      "file": "myohand-run-independent113.json",
+      "sha256": "c00176d6c74abf2e19108f0a1f0fbf4074d02b4d447e9ff05035fdd122bacb34",
+      "runId": "myohand-fc683de7858c9e40",
+      "framesCompared": 41,
+      "muscles": 39,
+      "coordinates": 23,
+      "forceScale": 1.13,
+      "activationTimeScale": 1.3,
+      "maxAbsErrors": {
+        "q": 4.99116512009401e-11,
+        "qvel": 4.985904744625458e-11,
+        "activation": 4.94932428374284e-11,
+        "force_N": 4.993635713268496e-11,
+        "qfrcActuator_Nm": 4.995443728811333e-11
+      },
+      "absoluteTolerance": 1e-08,
+      "parameterMaxAbsErrors": {
+        "gainParameters": 0.0,
+        "biasParameters": 0.0,
+        "dynamicsParameters": 0.0
+      },
+      "rawActionControlMaxAbsError": 0.0,
+      "sourceHashChecks": {
+        "envs/myo/assets/hand/myohand_pose.xml": true,
+        "envs/myo/base_v0.py": true,
+        "envs/myo/myobase/__init__.py": true,
+        "envs/myo/myobase/pose_v0.py": true,
+        "simhive/myo_sim/hand/assets/myohand_assets.xml": true,
+        "simhive/myo_sim/hand/assets/myohand_body.xml": true,
+        "simhive/myo_sim/scene/myosuite_scene.xml": true
+      },
+      "passed": true
+    },
+    {
+      "file": "myohand-run-track-wrist.json",
+      "sha256": "783ad257b0a9d672bf20873a24ff791e40aac03f088f7d04110477f2376b2238",
+      "runId": "myohand-c75bb6e5a6e432cb",
+      "framesCompared": 101,
+      "muscles": 39,
+      "coordinates": 23,
+      "forceScale": 1.0,
+      "activationTimeScale": 1.0,
+      "maxAbsErrors": {
+        "q": 4.996449160646669e-11,
+        "qvel": 4.996469904483547e-11,
+        "activation": 4.9995483881321023e-11,
+        "force_N": 4.997453839639121e-11,
+        "qfrcActuator_Nm": 4.996493756931342e-11
+      },
+      "absoluteTolerance": 1e-08,
+      "parameterMaxAbsErrors": {
+        "gainParameters": 0.0,
+        "biasParameters": 0.0,
+        "dynamicsParameters": 0.0
+      },
+      "rawActionControlMaxAbsError": 1.1102230246251565e-16,
+      "sourceHashChecks": {
+        "envs/myo/assets/hand/myohand_pose.xml": true,
+        "envs/myo/base_v0.py": true,
+        "envs/myo/myobase/__init__.py": true,
+        "envs/myo/myobase/pose_v0.py": true,
+        "simhive/myo_sim/hand/assets/myohand_assets.xml": true,
+        "simhive/myo_sim/hand/assets/myohand_body.xml": true,
+        "simhive/myo_sim/scene/myosuite_scene.xml": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

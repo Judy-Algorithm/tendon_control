@@ -3,6 +3,8 @@ import fs from 'node:fs/promises';
 import {chromium} from 'playwright';
 import {CONTROLS as ATLAS} from '../control-data.js';
 import {FITTED_ROUTES} from '../route-data.js';
+import {ATLAS as DISPLAY_ATLAS} from '../atlas-data.js';
+import {OPENSIM_MUSCLES} from '../opensim-muscles.js';
 
 const browser=await chromium.launch({channel:process.env.BROWSER_CHANNEL||'chrome',headless:true,args:['--enable-unsafe-swiftshader']});
 await fs.mkdir('test-output',{recursive:true});
@@ -17,9 +19,21 @@ function trigger(joint){return page.locator(`[data-joint-id="${joint}"] .joint-t
 function action(dof,id){return page.locator(`[data-action-key="${dof}:${id}"]`);}
 function toggle(id){return page.locator('.path-list:not([hidden])').locator(`[data-toggle-tendon="${id}"]`);}
 async function verifyRender(expected){
-  const s=await snapshot();equalSet(s.visible,expected);equalSet(s.rendered,expected);equalSet(s.labelIds,expected);
-  const bounds=await page.locator('.path-callout rect').evaluateAll(rects=>rects.map(r=>{const b=r.getBBox(),svg=r.ownerSVGElement;return {x:b.x,y:b.y,right:b.x+b.width,bottom:b.y+b.height,w:svg.clientWidth,h:svg.clientHeight};}));
-  for(const r of bounds)assert.ok(r.x>=0&&r.y>=0&&r.right<=r.w&&r.bottom<=r.h,'Arrow label exceeds the viewport');
+  // ROM playback replaces every SVG label on each rendered frame. Resolving a
+  // locator's node array and evaluating it in a later browser task can therefore
+  // observe detached rects. Query the current tree and snapshot in one task;
+  // require every expected label, rather than filtering detached/missing nodes.
+  await page.waitForFunction(ids=>{
+    const s=window.tendonAtlas?.snapshot();if(!s)return false;
+    const same=a=>a.length===ids.length&&[...a].sort().every((v,i)=>v===[...ids].sort()[i]);
+    const rects=[...document.querySelectorAll('.path-callout rect')];
+    return same(s.visible)&&same(s.rendered)&&same(s.labelIds)&&rects.length===ids.length&&rects.every(r=>r.isConnected&&r.ownerSVGElement);
+  },expected,{timeout:5000});
+  const {state,bounds}=await page.evaluate(()=>({state:window.tendonAtlas.snapshot(),bounds:[...document.querySelectorAll('.path-callout rect')].map(r=>{
+    const b=r.getBBox(),svg=r.ownerSVGElement;return {id:r.parentElement.dataset.tendon,connected:r.isConnected,hasSVG:Boolean(svg),x:b.x,y:b.y,right:b.x+b.width,bottom:b.y+b.height,w:svg?.clientWidth,h:svg?.clientHeight};
+  })}));
+  equalSet(state.visible,expected);equalSet(state.rendered,expected);equalSet(state.labelIds,expected);equalSet(bounds.map(r=>r.id),expected);
+  for(const r of bounds){assert.ok(r.connected&&r.hasSVG,`Arrow label ${r.id} is detached`);assert.ok(r.x>=0&&r.y>=0&&r.right<=r.w&&r.bottom<=r.h,`Arrow label ${r.id} exceeds the viewport`);}
 }
 try{
   await page.goto(url);await page.waitForFunction(()=>window.tendonAtlas?.snapshot().ready);
@@ -27,7 +41,7 @@ try{
   if((await snapshot()).jointId)await trigger((await snapshot()).jointId).click();
   assert.equal(await page.locator('.joint-trigger').count(),17);
   assert.equal((await snapshot()).boneCount,29);
-  const geometry=await snapshot();assert.equal(geometry.geometryRevision,2);assert.equal(geometry.endpoints.length,37);
+  const geometry=await snapshot();assert.equal(geometry.geometryRevision,2);equalSet(geometry.endpoints.map(e=>e.id),new Set([...DISPLAY_ATLAS.tendons,...OPENSIM_MUSCLES].map(t=>t.id)));
   for(const e of geometry.endpoints){
     assert.equal(e.depthTest,true);
     if(FITTED_ROUTES[e.id]){
@@ -95,5 +109,5 @@ try{
   await trigger('joint_bone0').click();await verifyRender(ATLAS.joints[0].tendons.filter(id=>id!=='FDS3'));
   await page.screenshot({path:'test-output/mobile-wrist.png'});
   assert.deepEqual(errors,[]);
-  console.log(`Passed: 16 joints, ${actionCount} actions, synchronized path/arrow toggles, rotation, desktop and mobile; no browser errors.`);
+  console.log(`Passed: 17 joints, ${actionCount} actions, synchronized path/arrow toggles, rotation, desktop and mobile; no browser errors.`);
 }finally{await browser.close();}

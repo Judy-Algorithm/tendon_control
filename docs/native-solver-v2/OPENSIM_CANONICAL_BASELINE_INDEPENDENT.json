@@ -1,0 +1,157 @@
+{
+  "status": "FAIL",
+  "directNativeMomentArmStatus": "PASS",
+  "engine": "version 4.4.1-2023-07-13-710e13be5, build date 14:40:27 Jul 14 2023",
+  "modelHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463",
+  "runtimeModelHash": "53a67782946609bcfeb640c0020b05fca0baac878a1242da2676be64e7b051cb",
+  "runHash": "90a997133adff37a16238d596993187713fcf7bf769d63b935b2128e677b5a59",
+  "method": "Fresh native model; geometry length finite differences with native coordinate couplers, tau=-dL/dq*force. No exporter or ID-basis implementation imported.",
+  "finiteDifferenceThreshold_Nm": 5e-05,
+  "frames": [
+    {
+      "frameIndex": 0,
+      "time_s": 0.0,
+      "pathLengthMaxAbsDifference_m": 8.131401108002478e-11,
+      "directNativeMomentArmMaxAbsDifference_Nm": 1.4790443730872127e-09,
+      "directNativeLargestDifference": {
+        "muscle": "EDCM",
+        "coordinate": "deviation",
+        "directTorque_Nm": -0.036552811727439335,
+        "exportedTorque_Nm": -0.03655281320648371
+      },
+      "worstFiniteDifferenceDiagnosis": {
+        "muscle": "FPL",
+        "coordinate": "flexion",
+        "sameBodyMovingSegmentDerivativeTorque_Nm": {
+          "FPL-P5 \u2192 FPL-P6": 0.011652546468447506
+        },
+        "differenceMinusSameBodySegmentTerm_Nm": -8.341206197970408e-12,
+        "interpretation": "OpenSim4.4 GeometryPath.addInEquivalentForces skips segments whose endpoints share a mobilized body; finite total-length derivatives still include changing same-body MovingPathPoint segments."
+      },
+      "finiteDifferenceChecks": [
+        {
+          "epsilon_rad": 1e-05,
+          "maxAbsDifference_Nm": 0.01165254647106823,
+          "rmsDifference_Nm": 0.00037711578135026354,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.02062028825976142,
+            "exportedTorque_Nm": 0.008967741788693192
+          }
+        },
+        {
+          "epsilon_rad": 1e-06,
+          "maxAbsDifference_Nm": 0.0116525464601063,
+          "rmsDifference_Nm": 0.000377115782779809,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020620288248799492,
+            "exportedTorque_Nm": 0.008967741788693192
+          }
+        }
+      ],
+      "muscleSumMaxAbsDifference_Nm": 0.0,
+      "exportedBalanceIdentityMaxAbsDifference_Nm": 1.4065778018886668e-15
+    },
+    {
+      "frameIndex": 25,
+      "time_s": 1.0,
+      "pathLengthMaxAbsDifference_m": 7.523959233424193e-11,
+      "directNativeMomentArmMaxAbsDifference_Nm": 1.4790495217464894e-09,
+      "directNativeLargestDifference": {
+        "muscle": "EDCM",
+        "coordinate": "deviation",
+        "directTorque_Nm": -0.03655288506730045,
+        "exportedTorque_Nm": -0.03655288654634997
+      },
+      "worstFiniteDifferenceDiagnosis": {
+        "muscle": "FPL",
+        "coordinate": "flexion",
+        "sameBodyMovingSegmentDerivativeTorque_Nm": {
+          "FPL-P5 \u2192 FPL-P6": 0.011652546466978749
+        },
+        "differenceMinusSameBodySegmentTerm_Nm": -8.341211402140836e-12,
+        "interpretation": "OpenSim4.4 GeometryPath.addInEquivalentForces skips segments whose endpoints share a mobilized body; finite total-length derivatives still include changing same-body MovingPathPoint segments."
+      },
+      "finiteDifferenceChecks": [
+        {
+          "epsilon_rad": 1e-05,
+          "maxAbsDifference_Nm": 0.011652546469599467,
+          "rmsDifference_Nm": 0.0003770397713117371,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020620288257162313,
+            "exportedTorque_Nm": 0.008967741787562846
+          }
+        },
+        {
+          "epsilon_rad": 1e-06,
+          "maxAbsDifference_Nm": 0.011652546458637537,
+          "rmsDifference_Nm": 0.0003770397723739628,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020620288246200384,
+            "exportedTorque_Nm": 0.008967741787562846
+          }
+        }
+      ],
+      "muscleSumMaxAbsDifference_Nm": 0.0,
+      "exportedBalanceIdentityMaxAbsDifference_Nm": 5.08233671604316e-16
+    },
+    {
+      "frameIndex": 50,
+      "time_s": 2.0,
+      "pathLengthMaxAbsDifference_m": 1.7166529309164957e-10,
+      "directNativeMomentArmMaxAbsDifference_Nm": 1.6664058188897712e-09,
+      "directNativeLargestDifference": {
+        "muscle": "FDSL",
+        "coordinate": "4cmc_flexion",
+        "directTorque_Nm": 0.08025149274347912,
+        "exportedTorque_Nm": 0.08025149440988494
+      },
+      "worstFiniteDifferenceDiagnosis": {
+        "muscle": "FPL",
+        "coordinate": "flexion",
+        "sameBodyMovingSegmentDerivativeTorque_Nm": {
+          "FPL-P5 \u2192 FPL-P6": 0.011652546466111616
+        },
+        "differenceMinusSameBodySegmentTerm_Nm": -8.341207932693884e-12,
+        "interpretation": "OpenSim4.4 GeometryPath.addInEquivalentForces skips segments whose endpoints share a mobilized body; finite total-length derivatives still include changing same-body MovingPathPoint segments."
+      },
+      "finiteDifferenceChecks": [
+        {
+          "epsilon_rad": 1e-05,
+          "maxAbsDifference_Nm": 0.011652546468732337,
+          "rmsDifference_Nm": 0.00037658730701489577,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020620288255627842,
+            "exportedTorque_Nm": 0.008967741786895505
+          }
+        },
+        {
+          "epsilon_rad": 1e-06,
+          "maxAbsDifference_Nm": 0.011652546457770408,
+          "rmsDifference_Nm": 0.0003765873079373962,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020620288244665913,
+            "exportedTorque_Nm": 0.008967741786895505
+          }
+        }
+      ],
+      "muscleSumMaxAbsDifference_Nm": 0.0,
+      "exportedBalanceIdentityMaxAbsDifference_Nm": 4.43227843517154e-16
+    }
+  ],
+  "limitations": [
+    "Checks exported muscle virtual work and algebraic balance identity, not independent SO optimality or physiological reserve acceptance.",
+    "Finite differences sample three saved frames, not every frame; force labels supplied by native SO are not re-solved here."
+  ]
+}

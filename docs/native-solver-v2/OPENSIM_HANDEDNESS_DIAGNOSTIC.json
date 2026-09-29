@@ -1,0 +1,970 @@
+{
+  "status": "MAPPING_SIGN_BUG_FOUND_NOT_APPLIED",
+  "scope": "Read-only diagnostic, no active fixture or mapping changed. Axial correction depends on verified opposite handedness of display MyoHand RIGHT and canonical OpenSim LEFT. Axis similarity remains a separate requirement.",
+  "sourceModelHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463",
+  "displaySource": "docs/data-provenance.json: public MyoHand geometry; native MyoHand manifest declares RIGHT",
+  "polarRegistrationDeterminant": -1.0000000000000002,
+  "polarRegistration": [
+    [
+      -0.07184388592055847,
+      -0.9972104499297834,
+      0.020242890274683043
+    ],
+    [
+      -0.2657525304275258,
+      0.038699901205096594,
+      0.9632641954407332
+    ],
+    [
+      0.9613605195904399,
+      -0.06382504365493878,
+      0.2677915517249272
+    ]
+  ],
+  "axialRegistration": [
+    [
+      0.07184388592055849,
+      0.9972104499297836,
+      -0.020242890274683047
+    ],
+    [
+      0.26575253042752583,
+      -0.0386999012050966,
+      -0.9632641954407334
+    ],
+    [
+      -0.9613605195904401,
+      0.0638250436549388,
+      -0.26779155172492725
+    ]
+  ],
+  "explanation": "A right-handed cross-product palm basis on both hands silently chooses a proper rotation. Opposite-hand anatomy requires polar map P with det(P)=-1; an angular velocity is axial and transforms as det(P)P omega. Neglecting chirality reverses flexion signs for in-plane axes.",
+  "landmarkSimilarityFits": [
+    {
+      "determinant": -1,
+      "scale": 1.021157322554687,
+      "rms_m": 0.006456965868320046
+    },
+    {
+      "determinant": 1,
+      "scale": 0.938196396533559,
+      "rms_m": 0.02174637052582376
+    }
+  ],
+  "counts": {
+    "axis_registration_pending": 8,
+    "candidate_mapping_requires_independent_review": 14,
+    "out_of_original_amplitude_range": 22,
+    "unsupported_constructed_or_coupled_axis": 4
+  },
+  "rows": [
+    {
+      "actionId": "wrist_flex:positive",
+      "label": "腕关节 · 弯曲",
+      "coordinate": "flexion",
+      "oldStatus": "mapped",
+      "oldAxisCosine": -0.9427417773317063,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.8877603451788478,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        2.82013145543701e-09,
+        1.2000000508201314
+      ],
+      "nativeRange_rad": [
+        -1.22173048,
+        1.22173048
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "axis_registration_pending"
+    },
+    {
+      "actionId": "wrist_flex:negative",
+      "label": "腕关节 · 伸展",
+      "coordinate": "flexion",
+      "oldStatus": "mapped",
+      "oldAxisCosine": -0.9427417773317063,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.8877603451788478,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -1.2000000451798685,
+        2.82013145543701e-09
+      ],
+      "nativeRange_rad": [
+        -1.22173048,
+        1.22173048
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "axis_registration_pending"
+    },
+    {
+      "actionId": "wrist_abd:positive",
+      "label": "腕关节 · 桡偏",
+      "coordinate": "deviation",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.28670467240628267,
+      "oldSign": -1,
+      "correctedAxisCosine": -0.7646344415638832,
+      "correctedSign": -1,
+      "requestedRange_rad": [
+        -0.5999999353450602,
+        8.84549396760041e-08
+      ],
+      "nativeRange_rad": [
+        -0.17453293,
+        0.43633231
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "axis_registration_pending"
+    },
+    {
+      "actionId": "wrist_abd:negative",
+      "label": "腕关节 · 尺偏",
+      "coordinate": "deviation",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.28670467240628267,
+      "oldSign": -1,
+      "correctedAxisCosine": -0.7646344415638832,
+      "correctedSign": -1,
+      "requestedRange_rad": [
+        8.84549396760041e-08,
+        0.5000000884549397
+      ],
+      "nativeRange_rad": [
+        -0.17453293,
+        0.43633231
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "axis_registration_pending"
+    },
+    {
+      "actionId": "thumb_CMC_flex:negative",
+      "label": "拇指 CMC · 弯曲",
+      "coordinate": "cmc_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": 0.7739723665083467,
+      "oldSign": 1,
+      "correctedAxisCosine": -0.2820364494726527,
+      "correctedSign": -1,
+      "requestedRange_rad": [
+        -1.40921614617423e-14,
+        0.3000000118999859
+      ],
+      "nativeRange_rad": [
+        -0.78539816,
+        0.26179939
+      ],
+      "crossProductIdentityMaxError": 1.942890293094024e-16,
+      "status": "axis_registration_pending"
+    },
+    {
+      "actionId": "thumb_CMC_flex:positive",
+      "label": "拇指 CMC · 伸展",
+      "coordinate": "cmc_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": 0.7739723665083467,
+      "oldSign": 1,
+      "correctedAxisCosine": -0.2820364494726527,
+      "correctedSign": -1,
+      "requestedRange_rad": [
+        -1.000000000000014,
+        -1.40921614617423e-14
+      ],
+      "nativeRange_rad": [
+        -0.78539816,
+        0.26179939
+      ],
+      "crossProductIdentityMaxError": 1.942890293094024e-16,
+      "status": "axis_registration_pending"
+    },
+    {
+      "actionId": "thumb_CMC_abd:positive",
+      "label": "拇指 CMC · 外展",
+      "coordinate": "cmc_abduction",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.773989735718686,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.0616979360233253,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -1.14040043408494e-13,
+        1.3999999759998858
+      ],
+      "nativeRange_rad": [
+        -0.43633231,
+        0.43633231
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "axis_registration_pending"
+    },
+    {
+      "actionId": "thumb_CMC_abd:negative",
+      "label": "拇指 CMC · 内收",
+      "coordinate": "cmc_abduction",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.773989735718686,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.0616979360233253,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.699999988100114,
+        -1.14040043408494e-13
+      ],
+      "nativeRange_rad": [
+        -0.43633231,
+        0.43633231
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "axis_registration_pending"
+    },
+    {
+      "actionId": "ulnar_CMC_flex:positive",
+      "label": "第4、5掌骨 CMC · 屈曲 Flexion",
+      "coordinate": "4cmc_flexion / CMC5_r1",
+      "oldStatus": "unsupported",
+      "status": "unsupported_constructed_or_coupled_axis"
+    },
+    {
+      "actionId": "ulnar_CMC_flex:negative",
+      "label": "第4、5掌骨 CMC · 伸回中立位",
+      "coordinate": "4cmc_flexion / CMC5_r1",
+      "oldStatus": "unsupported",
+      "status": "unsupported_constructed_or_coupled_axis"
+    },
+    {
+      "actionId": "thumb_MCP_flex:positive",
+      "label": "拇指 MCP · 弯曲",
+      "coordinate": "mp_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": 0.7726855849822953,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9641836135933805,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -1.52958518884147e-14,
+        0.9999999999999847
+      ],
+      "nativeRange_rad": [
+        -0.6981317,
+        0.78539816
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "thumb_MCP_flex:negative",
+      "label": "拇指 MCP · 伸展",
+      "coordinate": "mp_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": 0.7726855849822953,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9641836135933805,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.2000000030000153,
+        -1.52958518884147e-14
+      ],
+      "nativeRange_rad": [
+        -0.6981317,
+        0.78539816
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "thumb_MCP_abd:positive",
+      "label": "拇指 MCP · 外展",
+      "coordinate": null,
+      "oldStatus": "unsupported",
+      "status": "unsupported_constructed_or_coupled_axis"
+    },
+    {
+      "actionId": "thumb_MCP_abd:negative",
+      "label": "拇指 MCP · 内收",
+      "coordinate": null,
+      "oldStatus": "unsupported",
+      "status": "unsupported_constructed_or_coupled_axis"
+    },
+    {
+      "actionId": "index_MCP_flex:positive",
+      "label": "食指 MCP · 弯曲",
+      "coordinate": "2mcp_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.8755338800125796,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9960162650084871,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        8.74897678972486e-09,
+        1.600000032748977
+      ],
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "crossProductIdentityMaxError": 1.6653345369377348e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "index_MCP_flex:negative",
+      "label": "食指 MCP · 伸展",
+      "coordinate": "2mcp_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.8755338800125796,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9960162650084871,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.3499999852510232,
+        8.74897678972486e-09
+      ],
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "crossProductIdentityMaxError": 1.6653345369377348e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "index_MCP_abd:positive",
+      "label": "食指 MCP · 外展",
+      "coordinate": "2mcp_abduction",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": 0.8851051086131965,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9955501712747106,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -8.68320987800593e-29,
+        0.400000006
+      ],
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "index_MCP_abd:negative",
+      "label": "食指 MCP · 内收",
+      "coordinate": "2mcp_abduction",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": 0.8851051086131965,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9955501712747106,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.3000000119,
+        -8.68320987800593e-29
+      ],
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "middle_MCP_flex:positive",
+      "label": "中指 MCP · 弯曲",
+      "coordinate": "3mcp_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9889739392975458,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9937739078406548,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        6.8443146970229e-09,
+        1.6000000308443147
+      ],
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "middle_MCP_flex:negative",
+      "label": "中指 MCP · 伸展",
+      "coordinate": "3mcp_flexion",
+      "oldStatus": "mapped",
+      "oldAxisCosine": -0.9889739392975458,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9937739078406548,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.3499999871556853,
+        6.8443146970229e-09
+      ],
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "middle_MCP_abd:positive",
+      "label": "中指 MCP · 桡偏",
+      "coordinate": "3mcp_abduction",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": 0.9849618503243998,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9896318241329377,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        1.15706560923878e-25,
+        0.400000006
+      ],
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "crossProductIdentityMaxError": 1.1102230246251565e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "middle_MCP_abd:negative",
+      "label": "中指 MCP · 尺偏",
+      "coordinate": "3mcp_abduction",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": 0.9849618503243998,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9896318241329377,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.3000000119,
+        1.15706560923878e-25
+      ],
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "crossProductIdentityMaxError": 1.1102230246251565e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "ring_MCP_flex:positive",
+      "label": "无名指 MCP · 弯曲",
+      "coordinate": "4mcp_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9963432640271931,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9798723210909076,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        4.76683700544055e-09,
+        1.600000028766837
+      ],
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "ring_MCP_flex:negative",
+      "label": "无名指 MCP · 伸展",
+      "coordinate": "4mcp_flexion",
+      "oldStatus": "mapped",
+      "oldAxisCosine": -0.9963432640271931,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9798723210909076,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.349999989233163,
+        4.76683700544055e-09
+      ],
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "ring_MCP_abd:negative",
+      "label": "无名指 MCP · 外展",
+      "coordinate": "4mcp_abduction",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": 0.9827942899014928,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9827112732951554,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.30000001176905733,
+        1.30942636957374e-10
+      ],
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "crossProductIdentityMaxError": 1.1102230246251565e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "ring_MCP_abd:positive",
+      "label": "无名指 MCP · 内收",
+      "coordinate": "4mcp_abduction",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": 0.9827942899014928,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9827112732951554,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        1.30942636957374e-10,
+        0.40000000613094266
+      ],
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "crossProductIdentityMaxError": 1.1102230246251565e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "pinky_MCP_flex:positive",
+      "label": "小指 MCP · 弯曲",
+      "coordinate": "5mcp_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9696552228106518,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9220651560349054,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        1.02388043114882e-09,
+        1.6000000250238806
+      ],
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "pinky_MCP_flex:negative",
+      "label": "小指 MCP · 伸展",
+      "coordinate": "5mcp_flexion",
+      "oldStatus": "mapped",
+      "oldAxisCosine": -0.9696552228106518,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9220651560349054,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.4999999989761196,
+        1.02388043114882e-09
+      ],
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "pinky_MCP_abd:negative",
+      "label": "小指 MCP · 外展",
+      "coordinate": "5mcp_abduction",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": 0.9535014571411106,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9415833085940744,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.3000000144328643,
+        -2.53286431027479e-09
+      ],
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "pinky_MCP_abd:positive",
+      "label": "小指 MCP · 内收",
+      "coordinate": "5mcp_abduction",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": 0.9535014571411106,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.9415833085940744,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -2.53286431027479e-09,
+        0.4999999974671357
+      ],
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "thumb_IP_flex:positive",
+      "label": "拇指 IP · 弯曲",
+      "coordinate": "ip_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": 0.2889910189177725,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.973943910936084,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -3.99700832476613e-14,
+        1.49999999999996
+      ],
+      "nativeRange_rad": [
+        -0.43633231,
+        1.30899694
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "thumb_IP_flex:negative",
+      "label": "拇指 IP · 伸展",
+      "coordinate": "ip_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": 0.2889910189177725,
+      "oldSign": 1,
+      "correctedAxisCosine": 0.973943910936084,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -0.20000000300003998,
+        -3.99700832476613e-14
+      ],
+      "nativeRange_rad": [
+        -0.43633231,
+        1.30899694
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "index_PIP_flex:positive",
+      "label": "食指 PIP · 弯曲",
+      "coordinate": "2pm_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.7889759549009909,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9521208479391244,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        0.000146426395812156,
+        1.800146378395812
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "index_PIP_flex:negative",
+      "label": "食指 PIP · 伸展",
+      "coordinate": "2pm_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.7889759549009909,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9521208479391244,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        0.000146426395812156,
+        1.1701463951958122
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "middle_PIP_flex:positive",
+      "label": "中指 PIP · 弯曲",
+      "coordinate": "3pm_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9710890218083424,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9271898501172281,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        2.76192822597155e-12,
+        1.7999999520027619
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "middle_PIP_flex:negative",
+      "label": "中指 PIP · 伸展",
+      "coordinate": "3pm_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9710890218083424,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9271898501172281,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        2.76192822597155e-12,
+        1.169999968802762
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "ring_PIP_flex:positive",
+      "label": "无名指 PIP · 弯曲",
+      "coordinate": "4pm_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.98704668626,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9996551929764332,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -1.62794668640628e-11,
+        1.7999999519837204
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "ring_PIP_flex:negative",
+      "label": "无名指 PIP · 伸展",
+      "coordinate": "4pm_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.98704668626,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9996551929764332,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -1.62794668640628e-11,
+        1.1699999687837206
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "pinky_PIP_flex:positive",
+      "label": "小指 PIP · 弯曲",
+      "coordinate": "5pm_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.8816680136868799,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9458019718981441,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        4.87787660490509e-05,
+        1.8000487307660489
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "pinky_PIP_flex:negative",
+      "label": "小指 PIP · 伸展",
+      "coordinate": "5pm_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.8816680136868799,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9458019718981441,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        4.87787660490509e-05,
+        1.170048747566049
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "index_DIP_flex:positive",
+      "label": "食指 DIP · 弯曲",
+      "coordinate": "2md_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9766152890060603,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9333045876807898,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        0.000140231594820255,
+        1.6001402555948203
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "index_DIP_flex:negative",
+      "label": "食指 DIP · 伸展",
+      "coordinate": "2md_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9766152890060603,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9333045876807898,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        0.000140231594820255,
+        1.0401402471948205
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "middle_DIP_flex:positive",
+      "label": "中指 DIP · 弯曲",
+      "coordinate": "3md_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9753491437699788,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9260993174031193,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        0.000119783810135061,
+        1.600119807810135
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "middle_DIP_flex:negative",
+      "label": "中指 DIP · 伸展",
+      "coordinate": "3md_flexion",
+      "oldStatus": "unsupported",
+      "oldAxisCosine": -0.9753491437699788,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9260993174031193,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        0.000119783810135061,
+        1.0401197994101352
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "ring_DIP_flex:positive",
+      "label": "无名指 DIP · 弯曲",
+      "coordinate": "4md_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.8606227321920953,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9928525282228051,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -3.83544812863329e-11,
+        1.6000000239616456
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "ring_DIP_flex:negative",
+      "label": "无名指 DIP · 伸展",
+      "coordinate": "4md_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.8606227321920953,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9928525282228051,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        -3.83544812863329e-11,
+        1.0400000155616458
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "crossProductIdentityMaxError": 3.3306690738754696e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    },
+    {
+      "actionId": "pinky_DIP_flex:positive",
+      "label": "小指 DIP · 弯曲",
+      "coordinate": "5md_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.8435615864997192,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9065968879519546,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        3.01457052785629e-05,
+        1.6000301697052786
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "out_of_original_amplitude_range"
+    },
+    {
+      "actionId": "pinky_DIP_flex:negative",
+      "label": "小指 DIP · 伸展",
+      "coordinate": "5md_flexion",
+      "oldStatus": "not_yet_verified",
+      "oldAxisCosine": -0.8435615864997192,
+      "oldSign": -1,
+      "correctedAxisCosine": 0.9065968879519546,
+      "correctedSign": 1,
+      "requestedRange_rad": [
+        3.01457052785629e-05,
+        1.0400301613052787
+      ],
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "crossProductIdentityMaxError": 2.220446049250313e-16,
+      "status": "candidate_mapping_requires_independent_review"
+    }
+  ]
+}

@@ -35,8 +35,6 @@ function createSceneFixture() {
   });
   scene.ghostGroup = new THREE.Group();
   scene.pathGroup = new THREE.Group();
-  scene.wrapGroup = new THREE.Group();
-  scene.wrapAnchors = [new THREE.Mesh(), new THREE.Mesh()];
   scene.markers = Array.from({length: 4}, () => ({fitted: new THREE.Mesh(), observed: new THREE.Mesh()}));
   scene.paths = new Map();
   for (const id of ['FDS2', 'FDP2', 'EDC2']) {
@@ -50,7 +48,7 @@ function createSceneFixture() {
   scene.dummy = new THREE.Object3D();
   scene.up = new THREE.Vector3(0, 1, 0);
   scene.diagnostics = {};
-  for (const name of ['residualLine', 'dimensionLine', 'trajectoryLine', 'axisLine', 'ringLine', 'leverLine', 'wrapPath', 'wrapLeader'])
+  for (const name of ['residualLine', 'dimensionLine', 'trajectoryLine', 'axisLine', 'ringLine', 'leverLine'])
     scene[name] = new THREE.Line(new THREE.BufferGeometry());
   scene.forceArrow = new THREE.ArrowHelper();
   scene.contactDot = new THREE.Mesh();
@@ -74,10 +72,8 @@ test('explainer display scale/explosion resets exactly without modifying source 
   const scene = createSceneFixture(), baseline = transforms(scene);
   scene.setState({step: 'scale', parameters: {scale: 1.3, explode: 1, angle: 46}});
   assert.notDeepEqual(transforms(scene), baseline);
-  assert.equal(scene.wrapGroup.visible, true);
   scene.reset();
   assert.deepEqual(transforms(scene), baseline);
-  assert.equal(scene.wrapGroup.visible, false);
   assert.equal(JSON.stringify(MODEL), modelBefore);
   assert.equal(JSON.stringify(FITTED_ROUTES), pathsBefore);
 });
@@ -130,7 +126,6 @@ test('MyoHand does not invent external contact or overwrite provided angles duri
     assert.equal(scene.forceArrow.visible, false);
     assert.equal(scene.contactDot.visible, false);
     assert.equal(scene.leverLine.visible, false);
-    assert.equal(scene.wrapGroup.visible, false);
     assert.equal(scene.diagnostics.displayAngleDeg, 31);
   }
 });
@@ -165,16 +160,12 @@ test('screen-space mechanics diagram uses the same force and lever values, witho
   assert.equal(scene.mechanicsInset.style.display, 'none');
 });
 
-test('detached wrapping schematic is only visible in exploded Scale, not a solver path', () => {
+test('detached wrapping schematic is absent from every teaching step', () => {
   const scene = createSceneFixture();
-  for (const step of ['overview', 'ik', 'id', 'so', 'moco']) {
+  for (const step of ['overview', 'scale', 'ik', 'id', 'so', 'moco']) {
     scene.setState({route: 'opensim', step, parameters: {explode: 1}});
-    assert.equal(scene.wrapGroup.visible, false);
+    assert.equal(scene.wrapGroup, undefined);
   }
-  scene.setState({step: 'scale', parameters: {explode: .5}});
-  assert.equal(scene.wrapGroup.visible, true);
-  scene.setState({parameters: {explode: 0}});
-  assert.equal(scene.wrapGroup.visible, false);
 });
 
 test('hotspot meaning and source title refresh when switching between model routes', () => {

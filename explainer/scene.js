@@ -23,7 +23,7 @@ const SOURCE_TITLES = {overview: 'OpenSim · Workflows', scale: 'OpenSim · How 
 const HOTSPOT_MEANINGS = {'scale-span': '几何长度随比例调整', 'path-anchors': '路径附着随骨段移动',
   'observed-markers': '蓝点表示待匹配目标', 'fitted-markers': '绿点表示当前模型位置',
   'external-force': '作用点与方向决定外力矩', 'joint-torque': '围绕该轴投影力矩',
-  'motion-trace': '示意相邻时刻的运动', 'wrap-illustration': '只演示路径如何绕开表面',
+  'motion-trace': '示意相邻时刻的运动',
   FDS2: '食指浅屈肌的已映射通路', FDP2: '食指深屈肌的已映射通路', EDC2: '食指伸肌的已映射通路'};
 const finite = (value, fallback) => Number.isFinite(Number(value)) ? Number(value) : fallback;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
@@ -185,21 +185,6 @@ export class ExplainerScene {
     this.contactDot.scale.setScalar(1.6);
     this.contactDot.userData = {...this.forceArrow.line.userData};
     this.annotationGroup.add(this.contactDot);
-    // Detached conceptual cross-section, never used to reroute the native display paths.
-    this.wrapGroup = new THREE.Group();
-    this.wrapSurface = new THREE.Mesh(this.ownGeometry(new THREE.SphereGeometry(.009, 18, 12)),
-      this.ownMaterial(basic(C.geometry, {transparent: true, opacity: .24, wireframe: true, depthWrite: false})));
-    this.wrapSurface.userData = {kind: 'geometry', id: 'wrap-illustration', label: '包绕面示意（非原生）'};
-    this.wrapGroup.add(this.wrapSurface);
-    this.wrapPath = this.line(C.activation);
-    this.annotationGroup.remove(this.wrapPath); this.wrapGroup.add(this.wrapPath);
-    this.wrapLeader = this.line(C.muted, true);
-    this.wrapAnchors = [0, 1].map(() => {
-      const dot = new THREE.Mesh(this.dotGeometry, this.ownMaterial(basic(C.activation)));
-      dot.scale.setScalar(1.3); dot.userData = {...this.wrapSurface.userData};
-      this.wrapGroup.add(dot); return dot;
-    });
-    this.annotationGroup.add(this.wrapGroup);
     this.mechanicsInset = document.createElement('button');
     this.mechanicsInset.type = 'button';
     this.mechanicsInset.className = 'explainer-mechanics-inset';
@@ -433,29 +418,16 @@ export class ExplainerScene {
     }));
     this.trajectoryLine.visible = ['moco', 'integration', 'dynamics'].includes(step);
     this.setLine(this.trajectoryLine, Array.from({length: 42}, (_, i) => rotatePoint(this.tip, this.rig, 10 + i)));
-    this.wrapGroup.visible = this.wrapLeader.visible = isScale && explosion > .08;
-    const wrapCenter = this.pivot.clone().add(new THREE.Vector3(.025, .008, -.073 - explosion * .01));
-    this.wrapGroup.position.copy(wrapCenter);
-    const wrapPoints = [new THREE.Vector3(0, -.025, -.009),
-      ...Array.from({length: 25}, (_, i) => {
-        const a = -Math.PI / 2 + Math.PI * i / 24;
-        return new THREE.Vector3(0, -.0098 * Math.cos(a), .0098 * Math.sin(a));
-      }), new THREE.Vector3(0, -.025, .009)];
-    this.setLine(this.wrapPath, wrapPoints);
-    this.wrapAnchors[0].position.copy(wrapPoints[0]);
-    this.wrapAnchors[1].position.copy(wrapPoints.at(-1));
-    this.setLine(this.wrapLeader, [start, wrapCenter]);
-    this.updateLabels({isScale, isIK, isForce, showPaths, contact, scaleEnd, selected, angle, wrapCenter});
+    this.updateLabels({isScale, isIK, isForce, showPaths, contact, scaleEnd, selected, angle});
     this.render();
   }
 
-  updateLabels({isScale, isIK, isForce, showPaths, contact, scaleEnd, selected, wrapCenter}) {
+  updateLabels({isScale, isIK, isForce, showPaths, contact, scaleEnd, selected}) {
     const {route, step} = this.state;
     const descriptors = [];
     if (isScale) {
       descriptors.push({id: 'scale-span', text: '骨段长度比', point: scaleEnd, color: C.geometry, kind: 'parameter'});
       descriptors.push({id: 'path-anchors', text: '路径锚点', point: this.paths.get('FDS2').posed.at(-1)[1], color: C.activation, kind: 'geometry'});
-      if (this.wrapGroup.visible) descriptors.push({id: 'wrap-illustration', text: '包绕示意（非原生）', point: wrapCenter, color: C.geometry, kind: 'geometry'});
     } else if (isIK) {
       descriptors.push({id: 'observed-markers', text: '观测点', point: this.markers[3].observed.position, color: C.observation, kind: 'marker'});
       descriptors.push({id: 'fitted-markers', text: '模型点', point: this.markers[1].fitted.position, color: C.geometry, kind: 'marker'});

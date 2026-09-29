@@ -1,0 +1,683 @@
+{
+  "repairId": "arms-left-native-repair-v1",
+  "sourceModelHash": "45c45732788afd4fcc78b89c97cf7a5da51de82dcb735d480459ee4e8770207b",
+  "repairedModelHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463",
+  "repairScriptHash": "c7e7f683bc034aaa99c674c2add6d911c66ab51b2a10025c3ea4df78e7c7b6de",
+  "changes": [
+    {
+      "kind": "native_mesh_scale",
+      "body": "clavicle",
+      "mesh": "clavicle.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "scapula",
+      "mesh": "scapula.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "humerus",
+      "mesh": "humerus.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "ulna",
+      "mesh": "ulna.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "radius",
+      "mesh": "radius.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "proximal_row",
+      "mesh": "lunate.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "proximal_row",
+      "mesh": "sdfastSCAPHOIDw.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "proximal_row",
+      "mesh": "sdfastPISIFORMw.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "proximal_row",
+      "mesh": "sdfastTRIQUETRALw.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "capitate",
+      "mesh": "capitate.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "trapezium",
+      "mesh": "trapezium.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "trapezoid",
+      "mesh": "trapezoid.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "hamate",
+      "mesh": "hamate.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "firstmc",
+      "mesh": "1mc.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "proximal_thumb",
+      "mesh": "thumbprox.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "distal_thumb",
+      "mesh": "thumbdist.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "secondmc",
+      "mesh": "2mc.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "thirdmc",
+      "mesh": "3mc.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "fourthmc",
+      "mesh": "4mc_new.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "fifthmc",
+      "mesh": "5mc_new.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "2proxph",
+      "mesh": "2proxph.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "2midph",
+      "mesh": "2midph.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "2distph",
+      "mesh": "2distph.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "3proxph",
+      "mesh": "3proxph.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "3midph",
+      "mesh": "3midph.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "3distph",
+      "mesh": "3distph.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "4proxph",
+      "mesh": "4proxph_new.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "4midph",
+      "mesh": "4midph_new.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "4distph",
+      "mesh": "4distph_new.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "5proxph",
+      "mesh": "5proxph_new.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "5midph",
+      "mesh": "5midph_new.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "native_mesh_scale",
+      "body": "5distph",
+      "mesh": "5distph_new.vtp",
+      "before": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "after": [
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "kind": "ground_mesh",
+      "before": "thorax_GlobalX180.vtp",
+      "after": "thorax.vtp",
+      "scale": [
+        1,
+        1,
+        -1
+      ]
+    },
+    {
+      "kind": "moving_path_y_reflection",
+      "muscle": "FPL",
+      "point": "FPL-P5",
+      "before": [
+        0.00882,
+        0.00882,
+        -0.01038
+      ],
+      "after": [
+        -0.00882,
+        -0.00882,
+        0.01038
+      ]
+    },
+    {
+      "kind": "moving_path_y_reflection",
+      "muscle": "APL",
+      "point": "APL-P6",
+      "before": [
+        0.00634,
+        0.00624,
+        0.00384
+      ],
+      "after": [
+        -0.00634,
+        -0.00624,
+        -0.00384
+      ]
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "humerus",
+      "wrap": "Elbow_PT_ECRL",
+      "before": "all",
+      "rightTemplateQuadrant": "x",
+      "after": "x"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "proximal_row",
+      "wrap": "EIP",
+      "before": "all",
+      "rightTemplateQuadrant": "z",
+      "after": "z"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "proximal_row",
+      "wrap": "PL",
+      "before": "all",
+      "rightTemplateQuadrant": "-z",
+      "after": "-z"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "proximal_row",
+      "wrap": "FDS",
+      "before": "all",
+      "rightTemplateQuadrant": "-z",
+      "after": "-z"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "proximal_row",
+      "wrap": "FDP",
+      "before": "all",
+      "rightTemplateQuadrant": "y",
+      "after": "-y"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "proximal_row",
+      "wrap": "EDM",
+      "before": "all",
+      "rightTemplateQuadrant": "-z",
+      "after": "-z"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "proximal_row",
+      "wrap": "FPL",
+      "before": "all",
+      "rightTemplateQuadrant": "-z",
+      "after": "-z"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "proximal_thumb",
+      "wrap": "IPthumb",
+      "before": "all",
+      "rightTemplateQuadrant": "-x",
+      "after": "-x"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "secondmc",
+      "wrap": "2ndmcp_FDSI",
+      "before": "all",
+      "rightTemplateQuadrant": "y",
+      "after": "-y"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "secondmc",
+      "wrap": "2ndmcp_FDPI",
+      "before": "all",
+      "rightTemplateQuadrant": "y",
+      "after": "-y"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "fifthmc",
+      "wrap": "5thmcp",
+      "before": "all",
+      "rightTemplateQuadrant": "-x",
+      "after": "-x"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "2proxph",
+      "wrap": "2ndpm_FDPI",
+      "before": "all",
+      "rightTemplateQuadrant": "y",
+      "after": "-y"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "2proxph",
+      "wrap": "2ndpm_extI",
+      "before": "all",
+      "rightTemplateQuadrant": "-y",
+      "after": "y"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "2proxph",
+      "wrap": "Secondpm",
+      "before": "all",
+      "rightTemplateQuadrant": "x",
+      "after": "x"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "2midph",
+      "wrap": "2ndmd_extI",
+      "before": "all",
+      "rightTemplateQuadrant": "-y",
+      "after": "y"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "2midph",
+      "wrap": "Secondmd",
+      "before": "all",
+      "rightTemplateQuadrant": "x",
+      "after": "x"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "3midph",
+      "wrap": "Thirdmd",
+      "before": "all",
+      "rightTemplateQuadrant": "x",
+      "after": "x"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "4midph",
+      "wrap": "Fourthmd",
+      "before": "all",
+      "rightTemplateQuadrant": "x",
+      "after": "x"
+    },
+    {
+      "kind": "wrap_quadrant_reflection",
+      "body": "5midph",
+      "wrap": "Fifthmd",
+      "before": "all",
+      "rightTemplateQuadrant": "x",
+      "after": "x"
+    }
+  ],
+  "ruleSource": "User tendon_control server/left_adapter.py, arms-left-landmarks-1",
+  "scope": "Native geometry/moving-point/wrap-quadrant mirror consistency repair. No parameter fitting, no attachment-coordinate changes, no ROM edits; separate FDPI path-domain repair is not applied.",
+  "sourceXMLUnchanged": true
+}

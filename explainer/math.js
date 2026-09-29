@@ -33,8 +33,8 @@ export function activationPulse({amplitude=.6,tau=.04,duration=.6,dt=.002}={}){
   return rows;
 }
 export function parseRoute(hash){
-  const [route,step]=hash.replace(/^#/,'').split('/');
-  return ['opensim','myohand'].includes(route)?{route,step:step||'overview'}:{route:'control',step:'overview'};
+  const [route,step]=hash.replace(/^#\/?/,'').split('/');
+  return ['opensim','myohand','mano'].includes(route)?{route,step:step||'overview'}:{route:'control',step:'overview'};
 }
 export function polylinePath(values,{width=420,height=130,minY=0,maxY=1,minX=0,maxX=1,pad=20}={}){
   return values.map(([x,y],i)=>`${i?'L':'M'}${(pad+(x-minX)/(maxX-minX||1)*(width-pad*2)).toFixed(2)},${(height-pad-(y-minY)/(maxY-minY||1)*(height-pad*2)).toFixed(2)}`).join(' ');

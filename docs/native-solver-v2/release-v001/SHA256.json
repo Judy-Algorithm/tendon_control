@@ -1,0 +1,1347 @@
+[
+  {
+    "path": "explainer/native-v2/balance-chart.js",
+    "bytes": 7790,
+    "sha256": "a9984578d28f1b2b671d71de80aa8b597bd7ec2b680ea8e21d290f68a42436f2"
+  },
+  {
+    "path": "explainer/native-v2/charts.js",
+    "bytes": 10644,
+    "sha256": "267eed49c00efa5efaf963a7d0152781c4b646e1172daf960914033c0b76c0fe"
+  },
+  {
+    "path": "explainer/native-v2/comparison.js",
+    "bytes": 6291,
+    "sha256": "839f9c3d1a46865addd1f0a35bcc36cf5a1752a27043cc1414355294aaec6dff"
+  },
+  {
+    "path": "explainer/native-v2/contracts.js",
+    "bytes": 6426,
+    "sha256": "0ea8778fe3013a20134a750808303cc4e2aaee309b8db3760972c5eb48be9c4f"
+  },
+  {
+    "path": "explainer/native-v2/data/action-catalog.json",
+    "bytes": 181519,
+    "sha256": "da80e67f1aba90d892411938f1d50c72ce182852c6885b39001db965486930d0"
+  },
+  {
+    "path": "explainer/native-v2/data/legacy-raw-index.json",
+    "bytes": 55044,
+    "sha256": "0a0a303374902254e95418887dadd9e9260df195b9687698987c2671c531673d"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-action-audit.json",
+    "bytes": 54214,
+    "sha256": "6d5474afb6083cdc79b82005ab8696d9320b8b1be23ab40ddcab91e13180d9ee"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-geometry-check.json",
+    "bytes": 1888,
+    "sha256": "f7ccb73557886308986d3030c5b965b638d077d082db1416c9b94c0bdc8ef217"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-index.json",
+    "bytes": 144889,
+    "sha256": "1782cc288182960550ad9dcebbabed649aa12388e0cd7ee55844e670d10278f1"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-model.json",
+    "bytes": 5928370,
+    "sha256": "43211439165424ea119954d320c90fa6b24f90dedb4d40e87dd50b722078b88c"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-moment-audit.json",
+    "bytes": 61266,
+    "sha256": "a046b41c40be435155f39462bd7f611ec8257836d5d22727e8b7c7684aee2c63"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-native-coordinate-report.json",
+    "bytes": 45085,
+    "sha256": "c47a417085088db49f065dc05444da78d94553420a9ad3b17a0c49411868d761"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-parameter-check.json",
+    "bytes": 4579,
+    "sha256": "a2928fc03ca0bb82b93dd56bbc7e5680c96777462decac6a6b571045dad86b37"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-index_DIP_flex-negative-tuned.json",
+    "bytes": 3093437,
+    "sha256": "e655bb4f29bc90304d2cbe6f2a857ba1ed6143a88c4976cff3d14f05993dabcc"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-index_DIP_flex-negative.json",
+    "bytes": 3012087,
+    "sha256": "77bb1740f8de5675d54886d52b8643f15cce81969f33506f72ec514d7c7a6b2b"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-index_PIP_flex-negative-tuned.json",
+    "bytes": 3165844,
+    "sha256": "1c590a5e3346650d49b8b90679ee4465e0338ac5910ddfa94388b9a98d375454"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-index_PIP_flex-negative.json",
+    "bytes": 3136986,
+    "sha256": "06070250c00068d481aa17220fb0cecef5731f566b1e429bbc8e46de3c2fcaef"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-middle_DIP_flex-negative-tuned.json",
+    "bytes": 3097546,
+    "sha256": "0082f1b458e43b98068d83a70831a725a2738457bcaeba45a9ae51ce66094ae3"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-middle_DIP_flex-negative.json",
+    "bytes": 3090100,
+    "sha256": "f8528ca4ee6a4f7cb96166a57871c97b6801f3b0702dd5d500093af0aca0ccbb"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-middle_PIP_flex-negative-tuned.json",
+    "bytes": 3096549,
+    "sha256": "fb87920736f601a1578891f34f98fa7a955a18c60491e9f5bbb42720c23cffe2"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-middle_PIP_flex-negative.json",
+    "bytes": 3049727,
+    "sha256": "d740e35c0c2156222e4b5c318273191209801e2240310fb5e8743ef4e02025c6"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-pinky_DIP_flex-negative-tuned.json",
+    "bytes": 3149331,
+    "sha256": "ea2c392424a65571182d1ee9e65254ae16c2a603b0e5efb90c78e4e70ddadac7"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-pinky_DIP_flex-negative.json",
+    "bytes": 3092357,
+    "sha256": "5b7dc0da886075bc57cd7c578781f9e9451a145d0c1c20ded0a2aedfbedfaaa5"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-pinky_PIP_flex-negative-tuned.json",
+    "bytes": 3138485,
+    "sha256": "787a7bac44661945e3c82c6d08899b4e091e2d6eaecf98837eb54410b0f12f48"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-pinky_PIP_flex-negative.json",
+    "bytes": 3082143,
+    "sha256": "bf27ec8fdd9ebf24c5cfa62bcdbccbefe0eef59687701f7cf11ba0605139bf1c"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-ring_DIP_flex-negative-tuned.json",
+    "bytes": 3094774,
+    "sha256": "103ecd65778dd8dc3a528a0b39ff653092f277a21c68fad4a61ccef458fb09f6"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-ring_DIP_flex-negative.json",
+    "bytes": 3128760,
+    "sha256": "f424b6de89d26967e39da2b2acbb67ece51bc793b83eef8e7dc30a5845428a2b"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-ring_PIP_flex-negative-tuned.json",
+    "bytes": 3115570,
+    "sha256": "8f666d15bfa38b7281226455597c69335fa462457ce171090f8d3e4bbf319b4b"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-ring_PIP_flex-negative.json",
+    "bytes": 3131339,
+    "sha256": "ac23bc84ce3356d1667cc02d9f788de7a722b3d3ba0ecd9c4035aba65e7ff212"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-thumb_CMC_abd-negative-tuned.json",
+    "bytes": 3072172,
+    "sha256": "1a03dfc2ba2743aec35cbf4d69d0bc348afcb7161993a4e8a08c24731dab91ae"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-thumb_CMC_abd-negative.json",
+    "bytes": 2999285,
+    "sha256": "66a6ced77367da441421874f30474616d7754a88c22aca04ed7fc827d3b500b0"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-thumb_CMC_flex-negative-tuned.json",
+    "bytes": 3088278,
+    "sha256": "d9dfa7197de5bb8e33d3e005929f36990ef1a5b364c5d86f0094b1aec1931329"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-thumb_CMC_flex-negative.json",
+    "bytes": 3082824,
+    "sha256": "943638fe1091c3fcf7bec6b53e5a0750e383dc09c2dfa0004e952414883b34a5"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-thumb_IP_flex-negative-tuned.json",
+    "bytes": 3091600,
+    "sha256": "87acef83a7cd6aabb8acfea8643461ec8d0d1a3040ef48bd9379d4e120afa882"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-thumb_IP_flex-negative.json",
+    "bytes": 3087979,
+    "sha256": "1caec65bf3609ae97367874241e32e8e0125f578fb66f5a3e68afec16a67d42f"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-thumb_MCP_flex-negative-tuned.json",
+    "bytes": 3088234,
+    "sha256": "d4a55dad3a32d3f16616dfdd6a32f90e0ac7f248b7fb6e09a825e408c36c4255"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-atlas-thumb_MCP_flex-negative.json",
+    "bytes": 3084743,
+    "sha256": "97b622056a5d57fd43f8ae48156c644af5fd1d626e33827b53cfd01dac2fd842"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-independent113.json",
+    "bytes": 1946763,
+    "sha256": "c00176d6c74abf2e19108f0a1f0fbf4074d02b4d447e9ff05035fdd122bacb34"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-cmc_abduction-negative.json",
+    "bytes": 1139099,
+    "sha256": "3dfaa6c6f3347be2d837e5f6ffce37f52dafadf57cd9777283e388774d63842a"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-cmc_abduction-positive.json",
+    "bytes": 1135261,
+    "sha256": "1778ca18a1deed8849c037f135df8cd689b6ba16a63aee7d3a6a406075f434af"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-cmc_flexion-negative.json",
+    "bytes": 1138576,
+    "sha256": "9cf9f21d903f03b5e0499914127e0dde6c8da5879725c649de5106aacfdd2bf8"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-cmc_flexion-positive.json",
+    "bytes": 1137335,
+    "sha256": "f770c7744cffdc2067fe4c71d74d5cc59b8f4b0959fa4b513717204230b7efac"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-deviation-negative.json",
+    "bytes": 1137754,
+    "sha256": "2748cd98dcc60042461fab64521e97b0e321bb2f89791855cdda8836640db90b"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-deviation-positive.json",
+    "bytes": 1137978,
+    "sha256": "e8282d15ae5dab306288ae2ba90457995d8d8e202da949937fe288f536a2a57b"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-flexion-negative.json",
+    "bytes": 1159481,
+    "sha256": "0fccad105aa87f3e4c4b0ec07a6f6700f443d3f6dfddbd296a9456d2fb1a246a"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-flexion-positive.json",
+    "bytes": 1139492,
+    "sha256": "4efe063f435cc1caa77fddcb75631e82d94557df66be0d9730cf3e9f830e5a85"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-ip_flexion-negative.json",
+    "bytes": 1136317,
+    "sha256": "1ceb28eb653708be45c9874d80964bc72ce3bb7b14c8f6ba8b4310a288767ab5"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-ip_flexion-positive.json",
+    "bytes": 1137262,
+    "sha256": "1421124f9bdc3744584041fba0c6dd9c8da679de5a96a8b4ac74624620ca5f87"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp2_abduction-negative.json",
+    "bytes": 1136330,
+    "sha256": "27ae3160c50a8d73bd116b7a6eb2e9b1bde503f1c1b7f0bd12d3779b700c587d"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp2_abduction-positive.json",
+    "bytes": 1139066,
+    "sha256": "5020a9f2bd2d14a61c9adbda1491b914459cee86dab43253a08eba2f61b29457"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp2_flexion-positive.json",
+    "bytes": 1104034,
+    "sha256": "1bd9ecdc2b907c8903940fa19432d184c283a31680ed3373d8ed1b7bb89c3b3e"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp3_abduction-negative.json",
+    "bytes": 1138817,
+    "sha256": "918dab7832b8bb8b1eb6310982a45d5837dea3b3ae37d03d3e2bf88414f45bec"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp3_abduction-positive.json",
+    "bytes": 1138532,
+    "sha256": "f2f8059c4dfbddde7bc252e8551f4ee4188a1dc2e98ecd3bb03d96ef95a25b62"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp3_flexion-positive.json",
+    "bytes": 1138438,
+    "sha256": "d8eff00d0e04b9e5b25c5134caae80ee8bffac440eb1426b9d06e85947aef06d"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp4_abduction-negative.json",
+    "bytes": 1138749,
+    "sha256": "ba172bb2ffb1d434811620d850357e563cea7d6a6d0e6cc9e386d016555b74e7"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp4_abduction-positive.json",
+    "bytes": 1138140,
+    "sha256": "5fd371da87721ea3493d08c674baf5cdd03ca165a915e19f99abf02437bdaca0"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp4_flexion-positive.json",
+    "bytes": 1139003,
+    "sha256": "2bbbdd9ac03095e22fd11fcb4a335e156fe758359efbf56f315a2e9bf0def60e"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp5_abduction-negative.json",
+    "bytes": 1137816,
+    "sha256": "3f4ac35c9fd23230981425614860203f6ef06b457d6bd4feb1814005f1fc2437"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp5_abduction-positive.json",
+    "bytes": 1138247,
+    "sha256": "997e8bec1ef69f0519846458dccdb5adaca235d1b3bf1d105c583275382f8da4"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mcp5_flexion-positive.json",
+    "bytes": 1139531,
+    "sha256": "6a75836e5bc975cf6cdf2333ff2f60133b24932938347bbcf185306e4e0897e4"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-md2_flexion-positive.json",
+    "bytes": 1137717,
+    "sha256": "b24f5a9e69612ca3e1cbdbb6abe16fcb947b1a04d11a09af6350996dbbb43a61"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-md3_flexion-positive.json",
+    "bytes": 1136095,
+    "sha256": "510afd2bb7b85a84032b1697683f7818bb2a60822106998dcd7f937de5577444"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-md4_flexion-positive.json",
+    "bytes": 1136383,
+    "sha256": "7346881c333413528d00b9539faa731d588506b1937bd77fcc1ec8b2dbef97a7"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-md5_flexion-positive.json",
+    "bytes": 1137727,
+    "sha256": "e80232b1f028553e860bd7891a9a2a0c9798f2a41d6100b84ebd6c8068a6ebe5"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mp_flexion-negative.json",
+    "bytes": 1140300,
+    "sha256": "17293576ee2d203f432221ef32e756c7606f5c0d20e698758da9df87c8c1f2b0"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-mp_flexion-positive.json",
+    "bytes": 1135481,
+    "sha256": "183a24e421f3c2d8aa16e6b43fe45320b1d927a306e5d337ac6e7d375d3b187e"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-pm2_flexion-positive.json",
+    "bytes": 1145680,
+    "sha256": "69e8bb10dfab4e219a2872897ac5f3eb0495325e65701287152144a724338b10"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-pm3_flexion-positive.json",
+    "bytes": 1138802,
+    "sha256": "3688b2a569e31860a964cba3121a1c7aec9b87749531272618d4f3646860cc10"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-pm4_flexion-positive.json",
+    "bytes": 1138226,
+    "sha256": "1b9d7608d2b39ad8ecfed8ecd2023c8046a859f5c7522e65319f134a4f697a44"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-pm5_flexion-positive.json",
+    "bytes": 1137050,
+    "sha256": "7311a62f19971b378977a0a119f8db6964cbca08812b44076224bc020c9b5295"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-pro_sup-negative.json",
+    "bytes": 1135894,
+    "sha256": "12eea630ee5d75e1e13529e903b630de8681c7114c4cb82a7d3cb7e57a9e3ed1"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-native-pro_sup-positive.json",
+    "bytes": 1141284,
+    "sha256": "6b0c1f0d6365fe7dd67bbf8d3f8a8c28c8ad04ee98f7f4c1af04c5b1a24e40d4"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-pulse-fds2force110.json",
+    "bytes": 1937158,
+    "sha256": "574e2f9d7bc5c339f5894785a208b5ed75072d1950d1743033cd464111d62ea0"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-pulse-fds2time120.json",
+    "bytes": 1936192,
+    "sha256": "a7441d77b1ea980e392e139a72e96f742ffabdcc6e72241f80c39ed8b411a976"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-pulse-force125.json",
+    "bytes": 1940572,
+    "sha256": "230d1e2c4db8d1e921b1e3029694bda15d3f8b27830528f945d810e5d343ee24"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-pulse-time150.json",
+    "bytes": 1939661,
+    "sha256": "19aa22c89da51eef1e7ff6deedacd75bfa1830e8e2396d1d1b8cbc8bfacb7a60"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-pulse.json",
+    "bytes": 1932675,
+    "sha256": "5e73fafbb4e88c36aa36176658b5298bbe818ac18dd39353929093c298edb95c"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-track-index.json",
+    "bytes": 4719067,
+    "sha256": "1e82fc013febbdbaf4e92e2d70c3d19991f231b5def4e4a7d029ad4b2dfa6f42"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-run-track-wrist.json",
+    "bytes": 4880734,
+    "sha256": "783ad257b0a9d672bf20873a24ff791e40aac03f088f7d04110477f2376b2238"
+  },
+  {
+    "path": "explainer/native-v2/data/myohand-tracking-report.json",
+    "bytes": 20419,
+    "sha256": "51406c30562696cb3e53b148bd30ca0394c92379c4cb40038bf27f703ab3cc75"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-atlas-middle-mcp-flex-negative.json",
+    "bytes": 5484080,
+    "sha256": "a4f02ef153ae167764127c41632a3f854b28e9673bdacb1a8c8afce5f1109314"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-atlas-pinky-mcp-flex-negative.json",
+    "bytes": 5452406,
+    "sha256": "b079b7f012cd16199e1407ec6d59e83ce8339eb1a8b7f13ac27f42fe38213d4d"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-atlas-ring-mcp-flex-negative.json",
+    "bytes": 5484190,
+    "sha256": "f6ccc14267f481280baebda3f34128f21be4f295a1418c0060d723f16c216524"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-atlas-wrist-flex-negative.json",
+    "bytes": 5590947,
+    "sha256": "6f8c4db21bcada606e9ff4f116dbaabbea274d070930806d7f18786f4b0f491f"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-atlas-wrist-flex-positive.json",
+    "bytes": 5629936,
+    "sha256": "27541644fcf9e7e8e5339063f71d43efe3c430e39a0843c0d08e80638dbbeb62"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-middle-mcp-flex-negative.json",
+    "bytes": 5483017,
+    "sha256": "24b0efd48297cb8b03e2f9166f18ca021e0f82fcac4503bafc6b64cb8117f8bd"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-pinky-mcp-flex-negative.json",
+    "bytes": 5451454,
+    "sha256": "34b7f0adecc0c47a89852f4dc981f25bd426ce8fbfb3681c670b81f8ee211016"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-ring-mcp-flex-negative.json",
+    "bytes": 5483172,
+    "sha256": "65fbe3fe55c148a6b7cf2941c21602a6e7b16334843710b03ea6049a94421aee"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-index-dip-flex-negative.json",
+    "bytes": 5476441,
+    "sha256": "46e79ece068edd71ef21ef257c301d30eb82f17ab107d31f526ff59d8015e473"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-index-mcp-flex-negative.json",
+    "bytes": 5453224,
+    "sha256": "09905e7c99ff6c18cdb06c91bf4f528fe3cbf5ec5d494ed515cb9a1daef5ad9a"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-index-pip-flex-negative.json",
+    "bytes": 5473673,
+    "sha256": "528888e9e5c47d6c6b34af42be0510b349d5440d5e38aae8551f24f66b5ad02f"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-middle-dip-flex-negative.json",
+    "bytes": 5484992,
+    "sha256": "c3957c465f5eaea6470d6b04eddb83c5ca6ddb138a4cc8a1dbf65404cf430a2c"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-middle-mcp-flex-negative.json",
+    "bytes": 5493164,
+    "sha256": "19e7f66cc57260bc07bd03d23f9ec012238055f5815a99d03ca356f71023c1f3"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-middle-pip-flex-negative.json",
+    "bytes": 5490556,
+    "sha256": "772d5a57570ce8d5f5d832263750ababafcf5d966b3d369875f07e0f578b49c6"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-pinky-dip-flex-negative.json",
+    "bytes": 5477259,
+    "sha256": "c1f08dbe5d002674561c2748f74a36557e521bd877f11b0e1021571bddb6aef5"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-pinky-mcp-flex-negative.json",
+    "bytes": 5502120,
+    "sha256": "9dad0f3915f5047c89d8ced034daf296c32f1c66e1311a676adde2a8d7a91d0f"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-pinky-pip-flex-negative.json",
+    "bytes": 5490422,
+    "sha256": "d244a81c38c38bb9709ab47b8836e6a1063c09295b7efd9f01ec9d2e6e45adc2"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-ring-dip-flex-negative-attempt.json",
+    "bytes": 516,
+    "sha256": "74f0a9b65fb973693ac58ad1497ced954e85b827446b8554620b46b034522305"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-ring-mcp-flex-negative.json",
+    "bytes": 5516337,
+    "sha256": "4416ac2b00228b93c318b0ac5c016a0b7d2008c1ae7a39fc06e834fc6ae0672c"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-ring-pip-flex-negative.json",
+    "bytes": 5483674,
+    "sha256": "5976134a6573733c9780944a624ed44ba4c0e9373fadb806cf8f4760bb865bbd"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-thumb-ip-flex-negative.json",
+    "bytes": 5486108,
+    "sha256": "c0742d87c1acd4888c1c18ab1e79bc9b463996ace47118cf6f20d738e2625a66"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-v2-thumb-mcp-flex-negative.json",
+    "bytes": 5436356,
+    "sha256": "19ad6fd0512e6d76fa3a17240ee78553f2f00418844ad32a418f0bdc1232f8a8"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-wrist-flex-negative.json",
+    "bytes": 5633735,
+    "sha256": "d3916c8f25fbfa9438213c90186508f4ab8018f15c279444ccb8373cabb2adf1"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-atlas-wrist-flex-positive.json",
+    "bytes": 5717492,
+    "sha256": "207c2562dd60d998a05e97f586b3fc7bd8d299c16e73a67bcec6594a2c29c144"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-coverage-v2.json",
+    "bytes": 160125,
+    "sha256": "0e25fa94fa63125b687f826bb21f3a2e12362b8a4a1a4fb19c714eb4a73035f8"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-coverage.json",
+    "bytes": 90401,
+    "sha256": "d7b106295e66e81560521f5d511d2a85312426ba39638f508e7e7f77e1ef21ee"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-finger-baseline.json",
+    "bytes": 2288657,
+    "sha256": "1860b46072d99099c4fce75dc2de64456d48be67f96afdf85e9c95395c773a20"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-finger-fmax110.json",
+    "bytes": 2289594,
+    "sha256": "6c3174c88e989ac45cfe30e049dee52f227cd67b58161012110c53e745a97246"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-finger-lopt105.json",
+    "bytes": 2307627,
+    "sha256": "60b8e1132dc2b81cfef84d9b165f0348fdfbbb4803a17f4c8234ac3fa198588a"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-finger-lts105.json",
+    "bytes": 2305718,
+    "sha256": "72930066ec2b03a025f10a0346291f8944d2d15d3f835a25c241f22e7f7e5713"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-finger-overload.json",
+    "bytes": 2280243,
+    "sha256": "8866b5530052ce26f7a72f07ea3fa37adf361cc13dc076c1b6376f424f04b611"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-geometry.json",
+    "bytes": 3657563,
+    "sha256": "b964f0fe44926b3fd1dde10b8d86a2bc8fb521536df5f8861baa9f0082f8c864"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-index-before-atlas-v2.json",
+    "bytes": 145606,
+    "sha256": "16b322bfb81faf15e53599591dacb2e2fa5bc99a30f14e2f937f7f7b4432bf83"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-index-v2.json",
+    "bytes": 177961,
+    "sha256": "79c61dbf7a0e8583b99cebf908b91d48b84e17fcbddfe4d8223057932ff6773c"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-index.json",
+    "bytes": 145606,
+    "sha256": "16b322bfb81faf15e53599591dacb2e2fa5bc99a30f14e2f937f7f7b4432bf83"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-model.json",
+    "bytes": 630951,
+    "sha256": "0300efb4f0138d809b12c0762d4ddf228cdf4a4346c5952022df3fb4c686157e"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-2mcp-abduction-negative.json",
+    "bytes": 2315536,
+    "sha256": "545231ba4a299a986ddb2bc7be816f28d768c1de5966653efb09308629e897d4"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-2mcp-abduction-positive.json",
+    "bytes": 2316792,
+    "sha256": "b61f965d344352b23adce52e1bed0e7520479c819b10762891f526660c4f70d0"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-2mcp-flexion-negative.json",
+    "bytes": 2318763,
+    "sha256": "d83db3c6cf8798fbe1976db529e53092b854fee54ae7ce721c5ab2132024ecfc"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-2mcp-flexion-positive.json",
+    "bytes": 2306868,
+    "sha256": "f2e88ae6d58c547c767ee72dcdffe6deb9e3e2d00834624053493df46fac97ba"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-2md-flexion-positive.json",
+    "bytes": 2313318,
+    "sha256": "592f3a78048e21d811ae318c9d0eb61081ad3ee7cf09e410d7232ea37d5220dc"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-2pm-flexion-positive.json",
+    "bytes": 2313936,
+    "sha256": "710e2d7773481d9b4167440a3964ce3854c46d1ded1af26fd9f12966c5c4efaf"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-3mcp-abduction-negative.json",
+    "bytes": 2316231,
+    "sha256": "a0b24138fbbea20ea74c07e968443afbcec773016191ad3b4ee0e6dfa0ecccc6"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-3mcp-abduction-positive.json",
+    "bytes": 2316370,
+    "sha256": "db4d0d62a26a735666f27d2b9e6837def580016308992bc9b5a2934eba6181a9"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-3mcp-flexion-negative.json",
+    "bytes": 2319465,
+    "sha256": "22409de7a8dcbfd99bdabc4fe4e244e826fa9140dafebf3a1ea0a3707571314b"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-3mcp-flexion-positive.json",
+    "bytes": 2316949,
+    "sha256": "7454a500eb0ce1112baa1d7a20907d1747bb7dc51b829abee629357a4c56bbc9"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-3md-flexion-positive.json",
+    "bytes": 2314520,
+    "sha256": "b508eafec2ece4806c2270550e43d4e000b18ca8dd55fdf6dcf30a64ca264419"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-3pm-flexion-positive.json",
+    "bytes": 2316201,
+    "sha256": "963c4af9e617dc15a8457328e7713ddb5a40f90c08fe0f27934924c84c8d4d09"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-4mcp-abduction-negative.json",
+    "bytes": 2316246,
+    "sha256": "1cbd13a22da1a15c682c17fd1bf7fbff469de148ab7d1e4b47a996151c02e523"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-4mcp-abduction-positive.json",
+    "bytes": 2315907,
+    "sha256": "4be927aced0f4f6e9fe699f5ab430feaa98c45388c3985722c7a93d71f9514b9"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-4mcp-flexion-negative.json",
+    "bytes": 2328024,
+    "sha256": "dcaae0cd03af324351246d76104477681adff5aeabc45eae0777be57f0dae4a7"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-4mcp-flexion-positive.json",
+    "bytes": 2316176,
+    "sha256": "8885a9be3baca58ff406a4aab58690fbda30699f71a1dd06d4f2d628218dea76"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-4md-flexion-positive.json",
+    "bytes": 2316178,
+    "sha256": "c1c1a93b921ccc2c7029cf4a4e95eb581204ba8af92108bb2f6bb52eeec11cbb"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-4pm-flexion-positive.json",
+    "bytes": 2314963,
+    "sha256": "02e4f9913affdab7d4598e870dc701fea5b38f6c0d3250a7d10da2b39c4a1bb1"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-5mcp-abduction-negative.json",
+    "bytes": 2316571,
+    "sha256": "87d07ff6c9648aba94133e9a80184723528a8302072bb662dd9d594cc7df9fbd"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-5mcp-abduction-positive.json",
+    "bytes": 2314216,
+    "sha256": "cc2b919a621bdfd1096698481711f645fb7c69cec22a1ee98730bbdbd0a950c1"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-5mcp-flexion-negative.json",
+    "bytes": 2317208,
+    "sha256": "ebaacb3e91678db7ae6fc3dc1eb0120e269635cf2e1347c8d74d00fd2559bb8a"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-5mcp-flexion-positive.json",
+    "bytes": 2307411,
+    "sha256": "8e381824c2d4f10fcf770ed3d0fc0ebc56fee38b4a2507522b11653e7e04e040"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-5md-flexion-positive.json",
+    "bytes": 2313810,
+    "sha256": "d0cbb15ded04db9cb20c3ee56b79d80230e37560408a611709bbba095c5fa743"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-5pm-flexion-positive.json",
+    "bytes": 2315978,
+    "sha256": "f194761d9b43699e59751e484166040129e01dc11191738f644dd46994b4eb07"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-actions.json",
+    "bytes": 24038,
+    "sha256": "a4b1188aac2765175d23a41a479a5db1c554b44c4829b0be986cda8cfee07a03"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-cmc-abduction-negative.json",
+    "bytes": 2315991,
+    "sha256": "70a5086ed412477c4ad32e2cabdc081036071545797aaee6f064c390d6bd1238"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-cmc-abduction-positive.json",
+    "bytes": 2315726,
+    "sha256": "00367031b15b002470b42b52827757d50e6118c2aa9d5728928fca10460362c3"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-cmc-flexion-negative.json",
+    "bytes": 2315806,
+    "sha256": "6325856f4e8993a6e04637899f0d33c9c894f8e228ad6d3bcfba3891ff893655"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-cmc-flexion-positive.json",
+    "bytes": 2314395,
+    "sha256": "74f6b34c84be328b24411d02457a5c7bf3569dab4f6ed9bd47ee86fea57edbaa"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-cmc4-midrange.json",
+    "bytes": 2314242,
+    "sha256": "794f5dc586b5d379ca33fefc16ce1f89e8d2793e2404cfefaf8b796c61e196e5"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-deviation-positive.json",
+    "bytes": 2319112,
+    "sha256": "c3c0035703c14b36f4dd7e205cf02f4d729b9fdf074a918459bba7a9b3bf01c7"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-flexion-negative.json",
+    "bytes": 2330138,
+    "sha256": "59961c50c94550247b67dbc5dfb320af8519a6850e6687fe01cb701f1b7ffaf9"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-flexion-positive.json",
+    "bytes": 2327283,
+    "sha256": "f15f316e21848b370a74ff8eba99d0bba088e5446b2aef1607c5a1cd3b9b5f56"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-ip-flexion-negative.json",
+    "bytes": 2316966,
+    "sha256": "fe68871d56ecd4b041f3751d5b4e658a1f2b56312f498bbeb6723c8a10c1916a"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-ip-flexion-positive.json",
+    "bytes": 2316245,
+    "sha256": "312b74dc382bded53bd91def2a05d67de50679e5c3c5212775bae10bc9848e71"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-mp-flexion-negative.json",
+    "bytes": 2314702,
+    "sha256": "0a8d026619405fdda14f7c47ee48ea1b77850e96267db3d78111d3ce82927ea6"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-native-mp-flexion-positive.json",
+    "bytes": 2320829,
+    "sha256": "52a441124438a479c05977d790db44882190555d67287111e32443a39b5487b9"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-repair.json",
+    "bytes": 12138,
+    "sha256": "b3a87ede945569c02a86701c1ff6705719a4120fe8288498cee0b3487e6450b3"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-scale-ik-evidence.json",
+    "bytes": 927,
+    "sha256": "bf26c1be1825569166ed4014d67f58b013f23bfc7b8f8a4a759f1aec6615f7ea"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-scale-ik-geometry.json",
+    "bytes": 3657659,
+    "sha256": "b1015bf7779a60fa423a4b82a4b686b1be9bb9d205f06d7f2666ecd34a755a96"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-scale-ik-model.json",
+    "bytes": 438519,
+    "sha256": "ccfbf55593ecf736699ec3b28c893406c194ac4c4abfeaa1a130cf4052d51273"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-scale-ik-roundtrip.json",
+    "bytes": 1768641,
+    "sha256": "77b3424d6b3a7adaea9bb9c83c152dcf19505aab8b1bf0613f72b9a585cb8f80"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-canonical-wrist-baseline.json",
+    "bytes": 2325466,
+    "sha256": "391ad1ba288a862a07d18d59b36a9bb032bd6d92d9c58a47b2eb8d1decc88bc2"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-coverage.json",
+    "bytes": 48843,
+    "sha256": "800e143e1dca9c4f34b75f4c459b0fb08c10b0ad7ff7762ada3abb1c0e10fce8"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-finger-baseline.json",
+    "bytes": 2288393,
+    "sha256": "a01f09217e81a385a1856cb54c84f9817a1567f12cbb07530d53903aef920f56"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-finger-fmax110.json",
+    "bytes": 2308066,
+    "sha256": "0bfd20d7d9701399e4cf5dd493e76f4f982bb3db8e3cf9e189e14fb6843d623d"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-finger-lopt105.json",
+    "bytes": 2308035,
+    "sha256": "916307d3207e3edb7a2cb2e5f2b0418f6d95fe1bd6a97841d3869141c7a549aa"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-finger-lts105.json",
+    "bytes": 2306418,
+    "sha256": "2701d210f737b7107a83243c2b2425e0cac6ffd9502c86dd36afca8143d2b579"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-finger-overload.json",
+    "bytes": 2280555,
+    "sha256": "986edb7479b48cdaf7df060a56a40a529a8b9067a642f8921709d008e3f1b65a"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-geometry.json",
+    "bytes": 3657519,
+    "sha256": "f442725b40858b56f6ea42c83b15cdc553e8acc5f2f8b35b6174d9f238eeae27"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-index.json",
+    "bytes": 177961,
+    "sha256": "79c61dbf7a0e8583b99cebf908b91d48b84e17fcbddfe4d8223057932ff6773c"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-model.json",
+    "bytes": 434446,
+    "sha256": "a289b1ee0e46e7fd15e26a8518c5bbcc84f741f2e93adefd5b38ff916164198b"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-2mcp-abduction-negative.json",
+    "bytes": 2316273,
+    "sha256": "2ed6c1273fca424866969783b242661e76ac5c7f2f17d7b6c18f29a3adf22276"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-2mcp-abduction-positive.json",
+    "bytes": 2316871,
+    "sha256": "6bf1d8e41aba8df0789afe80e24e93be93401a831ee0b2b23ba817b2a2c7fc89"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-2mcp-flexion-negative.json",
+    "bytes": 2318919,
+    "sha256": "981c5c5bf2e2de812284a946ecc6212cc04ab0fdd995e976ebfebb8d5e447246"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-2mcp-flexion-positive.json",
+    "bytes": 2307434,
+    "sha256": "d12f70d1774b9e74c9191ab58e1c71f2601f189a577c786c488f9042ab8c3754"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-2md-flexion-positive.json",
+    "bytes": 2313909,
+    "sha256": "4a513332ab576086e0d13d29c70c9e48b3a858cdf6ad5d36ca9fb3484f52e0dd"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-2pm-flexion-positive.json",
+    "bytes": 2313698,
+    "sha256": "94aebf1e28512e00bb12f24536061c3d13ee6da3ab4cda94789f2365c9a31006"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-3mcp-abduction-negative.json",
+    "bytes": 2316243,
+    "sha256": "d3a782718d640e7a205e1e5190ceb59a6ffad13656fe72556cdcdb1304f8dfab"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-3mcp-abduction-positive.json",
+    "bytes": 2316486,
+    "sha256": "23ba9d75e2fdd46c83c3ad40cbe68c486fd079379759ed5bbab5e4a0ab7d031e"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-3mcp-flexion-negative.json",
+    "bytes": 2319314,
+    "sha256": "4279480ea4dc94883dd01a86dab979b8220fdae711e0419a34abd3e3592316f6"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-3mcp-flexion-positive.json",
+    "bytes": 2316955,
+    "sha256": "d41664371fec6cd174fb8015823cd929c1cc7cfe874691aaea98a20da8652aea"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-3md-flexion-positive.json",
+    "bytes": 2314562,
+    "sha256": "857faa8dc13779599c4524e7a408a0544bbc2ce77379c482722cc8c3e4e21d38"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-3pm-flexion-positive.json",
+    "bytes": 2316398,
+    "sha256": "110c7a30039c0e4c68440af3fd739f597fc260d37a57b82ab0daf3ad5cddbb1e"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-4mcp-abduction-negative.json",
+    "bytes": 2316374,
+    "sha256": "09adb50537cb79aca5938e111987a9b94bf0816f0b9284774214310589097ab9"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-4mcp-abduction-positive.json",
+    "bytes": 2316592,
+    "sha256": "d22010c9b26a4d9923b36d480ae571e8f85aa00b5b5596e5b69e85e98109ce11"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-4mcp-flexion-negative.json",
+    "bytes": 2328503,
+    "sha256": "06594c500f8947bce878a1724c160db43487a3074739e3f3291a07bcd89ec64e"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-4mcp-flexion-positive.json",
+    "bytes": 2316573,
+    "sha256": "4a27ea583ddfbf9839aa116a5fd3762ca538c3b70aad370cad360f3cbbbaa789"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-4md-flexion-positive.json",
+    "bytes": 2316670,
+    "sha256": "2a4b8d97a6560147df315f7b8ea5578f815470d0e2c9d17ef3a7ab6236b6755a"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-4pm-flexion-positive.json",
+    "bytes": 2315705,
+    "sha256": "55ba8f3a8c3fe06fd33abbe870138261af34556967e908722ec68eeb7ae2daaf"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-5mcp-abduction-negative.json",
+    "bytes": 2316669,
+    "sha256": "85b28986691b75caa5f01b983fb2acf6fe9455c07181f1a93f681d95a3f58bd0"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-5mcp-abduction-positive.json",
+    "bytes": 2314639,
+    "sha256": "c37ef8d4ff3a0cd5e2a78b7872394d091df6fd69c14f495f122ac59bf4eb2c0f"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-5mcp-flexion-negative.json",
+    "bytes": 2317088,
+    "sha256": "ef53183f0e210feccf730823978c3c5f3465d6ea5db4a47d7832605c97b48071"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-5mcp-flexion-positive.json",
+    "bytes": 2307776,
+    "sha256": "102e15e2d717cb3bc1ed3ce266292e9517e79d89a0d9c21b30b4203e0c2db30f"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-5md-flexion-positive.json",
+    "bytes": 2314183,
+    "sha256": "eca4b8170646425c47f0b4e62d1beb020169a8a79761616bb16a2e6021a1f8cc"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-5pm-flexion-positive.json",
+    "bytes": 2315880,
+    "sha256": "078990e70f6727f43445314d94df90abe339e619a080d1a28e94233cb73e8202"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-actions.json",
+    "bytes": 17663,
+    "sha256": "461adba5c39f577a9ac40ed28697a7fc07190d19e2ac96267e032ea28ba606c8"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-cmc-abduction-negative.json",
+    "bytes": 2316131,
+    "sha256": "8dc867345421814aec6b5edd41d33d3bb51f1b48f774cd0355bbab5e89752757"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-cmc-abduction-positive.json",
+    "bytes": 2315783,
+    "sha256": "366803f94923bda93132eb424c5626497fea0583aeb9d6404685dd0723b3a6da"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-cmc-flexion-negative.json",
+    "bytes": 2314495,
+    "sha256": "b93e610ef9306efd448adab0cea03c6ad05339ece567660ac3ed21257e54b546"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-cmc-flexion-positive.json",
+    "bytes": 2314571,
+    "sha256": "b5e5ff15e53626a143233958fa4b17b7de9660500025fea198565de31e28648e"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-cmc4-midrange.json",
+    "bytes": 2293336,
+    "sha256": "fd2c4008b41905065ed6c3f2772c730ac39c6c92c99f42538ad31d5beb41f7fe"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-deviation-positive.json",
+    "bytes": 2301360,
+    "sha256": "9282adcb057f5aa906c017c44985c8e90c8f777fa92adbacdc6d2cec0f4de8a2"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-flexion-negative.json",
+    "bytes": 2310459,
+    "sha256": "386560373389d41ea927ecf9a03bcd016a42e74abd72cf1d0591d6026f056c7f"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-flexion-positive.json",
+    "bytes": 2327258,
+    "sha256": "a06e1fc9ead70f0c86e616d7f2a61bdd60445a52283404e3f47246d4ff750de1"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-ip-flexion-negative.json",
+    "bytes": 2317273,
+    "sha256": "3b14f30b44cbe576ba7d01164f68ed316ae7df647a12d21853a6400516cfdd36"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-ip-flexion-positive.json",
+    "bytes": 2316081,
+    "sha256": "967d24c97ec5a60643439f21b7eeda21b48192bdedd15d09ba223b2c68ea702a"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-mp-flexion-negative.json",
+    "bytes": 2314920,
+    "sha256": "320fcf74ca2b18f1a720d1fa8e9d004ca72cd52ea437023057e889bd3edf7385"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-native-mp-flexion-positive.json",
+    "bytes": 2321266,
+    "sha256": "e1477e4ffed18feb30d176ed21f456c9f7f778d0a217a1409e19b46f5d79f4ea"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-scale-ik-evidence.json",
+    "bytes": 925,
+    "sha256": "9982f05e93899a828834a684b162c8d22f8d1b0f352dcea3891c864558b5d6d0"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-scale-ik-geometry.json",
+    "bytes": 3657615,
+    "sha256": "703159a256e30dbc5406c179280761ee4b1ffd83b99397d68e9fb82ce3ad98d9"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-scale-ik-model.json",
+    "bytes": 438155,
+    "sha256": "26ab3ff808eb3b8ad4de5140036dd47c97cc9b6d6cdeebd81161fae89507e74c"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-scale-ik-roundtrip.json",
+    "bytes": 1768344,
+    "sha256": "a99f7cebaeb78f317c46e047d51813f19ab9e2a981d2867c53733ae9aaaf75d7"
+  },
+  {
+    "path": "explainer/native-v2/data/opensim-wrist-baseline.json",
+    "bytes": 2325219,
+    "sha256": "2dc85aeba9478fe39bda59630d442b452a8755e38b533a07b637d1afcada5fe0"
+  },
+  {
+    "path": "explainer/native-v2/mano.css",
+    "bytes": 3321,
+    "sha256": "75467c5b955a0dbb2339f38a07c4f597a454feee7c882cf2224d118402857445"
+  },
+  {
+    "path": "explainer/native-v2/mano.js",
+    "bytes": 9683,
+    "sha256": "933c9333dc8b77cb0e0fed519a414db5ad6c06ea31c4c0c503bb8b1cccdb459e"
+  },
+  {
+    "path": "explainer/native-v2/native-scene.js",
+    "bytes": 31632,
+    "sha256": "5188e1107a94628d822b5208bccc89c453b76edfc075c2a210297ffac6739d0b"
+  },
+  {
+    "path": "explainer/native-v2/parameter-help.js",
+    "bytes": 1946,
+    "sha256": "1b4bec6e7c74c041442cbd88e7d97747d054591ba6f090809d2724359b06cf0e"
+  },
+  {
+    "path": "explainer/native-v2/request-editor.js",
+    "bytes": 5000,
+    "sha256": "9de789827e9b2f160ea6786995979d00e9234a8bf1a6d99fc596283f80a173cb"
+  },
+  {
+    "path": "explainer/native-v2/workbench.css",
+    "bytes": 8545,
+    "sha256": "3c3d3fe1e2a67c30108a69f7ff403d9719a62e75038e93f0ebac08832281dacd"
+  },
+  {
+    "path": "explainer/native-v2/workbench.js",
+    "bytes": 32628,
+    "sha256": "f785e0311c09b24217e2190401425aee55d453edc6fa4152b0c31756ec4f6daf"
+  },
+  {
+    "path": "scripts/native-v2/browser-edge-qa.mjs",
+    "bytes": 4622,
+    "sha256": "0e0b3edcc90d9b63341129f84b87ba5926ef5fe51a40f1c7aad7ef004a5a393e"
+  },
+  {
+    "path": "scripts/native-v2/browser-qa.mjs",
+    "bytes": 5612,
+    "sha256": "1b7f80d557be596e946ce26ef399bb78d501bb20a1215e436c4ba5650d223438"
+  },
+  {
+    "path": "scripts/native-v2/export-clips.mjs",
+    "bytes": 2250,
+    "sha256": "baea1254c3927056abe6a40afd2a196a7e588880cab8083214c211eab4d7a1c4"
+  },
+  {
+    "path": "scripts/native-v2/fresh-opensim-qa.mjs",
+    "bytes": 3968,
+    "sha256": "ecc88805e5d71b07a30f96c8a1a70eb54ac9ef9d6071ba9957afff0e966586c1"
+  },
+  {
+    "path": "scripts/native-v2/myohand_batch.py",
+    "bytes": 2304,
+    "sha256": "194d1ea05cffa5fd252811d6c92f16be35afc4febb56999dd0a6aefa595e7999"
+  },
+  {
+    "path": "scripts/native-v2/myohand_catalog.py",
+    "bytes": 7161,
+    "sha256": "56237cc71cd6539a33015d309a7d7e6acec1a2523ad3b5148f978cf000dfb4af"
+  },
+  {
+    "path": "scripts/native-v2/myohand_coordinate_batch.py",
+    "bytes": 4589,
+    "sha256": "e9f6aa9285c16e164776ed1ab18b71cdbe957c0a42f8735fbae0ef7bef81dc6f"
+  },
+  {
+    "path": "scripts/native-v2/myohand_geometry_check.py",
+    "bytes": 3356,
+    "sha256": "dbdcb9f1a21dd8e59e223711b298e413f13e735179873e5bf264fe80cd6a0ce5"
+  },
+  {
+    "path": "scripts/native-v2/myohand_identity.py",
+    "bytes": 880,
+    "sha256": "9d30f4dec656a8c797e93008879cbac2a41b5d6114479a1671885ed9314549d7"
+  },
+  {
+    "path": "scripts/native-v2/myohand_parameter_check.py",
+    "bytes": 4061,
+    "sha256": "d72b1734a6b9609696eacff11c1c328aed04171d37a55b6794a4edfd7d5247d0"
+  },
+  {
+    "path": "scripts/native-v2/myohand_report.py",
+    "bytes": 5102,
+    "sha256": "3de5d0fe57b3bd5add98e3b2215c19ad6ca77e6637dc5b7ee77baa66f2b5afec"
+  },
+  {
+    "path": "scripts/native-v2/myohand_runner.py",
+    "bytes": 25181,
+    "sha256": "86f88ec49768ea5a17ff65a1ad072c3d4bf65522011e63629b0c4e2ab9235746"
+  },
+  {
+    "path": "scripts/native-v2/myohand_runner_v1.py",
+    "bytes": 24141,
+    "sha256": "68c526166f8477b04cce4d4b4fc38b7ddb312ae03a363b521d64c0a9633bbdc3"
+  },
+  {
+    "path": "scripts/native-v2/myohand_runner_v2.py",
+    "bytes": 24704,
+    "sha256": "fde59257764bf5f07f81db8af0f71ab187edff31d7928417dbad5dcc5a6c111c"
+  },
+  {
+    "path": "scripts/native-v2/myohand_tracking_diagnose.py",
+    "bytes": 2636,
+    "sha256": "ffb64466d11a5405757ec9719f39dd0dd5d7a4ca875f78d9ec31c72934d6d79b"
+  },
+  {
+    "path": "scripts/native-v2/opensim_asset_manifest.py",
+    "bytes": 1187,
+    "sha256": "3490ec5ebb459e504acc8c994402b9bbffc242eeb8be5781dc60f8c3b2da7879"
+  },
+  {
+    "path": "scripts/native-v2/opensim_atlas.py",
+    "bytes": 2709,
+    "sha256": "ce01ee1dcd96d546dbdf5db4fd3761ddf76be4343adf3ed4ca5e3c5e1b456f1e"
+  },
+  {
+    "path": "scripts/native-v2/opensim_atlas_finalize_bounded.py",
+    "bytes": 5410,
+    "sha256": "3a720c5df021e86e440c89bba99896bf5dfe4094a3f10aab47f767506d25ec08"
+  },
+  {
+    "path": "scripts/native-v2/opensim_atlas_v2.py",
+    "bytes": 5215,
+    "sha256": "c6188e90449fb2a7639cd1c12040b2ced00b6f98b1678d0351402d2c58861195"
+  },
+  {
+    "path": "scripts/native-v2/opensim_atlas_watchdog.py",
+    "bytes": 3721,
+    "sha256": "39fd4751a46db4c152d0846dd49a332702e2c38eb045f3b520da0aee2707897a"
+  },
+  {
+    "path": "scripts/native-v2/opensim_cache_check.py",
+    "bytes": 1412,
+    "sha256": "a3f0781ffb2c56a3d0a49fbcab0879bf92d189829784cc1ba29d0fa1558769ea"
+  },
+  {
+    "path": "scripts/native-v2/opensim_canonical_batch.py",
+    "bytes": 3882,
+    "sha256": "2b5797468b6134a366816d3afbd644f102edf9436d4b969d85b6a47bfe9bae16"
+  },
+  {
+    "path": "scripts/native-v2/opensim_canonical_finalize.py",
+    "bytes": 4576,
+    "sha256": "ca15a437e865e58dda0467060fe2deda4de1ce0ee9d195909bf781ff92767feb"
+  },
+  {
+    "path": "scripts/native-v2/opensim_check.py",
+    "bytes": 4023,
+    "sha256": "71998ea1c5a399b50dd3c06519e525d25847526d4191e06ef14ea853694a0987"
+  },
+  {
+    "path": "scripts/native-v2/opensim_cmc_midrange_request.json",
+    "bytes": 355,
+    "sha256": "e81f3327c738facda34b02eeb772c4924d4191c0fda25a321d2f0f0b32dc7cf9"
+  },
+  {
+    "path": "scripts/native-v2/opensim_compact.py",
+    "bytes": 365,
+    "sha256": "7138fb054b431d00f401bb358db8faa435930575203853bcd5af4685de2142b4"
+  },
+  {
+    "path": "scripts/native-v2/opensim_coverage.py",
+    "bytes": 4977,
+    "sha256": "2655b9feda266a4824b21b0129abc925c3fb32454d22ac8d57694c5817f5c4ca"
+  },
+  {
+    "path": "scripts/native-v2/opensim_enrich_roundtrip.py",
+    "bytes": 956,
+    "sha256": "cd8636b6cf53fc7967497789d972211cf552507ed4366a5ee927ce8ad3cd94fe"
+  },
+  {
+    "path": "scripts/native-v2/opensim_fdpi_diagnostic.py",
+    "bytes": 4441,
+    "sha256": "c8d48b28525a4d436e151739dba170922c4ad7109a8d8a6d5a7b3f1710e5352b"
+  },
+  {
+    "path": "scripts/native-v2/opensim_fdpi_summary.py",
+    "bytes": 813,
+    "sha256": "548f3240c714307d1d95b49eeaf1cab83769dc115794571e7829cc09f6a4d6b5"
+  },
+  {
+    "path": "scripts/native-v2/opensim_handedness_diagnostic.py",
+    "bytes": 7083,
+    "sha256": "5db27ef6a90cf32fc3b3da089b750beb8cc48484f15f08279783f82c940346b1"
+  },
+  {
+    "path": "scripts/native-v2/opensim_invalid_request.json",
+    "bytes": 118,
+    "sha256": "906dbe803dbd480b30e1f4e2361b9fb8cbfdf3cfb1dc6609e294b264a7ac9d68"
+  },
+  {
+    "path": "scripts/native-v2/opensim_left_repair.py",
+    "bytes": 4666,
+    "sha256": "c7e7f683bc034aaa99c674c2add6d911c66ab51b2a10025c3ea4df78e7c7b6de"
+  },
+  {
+    "path": "scripts/native-v2/opensim_mesh_audit.py",
+    "bytes": 3898,
+    "sha256": "43ff932dcc6f8c3fa1d23306c53b1cd554510cb543cf7e34a6088f0bbe4a19b3"
+  },
+  {
+    "path": "scripts/native-v2/opensim_meshes.py",
+    "bytes": 3191,
+    "sha256": "a937991e2cb9824d02119f2c7785e5a00107dbb1fb4d6a63d5556d29d8eee2c7"
+  },
+  {
+    "path": "scripts/native-v2/opensim_native_actions.py",
+    "bytes": 3946,
+    "sha256": "187e09d645cb5d785a80f9ddcbf25d2b29e2985b157be4929c0af013ab43c55d"
+  },
+  {
+    "path": "scripts/native-v2/opensim_prepare.py",
+    "bytes": 3245,
+    "sha256": "ffe5f50a824ac7467158bcbeb0f271593c33d0715927d2e621eda0cc4dcd7435"
+  },
+  {
+    "path": "scripts/native-v2/opensim_reconcile_identity.py",
+    "bytes": 1021,
+    "sha256": "0e1a1549dbd580491f2bdffcb12fd9a417cd8b682e37c2fe9bab5a61875b8d7c"
+  },
+  {
+    "path": "scripts/native-v2/opensim_register_cmc.py",
+    "bytes": 1298,
+    "sha256": "bf6bfc0cf27f61f42d082cf9108db9fc0dc408201b8d119b8696cda9283e152a"
+  },
+  {
+    "path": "scripts/native-v2/opensim_run.py",
+    "bytes": 27042,
+    "sha256": "962c091d80c58770ab666b177fc76e202b853f5c90075cb27c7e0ecd248a98f6"
+  },
+  {
+    "path": "scripts/native-v2/opensim_scale_ik.py",
+    "bytes": 7614,
+    "sha256": "4d8f74ee1a4286f19f84312d310630bdf010c708b17bf88e9fed0d197b407e5c"
+  },
+  {
+    "path": "scripts/native-v2/release-audit.mjs",
+    "bytes": 4292,
+    "sha256": "348d7b1c588657c7f8694e25117b66e7b8ed1acabefa68f67c984012f73af787"
+  },
+  {
+    "path": "scripts/native-v2/review_root_post_fix.mjs",
+    "bytes": 5181,
+    "sha256": "9ee76f2ec818250c0bd6c1a3fa262ab83d8943f98f9f2123cc465ce18d8e34af"
+  },
+  {
+    "path": "scripts/native-v2/server-qa.mjs",
+    "bytes": 2516,
+    "sha256": "d49bd50a822ab9fd27a6667832f12d3d3c9ebae2d576f080a29def0dac75c509"
+  },
+  {
+    "path": "scripts/native-v2/server.mjs",
+    "bytes": 8748,
+    "sha256": "ad5750bacf425e820030f1f59ac696fafb9176291b3cd0c773b768293374c310"
+  },
+  {
+    "path": "scripts/native-v2/verify_myohand_independent.py",
+    "bytes": 6437,
+    "sha256": "5bf28ff79f36cbc4ba39a84945da1f2110160931cb3459eaf470ce1e1a7e8e20"
+  },
+  {
+    "path": "scripts/native-v2/verify_opensim_acceleration_independent.py",
+    "bytes": 4737,
+    "sha256": "34f6f64946dbcfebfc4e32ca10f90e19f3b22e465eb663b447ed3426d1568054"
+  },
+  {
+    "path": "scripts/native-v2/verify_opensim_handedness_independent.py",
+    "bytes": 6182,
+    "sha256": "edd246c9ba1d84d5e624492765681bbe65035c16f670d46aa32346962575bbff"
+  },
+  {
+    "path": "scripts/native-v2/verify_opensim_independent.py",
+    "bytes": 7216,
+    "sha256": "7d51d63210b265a034a2d8563c5226c16d124cb8c9c13f0610dd016c2791a327"
+  },
+  {
+    "path": "scripts/native-v2/verify_opensim_mesh_independent.py",
+    "bytes": 3717,
+    "sha256": "5a59603d2acc4c1d96aa6d8fe71296af6091849e7b119178ccd796af2dc18977"
+  },
+  {
+    "path": "scripts/native-v2/verify_opensim_mirror_independent.py",
+    "bytes": 7500,
+    "sha256": "1452bf2f992c5097e315404ae78592c428d4542f5e312fba8922ae3c2cacb1df"
+  },
+  {
+    "path": "scripts/native-v2/verify_opensim_so_standalone.py",
+    "bytes": 7759,
+    "sha256": "eb4598bbb15c68750570f2b1f7dec76d5e55873f9f424767f4c02a71f955c80a"
+  }
+]

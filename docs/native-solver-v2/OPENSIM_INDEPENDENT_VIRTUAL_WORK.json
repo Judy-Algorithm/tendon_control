@@ -1,0 +1,108 @@
+{
+  "status": "FAIL",
+  "engine": "version 4.4.1-2023-07-13-710e13be5, build date 14:40:27 Jul 14 2023",
+  "modelHash": "45c45732788afd4fcc78b89c97cf7a5da51de82dcb735d480459ee4e8770207b",
+  "runtimeModelHash": "dc69bc8c3d1aac914c0617ec27148e4ff1cb0958bc6845a63dff8dcebca92028",
+  "runHash": "a01f09217e81a385a1856cb54c84f9817a1567f12cbb07530d53903aef920f56",
+  "method": "Fresh native model; geometry length finite differences with native coordinate couplers, tau=-dL/dq*force. No exporter or ID-basis implementation imported.",
+  "finiteDifferenceThreshold_Nm": 5e-05,
+  "frames": [
+    {
+      "frameIndex": 0,
+      "time_s": 0.0,
+      "pathLengthMaxAbsDifference_m": 8.131401108002478e-11,
+      "finiteDifferenceChecks": [
+        {
+          "epsilon_rad": 1e-05,
+          "maxAbsDifference_Nm": 0.0050956644696142535,
+          "rmsDifference_Nm": 0.00017145643300436883,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020579753589378778,
+            "exportedTorque_Nm": 0.02567541805899303
+          }
+        },
+        {
+          "epsilon_rad": 1e-06,
+          "maxAbsDifference_Nm": 0.005095664500785139,
+          "rmsDifference_Nm": 0.0001714564366866452,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020579753558207892,
+            "exportedTorque_Nm": 0.02567541805899303
+          }
+        }
+      ],
+      "muscleSumMaxAbsDifference_Nm": 0.0,
+      "exportedBalanceIdentityMaxAbsDifference_Nm": 9.844981128613804e-16
+    },
+    {
+      "frameIndex": 25,
+      "time_s": 1.0,
+      "pathLengthMaxAbsDifference_m": 7.523959233424193e-11,
+      "finiteDifferenceChecks": [
+        {
+          "epsilon_rad": 1e-05,
+          "maxAbsDifference_Nm": 0.005095664468655583,
+          "rmsDifference_Nm": 0.00017120087842231003,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020579753585507017,
+            "exportedTorque_Nm": 0.0256754180541626
+          }
+        },
+        {
+          "epsilon_rad": 1e-06,
+          "maxAbsDifference_Nm": 0.005095664499826472,
+          "rmsDifference_Nm": 0.00017120088132532865,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.02057975355433613,
+            "exportedTorque_Nm": 0.0256754180541626
+          }
+        }
+      ],
+      "muscleSumMaxAbsDifference_Nm": 0.0,
+      "exportedBalanceIdentityMaxAbsDifference_Nm": 4.0986522742805684e-16
+    },
+    {
+      "frameIndex": 50,
+      "time_s": 2.0,
+      "pathLengthMaxAbsDifference_m": 1.7166529309164957e-10,
+      "finiteDifferenceChecks": [
+        {
+          "epsilon_rad": 1e-05,
+          "maxAbsDifference_Nm": 0.005095664468089536,
+          "rmsDifference_Nm": 0.00017052687360546743,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.020579753583220905,
+            "exportedTorque_Nm": 0.02567541805131044
+          }
+        },
+        {
+          "epsilon_rad": 1e-06,
+          "maxAbsDifference_Nm": 0.005095664499260421,
+          "rmsDifference_Nm": 0.00017052687613186053,
+          "largestDifference": {
+            "muscle": "FPL",
+            "coordinate": "flexion",
+            "finiteDifferenceTorque_Nm": 0.02057975355205002,
+            "exportedTorque_Nm": 0.02567541805131044
+          }
+        }
+      ],
+      "muscleSumMaxAbsDifference_Nm": 0.0,
+      "exportedBalanceIdentityMaxAbsDifference_Nm": 2.8532554967678343e-16
+    }
+  ],
+  "limitations": [
+    "Checks exported muscle virtual work and algebraic balance identity, not independent SO optimality or physiological reserve acceptance.",
+    "Finite differences sample three saved frames, not every frame; force labels supplied by native SO are not re-solved here."
+  ]
+}

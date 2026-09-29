@@ -1,0 +1,440 @@
+{
+  "status": "APPROVE_CANDIDATE_MAPPING_FOR_NATIVE_RERUN",
+  "scope": "Only angular correspondence; not identical fingertip paths, anatomical registration or SO success. All 48 statuses remain. Old proper-rotation mappings are superseded, not relabelled.",
+  "leftModelHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463",
+  "rightModelHash": "9a88909ca27da9397abe22599e51ae9699162bdf274f65d2a83d7b02793b24cc",
+  "candidateHash": "8954bf09e678821555aac2606859236a0d2b3feca3cf1f6e76ac2b52975fe304",
+  "independentReviewerNoAuthorImports": true,
+  "counts": {
+    "not_yet_verified": 8,
+    "unsupported": 26,
+    "mapped": 14
+  },
+  "maxAxisCosineDiscrepancy": 6.476041924941001e-12,
+  "finiteRotationConjugationMaxError": 3.3306690738754696e-16,
+  "mappedTrajectoryMaxError_rad": 2.220446049250313e-16,
+  "landmarkFits": [
+    {
+      "nativeModel": "canonical_left",
+      "determinant": -1,
+      "rms_m": 0.006456965868320039,
+      "scale": 1.0211573225546862
+    },
+    {
+      "nativeModel": "canonical_left",
+      "determinant": 1,
+      "rms_m": 0.02174637052582376,
+      "scale": 0.9381963965335585
+    },
+    {
+      "nativeModel": "original_right",
+      "determinant": -1,
+      "rms_m": 0.021746370525823754,
+      "scale": 0.9381963965335581
+    },
+    {
+      "nativeModel": "original_right",
+      "determinant": 1,
+      "rms_m": 0.0064569658683200455,
+      "scale": 1.0211573225546862
+    }
+  ],
+  "rows": [
+    {
+      "actionId": "wrist_flex:positive",
+      "status": "not_yet_verified",
+      "axisCosine": 0.8877603451806825,
+      "sign": 1,
+      "neutral_rad": 2.82013145543701e-09,
+      "qStart_rad": 2.82013145543701e-09,
+      "qEnd_rad": 1.2000000508201316
+    },
+    {
+      "actionId": "wrist_flex:negative",
+      "status": "not_yet_verified",
+      "axisCosine": 0.8877603451806825,
+      "sign": 1,
+      "neutral_rad": 2.82013145543701e-09,
+      "qStart_rad": 2.82013145543701e-09,
+      "qEnd_rad": -1.2000000451798687
+    },
+    {
+      "actionId": "wrist_abd:positive",
+      "status": "not_yet_verified",
+      "axisCosine": -0.7646344415645381,
+      "sign": -1,
+      "neutral_rad": 8.84549396760041e-08,
+      "qStart_rad": 8.84549396760041e-08,
+      "qEnd_rad": -0.5999999353450604
+    },
+    {
+      "actionId": "wrist_abd:negative",
+      "status": "not_yet_verified",
+      "axisCosine": -0.7646344415645381,
+      "sign": -1,
+      "neutral_rad": 8.84549396760041e-08,
+      "qStart_rad": 8.84549396760041e-08,
+      "qEnd_rad": 0.5000000884549397
+    },
+    {
+      "actionId": "thumb_CMC_flex:negative",
+      "status": "not_yet_verified",
+      "axisCosine": -0.28203644947233514,
+      "sign": -1,
+      "neutral_rad": -1.40921614617423e-14,
+      "qStart_rad": -1.40921614617423e-14,
+      "qEnd_rad": 0.30000001189998593
+    },
+    {
+      "actionId": "thumb_CMC_flex:positive",
+      "status": "not_yet_verified",
+      "axisCosine": -0.28203644947233514,
+      "sign": -1,
+      "neutral_rad": -1.40921614617423e-14,
+      "qStart_rad": -1.40921614617423e-14,
+      "qEnd_rad": -1.000000000000014
+    },
+    {
+      "actionId": "thumb_CMC_abd:positive",
+      "status": "not_yet_verified",
+      "axisCosine": 0.06169793602300553,
+      "sign": 1,
+      "neutral_rad": -1.14040043408494e-13,
+      "qStart_rad": -1.14040043408494e-13,
+      "qEnd_rad": 1.3999999759998858
+    },
+    {
+      "actionId": "thumb_CMC_abd:negative",
+      "status": "not_yet_verified",
+      "axisCosine": 0.06169793602300553,
+      "sign": 1,
+      "neutral_rad": -1.14040043408494e-13,
+      "qStart_rad": -1.14040043408494e-13,
+      "qEnd_rad": -0.699999988100114
+    },
+    {
+      "actionId": "thumb_MCP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9641836135933379,
+      "sign": 1,
+      "neutral_rad": -1.52958518884147e-14,
+      "qStart_rad": -1.52958518884147e-14,
+      "qEnd_rad": 0.9999999999999847
+    },
+    {
+      "actionId": "thumb_MCP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9641836135933379,
+      "sign": 1,
+      "neutral_rad": -1.52958518884147e-14,
+      "qStart_rad": -1.52958518884147e-14,
+      "qEnd_rad": -0.2000000030000153
+    },
+    {
+      "actionId": "index_MCP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9960162650084352,
+      "sign": 1,
+      "neutral_rad": 8.74897678972486e-09,
+      "qStart_rad": 8.74897678972486e-09,
+      "qEnd_rad": 1.600000032748977
+    },
+    {
+      "actionId": "index_MCP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9960162650084352,
+      "sign": 1,
+      "neutral_rad": 8.74897678972486e-09,
+      "qStart_rad": 8.74897678972486e-09,
+      "qEnd_rad": -0.3499999852510232
+    },
+    {
+      "actionId": "index_MCP_abd:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9955501712744852,
+      "sign": 1,
+      "neutral_rad": -8.68320987800593e-29,
+      "qStart_rad": -8.68320987800593e-29,
+      "qEnd_rad": 0.400000006
+    },
+    {
+      "actionId": "index_MCP_abd:negative",
+      "status": "unsupported",
+      "axisCosine": 0.9955501712744852,
+      "sign": 1,
+      "neutral_rad": -8.68320987800593e-29,
+      "qStart_rad": -8.68320987800593e-29,
+      "qEnd_rad": -0.30000001190000003
+    },
+    {
+      "actionId": "middle_MCP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9937739078406931,
+      "sign": 1,
+      "neutral_rad": 6.8443146970229e-09,
+      "qStart_rad": 6.8443146970229e-09,
+      "qEnd_rad": 1.6000000308443147
+    },
+    {
+      "actionId": "middle_MCP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9937739078406931,
+      "sign": 1,
+      "neutral_rad": 6.8443146970229e-09,
+      "qStart_rad": 6.8443146970229e-09,
+      "qEnd_rad": -0.3499999871556853
+    },
+    {
+      "actionId": "middle_MCP_abd:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9896318241328371,
+      "sign": 1,
+      "neutral_rad": 1.15706560923878e-25,
+      "qStart_rad": 1.15706560923878e-25,
+      "qEnd_rad": 0.400000006
+    },
+    {
+      "actionId": "middle_MCP_abd:negative",
+      "status": "unsupported",
+      "axisCosine": 0.9896318241328371,
+      "sign": 1,
+      "neutral_rad": 1.15706560923878e-25,
+      "qStart_rad": 1.15706560923878e-25,
+      "qEnd_rad": -0.30000001190000003
+    },
+    {
+      "actionId": "ring_MCP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9798723210908808,
+      "sign": 1,
+      "neutral_rad": 4.76683700544055e-09,
+      "qStart_rad": 4.76683700544055e-09,
+      "qEnd_rad": 1.600000028766837
+    },
+    {
+      "actionId": "ring_MCP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9798723210908808,
+      "sign": 1,
+      "neutral_rad": 4.76683700544055e-09,
+      "qStart_rad": 4.76683700544055e-09,
+      "qEnd_rad": -0.349999989233163
+    },
+    {
+      "actionId": "ring_MCP_abd:negative",
+      "status": "unsupported",
+      "axisCosine": 0.9827112732945585,
+      "sign": 1,
+      "neutral_rad": 1.30942636957374e-10,
+      "qStart_rad": 1.30942636957374e-10,
+      "qEnd_rad": -0.3000000117690574
+    },
+    {
+      "actionId": "ring_MCP_abd:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9827112732945585,
+      "sign": 1,
+      "neutral_rad": 1.30942636957374e-10,
+      "qStart_rad": 1.30942636957374e-10,
+      "qEnd_rad": 0.40000000613094266
+    },
+    {
+      "actionId": "pinky_MCP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9220651560345662,
+      "sign": 1,
+      "neutral_rad": 1.02388043114882e-09,
+      "qStart_rad": 1.02388043114882e-09,
+      "qEnd_rad": 1.6000000250238806
+    },
+    {
+      "actionId": "pinky_MCP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9220651560345662,
+      "sign": 1,
+      "neutral_rad": 1.02388043114882e-09,
+      "qStart_rad": 1.02388043114882e-09,
+      "qEnd_rad": -0.4999999989761196
+    },
+    {
+      "actionId": "pinky_MCP_abd:negative",
+      "status": "unsupported",
+      "axisCosine": 0.9415833086005504,
+      "sign": 1,
+      "neutral_rad": -2.53286431027479e-09,
+      "qStart_rad": -2.53286431027479e-09,
+      "qEnd_rad": -0.30000001443286434
+    },
+    {
+      "actionId": "pinky_MCP_abd:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9415833086005504,
+      "sign": 1,
+      "neutral_rad": -2.53286431027479e-09,
+      "qStart_rad": -2.53286431027479e-09,
+      "qEnd_rad": 0.4999999974671357
+    },
+    {
+      "actionId": "thumb_IP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9739439109367121,
+      "sign": 1,
+      "neutral_rad": -3.99700832476613e-14,
+      "qStart_rad": -3.99700832476613e-14,
+      "qEnd_rad": 1.49999999999996
+    },
+    {
+      "actionId": "thumb_IP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9739439109367121,
+      "sign": 1,
+      "neutral_rad": -3.99700832476613e-14,
+      "qStart_rad": -3.99700832476613e-14,
+      "qEnd_rad": -0.20000000300003998
+    },
+    {
+      "actionId": "index_PIP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9521208479388767,
+      "sign": 1,
+      "neutral_rad": 0.000146426395812156,
+      "qStart_rad": 0.000146426395812156,
+      "qEnd_rad": 1.8001463783958123
+    },
+    {
+      "actionId": "index_PIP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9521208479388767,
+      "sign": 1,
+      "neutral_rad": 0.000146426395812156,
+      "qStart_rad": 1.1701463951958124,
+      "qEnd_rad": 0.000146426395812156
+    },
+    {
+      "actionId": "middle_PIP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9271898501174234,
+      "sign": 1,
+      "neutral_rad": 2.76192822597155e-12,
+      "qStart_rad": 2.76192822597155e-12,
+      "qEnd_rad": 1.799999952002762
+    },
+    {
+      "actionId": "middle_PIP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9271898501174234,
+      "sign": 1,
+      "neutral_rad": 2.76192822597155e-12,
+      "qStart_rad": 1.1699999688027622,
+      "qEnd_rad": 2.76192822597155e-12
+    },
+    {
+      "actionId": "ring_PIP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9996551929764254,
+      "sign": 1,
+      "neutral_rad": -1.62794668640628e-11,
+      "qStart_rad": -1.62794668640628e-11,
+      "qEnd_rad": 1.7999999519837206
+    },
+    {
+      "actionId": "ring_PIP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9996551929764254,
+      "sign": 1,
+      "neutral_rad": -1.62794668640628e-11,
+      "qStart_rad": 1.1699999687837208,
+      "qEnd_rad": -1.62794668640628e-11
+    },
+    {
+      "actionId": "pinky_PIP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9458019718978403,
+      "sign": 1,
+      "neutral_rad": 4.87787660490509e-05,
+      "qStart_rad": 4.87787660490509e-05,
+      "qEnd_rad": 1.800048730766049
+    },
+    {
+      "actionId": "pinky_PIP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9458019718978403,
+      "sign": 1,
+      "neutral_rad": 4.87787660490509e-05,
+      "qStart_rad": 1.1700487475660493,
+      "qEnd_rad": 4.87787660490509e-05
+    },
+    {
+      "actionId": "index_DIP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9333045876807519,
+      "sign": 1,
+      "neutral_rad": 0.000140231594820255,
+      "qStart_rad": 0.000140231594820255,
+      "qEnd_rad": 1.6001402555948203
+    },
+    {
+      "actionId": "index_DIP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9333045876807519,
+      "sign": 1,
+      "neutral_rad": 0.000140231594820255,
+      "qStart_rad": 1.0401402471948205,
+      "qEnd_rad": 0.000140231594820255
+    },
+    {
+      "actionId": "middle_DIP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9260993174032657,
+      "sign": 1,
+      "neutral_rad": 0.000119783810135061,
+      "qStart_rad": 0.000119783810135061,
+      "qEnd_rad": 1.600119807810135
+    },
+    {
+      "actionId": "middle_DIP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9260993174032657,
+      "sign": 1,
+      "neutral_rad": 0.000119783810135061,
+      "qStart_rad": 1.0401197994101352,
+      "qEnd_rad": 0.000119783810135061
+    },
+    {
+      "actionId": "ring_DIP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9928525282227623,
+      "sign": 1,
+      "neutral_rad": -3.83544812863329e-11,
+      "qStart_rad": -3.83544812863329e-11,
+      "qEnd_rad": 1.6000000239616456
+    },
+    {
+      "actionId": "ring_DIP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9928525282227623,
+      "sign": 1,
+      "neutral_rad": -3.83544812863329e-11,
+      "qStart_rad": 1.0400000155616458,
+      "qEnd_rad": -3.83544812863329e-11
+    },
+    {
+      "actionId": "pinky_DIP_flex:positive",
+      "status": "unsupported",
+      "axisCosine": 0.9065968879519493,
+      "sign": 1,
+      "neutral_rad": 3.01457052785629e-05,
+      "qStart_rad": 3.01457052785629e-05,
+      "qEnd_rad": 1.6000301697052786
+    },
+    {
+      "actionId": "pinky_DIP_flex:negative",
+      "status": "mapped",
+      "axisCosine": 0.9065968879519493,
+      "sign": 1,
+      "neutral_rad": 3.01457052785629e-05,
+      "qStart_rad": 1.0400301613052787,
+      "qEnd_rad": 3.01457052785629e-05
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "engine": "version 4.4.1-2023-07-13-710e13be5, build date 14:40:27 Jul 14 2023",
+  "modelHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463",
+  "referenceHash": "6c3174c88e989ac45cfe30e049dee52f227cd67b58161012110c53e745a97246",
+  "request": {
+    "actionId": "native-index-flexion-demo",
+    "coordinate": "2mcp_flexion",
+    "targetRad": 0.25,
+    "duration_s": 2,
+    "samples": 51,
+    "parameters": {
+      "fmaxMultiplier": 1.1,
+      "optimalFiberLengthMultiplier": 1,
+      "tendonSlackLengthMultiplier": 1
+    },
+    "runId": "opensim-canonical-finger-fmax110"
+  },
+  "framesCompared": 51,
+  "muscles": 43,
+  "reserves": 23,
+  "nativeToolReturn": true,
+  "explicitFailureTimes_s": [],
+  "statusMatchesReference": true,
+  "errors": {
+    "activationMaxAbs": 7.393799114630006e-12,
+    "reserveTorqueMaxAbs_Nm": 1.1721040804602012e-14,
+    "muscleForceMaxAbs_N": 1.0111822490443956e-09,
+    "timeMaxAbs_s": 0.0,
+    "sumSquaredControlsObjectiveMaxAbs": 7.780442956573097e-13
+  },
+  "thresholds": {
+    "activationMaxAbs": 1e-07,
+    "reserveTorqueMaxAbs_Nm": 1e-07,
+    "muscleForceMaxAbs_N": 1e-05,
+    "timeMaxAbs_s": 1e-09,
+    "sumSquaredControlsObjectiveMaxAbs": 1e-06
+  },
+  "objectiveDefinition": "sum of squared43muscle activations and23dimensionless reserve controls, matching activation exponent2;",
+  "settings": {
+    "useMusclePhysiology": true,
+    "activationExponent": 2,
+    "convergenceCriterion": 1e-08,
+    "maxIterations": 1000,
+    "reserveOptimalForce_Nm": 0.01,
+    "reserveControlBounds": [
+      -1000,
+      1000
+    ]
+  },
+  "method": "Fresh independently constructed native AnalyzeTool+StaticOptimization with request-generated minimum-jerk coordinates. No exporter/repair module imported; all reference outputs used only after native solve.",
+  "privateEvidenceHashes": {
+    "request.json": "bb79483054de2c46290788b4c1b79370ae378fbfc6a79cd60a4be979a26428f0",
+    "independent_input.mot": "a8afb34290031267935d3452637c0957c6af4c7340c959f3c00ccfb331bb08f6",
+    "independent_independent_so_force.sto": "dcff7af4779173e04e0ee842c495c6ec995e5a99333fd926d1031120944c8be3",
+    "independent_so.log": "81b3a70f5377a7eb9f47340f77bb4b09f0df3f437913c0ae437d0248e94814bc",
+    "independent_actual_states.sto": "309d719cb2fa4b83bf06020a12b9aba1f912061bb0532eda6783870e33b97e08",
+    "independent_independent_so_controls.xml": "e79117e9947e060530b2b5ad57abdc9591fbfb4737f6b43af2090e1176ecb88b",
+    "independent_runtime_model.osim": "2b7ddb1ba2339b903f61605784ededf9935dbad721ccc9b344ddc15f4edf82c7",
+    "independent_independent_so_activation.sto": "3d5a87e6c77c276118ee10667bf336980b88d5f42d9314f81d1017c50e5e8ff0"
+  },
+  "limitations": [
+    "Reproduces this native reference policy, not physiological truth or dynamic excitation replay. Native acceleration/constraint warnings and reserve magnitude remain separate acceptance issues."
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "timestamp": "2026-09-29T19:21:18.618Z",
+  "acceptedJobsSubmitted": 0,
+  "capabilities": {
+    "localOnly": true,
+    "engines": {
+      "opensim": {
+        "available": true,
+        "modelHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463"
+      },
+      "myohand": {
+        "available": true,
+        "modelHash": "edfb415e6cc9efdd5be8ab98eb8d61779a01156d730a6d3a03cb39fa31c724dd"
+      }
+    }
+  },
+  "checks": [
+    {
+      "label": "Legitimate preset",
+      "status": "PASS"
+    },
+    {
+      "label": "Reject malformed pulseRaw",
+      "status": "PASS"
+    },
+    {
+      "label": "Reject malformed duration_s",
+      "status": "PASS"
+    },
+    {
+      "label": "Reject malformed initialQ",
+      "status": "PASS"
+    },
+    {
+      "label": "Reject malformed muscle",
+      "status": "PASS"
+    },
+    {
+      "label": "Reject malformed muscleForceScales",
+      "status": "PASS"
+    },
+    {
+      "label": "Legitimate binding",
+      "status": "PASS"
+    },
+    {
+      "label": "Wrong model fingerprint",
+      "status": "PASS"
+    },
+    {
+      "label": "Wrong geometry fingerprint",
+      "status": "PASS"
+    },
+    {
+      "label": "Wrong ordered channels",
+      "status": "PASS"
+    },
+    {
+      "label": "Run-level numeric failure invalidates frame",
+      "status": "PASS"
+    },
+    {
+      "label": "Heatmap failure legend",
+      "status": "PASS"
+    },
+    {
+      "label": "All failed heatmap cells gray",
+      "status": "PASS"
+    },
+    {
+      "label": "Failed response has no nonempty data path",
+      "status": "PASS"
+    },
+    {
+      "label": "Failed torque labelled",
+      "status": "PASS"
+    },
+    {
+      "label": "Failed CSV retains numeric values and invalid flags",
+      "status": "PASS"
+    },
+    {
+      "label": "Foreign Host",
+      "status": "PASS",
+      "response": {
+        "status": 403,
+        "body": "{\"error\":\"Local host only\"}"
+      }
+    },
+    {
+      "label": "Foreign Origin",
+      "status": "PASS",
+      "response": {
+        "status": 403,
+        "body": "{\"error\":\"Same-origin only\"}"
+      }
+    },
+    {
+      "label": "Missing Myo hash",
+      "status": "PASS",
+      "response": {
+        "status": 400,
+        "body": "{\"error\":\"This local service requires the exact model fingerprint; no silent model substitution\"}"
+      }
+    },
+    {
+      "label": "Wrong Myo hash",
+      "status": "PASS",
+      "response": {
+        "status": 400,
+        "body": "{\"error\":\"This local service requires the exact model fingerprint; no silent model substitution\"}"
+      }
+    },
+    {
+      "label": "Missing OpenSim hash",
+      "status": "PASS",
+      "response": {
+        "status": 400,
+        "body": "{\"error\":\"This local service requires the exact model fingerprint; no silent model substitution\"}"
+      }
+    },
+    {
+      "label": "Wrong OpenSim hash",
+      "status": "PASS",
+      "response": {
+        "status": 400,
+        "body": "{\"error\":\"This local service requires the exact model fingerprint; no silent model substitution\"}"
+      }
+    },
+    {
+      "label": "Malicious numeric string",
+      "status": "PASS",
+      "response": {
+        "status": 400,
+        "body": "{\"error\":\"原生请求字段、类型或通道不匹配\"}"
+      }
+    },
+    {
+      "label": "Unknown field",
+      "status": "PASS",
+      "response": {
+        "status": 400,
+        "body": "{\"error\":\"Unknown request field\"}"
+      }
+    },
+    {
+      "label": "Hidden asset",
+      "status": "PASS",
+      "response": {
+        "status": 403,
+        "body": "{\"error\":\"Not a public asset\"}"
+      }
+    },
+    {
+      "label": "Script asset",
+      "status": "PASS",
+      "response": {
+        "status": 403,
+        "body": "{\"error\":\"Not a public asset\"}"
+      }
+    }
+  ],
+  "sourceHashes": {
+    "explainer/native-v2/contracts.js": "0ea8778fe3013a20134a750808303cc4e2aaee309b8db3760972c5eb48be9c4f",
+    "explainer/native-v2/request-editor.js": "9de789827e9b2f160ea6786995979d00e9234a8bf1a6d99fc596283f80a173cb",
+    "explainer/native-v2/workbench.js": "abb3c2ec6bb1c16897fab9473305638474aedb355eb695eba2c9709ff1c45177",
+    "explainer/native-v2/charts.js": "b5fdb8bf10433ee4a2b648db5c3bb61bdb6604c5a3afab67a265cad1ae6c302a",
+    "explainer/native-v2/native-scene.js": "76bc8246d9a71a17e52f17ddd0a41034c342c28023e23de8d692b873a8d3b407",
+    "scripts/native-v2/server.mjs": "5a18ff2b6a5c76f26f61c287e09fcdd71dc3ef95e3bcd3967738799cd88c0a40",
+    "scripts/native-v2/myohand_identity.py": "9d30f4dec656a8c797e93008879cbac2a41b5d6114479a1671885ed9314549d7"
+  }
+}

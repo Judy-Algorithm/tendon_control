@@ -1,0 +1,32 @@
+{
+  "at": "2026-09-29T19:43:11.897Z",
+  "url": "http://127.0.0.1:4181",
+  "checks": [
+    "wrong model fingerprint rejected",
+    "unknown executable field rejected",
+    "cross-origin request rejected",
+    "oversized payload rejected",
+    "valid native request accepted",
+    "cancel acknowledged",
+    "cancelled run has no result",
+    "bounded native validation attempted",
+    "invalid native parameter preserved as failure"
+  ],
+  "cancelled": {
+    "id": "d4d1af3d-9611-4fc4-a68a-6fd657ea11f9",
+    "engine": "opensim",
+    "status": "cancelled",
+    "stage": "已取消",
+    "startedAt": "2026-09-29T19:43:11.018Z",
+    "finishedAt": "2026-09-29T19:43:11.179Z"
+  },
+  "failed": {
+    "id": "418f097f-b4c7-40d2-bd3f-4b9d79488da8",
+    "engine": "opensim",
+    "status": "failed",
+    "stage": "求解失败，已保留日志",
+    "error": "[info] Loaded model ARMS43_left_repaired_v1 from file [local-path]\n[warning] Couldn't find file 'thorax.vtp'.\n[warning] Couldn't find file 'clavicle.vtp'.\n[warning] Couldn't find file 'scapula.vtp'.\n[warning] Couldn't find file 'humerus.vtp'.\n[warning] Couldn't find file 'ulna.vtp'.\n[warning] Couldn't find file 'radius.vtp'.\n[warning] Couldn't find file 'lunate.vtp'.\n[warning] Couldn't find file 'sdfastSCAPHOIDw.vtp'.\n[warning] Couldn't find file 'sdfastPISIFORMw.vtp'.\n[warning] Couldn't find file 'sdfastTRIQUETRALw.vtp'.\n[warning] Couldn't find file 'capitate.vtp'.\n[warning] Couldn't find file 'trapezium.vtp'.\n[warning] Couldn't find file 'trapezoid.vtp'.\n[warning] Couldn't find file 'hamate.vtp'.\n[warning] Couldn't find file '1mc.vtp'.\n[warning] Couldn't find file 'thumbprox.vtp'.\n[warning] Couldn't find file 'thumbdist.vtp'.\n[warning] Couldn't find file '2mc.vtp'.\n[warning] Couldn't find file '3mc.vtp'.\n[warning] Couldn't find file '4mc_new.vtp'.\n[warning] Couldn't find file '5mc_new.vtp'.\n[warning] Couldn't find file '2proxph.vtp'.\n[warning] Couldn't find file '2midph.vtp'.\n[warning] Couldn't find file '2distph.vtp'.\n[warning] Couldn't find file '3proxph.vtp'.\n[warning] Couldn't find file '3midph.vtp'.\n[warning] Couldn't find file '3distph.vtp'.\n[warning] Couldn't find file '4proxph_new.vtp'.\n[warning] Couldn't find file '4midph_new.vtp'.\n[warning] Couldn't find file '4distph_new.vtp'.\n[warning] Couldn't find file '5proxph_new.vtp'.\n[warning] Couldn't find file '5midph_new.vtp'.\n[warning] Couldn't find file '5distph_new.vtp'.\nTraceback (most recent call last):\n  File \"[project]/scripts/native-v2/opensim_run.py\", line 234, in <module>\n    try:run(args.model,args.request,args.output,args.public_output)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"[project]/scripts/native-v2/opensim_run.py\", line 109, in run\n    scales={key:finite_number(p.get(key,1),key,.8,1.2) for key in allowed if key!='muscles'}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"[project]/scripts/native-v2/opensim_run.py\", line 109, in <dictcomp>\n    scales={key:finite_number(p.get(key,1),key,.8,1.2) for key in allowed if key!='muscles'}\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"[project]/scripts/native-v2/opensim_run.py\", line 54, in finite_number\n    if not math.isfinite(value) or not lo<=value<=hi:raise ValueError(f'{name} outside supported range [{lo},{hi}]')\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: fmaxMultiplier outside supported range [0.8,1.2]\n",
+    "startedAt": "2026-09-29T19:43:11.282Z",
+    "finishedAt": "2026-09-29T19:43:11.809Z"
+  }
+}

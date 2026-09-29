@@ -1,0 +1,1286 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NOT_ACTIVE",
+  "conclusion": "Restricting FDPI to the three declared adjacent wrap segments did not reduce the measured mirror discrepancy in these poses. No active model change was justified by this diagnostic.",
+  "sourceHashes": {
+    "right": "9a88909ca27da9397abe22599e51ae9699162bdf274f65d2a83d7b02793b24cc",
+    "leftV1": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463"
+  },
+  "changes": {
+    "right": [
+      {
+        "wrap": "FDP",
+        "before": [
+          -1,
+          -1
+        ],
+        "after": [
+          2,
+          3
+        ],
+        "points": [
+          "FDPI-P2",
+          "FDPI-P3"
+        ],
+        "bodies": [
+          "radius",
+          "capitate"
+        ]
+      },
+      {
+        "wrap": "2ndmcp_FDPI",
+        "before": [
+          -1,
+          -1
+        ],
+        "after": [
+          5,
+          6
+        ],
+        "points": [
+          "FDPI-P5",
+          "FDPI-P6"
+        ],
+        "bodies": [
+          "secondmc",
+          "2proxph"
+        ]
+      },
+      {
+        "wrap": "2ndpm_FDPI",
+        "before": [
+          -1,
+          -1
+        ],
+        "after": [
+          7,
+          8
+        ],
+        "points": [
+          "FDPI-P6_0",
+          "FDPI-P7"
+        ],
+        "bodies": [
+          "2proxph",
+          "2midph"
+        ]
+      }
+    ],
+    "left": [
+      {
+        "wrap": "FDP",
+        "before": [
+          -1,
+          -1
+        ],
+        "after": [
+          2,
+          3
+        ],
+        "points": [
+          "FDPI-P2",
+          "FDPI-P3"
+        ],
+        "bodies": [
+          "radius",
+          "capitate"
+        ]
+      },
+      {
+        "wrap": "2ndmcp_FDPI",
+        "before": [
+          -1,
+          -1
+        ],
+        "after": [
+          5,
+          6
+        ],
+        "points": [
+          "FDPI-P5",
+          "FDPI-P6"
+        ],
+        "bodies": [
+          "secondmc",
+          "2proxph"
+        ]
+      },
+      {
+        "wrap": "2ndpm_FDPI",
+        "before": [
+          -1,
+          -1
+        ],
+        "after": [
+          7,
+          8
+        ],
+        "points": [
+          "FDPI-P6_0",
+          "FDPI-P7"
+        ],
+        "bodies": [
+          "2proxph",
+          "2midph"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "pose": "neutral",
+      "values_rad": {},
+      "comparisons": {
+        "v1": {
+          "maxLengthMirrorDifference_m": 1.1102230246251565e-16,
+          "fdpiLengthMirrorDifference_m": 0.0,
+          "maxNativeMomentArmMirrorDifference_m": 1.4051260155412137e-15
+        },
+        "v2": {
+          "maxLengthMirrorDifference_m": 1.1102230246251565e-16,
+          "fdpiLengthMirrorDifference_m": 0.0,
+          "maxNativeMomentArmMirrorDifference_m": 1.4051260155412137e-15
+        }
+      },
+      "fdpiNativePathNodes": {
+        "right_v1": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "right_v2": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "left_v1": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "left_v2": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ]
+      }
+    },
+    {
+      "pose": "wrist",
+      "values_rad": {
+        "flexion": 0.2,
+        "deviation": 0.1
+      },
+      "comparisons": {
+        "v1": {
+          "maxLengthMirrorDifference_m": 6.938893903907228e-17,
+          "fdpiLengthMirrorDifference_m": 0.0,
+          "maxNativeMomentArmMirrorDifference_m": 4.44956571588051e-15
+        },
+        "v2": {
+          "maxLengthMirrorDifference_m": 6.938893903907228e-17,
+          "fdpiLengthMirrorDifference_m": 0.0,
+          "maxNativeMomentArmMirrorDifference_m": 4.44956571588051e-15
+        }
+      },
+      "fdpiNativePathNodes": {
+        "right_v1": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "right_v2": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "left_v1": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "left_v2": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ]
+      }
+    },
+    {
+      "pose": "index_thumb",
+      "values_rad": {
+        "2mcp_flexion": 0.3,
+        "2pm_flexion": 0.2,
+        "mp_flexion": 0.15
+      },
+      "comparisons": {
+        "v1": {
+          "maxLengthMirrorDifference_m": 0.028933097329152446,
+          "fdpiLengthMirrorDifference_m": 0.028933097329152446,
+          "maxNativeMomentArmMirrorDifference_m": 0.01881245863192394
+        },
+        "v2": {
+          "maxLengthMirrorDifference_m": 0.028933097329152446,
+          "fdpiLengthMirrorDifference_m": 0.028933097329152446,
+          "maxNativeMomentArmMirrorDifference_m": 0.01881245863192394
+        }
+      },
+      "fdpiNativePathNodes": {
+        "right_v1": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "right_v2": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "left_v1": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "left_v2": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ]
+      }
+    },
+    {
+      "pose": "more_flexed",
+      "values_rad": {
+        "2mcp_flexion": 0.7,
+        "2pm_flexion": 0.5,
+        "mp_flexion": 0.3
+      },
+      "comparisons": {
+        "v1": {
+          "maxLengthMirrorDifference_m": 0.03943914693860173,
+          "fdpiLengthMirrorDifference_m": 0.036574322135435045,
+          "maxNativeMomentArmMirrorDifference_m": 0.02134183483628252
+        },
+        "v2": {
+          "maxLengthMirrorDifference_m": 0.03943914693860173,
+          "fdpiLengthMirrorDifference_m": 0.036574322135435045,
+          "maxNativeMomentArmMirrorDifference_m": 0.02134183483628252
+        }
+      },
+      "fdpiNativePathNodes": {
+        "right_v1": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "right_v2": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "left_v1": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ],
+        "left_v2": [
+          {
+            "point": "FDPI-P1",
+            "body": "ulna",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P2",
+            "body": "radius",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P3",
+            "body": "capitate",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P4",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P5",
+            "body": "secondmc",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "secondmc",
+            "wrap": "2ndmcp_FDPI"
+          },
+          {
+            "point": "FDPI-P6",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P6_0",
+            "body": "2proxph",
+            "wrap": null
+          },
+          {
+            "point": "pwpt1",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "pwpt2",
+            "body": "2proxph",
+            "wrap": "2ndpm_FDPI"
+          },
+          {
+            "point": "FDPI-P7",
+            "body": "2midph",
+            "wrap": null
+          },
+          {
+            "point": "FDPI-P8",
+            "body": "2distph",
+            "wrap": null
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Native wrap ranges restricted to named adjacent original attachment pairs. This changes the native force-path model; neither symmetry alone nor a prettier path establishes anatomical validity. No active model/index or SO labels changed."
+}

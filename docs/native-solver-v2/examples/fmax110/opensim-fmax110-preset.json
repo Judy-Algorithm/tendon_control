@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "engine": "opensim",
+  "modelId": "opensim-arms-left-repaired-v1-full43",
+  "modelHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463",
+  "request": {
+    "actionId": "native-index-flexion-demo",
+    "coordinate": "2mcp_flexion",
+    "targetRad": 0.25,
+    "duration_s": 2,
+    "samples": 51,
+    "parameters": {
+      "fmaxMultiplier": 1.1,
+      "optimalFiberLengthMultiplier": 1,
+      "tendonSlackLengthMultiplier": 1
+    },
+    "runId": "opensim-canonical-finger-fmax110"
+  },
+  "parameters": {
+    "fmaxMultiplier": 1.1,
+    "optimalFiberLengthMultiplier": 1,
+    "tendonSlackLengthMultiplier": 1
+  },
+  "units": {
+    "q": "rad",
+    "activation": "dimensionless",
+    "force_N": "N",
+    "torque_Nm": "N m",
+    "paths": "m",
+    "time_s": "s"
+  },
+  "pending": false
+}

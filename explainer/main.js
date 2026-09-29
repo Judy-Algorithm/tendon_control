@@ -2,12 +2,15 @@ import {ExplainerScene} from './scene.js';
 import {SOURCES,OPENSIM_STEPS,MYOHAND_STEPS,MUSCLE_MODELS,GLOSSARY} from './content.js';
 import {clamp,torqueDemand,solveAllocation,parseRoute,polylinePath} from './math.js';
 import {mountMuscleLab} from './muscle-lab.js';
+import {mountWorkbench} from './native-v2/workbench.js';
+import {mountMano} from './native-v2/mano.js';
 
 const root=document.getElementById('explainer');
 const original=document.querySelector('.layout');
 const defaults={scale:1,explode:0,angle:10,load:2,lever:35,strength:1,activation:.2,noise:0,selectedMuscle:'FDS2',time:80,mocoMode:'inverse'};
 let state={route:'control',step:'overview',parameters:{...defaults},phase:0,playing:false};
 let scene=null,frame=0,last=0,fixture=null,fixtureError=null,opensimFixture=null,drawerReturn=null,disposeDrawer=null;
+let special=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const el=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;};
 const steps=()=>state.route==='opensim'?OPENSIM_STEPS:MYOHAND_STEPS;
@@ -16,6 +19,7 @@ const sourcesFor=()=>current().sourceIds||[];
 
 root.innerHTML=`<nav class="ex-rail" aria-label="求解步骤"></nav><div class="ex-body"><section class="ex-visual" aria-label="交互式模型"><div class="ex-scene"></div><header class="ex-hero"><div class="ex-eyebrow"></div><h1></h1><p></p></header><div class="ex-orbit-note">拖动旋转 · 滚轮缩放</div><button type="button" class="ex-presentation">演示模式</button><div class="ex-mode">三维几何示意</div><div class="ex-camera" aria-label="教学模型视角"><button data-camera="oblique">斜视</button><button data-camera="palm">掌侧</button><button data-camera="side">侧面</button></div></section><aside class="ex-panel" aria-label="当前步骤说明"></aside></div>`;
 const dialog=el('dialog','ex-drawer');dialog.setAttribute('aria-labelledby','ex-drawer-title');
+const teachingTemplate=root.innerHTML;
 dialog.innerHTML='<div class="ex-drawer-head"><h2 id="ex-drawer-title"></h2><button type="button" aria-label="关闭详情">×</button></div><div class="ex-drawer-body"></div>';
 document.body.append(dialog);
 dialog.querySelector('button').onclick=()=>dialog.close();
@@ -113,11 +117,19 @@ function togglePlay(){if(state.playing){pause();return;}if(state.parameters.time
 function reset(){pause();state.parameters={...defaults};scene?.reset();renderPanel();}
 function navigate(i){const s=steps()[i];if(s)location.hash=`${state.route}/${s.id}`;}
 function route(){
+  special?.dispose();special=null;root.classList.remove('mano-host');
+  if(!root.querySelector('.ex-rail')){root.innerHTML=teachingTemplate;bindSceneButtons();}
   pause();const parsed=parseRoute(location.hash);const changed=state.route!==parsed.route;state={...state,...parsed};
   const active=state.route!=='control';root.hidden=!active;original.hidden=active;
   document.querySelectorAll('[data-route]').forEach(a=>{if(a.dataset.route===state.route)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   window.dispatchEvent(new CustomEvent('explainer:route',{detail:state.route}));
   if(!active){scene?.dispose();scene=null;return;}
+  if(state.route==='mano'||state.step.split('?')[0]==='native'){
+    scene?.dispose();scene=null;root.innerHTML='';
+    if(state.route==='mano'){root.classList.add('mano-host');special=mountMano(root);special.setStep?.(state.step==='overview'?'shape':state.step);}
+    else{const query=new URLSearchParams(state.step.split('?')[1]||'');special=mountWorkbench(root,{engine:state.route,actionId:query.get('action')});}
+    return;
+  }
   if(!steps().some(s=>s.id===state.step))state.step='overview';
   if(changed)state.parameters={...defaults};
   if(!scene)try{scene=new ExplainerScene({host:root.querySelector('.ex-scene'),onSelect:data=>{openDrawer(data.label||data.id,`<p>选中的是教学三维模型中的${data.kind==='muscle'?'肌腱通路':'结构'}。它帮助定位当前原理，不代表个人解剖标定。</p>`+sourceMarkup(data.sourceIds||sourcesFor()));}});}catch(e){root.querySelector('.ex-scene').innerHTML='<div class="ex-fallback"><p>三维视图暂不可用。右侧原理、计算与官方依据仍可使用。</p></div>';console.error(e);}
@@ -126,16 +138,18 @@ function route(){
   if(state.route==='opensim'){const alternate=root.querySelector('[data-step="moco"]');alternate.classList.add('ex-alternative');alternate.querySelector('.step-num').textContent='↗';alternate.title='Moco：另一条求解路线，不是 SO 的必需后续步骤';}
   root.querySelector('.ex-eyebrow').textContent=state.route==='opensim'?'OPENSIM / INVERSE ANALYSIS':'MYOHAND / FORWARD SIMULATION';
   root.querySelector('.ex-hero h1').textContent=item.question||item.title;
-  root.querySelector('.ex-hero p').textContent=state.route==='opensim'?'从观测动作理解内部发力':'从控制指令理解下一刻的运动';
+  root.querySelector('.ex-hero p').textContent='';
   root.querySelector('.ex-mode').textContent=state.route==='myohand'&&state.step!=='overview'?'三维示意 · 曲线为原生回放':state.step==='id'||state.step==='so'?'三维示意 · 数值为简化计算':'交互式几何示意';
   if(state.step==='moco')root.querySelector('.ex-mode').textContent='时间耦合概念示意';
   root.querySelector('.ex-panel').scrollTop=0;root.querySelector('.ex-body').scrollTop=0;renderPanel();scene?.resize();
+  const entry=el('a','ex-native-entry','打开原生调参工作台 →');entry.href=`#${state.route}/native`;root.querySelector('.ex-panel').prepend(entry);
 }
-root.querySelectorAll('[data-camera]').forEach(b=>b.onclick=()=>scene?.setView(b.dataset.camera));
-root.querySelector('.ex-presentation').onclick=()=>{root.classList.toggle('presentation');root.querySelector('.ex-presentation').textContent=root.classList.contains('presentation')?'退出演示':'演示模式';scene?.resize();};
+function bindSceneButtons(){root.querySelectorAll('[data-camera]').forEach(b=>b.onclick=()=>scene?.setView(b.dataset.camera));
+root.querySelector('.ex-presentation').onclick=()=>{root.classList.toggle('presentation');root.querySelector('.ex-presentation').textContent=root.classList.contains('presentation')?'退出演示':'演示模式';scene?.resize();};}
+bindSceneButtons();
 window.addEventListener('hashchange',route);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
-fetch('./explainer/fixtures/myohand-native.json').then(r=>{if(!r.ok)throw new Error('fixture HTTP '+r.status);return r.json();}).then(data=>{fixture=data;if(state.route==='myohand')sync();}).catch(e=>{fixtureError=e.message;if(state.route==='myohand')renderReadout();});
+fetch('./explainer/fixtures/myohand-native.json').then(r=>{if(!r.ok)throw new Error('fixture HTTP '+r.status);return r.json();}).then(data=>{fixture=data;if(state.route==='myohand'&&!special)sync();}).catch(e=>{fixtureError=e.message;if(state.route==='myohand'&&!special)renderReadout();});
 fetch('./explainer/fixtures/opensim-so-native.json').then(r=>{if(!r.ok)throw new Error('fixture HTTP '+r.status);return r.json();}).then(data=>{opensimFixture=data;}).catch(()=>{opensimFixture=null;});
 route();
 // Read-only diagnostics for reproducible integration checks.
-window.explainerLab=Object.freeze({snapshot:()=>({route:state.route,step:state.step,parameters:{...state.parameters},playing:state.playing,fixtureLoaded:!!fixture,fixtureError,scene:scene?.getDiagnostics()||null})});
+window.explainerLab=Object.freeze({snapshot:()=>({route:state.route,step:state.step,parameters:{...state.parameters},playing:state.playing,fixtureLoaded:!!fixture,fixtureError,scene:scene?.getDiagnostics()||null,native:special?.snapshot?.()||null})});

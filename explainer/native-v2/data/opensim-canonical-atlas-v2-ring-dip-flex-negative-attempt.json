@@ -1,0 +1,10 @@
+{
+  "status": "TIMEOUT",
+  "wallTimeLimit_s": 900.0,
+  "elapsed_s": 900.4163897037506,
+  "startedAtEpoch": 1790709986.0276482,
+  "startEvidence": "request.json filesystem birth time; original attempt, not watchdog start",
+  "runId": "opensim-canonical-atlas-v2-ring-dip-flex-negative",
+  "partialOutputPolicy": "Logs/partial files preserved; no complete trajectory or activation result inferred.",
+  "scope": "Exact process identity and partial native logs retained in local attempt; no complete replay exported."
+}

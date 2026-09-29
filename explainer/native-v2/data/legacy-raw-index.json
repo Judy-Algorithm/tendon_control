@@ -1,0 +1,1765 @@
+{
+  "modelFile": "opensim-model.json",
+  "runs": [
+    {
+      "file": "opensim-finger-baseline.json",
+      "label": "食指 · 原参数",
+      "parameters": {
+        "fmaxMultiplier": 1,
+        "optimalFiberLengthMultiplier": 1,
+        "tendonSlackLengthMultiplier": 1
+      },
+      "actionId": "native-index-flexion-demo",
+      "status": "solved",
+      "runId": "opensim-finger-baseline",
+      "qc": {
+        "nativeToolReturn": true,
+        "frames": 51,
+        "acceptedFrames": 51,
+        "failedTimes_s": [],
+        "maxBalanceResidual_Nm": 3.000769580215057e-07,
+        "maxForceReconstruction_N": 4.535457829746292e-06,
+        "reserveRule": "No project5percent gate imposed; absolute native reserve is always reported.",
+        "nativeReportedAccelerationConstraintViolation": [
+          0.052241,
+          0.0522422,
+          0.052244,
+          0.0522471,
+          0.0522512,
+          0.0522564,
+          0.0522624,
+          0.0522692,
+          0.0522768,
+          0.0522849,
+          0.0522934,
+          0.0523023,
+          0.0523114,
+          0.0523247,
+          0.0523302,
+          0.0523393,
+          0.0523482,
+          0.0523569,
+          0.0523662,
+          0.052374,
+          0.0523812,
+          0.0523926,
+          0.0523986,
+          0.052404,
+          0.0524086,
+          0.0524126,
+          0.0524158,
+          0.0524182,
+          0.0524199,
+          0.0524209,
+          0.0524124,
+          0.0524122,
+          0.0524113,
+          0.0524097,
+          0.0524141,
+          0.0524114,
+          0.0524083,
+          0.0524045,
+          0.0524004,
+          0.0523968,
+          0.0523925,
+          0.0523881,
+          0.0523838,
+          0.0523816,
+          0.0523782,
+          0.0523745,
+          0.0523712,
+          0.0523685,
+          0.0523664,
+          0.0523651,
+          0.0523644
+        ],
+        "interpretation": "valid means native output present, no explicit native failure, activation bounds and reduced Nm/force reconstruction checks; not zero native acceleration-constraint norm or physiological reserve acceptance.",
+        "maxNativePathPolylineApproximationError_m": 8.575161910845397e-05
+      }
+    },
+    {
+      "file": "opensim-finger-fmax110.json",
+      "label": "食指 · Fmax ×1.10",
+      "parameters": {
+        "fmaxMultiplier": 1.1,
+        "optimalFiberLengthMultiplier": 1,
+        "tendonSlackLengthMultiplier": 1
+      },
+      "actionId": "native-index-flexion-demo",
+      "status": "solved",
+      "runId": "opensim-finger-fmax110",
+      "qc": {
+        "nativeToolReturn": true,
+        "frames": 51,
+        "acceptedFrames": 51,
+        "failedTimes_s": [],
+        "maxBalanceResidual_Nm": 3.1331281995228277e-07,
+        "maxForceReconstruction_N": 4.47958961125039e-06,
+        "reserveRule": "No project5percent gate imposed; absolute native reserve is always reported.",
+        "nativeReportedAccelerationConstraintViolation": [
+          0.0576082,
+          0.0576093,
+          0.0576111,
+          0.0576141,
+          0.057618,
+          0.057623,
+          0.0576288,
+          0.0576353,
+          0.0576425,
+          0.0576503,
+          0.0576585,
+          0.0576671,
+          0.0576758,
+          0.0576886,
+          0.0576938,
+          0.0577026,
+          0.0577112,
+          0.0577195,
+          0.0577284,
+          0.0577359,
+          0.0577428,
+          0.0577539,
+          0.0577596,
+          0.0577647,
+          0.0577691,
+          0.0577729,
+          0.0577759,
+          0.0577782,
+          0.0577798,
+          0.0577807,
+          0.0577722,
+          0.0577719,
+          0.0577689,
+          0.0577682,
+          0.0577733,
+          0.057771,
+          0.0577679,
+          0.0577644,
+          0.0577606,
+          0.0577566,
+          0.0577524,
+          0.0577481,
+          0.0577439,
+          0.0577418,
+          0.0577384,
+          0.0577348,
+          0.0577316,
+          0.057729,
+          0.0577269,
+          0.0577257,
+          0.0577251
+        ],
+        "interpretation": "valid means native output present, no explicit native failure, activation bounds and reduced Nm/force reconstruction checks; not zero native acceleration-constraint norm or physiological reserve acceptance.",
+        "maxNativePathPolylineApproximationError_m": 8.57516184529783e-05
+      }
+    },
+    {
+      "file": "opensim-finger-lopt105.json",
+      "label": "食指 · lopt ×1.05",
+      "parameters": {
+        "fmaxMultiplier": 1,
+        "optimalFiberLengthMultiplier": 1.05,
+        "tendonSlackLengthMultiplier": 1
+      },
+      "actionId": "native-index-flexion-demo",
+      "status": "solved",
+      "runId": "opensim-finger-lopt105",
+      "qc": {
+        "nativeToolReturn": true,
+        "frames": 51,
+        "acceptedFrames": 51,
+        "failedTimes_s": [],
+        "maxBalanceResidual_Nm": 3.126000038232435e-07,
+        "maxForceReconstruction_N": 3.687326310952699e-06,
+        "reserveRule": "No project5percent gate imposed; absolute native reserve is always reported.",
+        "nativeReportedAccelerationConstraintViolation": [
+          0.0593307,
+          0.0593317,
+          0.0593334,
+          0.0593363,
+          0.0593401,
+          0.0593448,
+          0.0593504,
+          0.0593567,
+          0.0593637,
+          0.0593713,
+          0.0593792,
+          0.0593876,
+          0.0593961,
+          0.0594087,
+          0.0594138,
+          0.0594225,
+          0.059431,
+          0.0594392,
+          0.0594482,
+          0.0594557,
+          0.0594627,
+          0.0594738,
+          0.0594797,
+          0.0594851,
+          0.0594898,
+          0.0594905,
+          0.0594961,
+          0.0595001,
+          0.0595022,
+          0.0595036,
+          0.0594959,
+          0.0594953,
+          0.059496,
+          0.0594951,
+          0.0594998,
+          0.0594979,
+          0.0594955,
+          0.0594926,
+          0.0594895,
+          0.0594861,
+          0.0594826,
+          0.0594789,
+          0.0594752,
+          0.0594735,
+          0.0594706,
+          0.0594674,
+          0.0594645,
+          0.0594621,
+          0.0594603,
+          0.0594592,
+          0.0594586
+        ],
+        "interpretation": "valid means native output present, no explicit native failure, activation bounds and reduced Nm/force reconstruction checks; not zero native acceleration-constraint norm or physiological reserve acceptance.",
+        "maxNativePathPolylineApproximationError_m": 8.57516184529783e-05
+      }
+    },
+    {
+      "file": "opensim-finger-lts105.json",
+      "label": "食指 · lTS ×1.05",
+      "parameters": {
+        "fmaxMultiplier": 1,
+        "optimalFiberLengthMultiplier": 1,
+        "tendonSlackLengthMultiplier": 1.05
+      },
+      "actionId": "native-index-flexion-demo",
+      "status": "solved",
+      "runId": "opensim-finger-lts105",
+      "qc": {
+        "nativeToolReturn": true,
+        "frames": 51,
+        "acceptedFrames": 51,
+        "failedTimes_s": [],
+        "maxBalanceResidual_Nm": 3.1457977692737893e-07,
+        "maxForceReconstruction_N": 7.853450689765396e-07,
+        "reserveRule": "No project5percent gate imposed; absolute native reserve is always reported.",
+        "nativeReportedAccelerationConstraintViolation": [
+          0.0688414,
+          0.0688417,
+          0.0688422,
+          0.068843,
+          0.0688441,
+          0.0688456,
+          0.0688474,
+          0.0688495,
+          0.0688519,
+          0.0688545,
+          0.0688575,
+          0.0688607,
+          0.0688641,
+          0.0688696,
+          0.0688714,
+          0.0688752,
+          0.0688791,
+          0.068883,
+          0.0688874,
+          0.0688912,
+          0.068895,
+          0.0689011,
+          0.0689047,
+          0.0689083,
+          0.0689117,
+          0.0689149,
+          0.068918,
+          0.0689209,
+          0.0689237,
+          0.0689262,
+          0.0689242,
+          0.0689271,
+          0.0689286,
+          0.0689305,
+          0.0689353,
+          0.0689368,
+          0.0689381,
+          0.0689392,
+          0.0689401,
+          0.0689408,
+          0.0689414,
+          0.0689418,
+          0.0689421,
+          0.0689433,
+          0.0689436,
+          0.0689436,
+          0.0689435,
+          0.0689434,
+          0.0689433,
+          0.0689432,
+          0.0689431
+        ],
+        "interpretation": "valid means native output present, no explicit native failure, activation bounds and reduced Nm/force reconstruction checks; not zero native acceleration-constraint norm or physiological reserve acceptance.",
+        "maxNativePathPolylineApproximationError_m": 8.57516184529783e-05
+      }
+    },
+    {
+      "file": "opensim-wrist-baseline.json",
+      "label": "腕屈曲 · 原参数",
+      "parameters": {
+        "fmaxMultiplier": 1,
+        "optimalFiberLengthMultiplier": 1,
+        "tendonSlackLengthMultiplier": 1
+      },
+      "actionId": "native-wrist-flexion-demo",
+      "status": "solved",
+      "runId": "opensim-wrist-baseline",
+      "qc": {
+        "nativeToolReturn": true,
+        "frames": 51,
+        "acceptedFrames": 51,
+        "failedTimes_s": [],
+        "maxBalanceResidual_Nm": 2.9811646580849005e-07,
+        "maxForceReconstruction_N": 4.502864144662055e-06,
+        "reserveRule": "No project5percent gate imposed; absolute native reserve is always reported.",
+        "nativeReportedAccelerationConstraintViolation": [
+          0.0522439,
+          0.0522351,
+          0.0522209,
+          0.0522007,
+          0.0521799,
+          0.0521616,
+          0.052149,
+          0.0521449,
+          0.0521516,
+          0.052171,
+          0.0522048,
+          0.0522543,
+          0.0523205,
+          0.0524042,
+          0.0525058,
+          0.0526257,
+          0.0527638,
+          0.05292,
+          0.0530939,
+          0.0532849,
+          0.053487,
+          0.0537044,
+          0.053936,
+          0.0541807,
+          0.0544371,
+          0.0547039,
+          0.0549797,
+          0.0552629,
+          0.0558093,
+          0.0564205,
+          0.0569702,
+          0.0573452,
+          0.0576738,
+          0.0579952,
+          0.0583082,
+          0.0586106,
+          0.0589009,
+          0.0591775,
+          0.0594407,
+          0.0596873,
+          0.0599154,
+          0.0601238,
+          0.0603115,
+          0.0604774,
+          0.060621,
+          0.0607415,
+          0.0608391,
+          0.0609136,
+          0.0609662,
+          0.0609956,
+          0.0610094
+        ],
+        "interpretation": "valid means native output present, no explicit native failure, activation bounds and reduced Nm/force reconstruction checks; not zero native acceleration-constraint norm or physiological reserve acceptance.",
+        "maxNativePathPolylineApproximationError_m": 8.160154031344735e-05
+      }
+    },
+    {
+      "file": "opensim-finger-overload.json",
+      "label": "食指 · 已声明20N外载荷",
+      "parameters": {
+        "fmaxMultiplier": 1,
+        "optimalFiberLengthMultiplier": 1,
+        "tendonSlackLengthMultiplier": 1
+      },
+      "actionId": "native-index-flexion-demo",
+      "status": "partial",
+      "runId": "opensim-finger-overload",
+      "qc": {
+        "nativeToolReturn": true,
+        "frames": 51,
+        "acceptedFrames": 39,
+        "failedTimes_s": [
+          0.12,
+          0.2,
+          0.28,
+          0.32,
+          0.36,
+          0.48,
+          0.64,
+          0.72,
+          1.36,
+          1.56,
+          1.64,
+          1.84
+        ],
+        "maxBalanceResidual_Nm": 0.0004161872851681108,
+        "maxForceReconstruction_N": 6.610534825313152e-06,
+        "reserveRule": "No project5percent gate imposed; absolute native reserve is always reported.",
+        "nativeReportedAccelerationConstraintViolation": [
+          0.0603621,
+          0.0603644,
+          0.060366,
+          0.0603654,
+          0.0603668,
+          0.0603686,
+          0.0605825,
+          0.0603771,
+          19.1995,
+          0.060382,
+          0.060387,
+          0.0605799,
+          0.0603986,
+          0.0604049,
+          0.0604118,
+          0.0604205,
+          0.0604285,
+          0.0607036,
+          0.0604453,
+          0.0607234,
+          0.0604765,
+          0.0604703,
+          0.0604775,
+          0.0604835,
+          0.0604873,
+          0.0604867,
+          0.0604747,
+          0.0604115,
+          0.0599547,
+          0.0601956,
+          0.0602259,
+          0.0603924,
+          0.0604035,
+          0.0602566,
+          0.0602617,
+          0.0602652,
+          0.0604273,
+          0.0602702,
+          0.0602709,
+          318.69,
+          0.0602744,
+          0.0602752,
+          0.0602759,
+          0.0602765,
+          0.0604349,
+          0.0604191,
+          0.0602774,
+          0.0603779,
+          0.0602775,
+          0.0602776,
+          0.0604205
+        ],
+        "interpretation": "valid means native output present, no explicit native failure, activation bounds and reduced Nm/force reconstruction checks; not zero native acceleration-constraint norm or physiological reserve acceptance.",
+        "maxNativePathPolylineApproximationError_m": 8.57516184529783e-05
+      }
+    },
+    {
+      "file": "opensim-atlas-wrist-flex-positive.json",
+      "label": "原动作 · 腕关节 · 弯曲",
+      "actionId": "wrist_flex:positive",
+      "parameters": {},
+      "origin": "original_atlas_angle_mapping",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-atlas-wrist-flex-negative.json",
+      "label": "原动作 · 腕关节 · 伸展",
+      "actionId": "wrist_flex:negative",
+      "parameters": {},
+      "origin": "original_atlas_angle_mapping",
+      "status": "partial"
+    },
+    {
+      "file": "opensim-atlas-middle-mcp-flex-negative.json",
+      "label": "原动作 · 中指 MCP · 伸展",
+      "actionId": "middle_MCP_flex:negative",
+      "parameters": {},
+      "origin": "original_atlas_angle_mapping",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-atlas-ring-mcp-flex-negative.json",
+      "label": "原动作 · 无名指 MCP · 伸展",
+      "actionId": "ring_MCP_flex:negative",
+      "parameters": {},
+      "origin": "original_atlas_angle_mapping",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-atlas-pinky-mcp-flex-negative.json",
+      "label": "原动作 · 小指 MCP · 伸展",
+      "actionId": "pinky_MCP_flex:negative",
+      "parameters": {},
+      "origin": "original_atlas_angle_mapping",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-scale-ik-roundtrip.json",
+      "label": "原生Scale→IK→ID→SO · 合成标记自检",
+      "actionId": "native-scale-ik-synthetic-triads",
+      "parameters": {},
+      "status": "solved",
+      "modelFile": "opensim-scale-ik-model.json",
+      "geometryFile": "opensim-scale-ik-geometry.json"
+    },
+    {
+      "file": "opensim-native-deviation-positive.json",
+      "label": "原生新示范 · deviation +",
+      "actionId": "native:deviation:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-flexion-negative.json",
+      "label": "原生新示范 · flexion −",
+      "actionId": "native:flexion:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-flexion-positive.json",
+      "label": "原生新示范 · flexion +",
+      "actionId": "native:flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-cmc-flexion-negative.json",
+      "label": "原生新示范 · cmc_flexion −",
+      "actionId": "native:cmc_flexion:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-cmc-flexion-positive.json",
+      "label": "原生新示范 · cmc_flexion +",
+      "actionId": "native:cmc_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-cmc-abduction-negative.json",
+      "label": "原生新示范 · cmc_abduction −",
+      "actionId": "native:cmc_abduction:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-cmc-abduction-positive.json",
+      "label": "原生新示范 · cmc_abduction +",
+      "actionId": "native:cmc_abduction:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-mp-flexion-negative.json",
+      "label": "原生新示范 · mp_flexion −",
+      "actionId": "native:mp_flexion:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-mp-flexion-positive.json",
+      "label": "原生新示范 · mp_flexion +",
+      "actionId": "native:mp_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-ip-flexion-negative.json",
+      "label": "原生新示范 · ip_flexion −",
+      "actionId": "native:ip_flexion:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-ip-flexion-positive.json",
+      "label": "原生新示范 · ip_flexion +",
+      "actionId": "native:ip_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-2mcp-abduction-negative.json",
+      "label": "原生新示范 · 2mcp_abduction −",
+      "actionId": "native:2mcp_abduction:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-2mcp-abduction-positive.json",
+      "label": "原生新示范 · 2mcp_abduction +",
+      "actionId": "native:2mcp_abduction:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "partial"
+    },
+    {
+      "file": "opensim-native-2mcp-flexion-negative.json",
+      "label": "原生新示范 · 2mcp_flexion −",
+      "actionId": "native:2mcp_flexion:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-2mcp-flexion-positive.json",
+      "label": "原生新示范 · 2mcp_flexion +",
+      "actionId": "native:2mcp_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-2pm-flexion-positive.json",
+      "label": "原生新示范 · 2pm_flexion +",
+      "actionId": "native:2pm_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-2md-flexion-positive.json",
+      "label": "原生新示范 · 2md_flexion +",
+      "actionId": "native:2md_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-3mcp-abduction-negative.json",
+      "label": "原生新示范 · 3mcp_abduction −",
+      "actionId": "native:3mcp_abduction:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-3mcp-abduction-positive.json",
+      "label": "原生新示范 · 3mcp_abduction +",
+      "actionId": "native:3mcp_abduction:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-3mcp-flexion-negative.json",
+      "label": "原生新示范 · 3mcp_flexion −",
+      "actionId": "native:3mcp_flexion:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-3mcp-flexion-positive.json",
+      "label": "原生新示范 · 3mcp_flexion +",
+      "actionId": "native:3mcp_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-3pm-flexion-positive.json",
+      "label": "原生新示范 · 3pm_flexion +",
+      "actionId": "native:3pm_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-4mcp-abduction-negative.json",
+      "label": "原生新示范 · 4mcp_abduction −",
+      "actionId": "native:4mcp_abduction:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-3md-flexion-positive.json",
+      "label": "原生新示范 · 3md_flexion +",
+      "actionId": "native:3md_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "partial"
+    },
+    {
+      "file": "opensim-native-4mcp-abduction-positive.json",
+      "label": "原生新示范 · 4mcp_abduction +",
+      "actionId": "native:4mcp_abduction:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-4mcp-flexion-negative.json",
+      "label": "原生新示范 · 4mcp_flexion −",
+      "actionId": "native:4mcp_flexion:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-4mcp-flexion-positive.json",
+      "label": "原生新示范 · 4mcp_flexion +",
+      "actionId": "native:4mcp_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-4pm-flexion-positive.json",
+      "label": "原生新示范 · 4pm_flexion +",
+      "actionId": "native:4pm_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-5mcp-abduction-negative.json",
+      "label": "原生新示范 · 5mcp_abduction −",
+      "actionId": "native:5mcp_abduction:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-4md-flexion-positive.json",
+      "label": "原生新示范 · 4md_flexion +",
+      "actionId": "native:4md_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "partial"
+    },
+    {
+      "file": "opensim-native-5mcp-abduction-positive.json",
+      "label": "原生新示范 · 5mcp_abduction +",
+      "actionId": "native:5mcp_abduction:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-5mcp-flexion-negative.json",
+      "label": "原生新示范 · 5mcp_flexion −",
+      "actionId": "native:5mcp_flexion:negative",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-5mcp-flexion-positive.json",
+      "label": "原生新示范 · 5mcp_flexion +",
+      "actionId": "native:5mcp_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-5pm-flexion-positive.json",
+      "label": "原生新示范 · 5pm_flexion +",
+      "actionId": "native:5pm_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-5md-flexion-positive.json",
+      "label": "原生新示范 · 5md_flexion +",
+      "actionId": "native:5md_flexion:positive",
+      "parameters": {},
+      "origin": "new_native_coordinate_demo_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    },
+    {
+      "file": "opensim-native-cmc4-midrange.json",
+      "label": "原生新示范 · CMC4 半范围0.1016rad",
+      "actionId": "native:4cmc_flexion:separate_midrange_demo",
+      "parameters": {},
+      "origin": "supplemental_native_midrange_not_original_atlas",
+      "group": "native-independent-coordinate",
+      "status": "solved"
+    }
+  ],
+  "parameters": [
+    {
+      "key": "fmaxMultiplier",
+      "label": "最大等长肌力倍率",
+      "min": 0.8,
+      "max": 1.2,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "key": "optimalFiberLengthMultiplier",
+      "label": "最优肌纤维长度倍率",
+      "min": 0.8,
+      "max": 1.2,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "key": "tendonSlackLengthMultiplier",
+      "label": "肌腱松弛长度倍率",
+      "min": 0.8,
+      "max": 1.2,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "coverage": [
+    {
+      "actionId": "wrist_flex:positive",
+      "label": "腕关节 · 弯曲",
+      "coordinate": "flexion",
+      "origin": "original_atlas",
+      "runStatus": "solved",
+      "status": "mapped",
+      "reason": "原生坐标/方向/范围已核对；为角度轨迹映射，不代表两种网格的逐点动作相同",
+      "axisCosineInPalmBasis": -0.9427417773317063,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -1.22173048,
+        1.22173048
+      ],
+      "requestedRange_rad": [
+        -1.2000000451798685,
+        2.82013145543701e-09
+      ],
+      "acceptedFrames": 121,
+      "attemptedFrames": 121,
+      "runFile": "opensim-atlas-wrist-flex-positive.json"
+    },
+    {
+      "actionId": "wrist_flex:negative",
+      "label": "腕关节 · 伸展",
+      "coordinate": "flexion",
+      "origin": "original_atlas",
+      "runStatus": "partial",
+      "status": "mapped",
+      "reason": "原生坐标/方向/范围已核对；为角度轨迹映射，不代表两种网格的逐点动作相同",
+      "axisCosineInPalmBasis": -0.9427417773317063,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -1.22173048,
+        1.22173048
+      ],
+      "requestedRange_rad": [
+        2.82013145543701e-09,
+        1.2000000508201314
+      ],
+      "acceptedFrames": 107,
+      "attemptedFrames": 121,
+      "runFile": "opensim-atlas-wrist-flex-negative.json"
+    },
+    {
+      "actionId": "wrist_abd:positive",
+      "label": "腕关节 · 桡偏",
+      "coordinate": "deviation",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.28670467240628267,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.17453293,
+        0.43633231
+      ],
+      "requestedRange_rad": [
+        -0.5999999353450602,
+        8.84549396760041e-08
+      ]
+    },
+    {
+      "actionId": "wrist_abd:negative",
+      "label": "腕关节 · 尺偏",
+      "coordinate": "deviation",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.28670467240628267,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.17453293,
+        0.43633231
+      ],
+      "requestedRange_rad": [
+        8.84549396760041e-08,
+        0.5000000884549397
+      ]
+    },
+    {
+      "actionId": "thumb_CMC_flex:negative",
+      "label": "拇指 CMC · 弯曲",
+      "coordinate": "cmc_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": 0.7739723665083467,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.78539816,
+        0.26179939
+      ],
+      "requestedRange_rad": [
+        -0.3000000119000141,
+        -1.40921614617423e-14
+      ]
+    },
+    {
+      "actionId": "thumb_CMC_flex:positive",
+      "label": "拇指 CMC · 伸展",
+      "coordinate": "cmc_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": 0.7739723665083467,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.78539816,
+        0.26179939
+      ],
+      "requestedRange_rad": [
+        -1.40921614617423e-14,
+        0.9999999999999859
+      ]
+    },
+    {
+      "actionId": "thumb_CMC_abd:positive",
+      "label": "拇指 CMC · 外展",
+      "coordinate": "cmc_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.773989735718686,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.43633231,
+        0.43633231
+      ],
+      "requestedRange_rad": [
+        -1.399999976000114,
+        -1.14040043408494e-13
+      ]
+    },
+    {
+      "actionId": "thumb_CMC_abd:negative",
+      "label": "拇指 CMC · 内收",
+      "coordinate": "cmc_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.773989735718686,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.43633231,
+        0.43633231
+      ],
+      "requestedRange_rad": [
+        -1.14040043408494e-13,
+        0.699999988099886
+      ]
+    },
+    {
+      "actionId": "ulnar_CMC_flex:positive",
+      "label": "第4、5掌骨 CMC · 屈曲 Flexion",
+      "coordinate": "4cmc_flexion / CMC5_r1",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "显示层构造轴或耦合动作，没有直接等价的原生独立坐标"
+    },
+    {
+      "actionId": "ulnar_CMC_flex:negative",
+      "label": "第4、5掌骨 CMC · 伸回中立位",
+      "coordinate": "4cmc_flexion / CMC5_r1",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "显示层构造轴或耦合动作，没有直接等价的原生独立坐标"
+    },
+    {
+      "actionId": "thumb_MCP_flex:positive",
+      "label": "拇指 MCP · 弯曲",
+      "coordinate": "mp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": 0.7726855849822953,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.6981317,
+        0.78539816
+      ],
+      "requestedRange_rad": [
+        -1.52958518884147e-14,
+        0.9999999999999847
+      ]
+    },
+    {
+      "actionId": "thumb_MCP_flex:negative",
+      "label": "拇指 MCP · 伸展",
+      "coordinate": "mp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": 0.7726855849822953,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.6981317,
+        0.78539816
+      ],
+      "requestedRange_rad": [
+        -0.2000000030000153,
+        -1.52958518884147e-14
+      ]
+    },
+    {
+      "actionId": "thumb_MCP_abd:positive",
+      "label": "拇指 MCP · 外展",
+      "coordinate": null,
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "显示层构造轴或耦合动作，没有直接等价的原生独立坐标"
+    },
+    {
+      "actionId": "thumb_MCP_abd:negative",
+      "label": "拇指 MCP · 内收",
+      "coordinate": null,
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "显示层构造轴或耦合动作，没有直接等价的原生独立坐标"
+    },
+    {
+      "actionId": "index_MCP_flex:positive",
+      "label": "食指 MCP · 弯曲",
+      "coordinate": "2mcp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.8755338800125796,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "requestedRange_rad": [
+        -1.6000000152510232,
+        8.74897678972486e-09
+      ]
+    },
+    {
+      "actionId": "index_MCP_flex:negative",
+      "label": "食指 MCP · 伸展",
+      "coordinate": "2mcp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.8755338800125796,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "requestedRange_rad": [
+        8.74897678972486e-09,
+        0.35000000274897675
+      ]
+    },
+    {
+      "actionId": "index_MCP_abd:positive",
+      "label": "食指 MCP · 外展",
+      "coordinate": "2mcp_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": 0.8851051086131965,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "requestedRange_rad": [
+        -8.68320987800593e-29,
+        0.400000006
+      ]
+    },
+    {
+      "actionId": "index_MCP_abd:negative",
+      "label": "食指 MCP · 内收",
+      "coordinate": "2mcp_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": 0.8851051086131965,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "requestedRange_rad": [
+        -0.3000000119,
+        -8.68320987800593e-29
+      ]
+    },
+    {
+      "actionId": "middle_MCP_flex:positive",
+      "label": "中指 MCP · 弯曲",
+      "coordinate": "3mcp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9889739392975458,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "requestedRange_rad": [
+        -1.6000000171556854,
+        6.8443146970229e-09
+      ]
+    },
+    {
+      "actionId": "middle_MCP_flex:negative",
+      "label": "中指 MCP · 伸展",
+      "coordinate": "3mcp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "solved",
+      "status": "mapped",
+      "reason": "原生坐标/方向/范围已核对；为角度轨迹映射，不代表两种网格的逐点动作相同",
+      "axisCosineInPalmBasis": -0.9889739392975458,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "requestedRange_rad": [
+        6.8443146970229e-09,
+        0.35000000084431465
+      ],
+      "acceptedFrames": 121,
+      "attemptedFrames": 121,
+      "runFile": "opensim-atlas-middle-mcp-flex-negative.json"
+    },
+    {
+      "actionId": "middle_MCP_abd:positive",
+      "label": "中指 MCP · 桡偏",
+      "coordinate": "3mcp_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": 0.9849618503243998,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "requestedRange_rad": [
+        1.15706560923878e-25,
+        0.400000006
+      ]
+    },
+    {
+      "actionId": "middle_MCP_abd:negative",
+      "label": "中指 MCP · 尺偏",
+      "coordinate": "3mcp_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": 0.9849618503243998,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "requestedRange_rad": [
+        -0.3000000119,
+        1.15706560923878e-25
+      ]
+    },
+    {
+      "actionId": "ring_MCP_flex:positive",
+      "label": "无名指 MCP · 弯曲",
+      "coordinate": "4mcp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9963432640271931,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "requestedRange_rad": [
+        -1.6000000192331632,
+        4.76683700544055e-09
+      ]
+    },
+    {
+      "actionId": "ring_MCP_flex:negative",
+      "label": "无名指 MCP · 伸展",
+      "coordinate": "4mcp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "solved",
+      "status": "mapped",
+      "reason": "原生坐标/方向/范围已核对；为角度轨迹映射，不代表两种网格的逐点动作相同",
+      "axisCosineInPalmBasis": -0.9963432640271931,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "requestedRange_rad": [
+        4.76683700544055e-09,
+        0.34999999876683696
+      ],
+      "acceptedFrames": 121,
+      "attemptedFrames": 121,
+      "runFile": "opensim-atlas-ring-mcp-flex-negative.json"
+    },
+    {
+      "actionId": "ring_MCP_abd:negative",
+      "label": "无名指 MCP · 外展",
+      "coordinate": "4mcp_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": 0.9827942899014928,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "requestedRange_rad": [
+        -0.30000001176905733,
+        1.30942636957374e-10
+      ]
+    },
+    {
+      "actionId": "ring_MCP_abd:positive",
+      "label": "无名指 MCP · 内收",
+      "coordinate": "4mcp_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": 0.9827942899014928,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "requestedRange_rad": [
+        1.30942636957374e-10,
+        0.40000000613094266
+      ]
+    },
+    {
+      "actionId": "pinky_MCP_flex:positive",
+      "label": "小指 MCP · 弯曲",
+      "coordinate": "5mcp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9696552228106518,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "requestedRange_rad": [
+        -1.6000000229761195,
+        1.02388043114882e-09
+      ]
+    },
+    {
+      "actionId": "pinky_MCP_flex:negative",
+      "label": "小指 MCP · 伸展",
+      "coordinate": "5mcp_flexion",
+      "origin": "original_atlas",
+      "runStatus": "solved",
+      "status": "mapped",
+      "reason": "原生坐标/方向/范围已核对；为角度轨迹映射，不代表两种网格的逐点动作相同",
+      "axisCosineInPalmBasis": -0.9696552228106518,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        -0.785398163397,
+        1.570796326795
+      ],
+      "requestedRange_rad": [
+        1.02388043114882e-09,
+        0.5000000010238804
+      ],
+      "acceptedFrames": 121,
+      "attemptedFrames": 121,
+      "runFile": "opensim-atlas-pinky-mcp-flex-negative.json"
+    },
+    {
+      "actionId": "pinky_MCP_abd:negative",
+      "label": "小指 MCP · 外展",
+      "coordinate": "5mcp_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": 0.9535014571411106,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "requestedRange_rad": [
+        -0.3000000144328643,
+        -2.53286431027479e-09
+      ]
+    },
+    {
+      "actionId": "pinky_MCP_abd:positive",
+      "label": "小指 MCP · 内收",
+      "coordinate": "5mcp_abduction",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": 0.9535014571411106,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.261799387799,
+        0.261799387799
+      ],
+      "requestedRange_rad": [
+        -2.53286431027479e-09,
+        0.4999999974671357
+      ]
+    },
+    {
+      "actionId": "thumb_IP_flex:positive",
+      "label": "拇指 IP · 弯曲",
+      "coordinate": "ip_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": 0.2889910189177725,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.43633231,
+        1.30899694
+      ],
+      "requestedRange_rad": [
+        -3.99700832476613e-14,
+        1.49999999999996
+      ]
+    },
+    {
+      "actionId": "thumb_IP_flex:negative",
+      "label": "拇指 IP · 伸展",
+      "coordinate": "ip_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": 0.2889910189177725,
+      "proposedSign": 1,
+      "nativeRange_rad": [
+        -0.43633231,
+        1.30899694
+      ],
+      "requestedRange_rad": [
+        -0.20000000300003998,
+        -3.99700832476613e-14
+      ]
+    },
+    {
+      "actionId": "index_PIP_flex:positive",
+      "label": "食指 PIP · 弯曲",
+      "coordinate": "2pm_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.7889759549009909,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "requestedRange_rad": [
+        -1.7998535256041877,
+        0.000146426395812156
+      ]
+    },
+    {
+      "actionId": "index_PIP_flex:negative",
+      "label": "食指 PIP · 伸展",
+      "coordinate": "2pm_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.7889759549009909,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "requestedRange_rad": [
+        -1.1698535424041878,
+        0.000146426395812156
+      ]
+    },
+    {
+      "actionId": "middle_PIP_flex:positive",
+      "label": "中指 PIP · 弯曲",
+      "coordinate": "3pm_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9710890218083424,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "requestedRange_rad": [
+        -1.7999999519972378,
+        2.76192822597155e-12
+      ]
+    },
+    {
+      "actionId": "middle_PIP_flex:negative",
+      "label": "中指 PIP · 伸展",
+      "coordinate": "3pm_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9710890218083424,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "requestedRange_rad": [
+        -1.169999968797238,
+        2.76192822597155e-12
+      ]
+    },
+    {
+      "actionId": "ring_PIP_flex:positive",
+      "label": "无名指 PIP · 弯曲",
+      "coordinate": "4pm_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.98704668626,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "requestedRange_rad": [
+        -1.7999999520162793,
+        -1.62794668640628e-11
+      ]
+    },
+    {
+      "actionId": "ring_PIP_flex:negative",
+      "label": "无名指 PIP · 伸展",
+      "coordinate": "4pm_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.98704668626,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "requestedRange_rad": [
+        -1.1699999688162794,
+        -1.62794668640628e-11
+      ]
+    },
+    {
+      "actionId": "pinky_PIP_flex:positive",
+      "label": "小指 PIP · 弯曲",
+      "coordinate": "5pm_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.8816680136868799,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "requestedRange_rad": [
+        -1.7999511732339508,
+        4.87787660490509e-05
+      ]
+    },
+    {
+      "actionId": "pinky_PIP_flex:negative",
+      "label": "小指 PIP · 伸展",
+      "coordinate": "5pm_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.8816680136868799,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.745329251994
+      ],
+      "requestedRange_rad": [
+        -1.169951190033951,
+        4.87787660490509e-05
+      ]
+    },
+    {
+      "actionId": "index_DIP_flex:positive",
+      "label": "食指 DIP · 弯曲",
+      "coordinate": "2md_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9766152890060603,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "requestedRange_rad": [
+        -1.5998597924051798,
+        0.000140231594820255
+      ]
+    },
+    {
+      "actionId": "index_DIP_flex:negative",
+      "label": "食指 DIP · 伸展",
+      "coordinate": "2md_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9766152890060603,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "requestedRange_rad": [
+        -1.03985978400518,
+        0.000140231594820255
+      ]
+    },
+    {
+      "actionId": "middle_DIP_flex:positive",
+      "label": "中指 DIP · 弯曲",
+      "coordinate": "3md_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9753491437699788,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "requestedRange_rad": [
+        -1.599880240189865,
+        0.000119783810135061
+      ]
+    },
+    {
+      "actionId": "middle_DIP_flex:negative",
+      "label": "中指 DIP · 伸展",
+      "coordinate": "3md_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "unsupported",
+      "reason": "原始片段幅度超出当前原生关节范围；未缩小幅度制造通过",
+      "axisCosineInPalmBasis": -0.9753491437699788,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "requestedRange_rad": [
+        -1.0398802317898652,
+        0.000119783810135061
+      ]
+    },
+    {
+      "actionId": "ring_DIP_flex:positive",
+      "label": "无名指 DIP · 弯曲",
+      "coordinate": "4md_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.8606227321920953,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "requestedRange_rad": [
+        -1.6000000240383545,
+        -3.83544812863329e-11
+      ]
+    },
+    {
+      "actionId": "ring_DIP_flex:negative",
+      "label": "无名指 DIP · 伸展",
+      "coordinate": "4md_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.8606227321920953,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "requestedRange_rad": [
+        -1.0400000156383546,
+        -3.83544812863329e-11
+      ]
+    },
+    {
+      "actionId": "pinky_DIP_flex:positive",
+      "label": "小指 DIP · 弯曲",
+      "coordinate": "5md_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.8435615864997192,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "requestedRange_rad": [
+        -1.5999698782947216,
+        3.01457052785629e-05
+      ]
+    },
+    {
+      "actionId": "pinky_DIP_flex:negative",
+      "label": "小指 DIP · 伸展",
+      "coordinate": "5md_flexion",
+      "origin": "original_atlas",
+      "runStatus": "not_run",
+      "status": "not_yet_verified",
+      "reason": "模型间关节轴方向差异，需额外配准，不能只按名字映射",
+      "axisCosineInPalmBasis": -0.8435615864997192,
+      "proposedSign": -1,
+      "nativeRange_rad": [
+        0.0,
+        1.396263401595
+      ],
+      "requestedRange_rad": [
+        -1.0399698698947217,
+        3.01457052785629e-05
+      ]
+    }
+  ],
+  "coverageFile": "opensim-coverage.json",
+  "geometryFile": "opensim-geometry.json",
+  "nativeActionsFile": "opensim-native-actions.json"
+}

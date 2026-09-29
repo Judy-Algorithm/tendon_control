@@ -1,0 +1,1132 @@
+{
+  "status": "SOURCE_MODEL_MESH_MISMATCH",
+  "sourceModelHash": "45c45732788afd4fcc78b89c97cf7a5da51de82dcb735d480459ee4e8770207b",
+  "nativeExporterCheck": "No duplicate mesh scaling or matrix-transpose error; exportedworld vertices match directnativeMesh.frame×Mesh.scale×sourcevertices.",
+  "cause": "LEFT source already reflects body/joint/local anatomy Y, but Mesh.scale_factors stay+1 and filenames refer to unchanged right-hand geometry.",
+  "proposedRepairStatus": "DIAGNOSTIC_ONLY_NOT_APPLIED",
+  "rows": [
+    {
+      "body": "clavicle",
+      "mesh": "clavicle.vtp",
+      "frame": "/bodyset/clavicle",
+      "sourceLocalBounds_m": [
+        [
+          -0.040312,
+          -0.013585,
+          -0.001184
+        ],
+        [
+          0.009944,
+          0.026082,
+          0.122953
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.2246467991473532e-16,
+      "leftMassCenter_m": [
+        -0.011096,
+        -0.0063723,
+        0.054168
+      ],
+      "rightMassCenter_m": [
+        -0.011096,
+        0.0063723,
+        0.054168
+      ]
+    },
+    {
+      "body": "scapula",
+      "mesh": "scapula.vtp",
+      "frame": "/bodyset/scapula",
+      "sourceLocalBounds_m": [
+        [
+          -0.107837,
+          -0.125076,
+          -0.105782
+        ],
+        [
+          0.013687,
+          0.015506,
+          0.009979
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.2246467991473532e-16,
+      "leftMassCenter_m": [
+        -0.054694,
+        0.035032,
+        -0.043734
+      ],
+      "rightMassCenter_m": [
+        -0.054694,
+        -0.035032,
+        -0.043734
+      ]
+    },
+    {
+      "body": "humerus",
+      "mesh": "humerus.vtp",
+      "frame": "/bodyset/humerus",
+      "sourceLocalBounds_m": [
+        [
+          -0.022899,
+          -0.302885,
+          -0.043811
+        ],
+        [
+          0.025735,
+          0.023418,
+          0.026377
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.2246467991473532e-16,
+      "leftMassCenter_m": [
+        0.018064,
+        0.140141,
+        -0.012746
+      ],
+      "rightMassCenter_m": [
+        0.018064,
+        -0.140141,
+        -0.012746
+      ]
+    },
+    {
+      "body": "ulna",
+      "mesh": "ulna.vtp",
+      "frame": "/bodyset/ulna",
+      "sourceLocalBounds_m": [
+        [
+          -0.028321,
+          -0.247579,
+          -0.014066
+        ],
+        [
+          0.014063,
+          0.012146,
+          0.056111
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.00971783,
+        0.0959509,
+        0.024286
+      ],
+      "rightMassCenter_m": [
+        0.00971783,
+        -0.0959509,
+        0.024286
+      ]
+    },
+    {
+      "body": "radius",
+      "mesh": "radius.vtp",
+      "frame": "/bodyset/radius",
+      "sourceLocalBounds_m": [
+        [
+          -0.00911,
+          -0.243321,
+          -0.009825
+        ],
+        [
+          0.045851,
+          0.002726,
+          0.036898
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0336341,
+        0.181559,
+        0.0156
+      ],
+      "rightMassCenter_m": [
+        0.0336341,
+        -0.181559,
+        0.0156
+      ]
+    },
+    {
+      "body": "proximal_row",
+      "mesh": "lunate.vtp",
+      "frame": "/bodyset/proximal_row",
+      "sourceLocalBounds_m": [
+        [
+          -0.007116,
+          -0.007488,
+          -0.007431
+        ],
+        [
+          0.006587,
+          0.006104,
+          0.008757
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "proximal_row",
+      "mesh": "sdfastSCAPHOIDw.vtp",
+      "frame": "/bodyset/proximal_row",
+      "sourceLocalBounds_m": [
+        [
+          0.00527,
+          -0.013547,
+          -0.012103
+        ],
+        [
+          0.019413,
+          0.004294,
+          0.009063
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "proximal_row",
+      "mesh": "sdfastPISIFORMw.vtp",
+      "frame": "/bodyset/proximal_row",
+      "sourceLocalBounds_m": [
+        [
+          -0.016016,
+          -0.017113,
+          -0.015299
+        ],
+        [
+          -0.007424,
+          -0.004382,
+          -0.005746
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "proximal_row",
+      "mesh": "sdfastTRIQUETRALw.vtp",
+      "frame": "/bodyset/proximal_row",
+      "sourceLocalBounds_m": [
+        [
+          -0.017155,
+          -0.016278,
+          -0.006109
+        ],
+        [
+          -0.004587,
+          0.000586,
+          0.005545
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "capitate",
+      "mesh": "capitate.vtp",
+      "frame": "/bodyset/capitate",
+      "sourceLocalBounds_m": [
+        [
+          -0.007351,
+          -0.010195,
+          -0.007199
+        ],
+        [
+          0.00642,
+          0.01137,
+          0.008375
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.00028,
+        -0.00333,
+        -0.0045
+      ],
+      "rightMassCenter_m": [
+        -0.00028,
+        0.00333,
+        -0.0045
+      ]
+    },
+    {
+      "body": "trapezium",
+      "mesh": "trapezium.vtp",
+      "frame": "/bodyset/trapezium",
+      "sourceLocalBounds_m": [
+        [
+          -0.00723,
+          -0.01017,
+          -0.007298
+        ],
+        [
+          0.006235,
+          0.007183,
+          0.008705
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "trapezoid",
+      "mesh": "trapezoid.vtp",
+      "frame": "/bodyset/trapezoid",
+      "sourceLocalBounds_m": [
+        [
+          -0.006464,
+          -0.005123,
+          -0.007385
+        ],
+        [
+          0.006129,
+          0.005752,
+          0.007657
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "hamate",
+      "mesh": "hamate.vtp",
+      "frame": "/bodyset/hamate",
+      "sourceLocalBounds_m": [
+        [
+          -0.008489,
+          -0.007731,
+          -0.009397
+        ],
+        [
+          0.006023,
+          0.009748,
+          0.006691
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "firstmc",
+      "mesh": "1mc.vtp",
+      "frame": "/bodyset/firstmc",
+      "sourceLocalBounds_m": [
+        [
+          -0.006527,
+          -0.03496,
+          -0.018651
+        ],
+        [
+          0.022023,
+          0.004997,
+          0.006628
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.00784,
+        0.01472,
+        -0.00602
+      ],
+      "rightMassCenter_m": [
+        0.00784,
+        -0.01472,
+        -0.00602
+      ]
+    },
+    {
+      "body": "proximal_thumb",
+      "mesh": "thumbprox.vtp",
+      "frame": "/bodyset/proximal_thumb",
+      "sourceLocalBounds_m": [
+        [
+          -0.000544,
+          -0.031039,
+          -0.015898
+        ],
+        [
+          0.017504,
+          -0.001789,
+          0.00325
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0096,
+        0.0163,
+        -0.0063
+      ],
+      "rightMassCenter_m": [
+        0.0096,
+        -0.0163,
+        -0.0063
+      ]
+    },
+    {
+      "body": "distal_thumb",
+      "mesh": "thumbdist.vtp",
+      "frame": "/bodyset/distal_thumb",
+      "sourceLocalBounds_m": [
+        [
+          -0.000649,
+          -0.018391,
+          -0.009016
+        ],
+        [
+          0.01114,
+          -0.001978,
+          0.002204
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.00557,
+        0.01042,
+        -0.0044
+      ],
+      "rightMassCenter_m": [
+        0.00557,
+        -0.01042,
+        -0.0044
+      ]
+    },
+    {
+      "body": "secondmc",
+      "mesh": "2mc.vtp",
+      "frame": "/bodyset/secondmc",
+      "sourceLocalBounds_m": [
+        [
+          -0.010929,
+          -0.033867,
+          -0.010578
+        ],
+        [
+          0.009486,
+          0.031027,
+          0.009685
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "thirdmc",
+      "mesh": "3mc.vtp",
+      "frame": "/bodyset/thirdmc",
+      "sourceLocalBounds_m": [
+        [
+          -0.005663,
+          -0.03158,
+          -0.01139
+        ],
+        [
+          0.006403,
+          0.033012,
+          0.007336
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rightMassCenter_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "body": "fourthmc",
+      "mesh": "4mc_new.vtp",
+      "frame": "/bodyset/fourthmc",
+      "sourceLocalBounds_m": [
+        [
+          -0.009813,
+          -0.054563,
+          -0.005178
+        ],
+        [
+          0.004716,
+          0.004973,
+          0.011145
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.002,
+        0.0214,
+        0.0034
+      ],
+      "rightMassCenter_m": [
+        -0.002,
+        -0.0214,
+        0.0034
+      ]
+    },
+    {
+      "body": "fifthmc",
+      "mesh": "5mc_new.vtp",
+      "frame": "/bodyset/fifthmc",
+      "sourceLocalBounds_m": [
+        [
+          -0.016992,
+          -0.047609,
+          -0.004311
+        ],
+        [
+          0.003552,
+          0.005005,
+          0.014709
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.00611809,
+        0.0176936,
+        0.00542873
+      ],
+      "rightMassCenter_m": [
+        -0.00611809,
+        -0.0176936,
+        0.00542873
+      ]
+    },
+    {
+      "body": "2proxph",
+      "mesh": "2proxph.vtp",
+      "frame": "/bodyset/2proxph",
+      "sourceLocalBounds_m": [
+        [
+          -0.004687,
+          -0.045486,
+          -0.003574
+        ],
+        [
+          0.011905,
+          -0.00462,
+          0.010467
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0044,
+        0.0253,
+        0.004
+      ],
+      "rightMassCenter_m": [
+        0.0044,
+        -0.0253,
+        0.004
+      ]
+    },
+    {
+      "body": "2midph",
+      "mesh": "2midph.vtp",
+      "frame": "/bodyset/2midph",
+      "sourceLocalBounds_m": [
+        [
+          -0.004486,
+          -0.02708,
+          -0.004167
+        ],
+        [
+          0.00714,
+          -0.003342,
+          0.003412
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0022,
+        0.0154,
+        0.00018
+      ],
+      "rightMassCenter_m": [
+        0.0022,
+        -0.0154,
+        0.00018
+      ]
+    },
+    {
+      "body": "2distph",
+      "mesh": "2distph.vtp",
+      "frame": "/bodyset/2distph",
+      "sourceLocalBounds_m": [
+        [
+          -0.00328,
+          -0.017745,
+          -0.002253
+        ],
+        [
+          0.004324,
+          -0.002105,
+          0.002475
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0013,
+        0.01,
+        2e-05
+      ],
+      "rightMassCenter_m": [
+        0.0013,
+        -0.01,
+        2e-05
+      ]
+    },
+    {
+      "body": "3proxph",
+      "mesh": "3proxph.vtp",
+      "frame": "/bodyset/3proxph",
+      "sourceLocalBounds_m": [
+        [
+          -0.005934,
+          -0.047608,
+          -0.002562
+        ],
+        [
+          0.007692,
+          -0.005188,
+          0.00946
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.00097,
+        0.0262,
+        0.0037
+      ],
+      "rightMassCenter_m": [
+        0.00097,
+        -0.0262,
+        0.0037
+      ]
+    },
+    {
+      "body": "3midph",
+      "mesh": "3midph.vtp",
+      "frame": "/bodyset/3midph",
+      "sourceLocalBounds_m": [
+        [
+          -0.004872,
+          -0.031216,
+          -0.002697
+        ],
+        [
+          0.00547,
+          -0.00276,
+          0.004774
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.00071,
+        0.0168,
+        0.0013
+      ],
+      "rightMassCenter_m": [
+        0.00071,
+        -0.0168,
+        0.0013
+      ]
+    },
+    {
+      "body": "3distph",
+      "mesh": "3distph.vtp",
+      "frame": "/bodyset/3distph",
+      "sourceLocalBounds_m": [
+        [
+          -0.003881,
+          -0.018544,
+          -0.002686
+        ],
+        [
+          0.004659,
+          -0.001718,
+          0.002365
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        0.0005,
+        0.0102,
+        -0.00028
+      ],
+      "rightMassCenter_m": [
+        0.0005,
+        -0.0102,
+        -0.00028
+      ]
+    },
+    {
+      "body": "4proxph",
+      "mesh": "4proxph_new.vtp",
+      "frame": "/bodyset/4proxph",
+      "sourceLocalBounds_m": [
+        [
+          -0.008443,
+          -0.042696,
+          -0.003041
+        ],
+        [
+          0.005607,
+          -0.00463,
+          0.008579
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.00223386,
+        0.0237516,
+        0.00349321
+      ],
+      "rightMassCenter_m": [
+        -0.00223386,
+        -0.0237516,
+        0.00349321
+      ]
+    },
+    {
+      "body": "4midph",
+      "mesh": "4midph_new.vtp",
+      "frame": "/bodyset/4midph",
+      "sourceLocalBounds_m": [
+        [
+          -0.006125,
+          -0.026631,
+          -0.002442
+        ],
+        [
+          0.003798,
+          -0.002467,
+          0.005209
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.00197812,
+        0.0147055,
+        0.00118627
+      ],
+      "rightMassCenter_m": [
+        -0.00197812,
+        -0.0147055,
+        0.00118627
+      ]
+    },
+    {
+      "body": "4distph",
+      "mesh": "4distph_new.vtp",
+      "frame": "/bodyset/4distph",
+      "sourceLocalBounds_m": [
+        [
+          -0.00422,
+          -0.01861,
+          -0.001946
+        ],
+        [
+          0.003972,
+          -0.001623,
+          0.003308
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.000427077,
+        0.0101666,
+        0.00202904
+      ],
+      "rightMassCenter_m": [
+        -0.000427077,
+        -0.0101666,
+        0.00202904
+      ]
+    },
+    {
+      "body": "5proxph",
+      "mesh": "5proxph_new.vtp",
+      "frame": "/bodyset/5proxph",
+      "sourceLocalBounds_m": [
+        [
+          -0.016622,
+          -0.037578,
+          -0.003124
+        ],
+        [
+          0.001812,
+          -0.003556,
+          0.007143
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.00810107,
+        0.0210768,
+        0.00214055
+      ],
+      "rightMassCenter_m": [
+        -0.00810107,
+        -0.0210768,
+        0.00214055
+      ]
+    },
+    {
+      "body": "5midph",
+      "mesh": "5midph_new.vtp",
+      "frame": "/bodyset/5midph",
+      "sourceLocalBounds_m": [
+        [
+          -0.01104,
+          -0.022399,
+          -0.002651
+        ],
+        [
+          0.001882,
+          -0.002321,
+          0.003879
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.00489968,
+        0.0121355,
+        -0.000152595
+      ],
+      "rightMassCenter_m": [
+        -0.00489968,
+        -0.0121355,
+        -0.000152595
+      ]
+    },
+    {
+      "body": "5distph",
+      "mesh": "5distph_new.vtp",
+      "frame": "/bodyset/5distph",
+      "sourceLocalBounds_m": [
+        [
+          -0.007444,
+          -0.015952,
+          -0.001316
+        ],
+        [
+          0.002076,
+          -0.001613,
+          0.002865
+        ]
+      ],
+      "nativeScaleFactors": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "maxExporterVsNativeWorldVertexError_m": 0.0,
+      "maxLeftBodyVsReflectedRightBodyTransformError": 1.214306433183765e-16,
+      "leftMassCenter_m": [
+        -0.00358265,
+        0.00888113,
+        0.000331822
+      ],
+      "rightMassCenter_m": [
+        -0.00358265,
+        -0.00888113,
+        0.000331822
+      ]
+    }
+  ],
+  "gapExamples": [
+    {
+      "bodies": [
+        "2proxph",
+        "2midph"
+      ],
+      "nearestVertexGapOriginal_m": 0.019938944979559208,
+      "nearestVertexGapWithProposedYReflection_m": 0.0007215715862760939
+    },
+    {
+      "bodies": [
+        "2midph",
+        "2distph"
+      ],
+      "nearestVertexGapOriginal_m": 0.011212140578202297,
+      "nearestVertexGapWithProposedYReflection_m": 0.0008910839420089891
+    },
+    {
+      "bodies": [
+        "3proxph",
+        "3midph"
+      ],
+      "nearestVertexGapOriginal_m": 0.019087518958733233,
+      "nearestVertexGapWithProposedYReflection_m": 0.0006121347890783789
+    },
+    {
+      "bodies": [
+        "3midph",
+        "3distph"
+      ],
+      "nearestVertexGapOriginal_m": 0.013423613989454445,
+      "nearestVertexGapWithProposedYReflection_m": 0.000625354880340424
+    }
+  ],
+  "existingRepairSource": "Existing repository server/left_adapter.py pins this source hash and specifies body mesh scale[1,-1,1], plus separate movingpoint andwrapquadrant physical repairs. Physics repair must not be silently applied to old SO results."
+}

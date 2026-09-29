@@ -1,0 +1,1389 @@
+{
+  "status": "PARTIAL",
+  "repairRulesAndRegistrationStatus": "PASS",
+  "allSampledPathMirrorStatus": "FAIL",
+  "quadrantCasePolicy": "Native quadrant strings compared case-insensitively; right template contains capital Y aliases.",
+  "sourceHash": "45c45732788afd4fcc78b89c97cf7a5da51de82dcb735d480459ee4e8770207b",
+  "rightHash": "9a88909ca27da9397abe22599e51ae9699162bdf274f65d2a83d7b02793b24cc",
+  "canonicalHash": "edba389625549eab1c55d3772bfd702334a433cc380b05c913d1c20521293463",
+  "engine": "version 4.4.1-2023-07-13-710e13be5, build date 14:40:27 Jul 14 2023",
+  "method": "Fresh native right/raw-left/canonical-left models; no repair/exporter module imported. Native VTP vertices transformed through actual body and mesh-scale matrices; no fitted alignment.",
+  "unchangedMuscleScalarMaxAbs": 0.0,
+  "bodyMeshScales": [
+    {
+      "body": "clavicle",
+      "file": "clavicle.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "scapula",
+      "file": "scapula.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "humerus",
+      "file": "humerus.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "ulna",
+      "file": "ulna.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "radius",
+      "file": "radius.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "proximal_row",
+      "file": "lunate.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "proximal_row",
+      "file": "sdfastSCAPHOIDw.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "proximal_row",
+      "file": "sdfastPISIFORMw.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "proximal_row",
+      "file": "sdfastTRIQUETRALw.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "capitate",
+      "file": "capitate.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "trapezium",
+      "file": "trapezium.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "trapezoid",
+      "file": "trapezoid.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "hamate",
+      "file": "hamate.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "firstmc",
+      "file": "1mc.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "proximal_thumb",
+      "file": "thumbprox.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "distal_thumb",
+      "file": "thumbdist.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "secondmc",
+      "file": "2mc.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "thirdmc",
+      "file": "3mc.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "fourthmc",
+      "file": "4mc_new.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "fifthmc",
+      "file": "5mc_new.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "2proxph",
+      "file": "2proxph.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "2midph",
+      "file": "2midph.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "2distph",
+      "file": "2distph.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "3proxph",
+      "file": "3proxph.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "3midph",
+      "file": "3midph.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "3distph",
+      "file": "3distph.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "4proxph",
+      "file": "4proxph_new.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "4midph",
+      "file": "4midph_new.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "4distph",
+      "file": "4distph_new.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "5proxph",
+      "file": "5proxph_new.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "5midph",
+      "file": "5midph_new.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "body": "5distph",
+      "file": "5distph_new.vtp",
+      "scale": [
+        1.0,
+        -1.0,
+        1.0
+      ]
+    }
+  ],
+  "wrapQuadrantChecks": [
+    {
+      "wrap": "Elbow_PT_ECRL",
+      "right": "x",
+      "canonical": "x",
+      "expected": "x",
+      "pass": true
+    },
+    {
+      "wrap": "ECU",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "EIP",
+      "right": "z",
+      "canonical": "z",
+      "expected": "z",
+      "pass": true
+    },
+    {
+      "wrap": "ECRL",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "ECRB",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "FCR",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "FCU",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "PL",
+      "right": "-z",
+      "canonical": "-z",
+      "expected": "-z",
+      "pass": true
+    },
+    {
+      "wrap": "FDS",
+      "right": "-z",
+      "canonical": "-z",
+      "expected": "-z",
+      "pass": true
+    },
+    {
+      "wrap": "FDP",
+      "right": "y",
+      "canonical": "-y",
+      "expected": "-y",
+      "pass": true
+    },
+    {
+      "wrap": "EDCL",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "EDCR",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "EDCM",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "EDCI",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "EDM",
+      "right": "-z",
+      "canonical": "-z",
+      "expected": "-z",
+      "pass": true
+    },
+    {
+      "wrap": "FPL",
+      "right": "-z",
+      "canonical": "-z",
+      "expected": "-z",
+      "pass": true
+    },
+    {
+      "wrap": "MPthumb",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "IPthumb",
+      "right": "-x",
+      "canonical": "-x",
+      "expected": "-x",
+      "pass": true
+    },
+    {
+      "wrap": "2ndmcp_extI",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "2ndmcp_FDSI",
+      "right": "Y",
+      "canonical": "-y",
+      "expected": "-y",
+      "pass": true
+    },
+    {
+      "wrap": "2ndmcp_FDPI",
+      "right": "Y",
+      "canonical": "-y",
+      "expected": "-y",
+      "pass": true
+    },
+    {
+      "wrap": "_3rdmcp",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "_4thmcp",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "_5thmcp",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "5thmcp",
+      "right": "-x",
+      "canonical": "-x",
+      "expected": "-x",
+      "pass": true
+    },
+    {
+      "wrap": "2ndpm_FDSI",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "2ndpm_FDPI",
+      "right": "y",
+      "canonical": "-y",
+      "expected": "-y",
+      "pass": true
+    },
+    {
+      "wrap": "2ndpm_extI",
+      "right": "-y",
+      "canonical": "y",
+      "expected": "y",
+      "pass": true
+    },
+    {
+      "wrap": "Secondpm",
+      "right": "x",
+      "canonical": "x",
+      "expected": "x",
+      "pass": true
+    },
+    {
+      "wrap": "2ndmd_extI",
+      "right": "-y",
+      "canonical": "y",
+      "expected": "y",
+      "pass": true
+    },
+    {
+      "wrap": "Secondmd",
+      "right": "x",
+      "canonical": "x",
+      "expected": "x",
+      "pass": true
+    },
+    {
+      "wrap": "Thirdpm",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "Thirdmd",
+      "right": "x",
+      "canonical": "x",
+      "expected": "x",
+      "pass": true
+    },
+    {
+      "wrap": "Fourthpm",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "Fourthmd",
+      "right": "x",
+      "canonical": "x",
+      "expected": "x",
+      "pass": true
+    },
+    {
+      "wrap": "Fifthpm",
+      "right": "all",
+      "canonical": "all",
+      "expected": "all",
+      "pass": true
+    },
+    {
+      "wrap": "Fifthmd",
+      "right": "x",
+      "canonical": "x",
+      "expected": "x",
+      "pass": true
+    }
+  ],
+  "cases": [
+    {
+      "pose": {},
+      "bodyTransformMirrorMaxAbs": 1.2246467991473532e-16,
+      "canonicalVsRawBodyTransformMaxAbs": 0.0,
+      "wrapTransformMirrorMaxAbs": 9.575673587391975e-16,
+      "attachmentMirrorMaxAbs_m": 5.551115123125783e-17,
+      "rawAttachmentMirrorMaxAbs_m": 0.017574735688793808,
+      "nativeMeshVertexMirrorMaxAbs_m": 5.551115123125783e-17,
+      "nativeVerticesChecked": 96,
+      "maxCanonicalRightPathLengthDifference_m": 1.1102230246251565e-16,
+      "pathLengths": [
+        {
+          "muscle": "ECRL",
+          "right_m": 0.3089537289926655,
+          "rawLeft_m": 0.3089537289926655,
+          "canonicalLeft_m": 0.3089537289926655
+        },
+        {
+          "muscle": "ECRB",
+          "right_m": 0.2825830263944274,
+          "rawLeft_m": 0.2825830263944274,
+          "canonicalLeft_m": 0.2825830263944274
+        },
+        {
+          "muscle": "ECU",
+          "right_m": 0.29921256997315127,
+          "rawLeft_m": 0.29921256997315115,
+          "canonicalLeft_m": 0.29921256997315115
+        },
+        {
+          "muscle": "FCR",
+          "right_m": 0.2947694192823788,
+          "rawLeft_m": 0.2947694192823788,
+          "canonicalLeft_m": 0.2947694192823788
+        },
+        {
+          "muscle": "FCU",
+          "right_m": 0.29813949998915196,
+          "rawLeft_m": 0.29813949998915196,
+          "canonicalLeft_m": 0.29813949998915196
+        },
+        {
+          "muscle": "PL",
+          "right_m": 0.31975347694526124,
+          "rawLeft_m": 0.31975347694526124,
+          "canonicalLeft_m": 0.31975347694526124
+        },
+        {
+          "muscle": "FDSL",
+          "right_m": 0.383037228139054,
+          "rawLeft_m": 0.383037228139054,
+          "canonicalLeft_m": 0.383037228139054
+        },
+        {
+          "muscle": "FDSR",
+          "right_m": 0.39721164490999245,
+          "rawLeft_m": 0.39721164490999245,
+          "canonicalLeft_m": 0.39721164490999245
+        },
+        {
+          "muscle": "FDSM",
+          "right_m": 0.3722374835670517,
+          "rawLeft_m": 0.3722374835670516,
+          "canonicalLeft_m": 0.3722374835670516
+        },
+        {
+          "muscle": "FDSI",
+          "right_m": 0.3734649154782938,
+          "rawLeft_m": 0.3734649154782938,
+          "canonicalLeft_m": 0.3734649154782938
+        },
+        {
+          "muscle": "FDPL",
+          "right_m": 0.37710138392246667,
+          "rawLeft_m": 0.37710138392246667,
+          "canonicalLeft_m": 0.37710138392246667
+        },
+        {
+          "muscle": "FDPR",
+          "right_m": 0.3810990777429023,
+          "rawLeft_m": 0.3810990777429023,
+          "canonicalLeft_m": 0.3810990777429023
+        },
+        {
+          "muscle": "FDPM",
+          "right_m": 0.3880110260911347,
+          "rawLeft_m": 0.3880110260911347,
+          "canonicalLeft_m": 0.3880110260911347
+        },
+        {
+          "muscle": "FDPI",
+          "right_m": 0.39068116498998956,
+          "rawLeft_m": 0.39068116498998956,
+          "canonicalLeft_m": 0.39068116498998956
+        },
+        {
+          "muscle": "EDCL",
+          "right_m": 0.4055942474186704,
+          "rawLeft_m": 0.4055942474186704,
+          "canonicalLeft_m": 0.4055942474186704
+        },
+        {
+          "muscle": "EDCR",
+          "right_m": 0.4152191989723665,
+          "rawLeft_m": 0.41521919897236653,
+          "canonicalLeft_m": 0.41521919897236653
+        },
+        {
+          "muscle": "EDCM",
+          "right_m": 0.425961771453412,
+          "rawLeft_m": 0.425961771453412,
+          "canonicalLeft_m": 0.425961771453412
+        },
+        {
+          "muscle": "EDCI",
+          "right_m": 0.4212506730664273,
+          "rawLeft_m": 0.4212506730664273,
+          "canonicalLeft_m": 0.4212506730664273
+        },
+        {
+          "muscle": "EDM",
+          "right_m": 0.40907871562212955,
+          "rawLeft_m": 0.40907871562212955,
+          "canonicalLeft_m": 0.40907871562212955
+        },
+        {
+          "muscle": "EIP",
+          "right_m": 0.2522998649646687,
+          "rawLeft_m": 0.2522998649646688,
+          "canonicalLeft_m": 0.2522998649646688
+        },
+        {
+          "muscle": "EPL",
+          "right_m": 0.28697902877490433,
+          "rawLeft_m": 0.2869790287749044,
+          "canonicalLeft_m": 0.2869790287749044
+        },
+        {
+          "muscle": "EPB",
+          "right_m": 0.17961474214910805,
+          "rawLeft_m": 0.179614742149108,
+          "canonicalLeft_m": 0.179614742149108
+        },
+        {
+          "muscle": "FPL",
+          "right_m": 0.2654356326504047,
+          "rawLeft_m": 0.26637443980691505,
+          "canonicalLeft_m": 0.26543563265040476
+        },
+        {
+          "muscle": "APL",
+          "right_m": 0.19913960086208946,
+          "rawLeft_m": 0.21337768440702762,
+          "canonicalLeft_m": 0.19913960086208948
+        },
+        {
+          "muscle": "APB",
+          "right_m": 0.07610871690745516,
+          "rawLeft_m": 0.07610871690745516,
+          "canonicalLeft_m": 0.07610871690745516
+        },
+        {
+          "muscle": "FPB",
+          "right_m": 0.05762221999125328,
+          "rawLeft_m": 0.05762221999125328,
+          "canonicalLeft_m": 0.05762221999125328
+        },
+        {
+          "muscle": "OPP",
+          "right_m": 0.04606462268530999,
+          "rawLeft_m": 0.04606462268530999,
+          "canonicalLeft_m": 0.04606462268530999
+        },
+        {
+          "muscle": "ADPt",
+          "right_m": 0.06365418894434713,
+          "rawLeft_m": 0.06365418894434713,
+          "canonicalLeft_m": 0.06365418894434713
+        },
+        {
+          "muscle": "ADPo",
+          "right_m": 0.07230168646736657,
+          "rawLeft_m": 0.07230168646736657,
+          "canonicalLeft_m": 0.07230168646736657
+        },
+        {
+          "muscle": "ADM",
+          "right_m": 0.06547036423780736,
+          "rawLeft_m": 0.06547036423780739,
+          "canonicalLeft_m": 0.06547036423780739
+        },
+        {
+          "muscle": "FDM",
+          "right_m": 0.056316628216753636,
+          "rawLeft_m": 0.056316628216753664,
+          "canonicalLeft_m": 0.056316628216753664
+        },
+        {
+          "muscle": "1stPI",
+          "right_m": 0.05103287085046551,
+          "rawLeft_m": 0.05103287085046551,
+          "canonicalLeft_m": 0.05103287085046551
+        },
+        {
+          "muscle": "2ndPI",
+          "right_m": 0.05075771452570432,
+          "rawLeft_m": 0.05075771452570432,
+          "canonicalLeft_m": 0.05075771452570432
+        },
+        {
+          "muscle": "3rdPI",
+          "right_m": 0.04633620589208361,
+          "rawLeft_m": 0.04633620589208361,
+          "canonicalLeft_m": 0.04633620589208361
+        },
+        {
+          "muscle": "1stDI_MC1",
+          "right_m": 0.065178752144889,
+          "rawLeft_m": 0.065178752144889,
+          "canonicalLeft_m": 0.065178752144889
+        },
+        {
+          "muscle": "1stDI_MC2",
+          "right_m": 0.061588112092798755,
+          "rawLeft_m": 0.061588112092798755,
+          "canonicalLeft_m": 0.061588112092798755
+        },
+        {
+          "muscle": "2ndDI",
+          "right_m": 0.05478179277015831,
+          "rawLeft_m": 0.05478179277015831,
+          "canonicalLeft_m": 0.05478179277015831
+        },
+        {
+          "muscle": "3rdDI",
+          "right_m": 0.0566528697191217,
+          "rawLeft_m": 0.0566528697191217,
+          "canonicalLeft_m": 0.0566528697191217
+        },
+        {
+          "muscle": "4thDI",
+          "right_m": 0.056032239865446046,
+          "rawLeft_m": 0.056032239865446046,
+          "canonicalLeft_m": 0.056032239865446046
+        },
+        {
+          "muscle": "LUML",
+          "right_m": 0.06194146773715851,
+          "rawLeft_m": 0.06194146773715851,
+          "canonicalLeft_m": 0.06194146773715851
+        },
+        {
+          "muscle": "LUMR",
+          "right_m": 0.06972451096672032,
+          "rawLeft_m": 0.06972451096672032,
+          "canonicalLeft_m": 0.06972451096672032
+        },
+        {
+          "muscle": "LUMM",
+          "right_m": 0.07070090017843071,
+          "rawLeft_m": 0.07070090017843071,
+          "canonicalLeft_m": 0.07070090017843071
+        },
+        {
+          "muscle": "LUMI",
+          "right_m": 0.06919801334362743,
+          "rawLeft_m": 0.06919801334362743,
+          "canonicalLeft_m": 0.06919801334362743
+        }
+      ]
+    },
+    {
+      "pose": {
+        "flexion": 0.2,
+        "deviation": 0.1
+      },
+      "bodyTransformMirrorMaxAbs": 1.249000902703301e-16,
+      "canonicalVsRawBodyTransformMaxAbs": 0.0,
+      "wrapTransformMirrorMaxAbs": 9.43689570931383e-16,
+      "attachmentMirrorMaxAbs_m": 8.326672684688674e-17,
+      "rawAttachmentMirrorMaxAbs_m": 0.013258356629150925,
+      "nativeMeshVertexMirrorMaxAbs_m": 8.326672684688674e-17,
+      "nativeVerticesChecked": 96,
+      "maxCanonicalRightPathLengthDifference_m": 6.938893903907228e-17,
+      "pathLengths": [
+        {
+          "muscle": "ECRL",
+          "right_m": 0.31268335479159803,
+          "rawLeft_m": 0.31268335479159803,
+          "canonicalLeft_m": 0.31268335479159803
+        },
+        {
+          "muscle": "ECRB",
+          "right_m": 0.28634043723178826,
+          "rawLeft_m": 0.28634043723178826,
+          "canonicalLeft_m": 0.28634043723178826
+        },
+        {
+          "muscle": "ECU",
+          "right_m": 0.2981799670325265,
+          "rawLeft_m": 0.2981799670325265,
+          "canonicalLeft_m": 0.2981799670325265
+        },
+        {
+          "muscle": "FCR",
+          "right_m": 0.2924802042633676,
+          "rawLeft_m": 0.2924802042633676,
+          "canonicalLeft_m": 0.2924802042633676
+        },
+        {
+          "muscle": "FCU",
+          "right_m": 0.29306061355886914,
+          "rawLeft_m": 0.2930606135588691,
+          "canonicalLeft_m": 0.2930606135588691
+        },
+        {
+          "muscle": "PL",
+          "right_m": 0.3155036986340772,
+          "rawLeft_m": 0.3155036986340772,
+          "canonicalLeft_m": 0.3155036986340772
+        },
+        {
+          "muscle": "FDSL",
+          "right_m": 0.3792249022159009,
+          "rawLeft_m": 0.3792249022159009,
+          "canonicalLeft_m": 0.3792249022159009
+        },
+        {
+          "muscle": "FDSR",
+          "right_m": 0.3936142563918401,
+          "rawLeft_m": 0.3936142563918401,
+          "canonicalLeft_m": 0.3936142563918401
+        },
+        {
+          "muscle": "FDSM",
+          "right_m": 0.369273763596898,
+          "rawLeft_m": 0.369273763596898,
+          "canonicalLeft_m": 0.369273763596898
+        },
+        {
+          "muscle": "FDSI",
+          "right_m": 0.37075317693504684,
+          "rawLeft_m": 0.37075317693504684,
+          "canonicalLeft_m": 0.37075317693504684
+        },
+        {
+          "muscle": "FDPL",
+          "right_m": 0.3741284713196202,
+          "rawLeft_m": 0.37412847131962024,
+          "canonicalLeft_m": 0.37412847131962024
+        },
+        {
+          "muscle": "FDPR",
+          "right_m": 0.3782175669340719,
+          "rawLeft_m": 0.3782175669340719,
+          "canonicalLeft_m": 0.3782175669340719
+        },
+        {
+          "muscle": "FDPM",
+          "right_m": 0.3853530974554407,
+          "rawLeft_m": 0.3853530974554407,
+          "canonicalLeft_m": 0.3853530974554407
+        },
+        {
+          "muscle": "FDPI",
+          "right_m": 0.38846061412475313,
+          "rawLeft_m": 0.38846061412475313,
+          "canonicalLeft_m": 0.38846061412475313
+        },
+        {
+          "muscle": "EDCL",
+          "right_m": 0.40707774404129304,
+          "rawLeft_m": 0.40707774404129304,
+          "canonicalLeft_m": 0.40707774404129304
+        },
+        {
+          "muscle": "EDCR",
+          "right_m": 0.41762458712472156,
+          "rawLeft_m": 0.41762458712472156,
+          "canonicalLeft_m": 0.41762458712472156
+        },
+        {
+          "muscle": "EDCM",
+          "right_m": 0.428882927356702,
+          "rawLeft_m": 0.4288829273567021,
+          "canonicalLeft_m": 0.4288829273567021
+        },
+        {
+          "muscle": "EDCI",
+          "right_m": 0.4247180596180115,
+          "rawLeft_m": 0.42471805961801146,
+          "canonicalLeft_m": 0.42471805961801146
+        },
+        {
+          "muscle": "EDM",
+          "right_m": 0.4099753931359275,
+          "rawLeft_m": 0.4099753931359275,
+          "canonicalLeft_m": 0.4099753931359275
+        },
+        {
+          "muscle": "EIP",
+          "right_m": 0.2555301129732971,
+          "rawLeft_m": 0.2555301129732971,
+          "canonicalLeft_m": 0.2555301129732971
+        },
+        {
+          "muscle": "EPL",
+          "right_m": 0.28949635503661914,
+          "rawLeft_m": 0.2894963550366192,
+          "canonicalLeft_m": 0.2894963550366192
+        },
+        {
+          "muscle": "EPB",
+          "right_m": 0.1814894470652027,
+          "rawLeft_m": 0.1814894470652027,
+          "canonicalLeft_m": 0.1814894470652027
+        },
+        {
+          "muscle": "FPL",
+          "right_m": 0.26315027445802597,
+          "rawLeft_m": 0.26356084752963793,
+          "canonicalLeft_m": 0.26315027445802597
+        },
+        {
+          "muscle": "APL",
+          "right_m": 0.19875359069327694,
+          "rawLeft_m": 0.21267503239733207,
+          "canonicalLeft_m": 0.19875359069327694
+        },
+        {
+          "muscle": "APB",
+          "right_m": 0.0761087169074552,
+          "rawLeft_m": 0.0761087169074552,
+          "canonicalLeft_m": 0.0761087169074552
+        },
+        {
+          "muscle": "FPB",
+          "right_m": 0.05762221999125329,
+          "rawLeft_m": 0.05762221999125329,
+          "canonicalLeft_m": 0.05762221999125329
+        },
+        {
+          "muscle": "OPP",
+          "right_m": 0.04606462268530996,
+          "rawLeft_m": 0.04606462268530996,
+          "canonicalLeft_m": 0.04606462268530996
+        },
+        {
+          "muscle": "ADPt",
+          "right_m": 0.06365418894434717,
+          "rawLeft_m": 0.06365418894434717,
+          "canonicalLeft_m": 0.06365418894434717
+        },
+        {
+          "muscle": "ADPo",
+          "right_m": 0.0723016864673666,
+          "rawLeft_m": 0.0723016864673666,
+          "canonicalLeft_m": 0.0723016864673666
+        },
+        {
+          "muscle": "ADM",
+          "right_m": 0.06547036423780739,
+          "rawLeft_m": 0.06547036423780737,
+          "canonicalLeft_m": 0.06547036423780737
+        },
+        {
+          "muscle": "FDM",
+          "right_m": 0.05631662821675369,
+          "rawLeft_m": 0.05631662821675368,
+          "canonicalLeft_m": 0.05631662821675368
+        },
+        {
+          "muscle": "1stPI",
+          "right_m": 0.05103287085046552,
+          "rawLeft_m": 0.05103287085046552,
+          "canonicalLeft_m": 0.05103287085046552
+        },
+        {
+          "muscle": "2ndPI",
+          "right_m": 0.05075771452570439,
+          "rawLeft_m": 0.05075771452570439,
+          "canonicalLeft_m": 0.05075771452570439
+        },
+        {
+          "muscle": "3rdPI",
+          "right_m": 0.04633620589208365,
+          "rawLeft_m": 0.046336205892083655,
+          "canonicalLeft_m": 0.046336205892083655
+        },
+        {
+          "muscle": "1stDI_MC1",
+          "right_m": 0.06517875214488905,
+          "rawLeft_m": 0.06517875214488905,
+          "canonicalLeft_m": 0.06517875214488905
+        },
+        {
+          "muscle": "1stDI_MC2",
+          "right_m": 0.061588112092798825,
+          "rawLeft_m": 0.061588112092798825,
+          "canonicalLeft_m": 0.061588112092798825
+        },
+        {
+          "muscle": "2ndDI",
+          "right_m": 0.054781792770158336,
+          "rawLeft_m": 0.054781792770158336,
+          "canonicalLeft_m": 0.054781792770158336
+        },
+        {
+          "muscle": "3rdDI",
+          "right_m": 0.05665286971912171,
+          "rawLeft_m": 0.05665286971912171,
+          "canonicalLeft_m": 0.05665286971912171
+        },
+        {
+          "muscle": "4thDI",
+          "right_m": 0.05603223986544606,
+          "rawLeft_m": 0.05603223986544606,
+          "canonicalLeft_m": 0.05603223986544606
+        },
+        {
+          "muscle": "LUML",
+          "right_m": 0.061941467737158515,
+          "rawLeft_m": 0.061941467737158494,
+          "canonicalLeft_m": 0.061941467737158494
+        },
+        {
+          "muscle": "LUMR",
+          "right_m": 0.06972451096672036,
+          "rawLeft_m": 0.06972451096672036,
+          "canonicalLeft_m": 0.06972451096672036
+        },
+        {
+          "muscle": "LUMM",
+          "right_m": 0.07070090017843073,
+          "rawLeft_m": 0.07070090017843073,
+          "canonicalLeft_m": 0.07070090017843073
+        },
+        {
+          "muscle": "LUMI",
+          "right_m": 0.06919801334362757,
+          "rawLeft_m": 0.0691980133436275,
+          "canonicalLeft_m": 0.0691980133436275
+        }
+      ]
+    },
+    {
+      "pose": {
+        "2mcp_flexion": 0.3,
+        "2pm_flexion": 0.2,
+        "mp_flexion": 0.15
+      },
+      "bodyTransformMirrorMaxAbs": 1.2246467991473532e-16,
+      "canonicalVsRawBodyTransformMaxAbs": 0.0,
+      "wrapTransformMirrorMaxAbs": 8.326672684688674e-16,
+      "attachmentMirrorMaxAbs_m": 5.551115123125783e-17,
+      "rawAttachmentMirrorMaxAbs_m": 0.017574735688793808,
+      "nativeMeshVertexMirrorMaxAbs_m": 5.551115123125783e-17,
+      "nativeVerticesChecked": 96,
+      "maxCanonicalRightPathLengthDifference_m": 0.028933097329152446,
+      "pathLengths": [
+        {
+          "muscle": "ECRL",
+          "right_m": 0.3089537289926655,
+          "rawLeft_m": 0.3089537289926655,
+          "canonicalLeft_m": 0.3089537289926655
+        },
+        {
+          "muscle": "ECRB",
+          "right_m": 0.2825830263944274,
+          "rawLeft_m": 0.2825830263944274,
+          "canonicalLeft_m": 0.2825830263944274
+        },
+        {
+          "muscle": "ECU",
+          "right_m": 0.29921256997315127,
+          "rawLeft_m": 0.29921256997315115,
+          "canonicalLeft_m": 0.29921256997315115
+        },
+        {
+          "muscle": "FCR",
+          "right_m": 0.2947694192823788,
+          "rawLeft_m": 0.2947694192823788,
+          "canonicalLeft_m": 0.2947694192823788
+        },
+        {
+          "muscle": "FCU",
+          "right_m": 0.29813949998915196,
+          "rawLeft_m": 0.29813949998915196,
+          "canonicalLeft_m": 0.29813949998915196
+        },
+        {
+          "muscle": "PL",
+          "right_m": 0.31975347694526124,
+          "rawLeft_m": 0.31975347694526124,
+          "canonicalLeft_m": 0.31975347694526124
+        },
+        {
+          "muscle": "FDSL",
+          "right_m": 0.383037228139054,
+          "rawLeft_m": 0.383037228139054,
+          "canonicalLeft_m": 0.383037228139054
+        },
+        {
+          "muscle": "FDSR",
+          "right_m": 0.39721164490999245,
+          "rawLeft_m": 0.39721164490999245,
+          "canonicalLeft_m": 0.39721164490999245
+        },
+        {
+          "muscle": "FDSM",
+          "right_m": 0.3722374835670517,
+          "rawLeft_m": 0.3722374835670516,
+          "canonicalLeft_m": 0.3722374835670516
+        },
+        {
+          "muscle": "FDSI",
+          "right_m": 0.3686303516700331,
+          "rawLeft_m": 0.3686303516700331,
+          "canonicalLeft_m": 0.3686303516700331
+        },
+        {
+          "muscle": "FDPL",
+          "right_m": 0.37710138392246667,
+          "rawLeft_m": 0.37710138392246667,
+          "canonicalLeft_m": 0.37710138392246667
+        },
+        {
+          "muscle": "FDPR",
+          "right_m": 0.3810990777429023,
+          "rawLeft_m": 0.3810990777429023,
+          "canonicalLeft_m": 0.3810990777429023
+        },
+        {
+          "muscle": "FDPM",
+          "right_m": 0.3880110260911347,
+          "rawLeft_m": 0.3880110260911347,
+          "canonicalLeft_m": 0.3880110260911347
+        },
+        {
+          "muscle": "FDPI",
+          "right_m": 0.38628195523953607,
+          "rawLeft_m": 0.3862819552395361,
+          "canonicalLeft_m": 0.4152150525686885
+        },
+        {
+          "muscle": "EDCL",
+          "right_m": 0.4055942474186704,
+          "rawLeft_m": 0.4055942474186704,
+          "canonicalLeft_m": 0.4055942474186704
+        },
+        {
+          "muscle": "EDCR",
+          "right_m": 0.4152191989723665,
+          "rawLeft_m": 0.41521919897236653,
+          "canonicalLeft_m": 0.41521919897236653
+        },
+        {
+          "muscle": "EDCM",
+          "right_m": 0.425961771453412,
+          "rawLeft_m": 0.425961771453412,
+          "canonicalLeft_m": 0.425961771453412
+        },
+        {
+          "muscle": "EDCI",
+          "right_m": 0.42528221034638075,
+          "rawLeft_m": 0.42528221034638075,
+          "canonicalLeft_m": 0.42528221034638075
+        },
+        {
+          "muscle": "EDM",
+          "right_m": 0.40907871562212955,
+          "rawLeft_m": 0.40907871562212955,
+          "canonicalLeft_m": 0.40907871562212955
+        },
+        {
+          "muscle": "EIP",
+          "right_m": 0.2561320759979389,
+          "rawLeft_m": 0.2561320759979389,
+          "canonicalLeft_m": 0.2561320759979389
+        },
+        {
+          "muscle": "EPL",
+          "right_m": 0.2883891512200663,
+          "rawLeft_m": 0.2883891512200663,
+          "canonicalLeft_m": 0.2883891512200663
+        },
+        {
+          "muscle": "EPB",
+          "right_m": 0.18100765500854735,
+          "rawLeft_m": 0.18100765500854737,
+          "canonicalLeft_m": 0.18100765500854737
+        },
+        {
+          "muscle": "FPL",
+          "right_m": 0.2637354299121594,
+          "rawLeft_m": 0.2646742370686697,
+          "canonicalLeft_m": 0.2637354299121594
+        },
+        {
+          "muscle": "APL",
+          "right_m": 0.19913960086208946,
+          "rawLeft_m": 0.21337768440702762,
+          "canonicalLeft_m": 0.19913960086208948
+        },
+        {
+          "muscle": "APB",
+          "right_m": 0.0764760329879678,
+          "rawLeft_m": 0.0764760329879678,
+          "canonicalLeft_m": 0.0764760329879678
+        },
+        {
+          "muscle": "FPB",
+          "right_m": 0.05677625588442539,
+          "rawLeft_m": 0.05677625588442539,
+          "canonicalLeft_m": 0.05677625588442539
+        },
+        {
+          "muscle": "OPP",
+          "right_m": 0.04606462268530999,
+          "rawLeft_m": 0.04606462268530999,
+          "canonicalLeft_m": 0.04606462268530999
+        },
+        {
+          "muscle": "ADPt",
+          "right_m": 0.06246430510897163,
+          "rawLeft_m": 0.062464305108971635,
+          "canonicalLeft_m": 0.062464305108971635
+        },
+        {
+          "muscle": "ADPo",
+          "right_m": 0.0710928495575147,
+          "rawLeft_m": 0.0710928495575147,
+          "canonicalLeft_m": 0.0710928495575147
+        },
+        {
+          "muscle": "ADM",
+          "right_m": 0.06547036423780736,
+          "rawLeft_m": 0.06547036423780739,
+          "canonicalLeft_m": 0.06547036423780739
+        },
+        {
+          "muscle": "FDM",
+          "right_m": 0.056316628216753636,
+          "rawLeft_m": 0.056316628216753664,
+          "canonicalLeft_m": 0.056316628216753664
+        },
+        {
+          "muscle": "1stPI",
+          "right_m": 0.050485752127776,
+          "rawLeft_m": 0.050485752127776,
+          "canonicalLeft_m": 0.050485752127776
+        },
+        {
+          "muscle": "2ndPI",
+          "right_m": 0.05075771452570432,
+          "rawLeft_m": 0.05075771452570432,
+          "canonicalLeft_m": 0.05075771452570432
+        },
+        {
+          "muscle": "3rdPI",
+          "right_m": 0.04633620589208361,
+          "rawLeft_m": 0.04633620589208361,
+          "canonicalLeft_m": 0.04633620589208361
+        },
+        {
+          "muscle": "1stDI_MC1",
+          "right_m": 0.06447072208852148,
+          "rawLeft_m": 0.06447072208852148,
+          "canonicalLeft_m": 0.06447072208852148
+        },
+        {
+          "muscle": "1stDI_MC2",
+          "right_m": 0.06038679290051706,
+          "rawLeft_m": 0.06038679290051706,
+          "canonicalLeft_m": 0.06038679290051706
+        },
+        {
+          "muscle": "2ndDI",
+          "right_m": 0.05478179277015831,
+          "rawLeft_m": 0.05478179277015831,
+          "canonicalLeft_m": 0.05478179277015831
+        },
+        {
+          "muscle": "3rdDI",
+          "right_m": 0.0566528697191217,
+          "rawLeft_m": 0.0566528697191217,
+          "canonicalLeft_m": 0.0566528697191217
+        },
+        {
+          "muscle": "4thDI",
+          "right_m": 0.056032239865446046,
+          "rawLeft_m": 0.056032239865446046,
+          "canonicalLeft_m": 0.056032239865446046
+        },
+        {
+          "muscle": "LUML",
+          "right_m": 0.06194146773715851,
+          "rawLeft_m": 0.06194146773715851,
+          "canonicalLeft_m": 0.06194146773715851
+        },
+        {
+          "muscle": "LUMR",
+          "right_m": 0.06972451096672032,
+          "rawLeft_m": 0.06972451096672032,
+          "canonicalLeft_m": 0.06972451096672032
+        },
+        {
+          "muscle": "LUMM",
+          "right_m": 0.07070090017843071,
+          "rawLeft_m": 0.07070090017843071,
+          "canonicalLeft_m": 0.07070090017843071
+        },
+        {
+          "muscle": "LUMI",
+          "right_m": 0.06696447730520559,
+          "rawLeft_m": 0.06696447730520559,
+          "canonicalLeft_m": 0.06696447730520559
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Canonical wrapping path length differences versus right are reported, not silently repaired with separate FDPI path-domain edits.",
+    "Mesh checks use three native vertices per attached body mesh at three poses; rendering/triangulation is not the solver geometry."
+  ]
+}
