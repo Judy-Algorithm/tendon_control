@@ -32,9 +32,9 @@ existing network configuration. No proxy/system setting was changed.
   10.29° difference at 100 ms with its controlled-intervention explanation.
 - Existing control: FDS3 search highlighted its FDSM mapping; selecting index
   MCP cleared search and restored the correct ROM/path controls. Returning
-  from the new routes retained this original scene. Continuous ROM playback
-  was already verified locally; the foreground/background Safari automation
-  pauses it rapidly, so this report does not claim a full production cycle.
+  from the new routes retained this original scene. After the in-app browser
+  finished loading, a complete production ROM cycle was also verified there:
+  2.6° while playing, then 91.7° and the Replay button at the endpoint.
 
 Direct, unedited production screenshots:
 
@@ -44,6 +44,9 @@ Direct, unedited production screenshots:
 - `screenshots/production-myohand.png`
 - `screenshots/production-internal-state.png`
 - `screenshots/production-control.png`
+- `screenshots/production-control-completed.png`
+- `screenshots/production-opensim-clean.png`
+- `screenshots/production-myohand-clean.png`
 
 ## Served-asset verification
 
@@ -65,8 +68,14 @@ The in-app test browser timed out on the public Vercel domains, although local
 testing worked. Direct command-line requests also timed out; requests through
 the already configured local proxy returned the correct production assets.
 Safari loaded and operated the actual HTTPS production site successfully.
+The in-app browser later completed loading too; all three routes were tested
+there and the normal production console error/warning log was empty.
 This is not a local mirrored copy. No certificate bypass, DNS change, new
 hosting service, credential change or force push was used.
+
+One documentation push failed before transfer because the direct GitHub
+connection timed out. Retrying through the computer's already configured proxy
+uses a per-command option, not a global Git or network-setting change.
 
 This document and production screenshots are a documentation-only follow-up
 to the tested application commit. See GitHub main for the final documentation
