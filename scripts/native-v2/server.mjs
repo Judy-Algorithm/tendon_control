@@ -48,6 +48,12 @@ const server=http.createServer(async(req,res)=>{
   const permitted=new Set([`127.0.0.1:${port}`,`localhost:${port}`]);if(!permitted.has(req.headers.host)){json(res,403,{error:'Local host only'});return;}
   if(req.headers.origin&&!permitted.has(new URL(req.headers.origin).host)){json(res,403,{error:'Same-origin only'});return;}
   const url=new URL(req.url,'http://127.0.0.1');
+  if(url.pathname==='/api/mano/model'&&req.method==='GET'){
+   if(!process.env.MANO_MODEL_JSON){json(res,404,{error:'User-local MANO not configured'});return;}
+   const model=JSON.parse(await fs.readFile(process.env.MANO_MODEL_JSON,'utf8'));
+   if(model.schema!=='mano-local-lbs-v1')throw Error('Local MANO schema mismatch');
+   json(res,200,model);return;
+  }
   if(url.pathname==='/api/native/capabilities'){json(res,200,{localOnly:true,engines:Object.fromEntries(Object.entries(runtimes).map(([k,v])=>[k,{available:v.available,modelHash:v.modelHash}]))});return;}
   if(url.pathname==='/api/native/jobs'&&req.method==='POST'){
    let body='';for await(const chunk of req){body+=chunk;if(body.length>300000){json(res,413,{error:'Request too large'});return;}}

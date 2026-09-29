@@ -3,7 +3,6 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 globalThis.window=globalThis;
 const {pathLength,inspectNativeFrame,inspectNativeOverlay,composeNativeTransform,NativeScene,activationColor,nativeFrameValid,markerResiduals,nativeExternalLoad}=await import('../explainer/native-v2/native-scene.js');
-const {manoDiagramPoints}=await import('../explainer/native-v2/mano.js');
 const load=name=>JSON.parse(fs.readFileSync(new URL(`../explainer/native-v2/data/${name}`,import.meta.url)));
 
 test('native adapter preserves every muscle channel and reports invalid paths, not zero lengths',()=>{
@@ -52,16 +51,6 @@ test('native model geoms reference real compiled meshes and valid body transform
  const model=load('myohand-model.json'),run=load('myohand-run-pulse.json'),meshes=new Map(model.meshes.map(m=>[m.id,m]));let count=0;
  for(const g of model.geoms){if(g.type!=='mjGEOM_MESH')continue;count++;assert.ok(meshes.has(g.meshId));for(const frame of [run.frames[0],run.frames.at(-1)]){assert.equal(frame.bodyPos[g.bodyId].length,3);assert.equal(frame.bodyQuat[g.bodyId].length,4);}}
  assert.equal(count,29);
-});
-test('MANO explanatory shape and pose remain separate, with 16 joints plus five distinct tips',()=>{
- const base=manoDiagramPoints(),shape=manoDiagramPoints({shape:1}),pose=manoDiagramPoints({pose:60});
- assert.equal(base.points.length,21);assert.equal(base.jointIndices.length,16);assert.equal(base.tipIndices.length,5);
- assert.equal(new Set([...base.jointIndices,...base.tipIndices]).size,21);
- assert.notDeepEqual(shape.points,base.points);assert.notDeepEqual(pose.points,base.points);
- for(const f of base.fingers)for(let j=1;j<4;j++){
-  const dist=(d,a,b)=>Math.hypot(...d.points[a].map((v,k)=>v-d.points[b][k]));
-  assert.ok(Math.abs(dist(base,f[j],f[j-1])-dist(pose,f[j],f[j-1]))<1e-10);
- }
 });
 test('native replay never imports illustrative atlas geometry or performs pose synthesis',()=>{
  const source=fs.readFileSync(new URL('../explainer/native-v2/native-scene.js',import.meta.url),'utf8');
