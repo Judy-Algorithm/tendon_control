@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Keep visual, teaching and native computation namespaces separate.",
+  "namespaces": {
+    "display": {
+      "id": "existing-myohand-visual-shm-rom-atlas",
+      "computationTier": "geometric-illustration",
+      "files": ["model-data.js", "atlas-data.js", "route-data.js", "opensim-muscles.js"],
+      "counts": {
+        "boneMeshes": 29,
+        "sourceHingeCoordinates": 23,
+        "sourceActuatorPaths": 39,
+        "atlasPhysicalJointGroups": 16,
+        "atlasDegreesOfFreedom": 23,
+        "atlasEnabledPaths": 37,
+        "additionalCmcDisplayControlGroups": 1,
+        "opensimSearchNames": 43
+      },
+      "versions": {
+        "geometrySourceRepository": "https://github.com/Judy-Algorithm/EMG2Tendon",
+        "geometrySourceCommit": "0513b54",
+        "shmTableOpenSimVersion": "4.5.2--",
+        "renderer": "Three.js r128"
+      },
+      "units": {"decodedGeometry": "m", "quantizationStep_m": 0.00001, "romAngles": "deg", "neutralMomentArms": "mm"},
+      "provenance": "docs/data-provenance.json",
+      "mappingLimitations": [
+        "MyoHand display geometry and SHM ROM table are not a registered shared musculoskeletal model.",
+        "43 OpenSim search names are a display mapping, not 43 native MyoHand actuator channels.",
+        "37 enabled paths exclude the original PT and PQ channels.",
+        "Additional fourth/fifth CMC coupling and thumb MCP lateral axis are display approximations, not extra native MyoHand coordinates.",
+        "ROM tendon deformation is geometric illustration; it does not solve force, contact or wrapping mechanics."
+      ]
+    },
+    "opensimTeaching": {
+      "id": "opensim-explanatory-calculations",
+      "computationTier": "simplified-calculation",
+      "files": ["explainer/math.js", "explainer/muscle-lab.js"],
+      "counts": {"allocationCoordinates": 1, "allocationMuscleLikeActuators": 2, "allocationReserves": 1, "ikProxyMarkers": 4},
+      "units": {"force": "N", "torque": "Nm", "sliderLever": "mm", "sliderAngle": "deg", "activation": "dimensionless"},
+      "nativeEngineVersion": null,
+      "mappingLimitations": [
+        "Browser allocation uses teaching torque capacities, not the displayed hand's native muscle parameters.",
+        "Muscle lab uses a declared Gaussian active force-length curve, not a native Millard, Thelen or De Groote constitutive implementation.",
+        "Scale and proxy-marker IK are display-geometry demonstrations. Moco is conceptual; no native trajectory optimization is run."
+      ],
+      "nativeReplay": {
+        "id": "one-hinge-two-Millard-teaching",
+        "computationTier": "native-replay",
+        "fixture": "explainer/fixtures/opensim-so-native.json",
+        "evidence": "docs/explainer/native-so-evidence/",
+        "engine": "OpenSim",
+        "version": "4.4.1-2023-07-13-710e13be5",
+        "counts": {"coordinates": 1, "muscles": 2, "reserves": 1, "loadCases": 3, "repeatedStaticFramesPerCase": 21},
+        "muscleClass": "Millard2012EquilibriumMuscle",
+        "loadCases_N": [0, 2, 4],
+        "units": {"angle": "rad", "force": "N", "torque": "Nm", "momentArm": "m/rad", "activation": "dimensionless", "reserveControl": "dimensionless"},
+        "reserveOptimalForce_Nm": 0.01,
+        "limitations": ["Not the visual hand or a personalized subject.", "Prescribed external force, not contact simulation.", "No Scale or IK performed; replay does not run a solver in the browser."]
+      }
+    },
+    "nativeMyoHand": {
+      "id": "native-myohand-posefixed-2.11.6-mj3.3.0",
+      "computationTier": "native-replay",
+      "environment": "myoHandPoseFixed-v0",
+      "fixture": "explainer/fixtures/myohand-native.json",
+      "fullManifest": "explainer/fixtures/MODEL_MANIFEST.json",
+      "checks": "explainer/fixtures/CHECKS.json",
+      "versions": {"MyoSuite": "2.11.6", "MuJoCo": "3.3.0", "myosuiteCommit": "05cb84678373f91271004f99602ebbf01e57d1a1", "myoSimCommit": "33f3ded946f55adbdcf963c99999587aadaf975f"},
+      "counts": {"qpos": 23, "qvel": 23, "muscles": 39, "activationStates": 39, "tendonsIncludingVisualization": 44, "pulseSamples": 201, "controlledInitialStateTraces": 2, "samplesPerControlledTrace": 51},
+      "physicsTimestep_s": 0.002,
+      "controlInterval_s": 0.02,
+      "selectedMuscle": {"name": "FDS2", "actuatorId": 11, "joint": "mcp2_flexion", "jointId": 7},
+      "units": {"qpos": "rad", "qvel": "rad/s", "ctrl": "dimensionless", "activation": "dimensionless", "actuatorForce": "N signed", "positiveTension": "N", "actuatorLength": "m geometric path", "moment": "m/rad", "generalizedActuatorTorque": "Nm", "time": "s"},
+      "conventions": {"actionTransform": "ctrl = sigmoid(5 * (raw_action - 0.5))", "positiveTension": "-actuator_force", "torque": "moment transpose times signed actuator_force"},
+      "mappingLimitations": [
+        "Not registered to the website skeleton; hand animation remains illustrative.",
+        "Five visualization tendons are not muscle actuators.",
+        "Twin initial activations are manually assigned controlled states, not naturally reached human observations.",
+        "This native MuJoCo muscle uses range/lengthrange, not directly interchangeable OpenSim lopt/lTS.",
+        "Path length is not elastic tendon stretch. Native traces are saved no-contact simulations, not live solver output."
+      ]
+    }
+  },
+  "sourceRegistries": ["explainer/content.js:SOURCES", "explainer/fixtures/myohand-native.json:manifest.officialSources"],
+  "licenseNotices": ["THIRD_PARTY_NOTICES.md", "LICENSE-MYOSUITE", "LICENSE-THREEJS"]
+}

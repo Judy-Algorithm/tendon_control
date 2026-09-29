@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "computationTier": "native-replay",
+  "modelId": "one-hinge-two-Millard-teaching",
+  "opensimVersion": "version 4.4.1-2023-07-13-710e13be5, build date 14:40:27 Jul 14 2023",
+  "muscles": [
+    "flexor",
+    "extensor"
+  ],
+  "coordinates": [
+    "angle"
+  ],
+  "modelDescription": "Synthetic one-hinge lever, two straight-path antagonistic Millard2012EquilibriumMuscle actuators; not a hand or subject model.",
+  "geometry": {
+    "leverLength_m": 0.3,
+    "mass_kg": 1.0,
+    "com_m": [
+      0.15,
+      0,
+      0
+    ],
+    "muscleInsertion_m": [
+      0.1,
+      0,
+      0
+    ],
+    "origins_m": [
+      [
+        0,
+        0.1,
+        0
+      ],
+      [
+        0,
+        -0.1,
+        0
+      ]
+    ],
+    "gravity_m_s2": [
+      0,
+      -9.81,
+      0
+    ]
+  },
+  "protocol": {
+    "tool": "OpenSim AnalyzeTool + StaticOptimization",
+    "use_muscle_physiology": true,
+    "activation_exponent": 2.0,
+    "convergence_criterion": 1e-08,
+    "max_iterations": 1000,
+    "reserve_optimal_force_Nm": 0.01,
+    "reserve_control_bounds": [
+      -20,
+      20
+    ],
+    "motion": "21 static frames, 0\u20130.2 s,10ms spacing",
+    "objective": "Minimize sum of squared actuator activation/control values subject to acceleration matching; official SO implementation."
+  },
+  "cases": [
+    {
+      "load_N": 0.0,
+      "angle_rad": 0.0,
+      "requiredTorque_Nm": 1.4715,
+      "activation": [
+        0.2161010877275746,
+        0.01
+      ],
+      "muscleForce_N": [
+        21.61010877275746,
+        0.8
+      ],
+      "muscleTorque_Nm": [
+        1.5280654455395701,
+        -0.0565685424949238
+      ],
+      "momentArms_m": [
+        0.07071067811865475,
+        -0.07071067811865475
+      ],
+      "capacity_N": [
+        100.0,
+        80.0
+      ],
+      "reserveControl": 0.0003056130867967,
+      "reserveTorque_Nm": 3.0561308679670005e-06,
+      "balanceMaxAbs_Nm": 4.0824485791901566e-08,
+      "forceReconstructionMaxAbs_N": 3.552713678800501e-15,
+      "frames": 21,
+      "nativeToolReturn": true,
+      "solveWall_s": 0.09050541697070003,
+      "modelSha256": "597ce36c32520e4b18ce8871411b6e5a184f19bc717e8ac70ed2a0014b4287f3",
+      "activationFileSha256": "11a99dd2ca1e8403499eae7a5152d9aecbca1417d6ec1d4c626539834980d917"
+    },
+    {
+      "load_N": 2.0,
+      "angle_rad": 0.0,
+      "requiredTorque_Nm": 2.0715,
+      "activation": [
+        0.3009537311324242,
+        0.01
+      ],
+      "muscleForce_N": [
+        30.095373113242417,
+        0.8
+      ],
+      "muscleTorque_Nm": [
+        2.128064241071301,
+        -0.0565685424949238
+      ],
+      "momentArms_m": [
+        0.07071067811865475,
+        -0.07071067811865475
+      ],
+      "capacity_N": [
+        100.0,
+        80.0
+      ],
+      "reserveControl": 0.0004256128490227,
+      "reserveTorque_Nm": 4.256128490227e-06,
+      "balanceMaxAbs_Nm": 4.529513253359596e-08,
+      "forceReconstructionMaxAbs_N": 0.0,
+      "frames": 21,
+      "nativeToolReturn": true,
+      "solveWall_s": 0.07293366605881602,
+      "modelSha256": "13b3346cf1e1ed29f0f5c7d15db7df557444a890c48627d65031b6d69b6e51fe",
+      "activationFileSha256": "d4cc525c48e4f36055701b2b9915811c9dd10da17d5b1ff35d6a277f655d19c9"
+    },
+    {
+      "load_N": 4.0,
+      "angle_rad": 0.0,
+      "requiredTorque_Nm": 2.6715,
+      "activation": [
+        0.3858063747155251,
+        0.01
+      ],
+      "muscleForce_N": [
+        38.58063747155251,
+        0.8
+      ],
+      "muscleTorque_Nm": [
+        2.7280630378634596,
+        -0.0565685424949238
+      ],
+      "momentArms_m": [
+        0.07071067811865475,
+        -0.07071067811865475
+      ],
+      "capacity_N": [
+        100.0,
+        80.0
+      ],
+      "reserveControl": 0.0005456132619226,
+      "reserveTorque_Nm": 5.456132619225999e-06,
+      "balanceMaxAbs_Nm": 4.8498844940070285e-08,
+      "forceReconstructionMaxAbs_N": 0.0,
+      "frames": 21,
+      "nativeToolReturn": true,
+      "solveWall_s": 0.07373945799190551,
+      "modelSha256": "9f103b233a5528774337d9db202e9ec5ce89af4bd4519ba3c228285bfa3257de",
+      "activationFileSha256": "b750ec4bb25236d65288380b46010f367ac2a11e57e5a410df2665248581c61e"
+    }
+  ],
+  "generator": "generate_opensim_teaching.py",
+  "generatorSha256": "5ea54864a8567bb5bff6d861910a46a5278607493365fe52700179077cf00610",
+  "limitations": [
+    "Native SO numbers correspond only to this transparent one-joint teaching model, not the visual hand or43muscle personalized models.",
+    "No Scale or IK performed: geometry and angle were specified.",
+    "Force is prescribed externally, not a contact simulation.",
+    "SO uses its native inextensible-tendon active-force capacity; full forward muscle dynamics are not claimed.",
+    "Replay cases are discrete0/2/4N; other loads must not be presented as newly solved native results."
+  ]
+}

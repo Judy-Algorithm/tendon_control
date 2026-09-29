@@ -283,6 +283,8 @@ search=new MuscleSearch(atlas,OPENSIM_MUSCLES,refresh);
 try{viewer=new TendonViewer();motion=new MotionController(viewer,MODEL);}catch(error){document.getElementById('model-error').hidden=false;console.error(error);}
 // Start at neutral; select a ROM action to begin playback.
 refresh();
+// Preserve the original route while stopping its animation when another lesson opens.
+window.addEventListener('explainer:route',event=>{if(event.detail!=='control')motion?.pause();else viewer?.resize();});
 // Read-only inspection lets integration checks verify actual rendered visibility.
 window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,direction:atlas.state.direction,search:atlas.state.search,
   scope:[...atlas.scope()],visible:atlas.visible(),highlighted:atlas.state.highlighted,

@@ -1,0 +1,47 @@
+.muscle-lab{--mlab-purple:#b49af5;--mlab-teal:#76d7c3;--mlab-muted:#9eadb7;color:#e0e8ec;font:14px/1.6 system-ui,sans-serif;max-width:720px;margin:auto}
+.muscle-lab *{box-sizing:border-box}
+.muscle-lab p{margin:8px 0}
+.muscle-lab figure{margin:0}
+.mlab-tier{display:inline-block;font-size:11px;letter-spacing:.08em;color:#b5c6d0;border:1px solid #66798366;padding:2px 8px;border-radius:12px}
+.mlab-intro p{color:#bac8d0;font-size:14px;line-height:1.65}
+.mlab-geometry{padding:8px 0 12px}
+.muscle-lab svg{display:block;width:100%;height:auto;overflow:visible}
+.muscle-lab svg text{fill:var(--mlab-muted);font:11px system-ui,sans-serif}
+.muscle-lab .mlab-svg-title{fill:#c6d5dc;font-size:12px}
+.mlab-dimension{fill:none;stroke:#5c7480;stroke-width:1}
+.mlab-belly{fill:#493a6670;stroke:var(--mlab-purple);stroke-width:1.6}
+.mlab-fiber-line{fill:none;stroke:var(--mlab-purple);stroke-width:1.3;opacity:.75}
+.mlab-tendon{fill:none;stroke:var(--mlab-teal);stroke-width:2}
+.mlab-anchor{fill:#dedbcf;stroke:#112027;stroke-width:2}
+.muscle-lab .mlab-fiber-text{fill:var(--mlab-purple);font-size:12px}
+.muscle-lab .mlab-tendon-text{fill:var(--mlab-teal);font-size:12px}
+.mlab-controls{display:grid;grid-template-columns:1fr;gap:16px;padding:14px 0;border-top:1px solid #8ca0ab22}
+.mlab-control{display:block}
+.mlab-control>span{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.mlab-control strong{font-weight:500;font-size:13px}
+.mlab-control code{font:12px ui-monospace,monospace;color:var(--mlab-muted);margin-left:5px}
+.mlab-control output{color:var(--mlab-purple);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mlab-control input{width:100%;margin:8px 0 3px;accent-color:var(--mlab-purple);cursor:pointer}
+.mlab-control small{display:block;color:var(--mlab-muted);font-size:12px}
+.mlab-result{margin:18px 0 10px;padding:14px 16px;border:1px solid #a892d640;background:linear-gradient(110deg,#33284266,#18303933);border-radius:10px}
+.mlab-result>div{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.mlab-result span{color:#c1cbd4;font-size:13px}
+.mlab-result strong{color:#e7d9ff;font-size:25px;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.mlab-result p{color:var(--mlab-muted);font:12px/1.5 ui-monospace,monospace;margin:3px 0 0}
+.mlab-chart{padding:12px 0 0}
+.mlab-grid{stroke:#8296a323;stroke-width:1}
+.mlab-optimal{stroke:#8296a38a;stroke-width:1;stroke-dasharray:3 4}
+.mlab-curve{fill:none;stroke:var(--mlab-teal);stroke-width:2.5}
+.mlab-current{fill:var(--mlab-purple);stroke:#172129;stroke-width:2}
+.mlab-current-line{stroke:var(--mlab-purple);stroke-width:1;stroke-dasharray:3 3}
+.mlab-legend{display:flex;justify-content:center;gap:20px;color:var(--mlab-muted);font-size:11px;margin:0 0 15px}
+.mlab-legend i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mlab-purple);margin-right:5px}
+.mlab-assumptions{border-top:1px solid #8ca0ab22;border-bottom:1px solid #8ca0ab22;padding:12px 0;margin:10px 0;color:var(--mlab-muted);font-size:12px}
+.mlab-assumptions summary{font-size:13px;color:#cbd8df;cursor:pointer}
+.mlab-assumptions p{line-height:1.7}
+.mlab-formula{padding:10px 12px;margin:10px 0;background:#0e171bcc;border-radius:6px;color:#d5e4ed;font:12px/1.8 ui-monospace,monospace;overflow-wrap:anywhere}
+.mlab-actions{display:flex;justify-content:space-between;gap:12px;margin:16px 0 0}
+.mlab-actions button{color:#c3d8e3;background:#19252b;border:1px solid #5a717d66;border-radius:7px;padding:8px 12px;font:12px system-ui,sans-serif;cursor:pointer}
+.mlab-actions button:hover{background:#25363e;border-color:#87a2b1}
+.muscle-lab :focus-visible{outline:2px solid #8dc8ff;outline-offset:4px}
+@media(max-width:480px){.mlab-result strong{font-size:22px}.mlab-control strong{font-size:12px}.mlab-intro p{font-size:13px}.mlab-actions{gap:8px}.mlab-actions button{padding:8px 10px}}

@@ -1,0 +1,27 @@
+[2026-09-30 00:29:07.319] [info] No external loads will be applied (external loads file not specified).
+[2026-09-30 00:29:07.320] [info] Executing the analyses from 0.0 to 0.2...
+[2026-09-30 00:29:07.337] [cout] [info] time = 0.0 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.337] [info] Bounds for 'flexor': 0.01 to 1.0.
+[2026-09-30 00:29:07.337] [info] Bounds for 'extensor': 0.01 to 1.0.
+[2026-09-30 00:29:07.337] [info] Bounds for 'reserve': -20.0 to 20.0.
+[2026-09-30 00:29:07.341] [cout] [info] time = 0.01 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.344] [cout] [info] time = 0.02 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.348] [cout] [info] time = 0.03 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.352] [cout] [info] time = 0.04 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.355] [cout] [info] time = 0.05 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.359] [cout] [info] time = 0.06 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.362] [cout] [info] time = 0.07 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.366] [cout] [info] time = 0.08 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.370] [cout] [info] time = 0.09 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.373] [cout] [info] time = 0.1 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.377] [cout] [info] time = 0.11 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.380] [cout] [info] time = 0.12 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.384] [cout] [info] time = 0.13 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.387] [cout] [info] time = 0.14 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.391] [cout] [info] time = 0.15 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.395] [cout] [info] time = 0.16 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.398] [cout] [info] time = 0.17 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.402] [cout] [info] time = 0.18 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.405] [cout] [info] time = 0.19 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.408] [cout] [info] time = 0.2 Performance = 0.0467998 Constraint violation = 1.25614e-06
+[2026-09-30 00:29:07.409] [info] Printing results of investigation teaching to docs/explainer/native-so-evidence/load_0N

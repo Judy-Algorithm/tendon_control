@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "actuatorMappingMaxAbs_Nm": 0.0,
+  "forceDecompositionMaxAbs_N": 0.0,
+  "dynamicsMaxAbs_Nm": 6.661338147750939e-16,
+  "nativeActionTransformMaxAbs": 0.0,
+  "mappingEquation": "qfrc_actuator = moment.T @ actuator_force; for positive tension T=-force, R=-moment.T",
+  "forceEquation": "actuator_force = mju_muscleGain(length,velocity,...) * act + mju_muscleBias(length,...)",
+  "twinInitialPoseIdentical": true,
+  "twinInitialAllVelocitiesZero": true,
+  "twinEndSelectedJointDifference_deg": 10.291008722718002,
+  "finiteAll": true,
+  "pulseSamples": 201,
+  "twinSamplesEach": 51
+}

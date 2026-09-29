@@ -1,0 +1,216 @@
+{
+  "id": "native-myohand-posefixed-2.11.6-mj3.3.0",
+  "computationTier": "native-replay",
+  "environment": "myoHandPoseFixed-v0",
+  "myosuiteVersion": "2.11.6",
+  "mujocoVersion": "3.3.0",
+  "myosuiteTagCommit": "05cb84678373f91271004f99602ebbf01e57d1a1",
+  "myoSimCommit": "33f3ded946f55adbdcf963c99999587aadaf975f",
+  "sourceVerification": "All seven listed installed files are byte-identical to the pinned official MyoSuite and myo_sim commits.",
+  "generatedUtc": "2026-09-29T16:26:34.744698+00:00",
+  "generator": "generate_myohand.py",
+  "generatorSha256": "e4595e94ba640592ee1ecede783fffc8efa313bc0b0bacfa504f48636bb18652",
+  "seed": 11,
+  "counts": {
+    "qpos": 23,
+    "qvel": 23,
+    "muscles": 39,
+    "activationStates": 39,
+    "tendonsIncludingVisualization": 44
+  },
+  "jointNames": [
+    "pro_sup",
+    "deviation",
+    "flexion",
+    "cmc_abduction",
+    "cmc_flexion",
+    "mp_flexion",
+    "ip_flexion",
+    "mcp2_flexion",
+    "mcp2_abduction",
+    "pm2_flexion",
+    "md2_flexion",
+    "mcp3_flexion",
+    "mcp3_abduction",
+    "pm3_flexion",
+    "md3_flexion",
+    "mcp4_flexion",
+    "mcp4_abduction",
+    "pm4_flexion",
+    "md4_flexion",
+    "mcp5_flexion",
+    "mcp5_abduction",
+    "pm5_flexion",
+    "md5_flexion"
+  ],
+  "muscleNames": [
+    "ECRL",
+    "ECRB",
+    "ECU",
+    "FCR",
+    "FCU",
+    "PL",
+    "PT",
+    "PQ",
+    "FDS5",
+    "FDS4",
+    "FDS3",
+    "FDS2",
+    "FDP5",
+    "FDP4",
+    "FDP3",
+    "FDP2",
+    "EDC5",
+    "EDC4",
+    "EDC3",
+    "EDC2",
+    "EDM",
+    "EIP",
+    "EPL",
+    "EPB",
+    "FPL",
+    "APL",
+    "OP",
+    "RI2",
+    "LU_RB2",
+    "UI_UB2",
+    "RI3",
+    "LU_RB3",
+    "UI_UB3",
+    "RI4",
+    "LU_RB4",
+    "UI_UB4",
+    "RI5",
+    "LU_RB5",
+    "UI_UB5"
+  ],
+  "physicsTimestep_s": 0.002,
+  "controlInterval_s": 0.02,
+  "frameSkip": 10,
+  "integrator": "Euler (native enum 0)",
+  "actionTransform": "ctrl = sigmoid(5 * (raw_action - 0.5)); raw_action in [-1,1]; ctrl actuator range [0,1]",
+  "units": {
+    "qpos_rad": "rad",
+    "activation": "dimensionless",
+    "ctrl": "dimensionless",
+    "actuator_force_N": "N signed",
+    "tension_N": "N positive tensile",
+    "actuator_length_m": "m geometry path",
+    "selected_moment_m": "m/rad",
+    "qfrc_actuator_Nm": "Nm"
+  },
+  "sources": {
+    "envs/myo/base_v0.py": {
+      "sha256": "80f5a1a471cf049863de875c379bfe2ea617e0c4bb66b15f566d4d6697203f8c"
+    },
+    "envs/myo/myobase/__init__.py": {
+      "sha256": "f9c35beb1e2400a2db32a98ae50ad6c748857c4bf927a3bb2cf4f36ea92a076a"
+    },
+    "envs/myo/myobase/pose_v0.py": {
+      "sha256": "207873ccd68357508a70eaa66c2fb478adc2a7eee6f77f4851265322be1caac5"
+    },
+    "envs/myo/assets/hand/myohand_pose.xml": {
+      "sha256": "fdf2070fa95201f1c1662d908d9da90750147b0338cd495b799ae3203386fe7c"
+    },
+    "simhive/myo_sim/hand/assets/myohand_assets.xml": {
+      "sha256": "2d6bd1f8c2dce2f0793ee8cd15b01281beb076be1cc6070dc0316f0dbe093dc8"
+    },
+    "simhive/myo_sim/hand/assets/myohand_body.xml": {
+      "sha256": "4b55b3fb1b33b4934f25668d3e8a03f84dec3a51dc6383ca6a1da20d5d6b4862"
+    },
+    "simhive/myo_sim/scene/myosuite_scene.xml": {
+      "sha256": "39e342fc0f4669b10fe28bfb6542fd06563db41b95cad3c4dc673ab126f4e11a"
+    }
+  },
+  "officialSources": [
+    {
+      "id": "myo-action",
+      "title": "MyoSuite BaseV0.step",
+      "url": "https://github.com/MyoHub/myosuite/blob/05cb84678373f91271004f99602ebbf01e57d1a1/myosuite/envs/myo/base_v0.py#L82-L125",
+      "section": "Normalized action transformation and robot.step"
+    },
+    {
+      "id": "myo-environment",
+      "title": "MyoSuite environment registration",
+      "url": "https://github.com/MyoHub/myosuite/blob/05cb84678373f91271004f99602ebbf01e57d1a1/myosuite/envs/myo/myobase/__init__.py#L257-L300",
+      "section": "myoHandPoseFixed-v0"
+    },
+    {
+      "id": "myo-native-model",
+      "title": "Native MyoHand muscle definitions",
+      "url": "https://github.com/MyoHub/myo_sim/blob/33f3ded946f55adbdcf963c99999587aadaf975f/hand/assets/myohand_assets.xml#L500-L541",
+      "section": "39 muscle actuators; force and lengthrange"
+    },
+    {
+      "id": "mj-muscles",
+      "title": "MuJoCo 3.3.0: Muscles",
+      "url": "https://mujoco.readthedocs.io/en/3.3.0/modeling.html#muscles",
+      "section": "Muscles: length scaling, FLV, sign, activation dynamics, relation to OpenSim"
+    },
+    {
+      "id": "mj-transmission",
+      "title": "MuJoCo 3.3.0: Actuation model",
+      "url": "https://mujoco.readthedocs.io/en/3.3.0/computation/index.html#actuation-model",
+      "section": "Transmission, stateful actuators, force generation"
+    },
+    {
+      "id": "mj-force-code",
+      "title": "MuJoCo native muscle gain and bias",
+      "url": "https://github.com/google-deepmind/mujoco/blob/3.3.0/src/engine/engine_util_misc.c#L530-L649",
+      "section": "mju_muscleGain, mju_muscleBias, mju_muscleDynamics"
+    },
+    {
+      "id": "mj-muscle-xml",
+      "title": "MuJoCo muscle actuator XML",
+      "url": "https://mujoco.readthedocs.io/en/3.3.0/XMLreference.html#actuator-muscle",
+      "section": "muscle actuator attributes"
+    }
+  ],
+  "selectedMuscle": {
+    "name": "FDS2",
+    "actuatorId": 11,
+    "joint": "mcp2_flexion",
+    "jointId": 7,
+    "actuatorLengthrange_m": [
+      0.330149,
+      0.392331
+    ],
+    "gainParameters": [
+      0.75,
+      1.05,
+      162.5,
+      200.0,
+      0.5,
+      1.6,
+      1.5,
+      1.3,
+      1.2
+    ],
+    "biasParameters": [
+      0.75,
+      1.05,
+      162.5,
+      200.0,
+      0.5,
+      1.6,
+      1.5,
+      1.3,
+      1.2
+    ],
+    "activationTimeConstants_s": [
+      0.01,
+      0.04
+    ],
+    "actearly": false,
+    "forceScale_N": 162.5
+  },
+  "limitations": [
+    "Native model simulation; not measured human data or a learned policy.",
+    "Selected model is not registered to the website display skeleton; display animation is illustrative.",
+    "Pulse has manually prescribed controls; twin activations are manually initialized controlled interventions, not naturally reached states.",
+    "Geometry path length is not elastic tendon extension. This MuJoCo muscle uses its native lengthrange/range mapping, not OpenSim lopt/lTS parameters.",
+    "Native muscle force is signed negative for tension; positive tension is exported as its negative.",
+    "Control is transformed from normalized action; raw action zero is not zero ctrl.",
+    "Force traces are replays, not live browser simulation; interpolated playback does not recompute physics."
+  ]
+}
