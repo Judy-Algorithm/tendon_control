@@ -1,12 +1,18 @@
-// Geometry-only ROM demonstration. Original angles and muscle associations follow ATLAS.
-// Supplemental CMC coupling is illustrative; see control-data.js and docs/cmc-coupling.md.
+// Geometry-only ROM demonstration driven by the supplied WSY OpenSim coordinate table.
+// The surface remains MyoHand geometry; this is prescribed kinematics, not a force solver.
 // This is prescribed kinematics; route blending is not a muscle-force solver.
 export const sub=(a,b)=>a.map((v,i)=>v-b[i]);
 export const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 export const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
 export const unit=a=>{const n=Math.hypot(...a);if(n<1e-10)throw new Error('Degenerate joint axis');return a.map(v=>v/n);};
 const fingers={index:2,middle:3,ring:4,pinky:5};
-const thumbTendons=new Set(['EPL','EPB','FPL','APL','OP','APB','FPB']);
+const thumbTendons=new Set(['EPL','EPB','FPL','APL','OP','OPP','APB','FPB','ADPt','ADPo','1stDI_MC1']);
+const digitTendons={
+  2:new Set(['FDS2','FDP2','EDC2','FDSI','FDPI','EDCI','EIP','LUMI','1stPI','1stDI_MC1','1stDI_MC2']),
+  3:new Set(['FDS3','FDP3','EDC3','FDSM','FDPM','EDCM','LUMM','2ndDI','3rdDI']),
+  4:new Set(['FDS4','FDP4','EDC4','FDSR','FDPR','EDCR','LUMR','2ndPI','4thDI']),
+  5:new Set(['FDS5','FDP5','EDC5','FDSL','FDPL','EDCL','EDM','LUML','3rdPI','ADM','FDM']),
+};
 
 // Estimate an unsegmented CMC hinge center from the proximal 3 mm of the metacarpal.
 // Native model coordinates point proximally along +Y and palmarly along +X.
@@ -51,12 +57,18 @@ export function buildRig(model,joint,dof){
       const downstream=unit(sub(distal,pivot));
       return {id:`cmc${digit}`,pivot,downstream,axis:unit(cross(downstream,[1,0,0])),ratio,inferred:true,
         affected:new Set([`${digit}mc`,`${digit}proxph`,`${digit}midph`,`${digit}distph`]),
-        tendonMatches:id=>id.endsWith(String(digit))||(digit===5&&id==='EDM')};
+        tendonMatches:id=>digitTendons[digit].has(id)||id.endsWith(String(digit))};
     });
     return {id:dof.id,components,inferred:true,affected:new Set(components.flatMap(r=>[...r.affected]))};
   }
   const native=name=>{const n=model.joints.find(j=>j.name===name);if(!n)throw new Error(`Missing joint ${name}`);return n;};
   const anchor=n=>n.anchor_i16.map(v=>v*model.quant);
+  if(dof.motion?.type==='forearm-rotation'){
+    const axisJoint=native('pro_sup'),pivot=anchor(axisJoint),axis=unit(axisJoint.axis);
+    return {id:dof.id,pivot,axis,downstream:axis.map(v=>-v),
+      affected:new Set(model.bones.filter(b=>b.name!=='ulna').map(b=>b.name)),
+      inferred:false,tendonMatches:()=>true};
+  }
   const [finger,level,kind]=dof.id.split('_');
   let axisJoint,affected,distal,inferred=false;
   if(finger==='wrist'){
@@ -82,7 +94,7 @@ export function buildRig(model,joint,dof){
   const nativeAxis=inferred?unit(cross(axisJoint.axis,downstream)):unit(axisJoint.axis);
   const axis=finger==='thumb'?nativeAxis.map(v=>-v):nativeAxis;
   return {id:dof.id,pivot,axis,downstream,affected:new Set(affected),inferred,
-    tendonMatches:id=>finger==='wrist'||(finger==='thumb'?thumbTendons.has(id):id.endsWith(String(fingers[finger]))||(finger==='index'&&id==='EIP')||(finger==='pinky'&&id==='EDM'))};
+    tendonMatches:id=>finger==='wrist'||(finger==='thumb'?thumbTendons.has(id):digitTendons[fingers[finger]].has(id)||id.endsWith(String(fingers[finger])))};
 }
 
 export function rotatePoint(point,rig,degrees){

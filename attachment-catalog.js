@@ -25,11 +25,15 @@ put('EPB',site('桡骨','radius'),site('拇指近节指骨基底','thumbprox'));
 put('FPL',site('桡骨','radius'),site('拇指远节指骨基底','thumbdist'));
 put('APL',site('桡骨','radius'),site('拇指掌骨基底','1mc'));
 put('OP',site('大多角骨区域','trapezium'),site('拇指掌骨骨干','1mc'));
+const modelAliases={FDSL:'FDS5',FDSR:'FDS4',FDSM:'FDS3',FDSI:'FDS2',FDPL:'FDP5',FDPR:'FDP4',FDPM:'FDP3',FDPI:'FDP2',EDCL:'EDC5',EDCR:'EDC4',EDCM:'EDC3',EDCI:'EDC2',OPP:'OP'};
 export function endpointText(id){
+  id=modelAliases[id]??id;
   const reference=ATTACHMENT_REFERENCE[id];
   if(reference){
     const label=reference.basis==='model-frames'?'模型坐标系起止位置':'起止位置';
     return `${label}：${reference.start} → ${reference.end}`;
   }
-  const {start,end}=catalog[id];return `起止位置：${start.label} → ${end.label}`;
+  const entry=catalog[id];
+  if(!entry)return '起止位置：目标模型肌肉通路（可视化参考）';
+  const {start,end}=entry;return `起止位置：${start.label} → ${end.label}`;
 }

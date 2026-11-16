@@ -9,14 +9,28 @@
     "sha256": "891bb506410760e8c7b5948938a30ae76320e854abe74ae2c96c09e93522465b",
     "opensimVersion": "4.5.2--",
     "neutralCoordinates": 0,
-    "momentArmThresholdMm": 0.01
+    "momentArmThresholdMm": 0.01,
+    "status": "legacy atlas-data.js provenance; no longer the displayed ROM control definition"
   },
-  "coordinateDirectionOverrides": {
-    "thumb_CMC_flex": "positive q is extension, negative q is flexion",
-    "ring_MCP_abd": "positive q is adduction toward the middle finger",
-    "pinky_MCP_abd": "positive q is adduction toward the middle finger",
-    "middle_MCP_abd": "use radial/ulnar deviation to avoid ambiguous middle-finger abduction"
+  "controlModel": {
+    "name": "WSY_20261111_left_personalized_REVIEW",
+    "file": "WSY_left_radioulnar_ECU_EDM_fixed_REVIEW.osim",
+    "sha256": "fe5b786c2e2e96228e2b07b56e71b0de20d85a4caeda017f213dd638cbf2791e",
+    "muscles": 43,
+    "bodies": 31,
+    "joints": 31,
+    "coordinates": 34,
+    "displayedFunctionalCoordinates": 24,
+    "neutralMomentArmThresholdMm": 0.01
   },
-  "rendering": "The public MyoHand surface and tendon paths are a visual reference. The 16-joint/23-DoF ranges and associations are from the SHM OpenSim control table. ROM motion uses prescribed single-joint kinematics with native MyoHand anchors/axes, descendant bone transforms, thumb sign conversion, and approximate tendon-route blending. Thumb MCP lateral motion uses a constructed axis. This is not a SHM-to-MyoHand registration, muscle-force simulation, collision solver, or a claim about native MyoHand moment arms.",
-  "attachmentDisplay": "attachment-catalog.js labels the displayed MyoHand geometry and equivalent endpoints. route-data.js contains regional visual-only fits; docs/attachment-audit.json records all 74 endpoints. endpoint-data.js retains the separate original SHM body-frame mapping, not the displayed attachment labels."
+  "coupling": {
+    "independent": "4cmc_flexion",
+    "independentRangeRad": [0, 0.2032],
+    "dependent": "CMC5_r1",
+    "function": "SimmSpline",
+    "xRad": [0, 0.2032],
+    "yRad": [0, 0.5528]
+  },
+  "bodyLabels": "Visible mesh labels use the exact target OpenSim Body names. The public visual meshes lunate, scaphoid, pisiform and triquetrum all map to the target model's single proximal_row body. Bodies outside the displayed hand and non-surface carrier bodies are not invented as visible meshes.",
+  "rendering": "Joint names, coordinate names, coordinate ranges, 43 Muscle names, CMC coupling, and default-pose moment-arm associations come from the target WSY OpenSim model. The public MyoHand surface and tendon paths remain a visual reference. ROM uses prescribed display kinematics with MyoHand anchors/axes and approximate route blending; it is not a WSY mesh export, muscle-force simulation, collision solver, or browser-native OpenSim solve. The target model has no independent thumb MCP ab/adduction coordinate, so that former constructed control is not displayed."
 }

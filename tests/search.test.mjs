@@ -41,12 +41,12 @@ test('all 43 OpenSim muscles have finite renderable visual paths',()=>{
   }
 });
 test('search reveals a hidden route independently of the selected joint and clearing restores a neutral empty scope',()=>{
-  const c=createAtlasState(CONTROLS);
-  c.openJoint('joint_bone11');c.selectDirection('middle_MCP_flex','positive');c.toggleTendon('FDS3');
+  const c=createAtlasState(CONTROLS,OPENSIM_MUSCLES);
+  c.openJoint('joint_bone11');c.selectDirection('middle_MCP_flex','positive');c.toggleTendon('FDSM');
   c.setSearch('fds3');
   assert.equal(c.joint(),null);assert.equal(c.action(),null);
-  assert.deepEqual(c.visible(),['FDS3']);assert.equal(c.state.highlighted,'FDS3');
-  c.setSearch('FDP5');assert.deepEqual(c.visible(),['FDP5']);assert.equal(c.state.highlighted,'FDP5');
+  assert.deepEqual(c.visible(),['FDSM']);assert.equal(c.state.highlighted,'FDSM');
+  c.setSearch('FDP5');assert.deepEqual(c.visible(),['FDPL']);assert.equal(c.state.highlighted,'FDPL');
   c.setSearch('FDS9');assert.deepEqual(c.visible(),[]);assert.equal(c.state.highlighted,null);
   c.setSearch('');assert.deepEqual(c.visible(),[]);assert.equal(c.state.search,'');
 });
@@ -116,7 +116,7 @@ test('searching during animation stops playback, resets the pose and hides motio
   s.state.openJoint('joint_bone11');s.refresh();assert.equal(s.input.value,'');
   s.state.selectDirection('middle_MCP_flex','negative');s.refresh();
   assert.equal(s.motion.playing,true);assert.equal(s.frames.size,1);
-  assert.deepEqual(s.state.visible(),['EDC3']);
+  assert.deepEqual(s.state.visible(),['EDCM']);
 });
 test('clear, Escape, keyboard result access, submit and unmatched input keep UI and model scope in sync',()=>{
   const s=setup();s.type('FDS');

@@ -25,8 +25,8 @@ function setup(){
 }
 test('a single hover name identifies the nearest bone without permanent labels',()=>{
  const s=setup();assert.equal(s.stage.children.length,1);assert.equal(s.hover.tooltip.hidden,true);
- s.move();assert.deepEqual(s.hover.snapshot(),{id:'3mc',name:'第3掌骨'});
- assert.equal(s.hover.tooltip.textContent,'第3掌骨');assert.equal(s.hover.tooltip.hidden,false);
+ s.move();assert.deepEqual(s.hover.snapshot(),{id:'3mc',name:'thirdmc'});
+ assert.equal(s.hover.tooltip.textContent,'thirdmc');assert.equal(s.hover.tooltip.hidden,false);
  assert.equal(s.hover.tooltip.children.length,0);
  s.move({clientX:25,clientY:55});assert.equal(s.hover.snapshot(),null);assert.equal(s.hover.tooltip.hidden,true);
  assert.equal(s.stage.children.length,1);

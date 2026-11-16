@@ -1,17 +1,18 @@
-// Chinese names correspond to the actual 29 meshes; the thumb has no middle phalanx.
+// Chinese anatomical labels plus the exact Body names in the supplied WSY OpenSim model.
+// Four visual proximal-carpal meshes map to the model's single proximal_row body.
 export const BONE_NAMES=Object.freeze({
- ulna:{name:'尺骨',short:'尺骨'},radius:{name:'桡骨',short:'桡骨'},
- lunate:{name:'月骨',short:'月骨'},scaphoid:{name:'舟骨',short:'舟骨'},
- pisiform:{name:'豌豆骨',short:'豌豆骨'},triquetrum:{name:'三角骨',short:'三角骨'},
- capitate:{name:'头状骨',short:'头状骨'},trapezium:{name:'大多角骨',short:'大多角骨'},
- trapezoid:{name:'小多角骨',short:'小多角骨'},hamate:{name:'钩骨',short:'钩骨'},
- '1mc':{name:'第1掌骨',short:'拇指掌骨'},
- thumbprox:{name:'拇指近节指骨',short:'拇指近节'},thumbdist:{name:'拇指远节指骨',short:'拇指远节'},
+ ulna:{name:'ulna',short:'尺骨'},radius:{name:'radius',short:'桡骨'},
+ lunate:{name:'proximal_row（月）',short:'月骨'},scaphoid:{name:'proximal_row（舟）',short:'舟骨'},
+ pisiform:{name:'proximal_row（豌豆）',short:'豌豆骨'},triquetrum:{name:'proximal_row（三角）',short:'三角骨'},
+ capitate:{name:'capitate',short:'头状骨'},trapezium:{name:'trapezium',short:'大多角骨'},
+ trapezoid:{name:'trapezoid',short:'小多角骨'},hamate:{name:'hamate',short:'钩骨'},
+ '1mc':{name:'firstmc',short:'拇指掌骨'},
+ thumbprox:{name:'proximal_thumb',short:'拇指近节'},thumbdist:{name:'distal_thumb',short:'拇指远节'},
  ...Object.fromEntries([['2','食指'],['3','中指'],['4','无名指'],['5','小指']].flatMap(([n,finger])=>[
-  [n+'mc',{name:'第'+n+'掌骨',short:finger+'掌骨'}],
-  [n+'proxph',{name:finger+'近节指骨',short:finger+'近节'}],
-  [n+'midph',{name:finger+'中节指骨',short:finger+'中节'}],
-  [n+'distph',{name:finger+'远节指骨',short:finger+'远节'}],
+  [n+'mc',{name:({2:'secondmc',3:'thirdmc',4:'fourthmc',5:'fifthmc'}[n]),short:finger+'掌骨'}],
+  [n+'proxph',{name:n+'proxph',short:finger+'近节'}],
+  [n+'midph',{name:n+'midph',short:finger+'中节'}],
+  [n+'distph',{name:n+'distph',short:finger+'远节'}],
  ]))
 });
 const BONE_PARTS={
@@ -30,7 +31,7 @@ const clamp=(n,a,b)=>Math.min(Math.max(n,a),Math.max(a,b));
 export function layoutBoneLabels(items,width,height,sides=new Map()){
  if(!items.length||width<=0||height<=0)return [];
  const compact=width<500,fontSize=compact?10.5:11;
- const short=width<420,rowHeight=fontSize+4,margin=(compact?87:101)+7;
+ const short=width<500,rowHeight=fontSize+4,margin=(compact?87:101)+7;
  const top=12,bottom=height-(compact?48:62);
  const ranked=[...items].sort((a,b)=>a.x-b.x||a.id.localeCompare(b.id));
  const half=Math.ceil(ranked.length/2);

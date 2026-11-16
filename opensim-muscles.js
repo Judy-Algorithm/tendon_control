@@ -1,12 +1,11 @@
 import {ATLAS} from './atlas-data.js';
 
-// Exact Muscle object order from Hand_Wrist_Model_for_development.osim.
-// SHA-256: 9A88909CA27DA9397ABE22599E51AE9699162BDF274F65D2A83D7B02793B24CC
+// Exact Muscle object order from WSY_left_radioulnar_ECU_EDM_fixed_REVIEW.osim.
+// SHA-256: fe5b786c2e2e96228e2b07b56e71b0de20d85a4caeda017f213dd638cbf2791e
 const atlasById=new Map(ATLAS.tendons.map(tendon=>[tendon.id,tendon]));
 
-// Default-pose GeometryPaths absent from the older web control table.
-// OpenSim ground coordinates are aligned using FPL/APL/EPB/EPL endpoints
-// against the visual hand (endpoint RMS: 0.48 mm).
+// Visual-only routes for muscles absent from the public MyoHand path set.
+// They preserve the existing display alignment and are not target-model geometry exports.
 const ROUTES={
   APB:[[-.005115063,-.067011715,.004785563],[-.002626537,-.066666881,.016203645],[.013818666,-.105093612,.039643707],[.015846388,-.120334843,.046756527]],
   FPB:[[-.00654341,-.068236755,.001727068],[-.005927707,-.078616223,.009091466],[.003613659,-.102949967,.025813237],[.008519891,-.113461577,.033558723]],

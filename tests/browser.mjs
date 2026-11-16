@@ -39,7 +39,7 @@ try{
   await page.goto(url);await page.waitForFunction(()=>window.tendonAtlas?.snapshot().ready);
   // Return the default ROM demonstration to the neutral overview for attachment checks.
   if((await snapshot()).jointId)await trigger((await snapshot()).jointId).click();
-  assert.equal(await page.locator('.joint-trigger').count(),17);
+  assert.equal(await page.locator('.joint-trigger').count(),18);
   assert.equal((await snapshot()).boneCount,29);
   const geometry=await snapshot();assert.equal(geometry.geometryRevision,2);equalSet(geometry.endpoints.map(e=>e.id),new Set([...DISPLAY_ATLAS.tendons,...OPENSIM_MUSCLES].map(t=>t.id)));
   for(const e of geometry.endpoints){
@@ -60,18 +60,18 @@ try{
   assert.equal(await page.locator('[data-joint-id="joint_bone11"] .total strong').innerText(),'6');
   await page.screenshot({path:'test-output/desktop-middle-six.png'});
   await action('middle_MCP_flex','positive').click();
-  await verifyRender(['FDS3','FDP3','RI3','LU_RB3','UI_UB3']);
-  await toggle('FDS3').click();assert.equal(await toggle('FDS3').innerText(),'Display');
-  await verifyRender(['FDP3','RI3','LU_RB3','UI_UB3']);
-  await toggle('FDS3').click();assert.equal(await toggle('FDS3').innerText(),'Hide');
-  await verifyRender(['FDS3','FDP3','RI3','LU_RB3','UI_UB3']);
+  await verifyRender(['FDSM','FDPM','2ndDI','3rdDI','LUMM']);
+  await toggle('FDSM').click();assert.equal(await toggle('FDSM').innerText(),'Display');
+  await verifyRender(['FDPM','2ndDI','3rdDI','LUMM']);
+  await toggle('FDSM').click();assert.equal(await toggle('FDSM').innerText(),'Hide');
+  await verifyRender(['FDSM','FDPM','2ndDI','3rdDI','LUMM']);
   await page.screenshot({path:'test-output/desktop-flexion-controls.png'});
-  await action('middle_MCP_flex','negative').click();await verifyRender(['EDC3']);
-  await page.locator('.path-callout[data-tendon="EDC3"]').click();
-  assert.equal((await snapshot()).highlighted,'EDC3');
+  await action('middle_MCP_flex','negative').click();await verifyRender(['EDCM']);
+  await page.locator('.path-callout[data-tendon="EDCM"]').click();
+  assert.equal((await snapshot()).highlighted,'EDCM');
   assert.ok((await page.locator('.path-list:not([hidden])').innerText()).includes('指总伸肌'));
 
-  // Real browser checks traverse all 48 actions, including the empty side of thumb MCP.
+  // Real browser checks traverse all 48 target-model action directions.
   let actionCount=0;
   for(const joint of ATLAS.joints){
     if((await snapshot()).jointId===joint.id)await trigger(joint.id).click();
@@ -86,8 +86,7 @@ try{
     }
   }
   assert.equal(actionCount,48);
-  await trigger('joint_bone2').click();await action('thumb_MCP_abd','negative').click();await verifyRender([]);
-  assert.equal(await page.locator('.path-list:not([hidden])').innerText(),'无');
+  assert.equal(await page.locator('[data-action-key^="thumb_MCP_abd:"]').count(),0);
 
   await trigger('joint_bone11').click();await verifyRender(middle.tendons);
   const before=await page.locator('.path-callout rect').first().getAttribute('y');
@@ -102,12 +101,12 @@ try{
   if((await snapshot()).jointId)await trigger((await snapshot()).jointId).click();
   await trigger('joint_bone11').click();
   await verifyRender(middle.tendons);await action('middle_MCP_flex','positive').click();
-  await toggle('FDS3').click();assert.equal(await toggle('FDS3').innerText(),'Display');
-  await verifyRender(['FDP3','RI3','LU_RB3','UI_UB3']);
+  await toggle('FDSM').click();assert.equal(await toggle('FDSM').innerText(),'Display');
+  await verifyRender(['FDPM','2ndDI','3rdDI','LUMM']);
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   await page.screenshot({path:'test-output/mobile-controls.png'});
-  await trigger('joint_bone0').click();await verifyRender(ATLAS.joints[0].tendons.filter(id=>id!=='FDS3'));
+  await trigger('joint_bone0').click();await verifyRender(ATLAS.joints.find(j=>j.id==='joint_bone0').tendons.filter(id=>id!=='FDSM'));
   await page.screenshot({path:'test-output/mobile-wrist.png'});
   assert.deepEqual(errors,[]);
-  console.log(`Passed: 17 joints, ${actionCount} actions, synchronized path/arrow toggles, rotation, desktop and mobile; no browser errors.`);
+  console.log(`Passed: 18 joints, ${actionCount} actions, synchronized path/arrow toggles, rotation, desktop and mobile; no browser errors.`);
 }finally{await browser.close();}

@@ -32,7 +32,7 @@ npm start
 ## 数据
 
 - 骨骼网格和原始肌腱路径保留自 [EMG2Tendon](https://github.com/Judy-Algorithm/EMG2Tendon) 的公开 MyoHand 可视化。显示时使用独立的局部附着修正数据；范围、依据和局限见 [附着核对](docs/attachment-review.md)。
-- 右侧是用户指定的 SHM OpenSim 中立位控制表：16 个物理关节、23 个自由度、37 条启用通路，关联阈值为力臂绝对值 0.01 mm。
+- 右侧 ROM 控制表来自 `WSY_left_radioulnar_ECU_EDM_fixed_REVIEW.osim`：显示 18 个关节组、24 个手/前臂功能坐标和全部 43 个 Muscle 名称；肌肉方向关联按模型默认位力臂计算，阈值为绝对值 0.01 mm。`radioulnar / forearm_rotation` 与 CMC4/CMC5 约束均按模型定义显示。
 - 两者按通路 ID 连接。左侧依据 MyoHand 关节锚点、转轴及骨骼层级做几何运动示意，不是右侧 SHM 参数的配准结果；不使用原网站的教学仿真矩阵，也不是肌力驱动的动力学仿真。
 - 原 MyoHand 含前臂旋转坐标、无独立拇指 MCP 侧向坐标。SHM 表含拇指 MCP 侧向自由度、不含前臂旋转；侧向项标注借用拇指 MCP 位置。PT、PQ 不列入活动执行器。
 - 正负力臂转换为具体动作，而不是统一解释为屈曲／伸展。拇指 CMC 屈伸坐标正向为伸展；无名指、小指 MCP 侧向正向为内收；中指侧向使用桡偏／尺偏。范围沿用该表，不能解释为公开 MyoHand 的原生运动限位。

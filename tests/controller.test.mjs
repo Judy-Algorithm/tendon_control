@@ -89,16 +89,16 @@ test('reduced motion waits for explicit play',()=>{
  globalThis.matchMedia=()=>({matches:false});
 });
 
-test('CMC playback identifies both illustrative ranges and the slider angle belongs to metacarpal five',()=>{
+test('CMC playback identifies the exact model coupling and both metacarpal angles',()=>{
  const {controller:c,poses}=setup();select(c,'ulnar_CMC_flex','positive');
- assert.equal(nodes.get('motion-progress').max,'20');
- assert.match(nodes.get('motion-hint').textContent,/第4掌骨 0–10°.*第5掌骨 0–20°/);
- nodes.get('motion-progress').value='12';nodes.get('motion-progress').events.input();
- assert.equal(c.degrees,12);assert.equal(c.playing,false);
+ assert.equal(nodes.get('motion-progress').max,'11.642029');
+ assert.match(nodes.get('motion-hint').textContent,/4cmc_flexion 0–11\.64°.*CMC5_r1.*31\.67°/);
+ nodes.get('motion-progress').value='8';nodes.get('motion-progress').events.input();
+ assert.equal(c.degrees,8);assert.equal(c.playing,false);
  assert.equal(poses.at(-1).rig.components.length,2);
- assert.match(nodes.get('motion-angle-label').textContent,/第5掌骨/);
+ assert.match(nodes.get('motion-angle-label').textContent,/第4掌骨 \/ 第5掌骨/);
  c.neutral();assert.equal(c.degrees,0);
- select(c,'ulnar_CMC_flex','negative');assert.equal(c.degrees,20);
+ select(c,'ulnar_CMC_flex','negative');assert.equal(c.degrees,11.642029);
  select(c,'middle_MCP_flex','positive');
  assert.equal(c.rig.components,undefined);
  assert.deepEqual(c.snapshot().affectedBones,['3proxph','3midph','3distph']);

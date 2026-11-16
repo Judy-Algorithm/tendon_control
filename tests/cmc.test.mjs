@@ -14,8 +14,8 @@ function points(name){
  const vertices=new Int16Array(bytes.buffer,bytes.byteOffset,bytes.length/2);
  return Array.from({length:vertices.length/3},(_,i)=>Array.from(vertices.slice(i*3,i*3+3),v=>v*MODEL.quant));
 }
-test('the coupled control extends the catalogue without changing measured SHM data',()=>{
- assert.equal(ATLAS.joints.length,16);assert.equal(CONTROLS.joints.length,17);
+test('target-model forearm and coupled CMC controls extend the visual catalogue',()=>{
+ assert.equal(ATLAS.joints.length,16);assert.equal(CONTROLS.joints.length,18);
  assert.equal(ATLAS.joints.flatMap(j=>j.dofs).length,23);
  assert.equal(CONTROLS.joints.flatMap(j=>j.dofs).length,24);
  assert.equal(CONTROLS.joints.flatMap(j=>j.dofs).flatMap(d=>d.directions).length,48);
@@ -24,7 +24,7 @@ test('the coupled control extends the catalogue without changing measured SHM da
  const state=createAtlasState(CONTROLS);state.openJoint(ULNAR_CMC.id);
  for(const action of dof.directions){
   state.selectDirection(dof.id,action.id);assert.equal(state.action(),action);
-  assert.deepEqual(state.scope(),[],'No unmeasured CMC muscle associations');
+  assert.ok(state.scope().length>0,'Target-model moment arms supply CMC muscle associations');
  }
  state.openJoint(null);assert.equal(state.action(),null);
  assert.ok(jointAnchor(MODEL,ULNAR_CMC).every(Number.isFinite));
@@ -58,13 +58,14 @@ test('CMC flexion pivots at both metacarpal bases and carries each complete fing
  for(const n of ['5mc','5proxph','5midph','5distph'])assert.equal(rigForBone(rig,n),rig.components[1]);
 });
 test('coupled flexion and return are monotone, bounded and return to exact neutral',()=>{
+ const max=dof.range.max;
  for(const action of dof.directions){
   const range=motionRange(dof,action);
-  assert.equal(range.start,action.id==='positive'?0:20);
-  assert.equal(range.target,action.id==='positive'?20:0);
+  assert.equal(range.start,action.id==='positive'?0:max);
+  assert.equal(range.target,action.id==='positive'?max:0);
   let previous=range.start;
   for(let i=0;i<=100;i++){
-   const angle=angleAt(range,i/100);assert.ok(angle>=0&&angle<=20);
+   const angle=angleAt(range,i/100);assert.ok(angle>=0&&angle<=max);
    assert.ok((angle-previous)*(range.target-range.start)>=0);previous=angle;
   }
   near(angleAt(range,1),range.target);

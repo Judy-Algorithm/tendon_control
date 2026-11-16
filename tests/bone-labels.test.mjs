@@ -5,6 +5,7 @@ import {CONTROLS as ATLAS} from '../control-data.js';
 import {THREE} from '../scripts/surface-geometry.mjs';
 import {BoneLabels,BONE_NAMES,layoutBoneLabels,bonesForPart} from '../bone-labels.js';
 import {buildRig,rigForBone} from '../motion.js';
+import {WSY_BODY_FOR_VISUAL_BONE} from '../wsy-model-data.js';
 
 const overlap=(a,b)=>a.left<b.left+b.w-.001&&a.left+a.w>b.left+.001&&a.top<b.top+b.h-.001&&a.top+a.h>b.top+.001;
 function assertClear(labels,w,h){
@@ -17,11 +18,11 @@ function assertClear(labels,w,h){
  for(const l of labels)assert.ok(l.left>gutter&&l.left+l.w<w-gutter,'Bone name overlaps a tendon-name gutter');
 }
 
-test('every actual mesh has a distinct Chinese name, with exactly two thumb phalanges',()=>{
+test('every visual mesh has a target OpenSim body label, with exactly two thumb phalanges',()=>{
  assert.deepEqual(Object.keys(BONE_NAMES).sort(),MODEL.bones.map(b=>b.name).sort());
  assert.equal(new Set(Object.values(BONE_NAMES).map(b=>b.name)).size,29);
  assert.equal(Object.keys(BONE_NAMES).filter(id=>id.startsWith('thumb')).length,2);
- for(const n of Object.values(BONE_NAMES))assert.match(n.name,/[\u4e00-\u9fff]/);
+ for(const [id,n] of Object.entries(BONE_NAMES))assert.ok(n.name.includes(WSY_BODY_FOR_VISUAL_BONE[id]),id);
 });
 
 test('even all 29 anchors clustered together remain legible on narrow and wide displays',()=>{
