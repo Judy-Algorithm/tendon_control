@@ -1,5 +1,5 @@
-// Geometry-only ROM demonstration driven by the supplied WSY OpenSim coordinate table.
-// The surface remains MyoHand geometry; this is prescribed kinematics, not a force solver.
+// Prescribed ROM display driven by the general native right-hand OpenSim model.
+// Native neutral meshes, axes and paths are displayed; this is not a force solver.
 // This is prescribed kinematics; route blending is not a muscle-force solver.
 export const sub=(a,b)=>a.map((v,i)=>v-b[i]);
 export const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
@@ -90,9 +90,10 @@ export function buildRig(model,joint,dof){
     else {const p=anchor(axisJoint),q=anchor(native(`pm${n}_flexion`));distal=p.map((v,i)=>2*v-q[i]);}
   }
   const pivot=anchor(axisJoint),downstream=unit(sub(distal,pivot));
-  // The source thumb hinge axes use the opposite sign from the ATLAS action convention.
   const nativeAxis=inferred?unit(cross(axisJoint.axis,downstream)):unit(axisJoint.axis);
-  const axis=finger==='thumb'?nativeAxis.map(v=>-v):nativeAxis;
+  // Keep the native right-model coordinate sign. Positive flexion must shorten
+  // the flexor path (OpenSim moment arm = -d(path length)/dq).
+  const axis=nativeAxis;
   return {id:dof.id,pivot,axis,downstream,affected:new Set(affected),inferred,
     tendonMatches:id=>finger==='wrist'||(finger==='thumb'?thumbTendons.has(id):digitTendons[fingers[finger]].has(id)||id.endsWith(String(fingers[finger])))};
 }

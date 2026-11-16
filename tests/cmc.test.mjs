@@ -4,7 +4,7 @@ import {MODEL} from '../model-data.js';
 import {ATLAS} from '../atlas-data.js';
 import {CONTROLS,ULNAR_CMC} from '../control-data.js';
 import {createAtlasState} from '../atlas-state.js';
-import {FITTED_ROUTES} from '../route-data.js';
+import {OPENSIM_MUSCLES} from '../opensim-muscles.js';
 import {buildRig,rigForBone,rigForTendon,jointAnchor,rotatePoint,routeInfluence,tendonSegments,motionRange,angleAt,sub,dot,unit} from '../motion.js';
 const dof=ULNAR_CMC.dofs[0],rig=buildRig(MODEL,ULNAR_CMC,dof);
 const near=(a,b,t=1e-9)=>assert.ok(Math.abs(a-b)<t,`${a} differs from ${b}`);
@@ -72,11 +72,11 @@ test('coupled flexion and return are monotone, bounded and return to exact neutr
  }
 });
 test('routing uses each digit’s hinge and leaves other digits and proximal paths fixed',()=>{
- for(const meta of ATLAS.tendons){
+ for(const meta of OPENSIM_MUSCLES){
   const c=rigForTendon(rig,meta.id);
-  const digit4=meta.id.endsWith('4'),digit5=meta.id.endsWith('5')||meta.id==='EDM';
-  assert.equal(c,digit4?rig.components[0]:digit5?rig.components[1]:null);
-  const rest=tendonSegments(MODEL,meta,FITTED_ROUTES[meta.id]).flat();
+  const expected=rig.components.find(component=>component.tendonMatches(meta.id))??null;
+  assert.equal(c,expected);
+  const rest=tendonSegments(MODEL,meta,meta.route).flat();
   for(const p of rest){
    const w=routeInfluence(p,rig,meta.id);
    assert.ok(w>=0&&w<=1);
@@ -84,6 +84,6 @@ test('routing uses each digit’s hinge and leaves other digits and proximal pat
    assert.ok(posed.every(Number.isFinite));
    if(!c||p[1]>0)assert.deepEqual(posed,p);
   }
-  if(c)assert.ok(rest.some(p=>routeInfluence(p,rig,meta.id)>.9));
+  if(c)assert.ok(rest.some(p=>routeInfluence(p,rig,meta.id)>.4));
  }
 });

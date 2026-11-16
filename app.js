@@ -292,7 +292,8 @@ window.tendonAtlas=Object.freeze({snapshot:()=>({jointId:atlas.state.jointId,dir
   boneCount:viewer?.bones.length||0,labelIds:[...document.querySelectorAll('.path-callout')].map(n=>n.dataset.tendon),
   boneLabels:[],boneHover:viewer?.boneHover.snapshot()??null,
   sideLabels:viewer?.sideLabels.snapshot()??[],
-  geometryRevision:2,
+  geometryRevision:3,
+  displayHand:'right',modelStatus:'REVIEW',
   endpoints:viewer?[...viewer.tendons].map(([id,t])=>({id,start:t.caps[0].position.toArray(),end:t.caps[1].position.toArray(),
     depthTest:t.material.depthTest,catalog:ATTACHMENT_CATALOG[id]})):[],
   motion:motion?.snapshot(),ready:Boolean(viewer)})});

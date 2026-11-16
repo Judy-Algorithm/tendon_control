@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {CONTROLS,JOINT_DISPLAY_ORDER} from '../control-data.js';
 import {OPENSIM_JOINT_NAMES,OPENSIM_COORDINATE_NAMES,coordinateDisplayName,jointDisplayTitle} from '../opensim-joints.js';
-import {WSY_MODEL_SOURCE,WSY_COORDINATES,WSY_MOMENT_ARMS_MM} from '../wsy-model-data.js';
+import {GENERAL_RIGHT_MODEL_SOURCE,GENERAL_RIGHT_COORDINATES,GENERAL_RIGHT_MOMENT_ARMS_MM} from '../general-right-model-data.js';
 
 const EXPECTED_JOINTS=['radioulnar','radiocarpal','CMC1a / CMC1b','CMC4 / CMC5','MCP','_2MCP','_3MCP','_4MCP','_5MCP','IP','_2prox-midph_b','_3prox-midph_b','_4prox-midph_b','_5prox-midph_b','_2mid-distph','_3mid-distph','_4mid-distph','_5mid-distph'];
 
@@ -35,14 +35,17 @@ test('headings show Coordinate names while expanded data retains Joint names',()
   assert.equal(coordinateDisplayName(CONTROLS.joints[0].dofs[0]),'forearm_rotation');
 });
 
-test('control definitions retain the supplied WSY model identity, ranges and moment arms',()=>{
-  assert.equal(WSY_MODEL_SOURCE.sha256,'fe5b786c2e2e96228e2b07b56e71b0de20d85a4caeda017f213dd638cbf2791e');
-  assert.equal(WSY_MODEL_SOURCE.muscleCount,43);
-  assert.deepEqual([WSY_COORDINATES.wrist_abd.min,WSY_COORDINATES.wrist_abd.max],[-10,25]);
-  assert.deepEqual([WSY_COORDINATES.ring_PIP_flex.min,WSY_COORDINATES.ring_PIP_flex.max],[0,100]);
-  assert.equal(WSY_COORDINATES.ulnar_CMC_flex.max,11.642029);
-  assert.equal(WSY_MOMENT_ARMS_MM.flexion.FCR,19.230254);
-  assert.equal(WSY_MOMENT_ARMS_MM['4cmc_flexion'].EDCL,-34.069407);
+test('control definitions retain the supplied general right model identity, ranges and moment arms',()=>{
+  assert.equal(GENERAL_RIGHT_MODEL_SOURCE.sha256,'c97e610a70bab78ad3368cf5bda45f192e79e3029ad8fa9d2a7d66fb2170a5a0');
+  assert.equal(GENERAL_RIGHT_MODEL_SOURCE.hand,'right');
+  assert.equal(GENERAL_RIGHT_MODEL_SOURCE.status,'REVIEW');
+  assert.equal(GENERAL_RIGHT_MODEL_SOURCE.muscleCount,43);
+  assert.ok(Math.abs(GENERAL_RIGHT_COORDINATES.wrist_abd.min+10)<1e-5&&Math.abs(GENERAL_RIGHT_COORDINATES.wrist_abd.max-25)<1e-5);
+  assert.ok(Math.abs(GENERAL_RIGHT_COORDINATES.ring_PIP_flex.max-100)<1e-5);
+  assert.ok(Math.abs(GENERAL_RIGHT_COORDINATES.thumb_CMC_flex.max-15)<1e-5);
+  assert.ok(Math.abs(GENERAL_RIGHT_COORDINATES.ulnar_CMC_flex.max-11.6425)<1e-4);
+  assert.equal(GENERAL_RIGHT_MOMENT_ARMS_MM.flexion.FCR,16.840104);
+  assert.equal(GENERAL_RIGHT_MOMENT_ARMS_MM['4cmc_flexion'].EDCL,-27.698857);
   const displayed=CONTROLS.joints.flatMap(j=>j.dofs);
   assert.equal(displayed.length,24);
   assert.ok(displayed.every(d=>d.rangeLabel==='模型范围'));

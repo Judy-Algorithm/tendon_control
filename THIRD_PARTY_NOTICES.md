@@ -9,12 +9,11 @@ documented in `docs/data-provenance.json`; it is not native MyoHand kinematics.
 - Source: https://github.com/MyoHub/myo_sim
 - Project: https://github.com/MyoHub/myosuite
 - License: Apache License 2.0; see `LICENSE-MYOSUITE`.
-- Use in this repository: unchanged, quantized public bone geometry, joint
-  anchors and 39 exported actuator paths in `model-data.js`. The interface
-  original atlas exposes the 37 channels referenced by the SHM table; PT and
-  PQ remain hidden in that atlas only. The separate native MyoHand workbench
-  exports and displays all 39 native muscle-actuator channels, including PT
-  and PQ, with their original native names and numerical results.
+- Use in this repository: the separate native MyoHand workbench exports and
+  displays all 39 native muscle-actuator channels, including PT and PQ, with
+  their original native names and numerical results. Legacy atlas metadata is
+  retained for compatibility, but the main ROM geometry is now the ARMS-based
+  native right-hand model described below.
 
 ## Three.js
 
@@ -32,8 +31,10 @@ documented in `docs/data-provenance.json`; it is not native MyoHand kinematics.
   of Simulating Functional Tasks.* bioRxiv 2021.12.28.474357.
   https://doi.org/10.1101/2021.12.28.474357
 - This personal educational/non-commercial website uses generated native
-  results from a user-supplied left-hand derivative. Only source-referenced
-  geometry from the ARMS 4.3 distribution is converted; no individualized
+  results from user-supplied ARMS derivatives. The main ROM uses the supplied
+  `General_right_native_REVIEW.osim`; the native-v2 teaching records retain
+  their separately versioned source identity. Only source-referenced geometry
+  from the ARMS distribution is converted; no individualized
   human anatomy or company-private geometry is claimed. Mesh coordinates are
   retained; polygon fan triangulation is display-only. Model source XML is not
   redistributed. Exact source hashes are attached to generated asset records.

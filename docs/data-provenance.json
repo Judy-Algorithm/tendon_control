@@ -1,8 +1,11 @@
 {
   "geometry": {
-    "repository": "https://github.com/Judy-Algorithm/EMG2Tendon",
-    "commit": "0513b54",
-    "source": "public MyoHand"
+    "sourcePackage": "General_right_native_20261116",
+    "model": "General_right_native_REVIEW.osim",
+    "modelSha256": "c97e610a70bab78ad3368cf5bda45f192e79e3029ad8fa9d2a7d66fb2170a5a0",
+    "hand": "right",
+    "meshFormat": "native VTP transformed to Ground at the default state and quantized to 0.01 mm for the web",
+    "status": "REVIEW"
   },
   "controlTable": {
     "model": "shm_msk_bones_muscle_tendon_only.osim",
@@ -10,12 +13,15 @@
     "opensimVersion": "4.5.2--",
     "neutralCoordinates": 0,
     "momentArmThresholdMm": 0.01,
-    "status": "legacy atlas-data.js provenance; no longer the displayed ROM control definition"
+    "status": "atlas-data.js compatibility data only; not the displayed ROM definition or geometry"
   },
   "controlModel": {
-    "name": "WSY_20261111_left_personalized_REVIEW",
-    "file": "WSY_left_radioulnar_ECU_EDM_fixed_REVIEW.osim",
-    "sha256": "fe5b786c2e2e96228e2b07b56e71b0de20d85a4caeda017f213dd638cbf2791e",
+    "name": "ARMS_right_general_native_20260804_updated_20261116_REVIEW",
+    "file": "General_right_native_REVIEW.osim",
+    "sha256": "c97e610a70bab78ad3368cf5bda45f192e79e3029ad8fa9d2a7d66fb2170a5a0",
+    "hand": "right",
+    "status": "REVIEW",
+    "participantScalingApplied": false,
     "muscles": 43,
     "bodies": 31,
     "joints": 31,
@@ -31,6 +37,6 @@
     "xRad": [0, 0.2032],
     "yRad": [0, 0.5528]
   },
-  "bodyLabels": "Visible mesh labels use the exact target OpenSim Body names. The public visual meshes lunate, scaphoid, pisiform and triquetrum all map to the target model's single proximal_row body. Bodies outside the displayed hand and non-surface carrier bodies are not invented as visible meshes.",
-  "rendering": "Joint names, coordinate names, coordinate ranges, 43 Muscle names, CMC coupling, and default-pose moment-arm associations come from the target WSY OpenSim model. The public MyoHand surface and tendon paths remain a visual reference. ROM uses prescribed display kinematics with MyoHand anchors/axes and approximate route blending; it is not a WSY mesh export, muscle-force simulation, collision solver, or browser-native OpenSim solve. The target model has no independent thumb MCP ab/adduction coordinate, so that former constructed control is not displayed."
+  "bodyLabels": "Visible labels use the exact right-model Body names. The lunate, scaphoid, pisiform and triquetrum VTP meshes all belong to proximal_row. Non-hand carrier and proximal-arm bodies are not shown in the ROM viewport.",
+  "rendering": "Bones and all 43 neutral muscle GeometryPaths are exported from the native right-hand model. Joint names, coordinate names and ranges, axes, CMC coupling, and default-pose moment-arm associations come from the same model. ROM remains prescribed display kinematics rather than a browser-native OpenSim force or dynamics solve. The source package declares REVIEW status and no participant scaling."
 }

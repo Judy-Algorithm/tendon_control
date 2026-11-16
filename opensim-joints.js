@@ -1,15 +1,15 @@
-import {WSY_COORDINATES,WSY_JOINT_NAMES,WSY_MOMENT_ARMS_MM} from './wsy-model-data.js';
+import {GENERAL_RIGHT_COORDINATES,GENERAL_RIGHT_JOINT_NAMES,GENERAL_RIGHT_MOMENT_ARMS_MM} from './general-right-model-data.js';
 
-export const OPENSIM_JOINT_NAMES=WSY_JOINT_NAMES;
+export const OPENSIM_JOINT_NAMES=GENERAL_RIGHT_JOINT_NAMES;
 export const OPENSIM_COORDINATE_NAMES=Object.freeze(Object.fromEntries(
-  Object.entries(WSY_COORDINATES).map(([id,spec])=>[id,spec.coordinate])
+  Object.entries(GENERAL_RIGHT_COORDINATES).map(([id,spec])=>[id,spec.coordinate])
 ));
 
 function modelDof(dof){
-  const spec=WSY_COORDINATES[dof.id];
+  const spec=GENERAL_RIGHT_COORDINATES[dof.id];
   if(!spec)return null; // The target model has no independent thumb MCP ab/adduction coordinate.
   const momentCoordinate=spec.coordinate.split(' / ')[0];
-  const moments=WSY_MOMENT_ARMS_MM[momentCoordinate]??{};
+  const moments=GENERAL_RIGHT_MOMENT_ARMS_MM[momentCoordinate]??{};
   const direction=id=>({
     id,label:id==='positive'?spec.positiveLabel:spec.negativeLabel,
     tendons:Object.entries(moments).filter(([,value])=>id==='positive'?value>0:value<0).map(([name])=>name),
@@ -23,7 +23,7 @@ function modelDof(dof){
 }
 
 export function withOpenSimJoint(joint){
-  const modelJoint=WSY_JOINT_NAMES[joint.id];
+  const modelJoint=GENERAL_RIGHT_JOINT_NAMES[joint.id];
   if(!modelJoint)throw new Error('Missing OpenSim joint name for '+joint.id);
   const dofs=joint.dofs.map(modelDof).filter(Boolean);
   if(!dofs.length)throw new Error('No target-model coordinate for '+joint.id);

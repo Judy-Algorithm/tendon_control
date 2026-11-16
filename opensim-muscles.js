@@ -1,7 +1,8 @@
 import {ATLAS} from './atlas-data.js';
+import {GENERAL_RIGHT_ROUTES} from './general-right-routes.js';
 
-// Exact Muscle object order from WSY_left_radioulnar_ECU_EDM_fixed_REVIEW.osim.
-// SHA-256: fe5b786c2e2e96228e2b07b56e71b0de20d85a4caeda017f213dd638cbf2791e
+// Exact Muscle object order and neutral GeometryPaths from General_right_native_REVIEW.osim.
+// SHA-256: c97e610a70bab78ad3368cf5bda45f192e79e3029ad8fa9d2a7d66fb2170a5a0
 const atlasById=new Map(ATLAS.tendons.map(tendon=>[tendon.id,tendon]));
 
 // Visual-only routes for muscles absent from the public MyoHand path set.
@@ -48,5 +49,5 @@ export const OPENSIM_MUSCLES=Object.freeze(SPECS.map(([modelName,sourceId,label]
   const intrinsicFamily=modelName.match(/^\d+(?:st|nd|rd|th)(DI|PI)/i)?.[1]?.toUpperCase();
   return Object.freeze({...source,id:modelName,modelName,name:label??source.name,
     sourceId:sourceId===modelName?undefined:sourceId,aliases:sourceId&&sourceId!==modelName?[sourceId]:[],
-    searchTerms:intrinsicFamily?[intrinsicFamily]:[],route:ROUTES[modelName]});
+    searchTerms:intrinsicFamily?[intrinsicFamily]:[],route:GENERAL_RIGHT_ROUTES[modelName]});
 }));

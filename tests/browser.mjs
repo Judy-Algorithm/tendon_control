@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {chromium} from 'playwright';
 import {CONTROLS as ATLAS} from '../control-data.js';
-import {FITTED_ROUTES} from '../route-data.js';
+import {GENERAL_RIGHT_ROUTES} from '../general-right-routes.js';
 import {ATLAS as DISPLAY_ATLAS} from '../atlas-data.js';
 import {OPENSIM_MUSCLES} from '../opensim-muscles.js';
 
@@ -41,12 +41,12 @@ try{
   if((await snapshot()).jointId)await trigger((await snapshot()).jointId).click();
   assert.equal(await page.locator('.joint-trigger').count(),18);
   assert.equal((await snapshot()).boneCount,29);
-  const geometry=await snapshot();assert.equal(geometry.geometryRevision,2);equalSet(geometry.endpoints.map(e=>e.id),new Set([...DISPLAY_ATLAS.tendons,...OPENSIM_MUSCLES].map(t=>t.id)));
+  const geometry=await snapshot();assert.equal(geometry.geometryRevision,3);assert.equal(geometry.displayHand,'right');assert.equal(geometry.modelStatus,'REVIEW');equalSet(geometry.endpoints.map(e=>e.id),new Set([...DISPLAY_ATLAS.tendons,...OPENSIM_MUSCLES].map(t=>t.id)));
   for(const e of geometry.endpoints){
     assert.equal(e.depthTest,true);
-    if(FITTED_ROUTES[e.id]){
-      assert.deepEqual(e.start,FITTED_ROUTES[e.id][0]);
-      assert.deepEqual(e.end,FITTED_ROUTES[e.id].at(-1));
+    if(GENERAL_RIGHT_ROUTES[e.id]){
+      assert.deepEqual(e.start,GENERAL_RIGHT_ROUTES[e.id][0]);
+      assert.deepEqual(e.end,GENERAL_RIGHT_ROUTES[e.id].at(-1));
     }
   }
   await verifyRender([]);

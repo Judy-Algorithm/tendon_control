@@ -2,7 +2,7 @@ import '../vendor/three.min.js';
 import '../vendor/orbit-controls.js';
 import {MODEL} from '../model-data.js';
 import {ATLAS} from '../atlas-data.js';
-import {FITTED_ROUTES} from '../route-data.js';
+import {GENERAL_RIGHT_ROUTES} from '../general-right-routes.js';
 import {buildRig, tendonSegments, routeInfluence, rotatePoint, rigForBone} from '../motion.js';
 
 // This adapter is a display-only kinematic illustration, not an OpenSim/MuJoCo
@@ -14,6 +14,7 @@ const C = {bone: 0xe8dfca, geometry: 0x60cbb6, observation: 0x77b6fa,
 const DEFAULTS = {scale: 1, explode: 0, angle: 25, load: 2, lever: 35,
   strength: 1, activation: .2, noise: 0, selectedMuscle: 'FDS2'};
 const ALIASES = {FDSI: 'FDS2', FDPI: 'FDP2', EDCI: 'EDC2'};
+const NATIVE_IDS = {FDS2: 'FDSI', FDP2: 'FDPI', EDC2: 'EDCI'};
 const PATH_IDS = ['FDS2', 'FDP2', 'EDC2'];
 const SOURCE_IDS = {overview: ['opensim-workflows'], scale: ['opensim-scale'], ik: ['opensim-ik'], id: ['opensim-id'],
   so: ['opensim-so'], moco: ['opensim-moco'], myohand: ['mujoco-muscle']};
@@ -136,7 +137,7 @@ export class ExplainerScene {
     this.paths = new Map();
     for (const id of PATH_IDS) {
       const meta = ATLAS.tendons.find(t => t.id === id);
-      const segments = tendonSegments(MODEL, meta, FITTED_ROUTES[id]);
+      const segments = tendonSegments(MODEL, meta, GENERAL_RIGHT_ROUTES[NATIVE_IDS[id]]);
       const material = this.ownMaterial(basic(id === 'EDC2' ? C.observation : C.activation));
       const mesh = new THREE.InstancedMesh(this.pathCylinder, material, segments.length);
       mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);

@@ -1,4 +1,4 @@
-// Chinese anatomical labels plus the exact Body names in the supplied WSY OpenSim model.
+// Chinese anatomical labels plus exact Body names in General_right_native_REVIEW.osim.
 // Four visual proximal-carpal meshes map to the model's single proximal_row body.
 export const BONE_NAMES=Object.freeze({
  ulna:{name:'ulna',short:'尺骨'},radius:{name:'radius',short:'桡骨'},
